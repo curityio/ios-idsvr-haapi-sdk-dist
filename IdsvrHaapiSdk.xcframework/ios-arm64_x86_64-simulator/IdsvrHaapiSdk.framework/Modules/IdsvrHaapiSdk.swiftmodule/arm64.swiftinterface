@@ -1,0 +1,97 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.3.1 (swiftlang-1200.0.41 clang-1200.0.32.8)
+// swift-module-flags: -target arm64-apple-ios14.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name IdsvrHaapiSdk
+import CommonCrypto
+import Compression
+import CryptoKit
+import DeviceCheck
+import Foundation
+import LocalAuthentication
+import Security
+import Swift
+import os
+open class Dpop {
+  final public let privateKey: Security.SecKey
+  final public let publicKey: Security.SecKey
+  final public let jwkThumbprint: Swift.String
+  final public let jti: Foundation.UUID
+  public init() throws
+  public func createProof(httpMethod: Swift.String, url: Foundation.URL) throws -> Swift.String
+  public func addDpopHeader(request: inout Foundation.URLRequest, httpMethod: Swift.String, url: Foundation.URL) throws
+  @objc deinit
+}
+public struct DpopAccessTokenInfo {
+  public var description: Swift.String {
+    get
+  }
+}
+public enum HaapiError : Swift.Error {
+  case communication(message: Swift.String, cause: Swift.Error? = nil)
+  case general(Swift.String)
+  case withCause(_: Swift.String, _: Swift.Error)
+  case serverError(statusCode: Swift.Int)
+  case challengeError(_: Swift.Error)
+  case noChallenge
+  case noAttestation
+  case noAttestationKey
+  case attestationNotSupported
+  case challengeCreationError(_: Swift.Error)
+  case dpopCreationError(_: Swift.Error)
+  case dpopProofCreationError(_: Swift.Error)
+  case haapiTokenManagerNameAlreadyExists
+  case noCat
+  case noHaapiToken(_: Swift.Error? = nil)
+  case noDelegate
+}
+public typealias OriginPredicate = (Foundation.URL) -> Swift.Bool
+@objc @_hasMissingDesignatedInitializers public class HaapiTokenManager : ObjectiveC.NSObject {
+  @objc deinit
+  public func close()
+  public class Builder {
+    public static let defaultName: Swift.String
+    public init(clientId: Swift.String, tokenEndpoint: Foundation.URL)
+    public func setUrlOriginPredicate(_ predicate: @escaping IdsvrHaapiSdk.OriginPredicate) -> IdsvrHaapiSdk.HaapiTokenManager.Builder
+    public func setName(_ name: Swift.String) -> IdsvrHaapiSdk.HaapiTokenManager.Builder
+    public func setStorage(_ storage: IdsvrHaapiSdk.Storage) -> IdsvrHaapiSdk.HaapiTokenManager.Builder
+    public func setInternalUrlSession(_ urlSession: Foundation.URLSession) -> IdsvrHaapiSdk.HaapiTokenManager.Builder
+    public func setExternalUrlSessionConfiguration(_ configuration: Foundation.URLSessionConfiguration) -> IdsvrHaapiSdk.HaapiTokenManager.Builder
+    public func build() -> IdsvrHaapiSdk.HaapiTokenManager
+    @objc deinit
+  }
+  public func unregister()
+  public func createClient(urlSession: Foundation.URLSession = .shared) -> IdsvrHaapiSdk.HaapiClient
+  public func makeUrlSession(request: Foundation.URLRequest, delegate: Foundation.URLSessionTaskDelegate?, delegateQueue: Foundation.OperationQueue?) -> Foundation.URLSession
+  public func makeUrlRequest(fromUrl url: Foundation.URL) -> Foundation.URLRequest
+  public func requestHaapiToken(cat: Swift.String, dpop: IdsvrHaapiSdk.Dpop, urlSession: Foundation.URLSession, completionHandler: @escaping (Swift.Result<Swift.String, IdsvrHaapiSdk.HaapiError>) -> Swift.Void)
+  public func getHaapiToken(completionHandler: @escaping (Swift.Result<IdsvrHaapiSdk.DpopAccessTokenInfo, IdsvrHaapiSdk.HaapiError>) -> Swift.Void)
+  public func getFreshHaapiToken(completionHandler: @escaping (Swift.Result<IdsvrHaapiSdk.DpopAccessTokenInfo, IdsvrHaapiSdk.HaapiError>) -> Swift.Void)
+  public func fetchAndAppendHaapiHeaders(on request: Foundation.URLRequest, originPredicate: ((Foundation.URL) -> Swift.Bool)? = nil, sessionId: Swift.String?, completionHandler: @escaping (Swift.Result<Foundation.URLRequest, Swift.Error>) -> Swift.Void)
+  @objc override dynamic public init()
+}
+extension HaapiTokenManager : Foundation.URLSessionDelegate {
+  @objc dynamic public func urlSession(_ session: Foundation.URLSession, didReceive challenge: Foundation.URLAuthenticationChallenge, completionHandler: @escaping (Foundation.URLSession.AuthChallengeDisposition, Foundation.URLCredential?) -> Swift.Void)
+}
+extension Data {
+  public init?(base64URLEncoded base64URLString: Swift.String)
+  public init?(base64URLEncoded base64URLData: Foundation.Data)
+  public func base64URLEncodedString() -> Swift.String
+  public func base64URLEncodedData() -> Foundation.Data
+}
+extension Data {
+  public init(_ data: Foundation.Data)
+  public func data() -> Foundation.Data
+}
+public protocol Storage {
+  func read(key: Swift.String) throws -> Foundation.Data?
+  func write(key: Swift.String, data: Foundation.Data) throws
+  func delete(key: Swift.String) throws
+}
+extension Error {
+  public var debugDescription: Swift.String {
+    get
+  }
+}
+@_hasMissingDesignatedInitializers public class HaapiClient {
+  public func performDataTask(for urlRequest: Foundation.URLRequest, completionHandler: @escaping (Swift.Result<Foundation.URLResponse, Swift.Error>) -> Swift.Void)
+  @objc deinit
+}
