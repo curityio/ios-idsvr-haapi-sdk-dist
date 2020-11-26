@@ -16,9 +16,7 @@ Pod::Spec.new do |spec|
   spec.documentation_url = 'https://developer.curity.io/docs/latest/index.html'
   spec.social_media_url = 'https://twitter.com/curityio'
   spec.swift_version = "5.0"
-
-  # TODO: Change to location on Bitbucket/GitHub. This will be the final URL where the binaries are located
-  spec.source           = { :git => 'https://appfrilans@bitbucket.org/curity/idsvrhaapisdk-disttest.git', :tag => '1.0.7' }
+  spec.source           = { :git => 'https://github.com/curityio/ios-idsvr-haapi-sdk-dist', :tag => '1.0.7' }
 
   spec.vendored_frameworks = "IdsvrHaapiSdk.xcframework"
 
