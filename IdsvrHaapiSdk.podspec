@@ -1,7 +1,7 @@
 Pod::Spec.new do |spec|
   spec.name             = 'IdsvrHaapiSdk'
   spec.version          = '0.1.0'
-  spec.license          = 'UNLICENSED'
+  spec.license          = { :type => "UNLICENSED", :file => "legal.md" }
   spec.homepage         = 'https://curity.io'
   spec.authors          = { 'Cuity' => 'info@curity.io' }
   spec.summary          = 'Hypermedia Authentication API (HAAPI) SDK for the Curity Identity Server'
