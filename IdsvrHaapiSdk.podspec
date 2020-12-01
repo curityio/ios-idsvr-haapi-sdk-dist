@@ -1,6 +1,6 @@
 Pod::Spec.new do |spec|
   spec.name             = 'IdsvrHaapiSdk'
-  spec.version          = '0.1.11'
+  spec.version          = '0.1.12'
   spec.license          = { :type => "UNLICENSED", :file => "legal.md" }
   spec.homepage         = 'https://curity.io'
   spec.authors          = { 'Cuity' => 'info@curity.io' }
