@@ -16,7 +16,7 @@ Pod::Spec.new do |spec|
   spec.documentation_url = 'https://developer.curity.io/docs/latest/index.html'
   spec.social_media_url = 'https://twitter.com/curityio'
   spec.swift_version = "5.0"
-  spec.source           = { :git => 'https://github.com/curityio/ios-idsvr-haapi-sdk-dist.git', :tag => '0.1.0' }
+  spec.source           = { :git => 'https://github.com/curityio/ios-idsvr-haapi-sdk-dist.git', :tag => '0.1.3' }
 
   spec.vendored_frameworks = "IdsvrHaapiSdk.xcframework"
 
