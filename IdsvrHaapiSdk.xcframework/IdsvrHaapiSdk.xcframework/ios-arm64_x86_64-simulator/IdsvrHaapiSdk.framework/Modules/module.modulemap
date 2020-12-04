@@ -1,4 +1,0 @@
-framework module IdsvrHaapiSdk {
-  header "IdsvrHaapiSdk-Swift.h"
-  requires objc
-}
