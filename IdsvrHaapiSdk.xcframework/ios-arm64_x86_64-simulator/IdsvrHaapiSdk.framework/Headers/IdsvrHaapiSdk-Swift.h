@@ -190,7 +190,6 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 #if __has_warning("-Watimport-in-framework-header")
 #pragma clang diagnostic ignored "-Watimport-in-framework-header"
 #endif
-@import Foundation;
 @import ObjectiveC;
 #endif
 
@@ -210,19 +209,57 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 #endif
 
 
+/// <code>HaapiTokenManager</code> instances manage HAAPI tokens and facilitate interacting with the HAAPI service.
+/// If needed, the <code>HaapiTokenManager</code> performs the attestation flow, by using the Device Check services on the iOS device.
+/// The <code>HaapiTokenManager</code> is created by using the Builder, like
+/// \code
+///    haapiTokenManager = HaapiTokenManager.Builder(
+///        tokenEndpoint: "https://curity.example.com/oauth/token"
+///        clientId: "my-oauth-client-id"
+///    ).build()
+///
+/// \endcodeThe <code>HaapiTokenManager</code> internally relies on an <code>URLSession</code> instance with default configuration to perform HTTP requests. However, it is possible to provide
+/// an initialized <code>URLSession</code>-instance to the Builder upon instantiation, which ensures custom connection-related configuration can be supported.
+/// Once an instance of the <code>HaapiTokenManager</code> is created, it can be used to obtain a HAAPI token. Once a HAAPI token is obtained, the <code>HaapiTokenManager</code>
+/// can provide a client through the <code>createClient()</code> method. This client can be instructed to use a provided <code>URLSession</code> to make its requests, or use an internal
+/// <code>URLSession</code> instead.
+/// For example, create a default <code>HaapiClient</code> using the <code>HaapiTokenManager</code> is done like
+/// \code
+/// let haapiClient = haapiTokenManager.createClient()
+///
+/// \endcodeAlternatively, creating it with a custom <code>URLSession</code> is done like
+/// \code
+/// let haapiClient = haapiTokenManager.createClient(
+///     urlSession: URLSession(
+///         configuration: URLSessionConfiguration.default,
+///         delegate: urlSessionDelegate,
+///         delegateQueue: nil
+///     )
+///
+/// \endcodeOnce a <code>HaapiTokenManager</code> is created, the <code>HaapiClient</code> that it can provide can be used to perform operations according to the HAAPI specifications. An example request made using the <code>HaapiClient</code> looks like
+/// \code
+/// var authorizationRequest = URLRequest(url: FlowTests.authorizationUrl)
+/// authorizationRequest.httpMethod = "GET"
+///
+/// haapiClient.performDataTask(for: authorizationRequest) { result in
+///     switch result {
+///     case .success(let responseAndData):
+///         let response = responseAndData.response
+///         let data = responseAndData.data
+///         ...
+///         break
+///     case .failure(let error):
+///         ...
+///     }
+/// }
+///
+/// \endcodeThe above example attempts to make a <code>GET</code> request to the authorization endpoint and provides a completing function for further processing of the results.
 SWIFT_CLASS("_TtC13IdsvrHaapiSdk17HaapiTokenManager")
 @interface HaapiTokenManager : NSObject
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
 
-@class NSURLSession;
-@class NSURLAuthenticationChallenge;
-@class NSURLCredential;
-
-@interface HaapiTokenManager (SWIFT_EXTENSION(IdsvrHaapiSdk)) <NSURLSessionDelegate>
-- (void)URLSession:(NSURLSession * _Nonnull)session didReceiveChallenge:(NSURLAuthenticationChallenge * _Nonnull)challenge completionHandler:(void (^ _Nonnull)(NSURLSessionAuthChallengeDisposition, NSURLCredential * _Nullable))completionHandler;
-@end
 
 
 #if __has_attribute(external_source_symbol)
@@ -422,7 +459,6 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 #if __has_warning("-Watimport-in-framework-header")
 #pragma clang diagnostic ignored "-Watimport-in-framework-header"
 #endif
-@import Foundation;
 @import ObjectiveC;
 #endif
 
@@ -442,19 +478,57 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 #endif
 
 
+/// <code>HaapiTokenManager</code> instances manage HAAPI tokens and facilitate interacting with the HAAPI service.
+/// If needed, the <code>HaapiTokenManager</code> performs the attestation flow, by using the Device Check services on the iOS device.
+/// The <code>HaapiTokenManager</code> is created by using the Builder, like
+/// \code
+///    haapiTokenManager = HaapiTokenManager.Builder(
+///        tokenEndpoint: "https://curity.example.com/oauth/token"
+///        clientId: "my-oauth-client-id"
+///    ).build()
+///
+/// \endcodeThe <code>HaapiTokenManager</code> internally relies on an <code>URLSession</code> instance with default configuration to perform HTTP requests. However, it is possible to provide
+/// an initialized <code>URLSession</code>-instance to the Builder upon instantiation, which ensures custom connection-related configuration can be supported.
+/// Once an instance of the <code>HaapiTokenManager</code> is created, it can be used to obtain a HAAPI token. Once a HAAPI token is obtained, the <code>HaapiTokenManager</code>
+/// can provide a client through the <code>createClient()</code> method. This client can be instructed to use a provided <code>URLSession</code> to make its requests, or use an internal
+/// <code>URLSession</code> instead.
+/// For example, create a default <code>HaapiClient</code> using the <code>HaapiTokenManager</code> is done like
+/// \code
+/// let haapiClient = haapiTokenManager.createClient()
+///
+/// \endcodeAlternatively, creating it with a custom <code>URLSession</code> is done like
+/// \code
+/// let haapiClient = haapiTokenManager.createClient(
+///     urlSession: URLSession(
+///         configuration: URLSessionConfiguration.default,
+///         delegate: urlSessionDelegate,
+///         delegateQueue: nil
+///     )
+///
+/// \endcodeOnce a <code>HaapiTokenManager</code> is created, the <code>HaapiClient</code> that it can provide can be used to perform operations according to the HAAPI specifications. An example request made using the <code>HaapiClient</code> looks like
+/// \code
+/// var authorizationRequest = URLRequest(url: FlowTests.authorizationUrl)
+/// authorizationRequest.httpMethod = "GET"
+///
+/// haapiClient.performDataTask(for: authorizationRequest) { result in
+///     switch result {
+///     case .success(let responseAndData):
+///         let response = responseAndData.response
+///         let data = responseAndData.data
+///         ...
+///         break
+///     case .failure(let error):
+///         ...
+///     }
+/// }
+///
+/// \endcodeThe above example attempts to make a <code>GET</code> request to the authorization endpoint and provides a completing function for further processing of the results.
 SWIFT_CLASS("_TtC13IdsvrHaapiSdk17HaapiTokenManager")
 @interface HaapiTokenManager : NSObject
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
 
-@class NSURLSession;
-@class NSURLAuthenticationChallenge;
-@class NSURLCredential;
-
-@interface HaapiTokenManager (SWIFT_EXTENSION(IdsvrHaapiSdk)) <NSURLSessionDelegate>
-- (void)URLSession:(NSURLSession * _Nonnull)session didReceiveChallenge:(NSURLAuthenticationChallenge * _Nonnull)challenge completionHandler:(void (^ _Nonnull)(NSURLSessionAuthChallengeDisposition, NSURLCredential * _Nullable))completionHandler;
-@end
 
 
 #if __has_attribute(external_source_symbol)

@@ -10,66 +10,58 @@ import LocalAuthentication
 import Security
 import Swift
 import os
-open class Dpop {
-  final public let privateKey: Security.SecKey
-  final public let publicKey: Security.SecKey
-  final public let jwkThumbprint: Swift.String
-  final public let jti: Foundation.UUID
-  public init() throws
-  public func createProof(httpMethod: Swift.String, url: Foundation.URL) throws -> Swift.String
-  public func addDpopHeader(request: inout Foundation.URLRequest, httpMethod: Swift.String, url: Foundation.URL) throws
-  @objc deinit
-}
-public struct DpopAccessTokenInfo {
-  public var description: Swift.String {
-    get
-  }
-}
 public enum HaapiError : Swift.Error {
   case communication(message: Swift.String, cause: Swift.Error? = nil)
-  case general(Swift.String)
-  case withCause(_: Swift.String, _: Swift.Error)
   case serverError(statusCode: Swift.Int)
-  case challengeError(_: Swift.Error)
-  case noChallenge
-  case noAttestation
-  case noAttestationKey
   case attestationNotSupported
-  case challengeCreationError(_: Swift.Error)
-  case dpopCreationError(_: Swift.Error)
-  case dpopProofCreationError(_: Swift.Error)
-  case haapiTokenManagerNameAlreadyExists
-  case noCat
-  case noHaapiToken(_: Swift.Error? = nil)
-  case noDelegate
+  case attestationFailure(cause: Swift.Error? = nil)
+  case attestationKeyGenFailure(cause: Swift.Error? = nil)
+  case attestationRefusedByServer(cause: Swift.Error? = nil)
+  case assertionFailure(cause: Swift.Error? = nil)
+  case dpopKeyCreationFailure(cause: Swift.Error)
+  case dpopProofCreationFailure(cause: Swift.Error)
+  case haapiTokenManagerIsClosed
+  case haapiTokenManagerIsExpired
+  case illegalState(message: Swift.String)
 }
-public typealias OriginPredicate = (Foundation.URL) -> Swift.Bool
-@objc @_hasMissingDesignatedInitializers public class HaapiTokenManager : ObjectiveC.NSObject {
+public class Dpop {
+  final public let jwkThumbprint: Swift.String
+  public init() throws
+  public func createProof(httpMethod: Swift.String, url: Foundation.URL) throws -> Swift.String
+  public func getHeaderValue(httpMethod: Swift.String, url: Foundation.URL) throws -> Swift.String
   @objc deinit
+}
+@objc @_hasMissingDesignatedInitializers public class HaapiTokenManager : ObjectiveC.NSObject {
   public func close()
+  public func clearState()
   public class Builder {
-    public static let defaultName: Swift.String
-    public init(clientId: Swift.String, tokenEndpoint: Foundation.URL)
-    public func setUrlOriginPredicate(_ predicate: @escaping IdsvrHaapiSdk.OriginPredicate) -> IdsvrHaapiSdk.HaapiTokenManager.Builder
+    public init(tokenEndpoint: Foundation.URL, clientId: Swift.String)
     public func setName(_ name: Swift.String) -> IdsvrHaapiSdk.HaapiTokenManager.Builder
     public func setStorage(_ storage: IdsvrHaapiSdk.Storage) -> IdsvrHaapiSdk.HaapiTokenManager.Builder
     public func setInternalUrlSession(_ urlSession: Foundation.URLSession) -> IdsvrHaapiSdk.HaapiTokenManager.Builder
-    public func setExternalUrlSessionConfiguration(_ configuration: Foundation.URLSessionConfiguration) -> IdsvrHaapiSdk.HaapiTokenManager.Builder
+    public func setHaapiTokenMinTtl(_ minTtl: Foundation.TimeInterval) -> IdsvrHaapiSdk.HaapiTokenManager.Builder
+    public func disableDeviceCheckAttestation() -> IdsvrHaapiSdk.HaapiTokenManager.Builder
     public func build() -> IdsvrHaapiSdk.HaapiTokenManager
     @objc deinit
   }
-  public func unregister()
   public func createClient(urlSession: Foundation.URLSession = .shared) -> IdsvrHaapiSdk.HaapiClient
-  public func makeUrlSession(request: Foundation.URLRequest, delegate: Foundation.URLSessionTaskDelegate?, delegateQueue: Foundation.OperationQueue?) -> Foundation.URLSession
-  public func makeUrlRequest(fromUrl url: Foundation.URL) -> Foundation.URLRequest
-  public func requestHaapiToken(cat: Swift.String, dpop: IdsvrHaapiSdk.Dpop, urlSession: Foundation.URLSession, completionHandler: @escaping (Swift.Result<Swift.String, IdsvrHaapiSdk.HaapiError>) -> Swift.Void)
-  public func getHaapiToken(completionHandler: @escaping (Swift.Result<IdsvrHaapiSdk.DpopAccessTokenInfo, IdsvrHaapiSdk.HaapiError>) -> Swift.Void)
-  public func getFreshHaapiToken(completionHandler: @escaping (Swift.Result<IdsvrHaapiSdk.DpopAccessTokenInfo, IdsvrHaapiSdk.HaapiError>) -> Swift.Void)
-  public func fetchAndAppendHaapiHeaders(on request: Foundation.URLRequest, originPredicate: ((Foundation.URL) -> Swift.Bool)? = nil, sessionId: Swift.String?, completionHandler: @escaping (Swift.Result<Foundation.URLRequest, Swift.Error>) -> Swift.Void)
+  public func getHaapiTokenAsync(forceFresh: Swift.Bool = false, callbackDispatchQueue: Dispatch.DispatchQueue = DispatchQueue.main, completionHandler: @escaping (Swift.Result<IdsvrHaapiSdk.DpopAccessTokenInfo, IdsvrHaapiSdk.HaapiError>) -> Swift.Void)
+  public func getHaapiToken(forceFresh: Swift.Bool = false) -> Swift.Result<IdsvrHaapiSdk.DpopAccessTokenInfo, IdsvrHaapiSdk.HaapiError>
+  @objc deinit
   @objc override dynamic public init()
 }
-extension HaapiTokenManager : Foundation.URLSessionDelegate {
-  @objc dynamic public func urlSession(_ session: Foundation.URLSession, didReceive challenge: Foundation.URLAuthenticationChallenge, completionHandler: @escaping (Foundation.URLSession.AuthChallengeDisposition, Foundation.URLCredential?) -> Swift.Void)
+public enum HttpHeaderNames {
+  public static let accept: Swift.String
+  public static let authorization: Swift.String
+  public static let contentType: Swift.String
+  public static let dpop: Swift.String
+  public static let haapiSessionId: Swift.String
+  public static let haapiSetSessionId: Swift.String
+}
+public enum MimeTypes {
+  public static let haapi: Swift.String
+  public static let json: Swift.String
+  public static let xWwwFormUrlEncoded: Swift.String
 }
 extension Data {
   public init?(base64URLEncoded base64URLString: Swift.String)
@@ -81,17 +73,48 @@ extension Data {
   public init(_ data: Foundation.Data)
   public func data() -> Foundation.Data
 }
+public enum StorageError : Swift.Error {
+  case writeError(cause: Swift.Error)
+  case readError(cause: Swift.Error)
+  case deleteError(cause: Swift.Error)
+}
 public protocol Storage {
   func read(key: Swift.String) throws -> Foundation.Data?
   func write(key: Swift.String, data: Foundation.Data) throws
   func delete(key: Swift.String) throws
 }
-extension Error {
-  public var debugDescription: Swift.String {
+extension URLResponse {
+  public func haapiSessionId() -> Swift.String?
+}
+extension URLRequest {
+  public mutating func addAuthorizationHeader(headerValue: Swift.String)
+  public mutating func addDpopHeader(headerValue: Swift.String)
+  public mutating func addDpopAccessTokenHeaders(from dpopAccessTokenInfo: IdsvrHaapiSdk.DpopAccessTokenInfo, httpMethod: Swift.String, url: Foundation.URL) throws
+  public mutating func addHaapiMediaTypeAcceptHeader()
+  public mutating func addHaapiSessionIdHeader(_ sessionId: Swift.String)
+}
+public struct ResponseAndData {
+  public let response: Foundation.URLResponse
+  public let data: Foundation.Data?
+}
+@_hasMissingDesignatedInitializers public class HaapiClient {
+  public func performDataTask(for urlRequest: Foundation.URLRequest, completionHandler: @escaping (Swift.Result<IdsvrHaapiSdk.ResponseAndData, Swift.Error>) -> Swift.Void)
+  @objc deinit
+}
+public struct AccessToken : Swift.CustomStringConvertible {
+  public let value: Swift.String
+  public let expiresOn: Foundation.Date
+  public func isValid(atTime: Foundation.Date, minTtl: Foundation.TimeInterval) -> Swift.Bool
+  public var description: Swift.String {
     get
   }
 }
-@_hasMissingDesignatedInitializers public class HaapiClient {
-  public func performDataTask(for urlRequest: Foundation.URLRequest, completionHandler: @escaping (Swift.Result<Foundation.URLResponse, Swift.Error>) -> Swift.Void)
-  @objc deinit
+public struct DpopAccessTokenInfo : Swift.CustomStringConvertible {
+  public let accessToken: IdsvrHaapiSdk.AccessToken
+  public let dpop: IdsvrHaapiSdk.Dpop
+  public var description: Swift.String {
+    get
+  }
+  public func dpopHeaderValue(httpMethod: Swift.String, url: Foundation.URL) throws -> Swift.String
+  public func authorizationHeaderValue() -> Swift.String
 }
