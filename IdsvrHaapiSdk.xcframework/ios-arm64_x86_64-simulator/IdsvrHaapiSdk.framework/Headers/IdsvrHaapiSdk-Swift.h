@@ -262,6 +262,8 @@ SWIFT_CLASS("_TtC13IdsvrHaapiSdk17HaapiTokenManager")
 
 
 
+
+
 #if __has_attribute(external_source_symbol)
 # pragma clang attribute pop
 #endif
@@ -528,6 +530,8 @@ SWIFT_CLASS("_TtC13IdsvrHaapiSdk17HaapiTokenManager")
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
+
+
 
 
 
