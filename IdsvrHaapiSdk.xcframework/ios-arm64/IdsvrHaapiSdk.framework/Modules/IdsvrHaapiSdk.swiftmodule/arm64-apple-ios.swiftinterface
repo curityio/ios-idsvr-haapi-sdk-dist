@@ -33,6 +33,11 @@ public enum HaapiError : Swift.Error {
   case haapiTokenManagerIsExpired
   case illegalState(message: Swift.String)
 }
+extension HaapiError : Foundation.LocalizedError {
+  public var errorDescription: Swift.String? {
+    get
+  }
+}
 @objc @_hasMissingDesignatedInitializers @objcMembers public class Dpop : ObjectiveC.NSObject {
   @objc final public let jwkThumbprint: Swift.String
   @objc public func createProof(httpMethod: Swift.String, url: Foundation.URL) throws -> Swift.String
@@ -96,6 +101,11 @@ public enum StorageError : Swift.Error {
   case writeError(cause: Swift.Error)
   case readError(cause: Swift.Error)
   case deleteError(cause: Swift.Error)
+}
+extension StorageError : Foundation.LocalizedError {
+  public var errorDescription: Swift.String? {
+    get
+  }
 }
 public protocol Storage {
   func read(key: Swift.String) throws -> Foundation.Data?
