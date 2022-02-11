@@ -1,4 +1,11 @@
 framework module IdsvrHaapiSdk {
-  header "IdsvrHaapiSdk-Swift.h"
-  requires objc
+  umbrella header "IdsvrHaapiSdk.h"
+
+  export *
+  module * { export * }
+}
+
+module IdsvrHaapiSdk.Swift {
+    header "IdsvrHaapiSdk-Swift.h"
+    requires objc
 }

@@ -373,6 +373,42 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class) BOOL enabled;)
 @end
 
 
+/// <code>HaapiManager</code> manages the communication flow between a client and the Curity Identity Server by providing data models objects
+/// for the different steps of the flow, which can be used in the UI components of the client application.
+/// A HAAPI flow can be initiated by calling the <code>start</code> function, which will provide a first result. Afterwards, use
+/// either <code>submitForm</code> or <code>followLink</code> to move forward. All these methods return an <code>HaapiResult</code>, which encloses a <code>HaapiRepresentation</code>, a <code>ProblemRepresentation</code> or an <code>Error</code>.
+/// A <code>HaapiRepresentation</code> represents a new step in the flow.
+/// A <code>ProblemRepresentation</code> indicates that a problem has occurred.
+/// An <code>Error</code> encloses an exception, in which case the flow should be stopped.
+/// The purpose of using this class is to obtain an <code>OAuthAuthorizationResponseStep</code> that contains the authorization response details.
+/// seealso:
+/// <code>OAuthTokenManager</code>
+SWIFT_CLASS("_TtC13IdsvrHaapiSdk12HaapiManager")
+@interface HaapiManager : NSObject
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+
+
+SWIFT_CLASS("_TtC13IdsvrHaapiSdk14HaapiSdkLogger")
+@interface HaapiSdkLogger : NSObject
+/// When <code>HaapiSdkLogger.enabled</code> is true, internal log statements will be available in the console. The default value is <code>false</code>.
+/// warning:
+/// This is for debug purpose
+/// note:
+/// For debug purpose, it is recommanded to set it in your AppDelegate.
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class) BOOL enabled;)
++ (BOOL)enabled SWIFT_WARN_UNUSED_RESULT;
++ (void)setEnabled:(BOOL)value;
+/// When <code>HaapiSdkLogger.enabledLogDriver</code> is true, internal log statement from IdsvrHaapiDriver will be available in the console. The default value is <code>false</code>.
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class) BOOL enabledLogDriver;)
++ (BOOL)enabledLogDriver SWIFT_WARN_UNUSED_RESULT;
++ (void)setEnabledLogDriver:(BOOL)value;
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER SWIFT_UNAVAILABLE;
+@end
+
+
 /// <code>HaapiTokenManager</code> instances manage HAAPI tokens and facilitate interacting with the HAAPI service.
 /// If needed, the <code>HaapiTokenManager</code> performs the attestation flow, by using the Device Check services on the iOS device.
 /// The <code>HaapiTokenManager</code> is created by using the Builder, like
@@ -514,6 +550,7 @@ SWIFT_CLASS("_TtC13IdsvrHaapiSdk16HaapiTokenResult")
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
+
 
 
 
