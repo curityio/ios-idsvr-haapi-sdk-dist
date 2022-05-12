@@ -1,5 +1,5 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.4 (swiftlang-1205.0.26.9 clang-1205.0.19.55)
+// swift-compiler-version: Apple Swift version 5.6 (swiftlang-5.6.0.323.62 clang-1316.0.20.8)
 // swift-module-flags: -target x86_64-apple-ios14.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name IdsvrHaapiSdk
 import Combine
 import CommonCrypto
@@ -12,6 +12,7 @@ import LocalAuthentication
 import Security
 import Swift
 import UIKit
+import _Concurrency
 import os
 @_hasMissingDesignatedInitializers public class FormField : Swift.Equatable {
   final public let name: Swift.String
@@ -87,13 +88,11 @@ public struct ResponseAndData {
   public func performDataTask(for urlRequest: Foundation.URLRequest, completionHandler: @escaping (Swift.Result<IdsvrHaapiSdk.ResponseAndData, Swift.Error>) -> Swift.Void)
   @available(swift, obsoleted: 1.0)
   @objc public func performDataTask(for urlRequest: Foundation.URLRequest, completionHandler: @escaping (Foundation.Data?, Foundation.URLResponse?, Swift.Error?) -> Swift.Void)
-  @objc override dynamic public init()
   @objc deinit
 }
 @objc @_hasMissingDesignatedInitializers @objcMembers public class HaapiTokenResult : ObjectiveC.NSObject {
   @objc final public let dPopAccessTokenInfo: IdsvrHaapiSdk.DpopAccessTokenInfo?
   @objc final public let error: Swift.Error?
-  @objc override dynamic public init()
   @objc deinit
 }
 public protocol HaapiConfigurable {
@@ -118,7 +117,7 @@ final public class HaapiConfiguration : IdsvrHaapiSdk.HaapiConfigurable, IdsvrHa
   public init(name: Swift.String, clientId: Swift.String, baseURL: Foundation.URL, tokenEndpointURL: Foundation.URL, authorizationEndpointURL: Foundation.URL, appRedirect: Swift.String, isAutoRedirect: Swift.Bool = true, urlSession: Foundation.URLSession = URLSession(configuration: .haapi))
   @objc deinit
 }
-extension URLSessionConfiguration {
+extension Foundation.URLSessionConfiguration {
   public static var haapi: Foundation.URLSessionConfiguration {
     get
   }
@@ -133,7 +132,7 @@ public class Problem : IdsvrHaapiSdk.ProblemRepresentation, Swift.Decodable, Swi
   required public init(from decoder: Swift.Decoder) throws
   @objc deinit
 }
-public typealias OAuthCompletion = (IdsvrHaapiSdk.TokenResponse) -> Swift.Void
+public typealias OAuthCompletion = (_ tokenResponse: IdsvrHaapiSdk.TokenResponse) -> Swift.Void
 @frozen public enum TokenResponse {
   case successfulToken(IdsvrHaapiSdk.SuccessfulTokenResponse)
   case errorToken(IdsvrHaapiSdk.ErrorTokenResponse)
@@ -178,9 +177,12 @@ public struct Metadata : Swift.Decodable, Swift.Equatable {
 }
 @objc @_hasMissingDesignatedInitializers @objcMembers public class Dpop : ObjectiveC.NSObject {
   @objc final public let jwkThumbprint: Swift.String
-  @objc public func createProof(httpMethod: Swift.String, url: Foundation.URL) throws -> Swift.String
-  @objc public func getHeaderValue(httpMethod: Swift.String, url: Foundation.URL) throws -> Swift.String
-  @objc override dynamic public init()
+  @objc @available(swift, obsoleted: 0.1, message: "Use `createProof(httpMethod: String, url: URL, nonce: String?, accessToken: String?)` instead")
+  public func createProof(httpMethod: Swift.String, url: Foundation.URL) throws -> Swift.String
+  @objc public func createProof(httpMethod: Swift.String, url: Foundation.URL, nonce: Swift.String? = nil, accessToken: Swift.String? = nil) throws -> Swift.String
+  @objc @available(swift, obsoleted: 0.1, message: "Use `getHeaderValue(httpMethod: String, url: URL, nonce: String?, accessToken: String?)` instead")
+  public func getHeaderValue(httpMethod: Swift.String, url: Foundation.URL) throws -> Swift.String
+  @objc public func getHeaderValue(httpMethod: Swift.String, url: Foundation.URL, nonce: Swift.String? = nil, accessToken: Swift.String? = nil) throws -> Swift.String
   @objc deinit
 }
 public enum HaapiError : Swift.Error {
@@ -197,7 +199,7 @@ public enum HaapiError : Swift.Error {
   case haapiTokenManagerIsExpired
   case illegalState(message: Swift.String)
 }
-extension HaapiError : Foundation.LocalizedError {
+extension IdsvrHaapiSdk.HaapiError : Foundation.LocalizedError {
   public var errorDescription: Swift.String? {
     get
   }
@@ -222,17 +224,20 @@ extension HaapiError : Foundation.LocalizedError {
     public func build() -> IdsvrHaapiSdk.HaapiTokenManager
     @objc deinit
   }
-  @objc override dynamic public init()
   @objc deinit
 }
-extension HaapiTokenManager {
+extension IdsvrHaapiSdk.HaapiTokenManager {
   @objc final public func createClient(urlSession: Foundation.URLSession? = nil) -> IdsvrHaapiSdk.HaapiClient
-  final public func getHaapiTokenAsync(forceFresh: Swift.Bool = false, callbackDispatchQueue: Dispatch.DispatchQueue = DispatchQueue.main, completionHandler: @escaping (Swift.Result<IdsvrHaapiSdk.DpopAccessTokenInfo, IdsvrHaapiSdk.HaapiError>) -> Swift.Void)
+  final public func getHaapiTokenAsync(forceFresh: Swift.Bool = false, callbackDispatchQueue: Dispatch.DispatchQueue = DispatchQueue.main, dpopNonce: Swift.String? = nil, completionHandler: @escaping (Swift.Result<IdsvrHaapiSdk.DpopAccessTokenInfo, IdsvrHaapiSdk.HaapiError>) -> Swift.Void)
   @objc @available(swift, obsoleted: 1.0)
   final public func getHaapiTokenAsync(forceFresh: Swift.Bool = false, callbackDispatchQueue: Dispatch.DispatchQueue = DispatchQueue.main, completionHandler: @escaping (IdsvrHaapiSdk.DpopAccessTokenInfo?, Swift.Error?) -> Swift.Void)
-  final public func getHaapiToken(forceFresh: Swift.Bool = false) -> Swift.Result<IdsvrHaapiSdk.DpopAccessTokenInfo, IdsvrHaapiSdk.HaapiError>
+  @objc @available(swift, obsoleted: 1.0)
+  final public func getHaapiTokenAsync(forceFresh: Swift.Bool = false, callbackDispatchQueue: Dispatch.DispatchQueue = DispatchQueue.main, dpopNonce: Swift.String? = nil, completionHandler: @escaping (IdsvrHaapiSdk.DpopAccessTokenInfo?, Swift.Error?) -> Swift.Void)
+  final public func getHaapiToken(forceFresh: Swift.Bool = false, dpopNonce: Swift.String? = nil) -> Swift.Result<IdsvrHaapiSdk.DpopAccessTokenInfo, IdsvrHaapiSdk.HaapiError>
   @objc @available(swift, obsoleted: 1.0)
   final public func getHaapiToken(forceFresh: Swift.Bool = false) -> IdsvrHaapiSdk.HaapiTokenResult?
+  @objc @available(swift, obsoleted: 1.0)
+  final public func getHaapiToken(forceFresh: Swift.Bool = false, dpopNonce: Swift.String?) -> IdsvrHaapiSdk.HaapiTokenResult?
   @objc final public func close()
   @objc final public func clearState()
 }
@@ -246,7 +251,7 @@ extension HaapiTokenManager {
   case genericUserProblem
   case other(value: Swift.String)
 }
-extension ProblemType : Swift.RawRepresentable {
+extension IdsvrHaapiSdk.ProblemType : Swift.RawRepresentable {
   public typealias RawValue = Swift.String
   public init?(rawValue: IdsvrHaapiSdk.ProblemType.RawValue)
   public var rawValue: IdsvrHaapiSdk.ProblemType.RawValue {
@@ -284,6 +289,8 @@ public enum HttpHeaderNames {
   public static let dpop: Swift.String
   public static let haapiSessionId: Swift.String
   public static let haapiSetSessionId: Swift.String
+  public static let dpopNonce: Swift.String
+  public static let wwwAuthenticate: Swift.String
 }
 public enum MimeTypes : Swift.String {
   case happi
@@ -325,18 +332,17 @@ public struct PollingProperties : IdsvrHaapiSdk.Properties {
   @objc override dynamic public var description: Swift.String {
     @objc get
   }
-  @objc override dynamic public init()
   @objc deinit
 }
 @objc @_hasMissingDesignatedInitializers @objcMembers public class DpopAccessTokenInfo : ObjectiveC.NSObject {
   @objc final public let accessToken: IdsvrHaapiSdk.AccessToken
   @objc final public let dpop: IdsvrHaapiSdk.Dpop
+  @objc final public let dpopNonce: Swift.String?
   @objc override dynamic public var description: Swift.String {
     @objc get
   }
   @objc public func dpopHeaderValue(httpMethod: Swift.String, url: Foundation.URL) throws -> Swift.String
   @objc public func authorizationHeaderValue() -> Swift.String
-  @objc override dynamic public init()
   @objc deinit
 }
 public struct UserMessage : Swift.Decodable, Swift.Equatable {
@@ -364,14 +370,14 @@ public struct UserMessage : Swift.Decodable, Swift.Equatable {
   case userRegister
   case other(value: Swift.String)
 }
-extension ActionKind : Swift.RawRepresentable {
+extension IdsvrHaapiSdk.ActionKind : Swift.RawRepresentable {
   public typealias RawValue = Swift.String
   public init(rawValue: IdsvrHaapiSdk.ActionKind.RawValue)
   public var rawValue: Swift.String {
     get
   }
 }
-public typealias HaapiCompletionHandler = (IdsvrHaapiSdk.HaapiResult) -> Swift.Void
+public typealias HaapiCompletionHandler = (_ haapiResult: IdsvrHaapiSdk.HaapiResult) -> Swift.Void
 @objc final public class HaapiManager : ObjectiveC.NSObject {
   public init(haapiConfiguration: IdsvrHaapiSdk.HaapiConfigurable)
   final public func close()
@@ -381,7 +387,6 @@ public typealias HaapiCompletionHandler = (IdsvrHaapiSdk.HaapiResult) -> Swift.V
   final public func start(_ authorizationParameters: IdsvrHaapiSdk.OAuthAuthorizationParameters = OAuthAuthorizationParameters(), completionHandler: @escaping IdsvrHaapiSdk.HaapiCompletionHandler)
   final public func submitForm(_ form: IdsvrHaapiSdk.FormActionModel, parameters: [Swift.String : Swift.String], completionHandler: @escaping IdsvrHaapiSdk.HaapiCompletionHandler)
   final public func followLink(_ link: IdsvrHaapiSdk.Link, completionHandler: @escaping IdsvrHaapiSdk.HaapiCompletionHandler)
-  @objc override dynamic public init()
   @objc deinit
 }
 public struct Link : Swift.Decodable, Swift.Equatable {
@@ -399,10 +404,11 @@ public struct OAuthAuthorizationParameters {
   public let extraRequestParameters: [Swift.String : Swift.String]
   public init(scopes: [Swift.String] = [], nonce: Swift.String? = nil, acrValues: [Swift.String] = [], extraRequestParameters: [Swift.String : Swift.String] = [:])
 }
-extension URLResponse {
+extension Foundation.URLResponse {
   public func haapiSessionId() -> Swift.String?
+  public func dpopNonce() -> Swift.String?
 }
-extension URLRequest {
+extension Foundation.URLRequest {
   public mutating func addAuthorizationHeader(headerValue: Swift.String)
   public mutating func addDpopHeader(headerValue: Swift.String)
   public mutating func addDpopAccessTokenHeaders(from dpopAccessTokenInfo: IdsvrHaapiSdk.DpopAccessTokenInfo, httpMethod: Swift.String, url: Foundation.URL) throws
@@ -419,7 +425,7 @@ extension URLRequest {
   case consentorStep
   case userConsentStep
 }
-extension RepresentationType : Swift.RawRepresentable {
+extension IdsvrHaapiSdk.RepresentationType : Swift.RawRepresentable {
   public typealias RawValue = Swift.String
   public init?(rawValue: Swift.String)
   public var rawValue: Swift.String {
@@ -452,7 +458,6 @@ public struct ErrorTokenResponse : Swift.Decodable {
   @objc @discardableResult
   public func disableDeviceCheckAttestation() -> IdsvrHaapiSdk.HaapiTokenManagerBuilder
   @objc public func build() -> IdsvrHaapiSdk.HaapiTokenManager
-  @objc override dynamic public init()
   @objc deinit
 }
 public enum StorageError : Swift.Error {
@@ -460,7 +465,7 @@ public enum StorageError : Swift.Error {
   case readError(cause: Swift.Error)
   case deleteError(cause: Swift.Error)
 }
-extension StorageError : Foundation.LocalizedError {
+extension IdsvrHaapiSdk.StorageError : Foundation.LocalizedError {
   public var errorDescription: Swift.String? {
     get
   }
@@ -625,7 +630,7 @@ public struct GenericRepresentationStep : IdsvrHaapiSdk.HaapiRepresentation, Swi
   case encapAutoActivation
   case unknown(value: Swift.String)
 }
-extension ClientOperationName : Swift.RawRepresentable {
+extension IdsvrHaapiSdk.ClientOperationName : Swift.RawRepresentable {
   public typealias RawValue = Swift.String
   public init(rawValue: Swift.String)
   public var rawValue: Swift.String {
@@ -716,15 +721,21 @@ public class ClientOperationActionModel : Swift.Decodable, Swift.Equatable {
   case done
   case failed
 }
-extension PollingStatus : Swift.RawRepresentable {
+extension IdsvrHaapiSdk.PollingStatus : Swift.RawRepresentable {
   public typealias RawValue = Swift.String
   public init?(rawValue: Swift.String)
   public var rawValue: Swift.String {
     get
   }
 }
+extension IdsvrHaapiSdk.TextFormField.Kind : Swift.Sendable {}
+extension IdsvrHaapiSdk.ProblemType : Swift.Sendable {}
 extension IdsvrHaapiSdk.MimeTypes : Swift.Equatable {}
 extension IdsvrHaapiSdk.MimeTypes : Swift.Hashable {}
 extension IdsvrHaapiSdk.MimeTypes : Swift.RawRepresentable {}
+extension IdsvrHaapiSdk.ActionKind : Swift.Sendable {}
 extension IdsvrHaapiSdk.RepresentationType : Swift.Hashable {}
+extension IdsvrHaapiSdk.RepresentationType : Swift.Sendable {}
+extension IdsvrHaapiSdk.ClientOperationName : Swift.Sendable {}
 extension IdsvrHaapiSdk.PollingStatus : Swift.Hashable {}
+extension IdsvrHaapiSdk.PollingStatus : Swift.Sendable {}
