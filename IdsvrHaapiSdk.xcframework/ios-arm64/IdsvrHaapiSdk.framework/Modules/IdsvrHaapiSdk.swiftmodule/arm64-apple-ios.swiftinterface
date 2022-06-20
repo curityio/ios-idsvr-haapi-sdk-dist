@@ -127,7 +127,8 @@ final public class HaapiConfiguration : IdsvrHaapiSdk.HaapiConfigurable, IdsvrHa
   final public let appRedirect: Swift.String
   final public let isAutoRedirect: Swift.Bool
   final public let urlSession: Foundation.URLSession
-  public init(name: Swift.String, clientId: Swift.String, baseURL: Foundation.URL, tokenEndpointURL: Foundation.URL, authorizationEndpointURL: Foundation.URL, appRedirect: Swift.String, isAutoRedirect: Swift.Bool = true, urlSession: Foundation.URLSession = URLSession(configuration: .haapi))
+  final public let revocationEndpointURL: Foundation.URL?
+  public init(name: Swift.String, clientId: Swift.String, baseURL: Foundation.URL, tokenEndpointURL: Foundation.URL, authorizationEndpointURL: Foundation.URL, appRedirect: Swift.String, isAutoRedirect: Swift.Bool = true, urlSession: Foundation.URLSession = URLSession(configuration: .haapi), revocationEndpointURL: Foundation.URL? = nil)
   @objc deinit
 }
 @available(iOS 14.0, *)
@@ -150,9 +151,16 @@ public class Problem : IdsvrHaapiSdk.ProblemRepresentation, Swift.Decodable, Swi
 @available(iOS 14.0, *)
 public typealias OAuthCompletion = (_ tokenResponse: IdsvrHaapiSdk.TokenResponse) -> Swift.Void
 @available(iOS 14.0, *)
+public typealias OAuthRevocationCompletion = (_ response: IdsvrHaapiSdk.TokenRevocationResponse) -> Swift.Void
+@available(iOS 14.0, *)
 @frozen public enum TokenResponse {
   case successfulToken(IdsvrHaapiSdk.SuccessfulTokenResponse)
   case errorToken(IdsvrHaapiSdk.ErrorTokenResponse)
+  case error(Swift.Error)
+}
+@available(iOS 14.0, *)
+@frozen public enum TokenRevocationResponse {
+  case success
   case error(Swift.Error)
 }
 @available(iOS 14.0, *)
@@ -161,12 +169,15 @@ public protocol OAuthTokenConfigurable {
   var tokenEndpointURL: Foundation.URL { get }
   var appRedirect: Swift.String { get }
   var urlSession: Foundation.URLSession { get }
+  var revocationEndpointURL: Foundation.URL? { get }
 }
 @available(iOS 14.0, *)
 final public class OAuthTokenManager {
   public init(oauthTokenConfiguration: IdsvrHaapiSdk.OAuthTokenConfigurable)
   final public func fetchAccessToken(with authorizationCode: Swift.String, completionHandler: @escaping IdsvrHaapiSdk.OAuthCompletion)
   final public func refreshAccessToken(with refreshToken: Swift.String, completionHandler: @escaping IdsvrHaapiSdk.OAuthCompletion)
+  final public func revokeAccessToken(with token: Swift.String, completionHandler: @escaping IdsvrHaapiSdk.OAuthRevocationCompletion)
+  final public func revokeRefreshToken(with token: Swift.String, completionHandler: @escaping IdsvrHaapiSdk.OAuthRevocationCompletion)
   @objc deinit
 }
 @available(iOS 14.0, *)
@@ -818,6 +829,8 @@ extension IdsvrHaapiSdk.PollingStatus : Swift.RawRepresentable {
 }
 @available(iOS 14.0, *)
 extension IdsvrHaapiSdk.TextFormField.Kind : Swift.Sendable {}
+@available(iOS 14.0, *)
+extension IdsvrHaapiSdk.TokenRevocationResponse : Swift.Sendable {}
 @available(iOS 14.0, *)
 extension IdsvrHaapiSdk.ProblemType : Swift.Sendable {}
 @available(iOS 14, *)
