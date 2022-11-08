@@ -9,11 +9,11 @@ import DeviceCheck
 import Foundation
 @_exported import IdsvrHaapiSdk
 import LocalAuthentication
+import OSLog
 import Security
 import Swift
 import UIKit
 import _Concurrency
-import os
 @_hasMissingDesignatedInitializers @available(iOS 14.0, *)
 public class FormField : Swift.Equatable {
   final public let name: Swift.String
@@ -440,14 +440,14 @@ public typealias HaapiCompletionHandler = (_ haapiResult: IdsvrHaapiSdk.HaapiRes
 @objc @available(iOS 14.0, *)
 final public class HaapiManager : ObjectiveC.NSObject {
   public init(haapiConfiguration: IdsvrHaapiSdk.HaapiConfigurable)
+  @objc deinit
   final public func close()
   public static var isSupported: Swift.Bool {
     get
   }
   final public func start(_ authorizationParameters: IdsvrHaapiSdk.OAuthAuthorizationParameters = OAuthAuthorizationParameters(), completionHandler: @escaping IdsvrHaapiSdk.HaapiCompletionHandler)
-  final public func submitForm(_ form: IdsvrHaapiSdk.FormActionModel, parameters: [Swift.String : Swift.String], completionHandler: @escaping IdsvrHaapiSdk.HaapiCompletionHandler)
+  final public func submitForm(_ form: IdsvrHaapiSdk.FormActionModel, parameters: [Swift.String : Any], completionHandler: @escaping IdsvrHaapiSdk.HaapiCompletionHandler)
   final public func followLink(_ link: IdsvrHaapiSdk.Link, completionHandler: @escaping IdsvrHaapiSdk.HaapiCompletionHandler)
-  @objc deinit
 }
 @available(iOS 14.0, *)
 public struct Link : Swift.Decodable, Swift.Equatable {
