@@ -6,7 +6,7 @@
 	<dict>
 		<key>Headers/IdsvrHaapiSdk-Swift.h</key>
 		<data>
-		pIGmm27GE3wE7hFpHo0noYXOXuk=
+		fJ16PJlmoTLAZOKG2tN/ph8q32g=
 		</data>
 		<key>Headers/IdsvrHaapiSdk.h</key>
 		<data>
@@ -14,23 +14,31 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		mxkHMT1tgBOwQ3FRGkXVm2yeVrc=
+		LVqoiqzol5cJApOmCI2QQ+OT/Rw=
+		</data>
+		<key>Modules/IdsvrHaapiSdk.swiftmodule/arm64-apple-ios.abi.json</key>
+		<data>
+		bD2RrZ3fPZb5qB35Uy9bFaNNAbw=
+		</data>
+		<key>Modules/IdsvrHaapiSdk.swiftmodule/arm64-apple-ios.private.swiftinterface</key>
+		<data>
+		43uXwMtJ8TsUkb9u3OaixoB4K8w=
 		</data>
 		<key>Modules/IdsvrHaapiSdk.swiftmodule/arm64-apple-ios.swiftdoc</key>
 		<data>
-		8zY7hxVPYspl81F2dTgS3fEUpjY=
+		2zMzcG4Lmwk6gn+aLw3vtVG5MWk=
 		</data>
 		<key>Modules/IdsvrHaapiSdk.swiftmodule/arm64-apple-ios.swiftinterface</key>
 		<data>
-		rBX1GohP5jQxggG/eNkiS8v9xHg=
+		43uXwMtJ8TsUkb9u3OaixoB4K8w=
 		</data>
 		<key>Modules/IdsvrHaapiSdk.swiftmodule/arm64-apple-ios.swiftmodule</key>
 		<data>
-		S9TRbTldHXb/al9TEFdkrvAbgJ8=
+		ZTiw2BWh2HP15vtL361PA/d7+wI=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
-		391sXko9BDb/QTUOHV7sZiSMngI=
+		jj0wpLZNY0bG7qZmYsHc2uQDw64=
 		</data>
 	</dict>
 	<key>files2</key>
@@ -39,7 +47,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			S9xIxbkad48OgurJzibaxSmZaudocH4LADe5fVJGT4c=
+			5OxjwEIrAFEpsYjvWLDlRL+cBgsBOlCTnmWBYQlJT5Q=
 			</data>
 		</dict>
 		<key>Headers/IdsvrHaapiSdk.h</key>
@@ -49,32 +57,46 @@
 			hFd5knX/7qM1HsRLl4vQPplVucNedPspiC8A/dQ2fow=
 			</data>
 		</dict>
+		<key>Modules/IdsvrHaapiSdk.swiftmodule/arm64-apple-ios.abi.json</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			Bnox8LXhllZbZp6fzb4WIu/lnsPOtNR1vITwkqODyzU=
+			</data>
+		</dict>
+		<key>Modules/IdsvrHaapiSdk.swiftmodule/arm64-apple-ios.private.swiftinterface</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			+NpczeJXyq12izYgCm1c7iDfg8EEn5El2DT/8A8ffnQ=
+			</data>
+		</dict>
 		<key>Modules/IdsvrHaapiSdk.swiftmodule/arm64-apple-ios.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			5yHpuk8VpYhr214b1Z3Ne56z+tewql0VK4jH9c0TQWs=
+			J+jNCCRyOXBSj4r6bb8YwRcZi7SPsgb5DVf4DzG3QDQ=
 			</data>
 		</dict>
 		<key>Modules/IdsvrHaapiSdk.swiftmodule/arm64-apple-ios.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			shZA0WKbWv4RhIbAJ4CPuAVmk9Lgg0z1DAJD3yg/B4s=
+			+NpczeJXyq12izYgCm1c7iDfg8EEn5El2DT/8A8ffnQ=
 			</data>
 		</dict>
 		<key>Modules/IdsvrHaapiSdk.swiftmodule/arm64-apple-ios.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			4OHyZ490piW83ldyaEHXIvMA6Y5OwbN/Sd/RMBOm6wQ=
+			sCvvtF+Ubjep2INHT+EUswGssvDTSRMX9H56eLp9Ufw=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			QVTd4DNmehHteYLHTY7WgGrScjKEXWxIBrQlSup70Bc=
+			Hv3Iunh/hH9dN9YACzU5SPraJFVE4aAzneSgtu6YEUw=
 			</data>
 		</dict>
 	</dict>
