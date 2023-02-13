@@ -15556,13 +15556,6 @@
         ]
       },
       {
-        "kind": "Import",
-        "name": "OSLog",
-        "printedName": "OSLog",
-        "declKind": "Import",
-        "moduleName": "IdsvrHaapiSdk"
-      },
-      {
         "kind": "TypeDecl",
         "name": "AuthenticatorSelectorStep",
         "printedName": "AuthenticatorSelectorStep",
@@ -20604,6 +20597,1190 @@
       },
       {
         "kind": "TypeDecl",
+        "name": "WebAuthnRegistrationClientOperationStep",
+        "printedName": "WebAuthnRegistrationClientOperationStep",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "actionModel",
+            "printedName": "actionModel",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "WebAuthnRegistrationClientOperationActionModel",
+                "printedName": "IdsvrHaapiSdk.WebAuthnRegistrationClientOperationActionModel",
+                "usr": "s:13IdsvrHaapiSdk46WebAuthnRegistrationClientOperationActionModelC"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:13IdsvrHaapiSdk39WebAuthnRegistrationClientOperationStepV11actionModelAA0defgh6ActionK0Cvp",
+            "mangledName": "$s13IdsvrHaapiSdk39WebAuthnRegistrationClientOperationStepV11actionModelAA0defgh6ActionK0Cvp",
+            "moduleName": "IdsvrHaapiSdk",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "WebAuthnRegistrationClientOperationActionModel",
+                    "printedName": "IdsvrHaapiSdk.WebAuthnRegistrationClientOperationActionModel",
+                    "usr": "s:13IdsvrHaapiSdk46WebAuthnRegistrationClientOperationActionModelC"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:13IdsvrHaapiSdk39WebAuthnRegistrationClientOperationStepV11actionModelAA0defgh6ActionK0Cvg",
+                "mangledName": "$s13IdsvrHaapiSdk39WebAuthnRegistrationClientOperationStepV11actionModelAA0defgh6ActionK0Cvg",
+                "moduleName": "IdsvrHaapiSdk",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "metadata",
+            "printedName": "metadata",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "IdsvrHaapiSdk.Metadata?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metadata",
+                    "printedName": "IdsvrHaapiSdk.Metadata",
+                    "usr": "s:13IdsvrHaapiSdk8MetadataV"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:13IdsvrHaapiSdk39WebAuthnRegistrationClientOperationStepV8metadataAA8MetadataVSgvp",
+            "mangledName": "$s13IdsvrHaapiSdk39WebAuthnRegistrationClientOperationStepV8metadataAA8MetadataVSgvp",
+            "moduleName": "IdsvrHaapiSdk",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "IdsvrHaapiSdk.Metadata?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Metadata",
+                        "printedName": "IdsvrHaapiSdk.Metadata",
+                        "usr": "s:13IdsvrHaapiSdk8MetadataV"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:13IdsvrHaapiSdk39WebAuthnRegistrationClientOperationStepV8metadataAA8MetadataVSgvg",
+                "mangledName": "$s13IdsvrHaapiSdk39WebAuthnRegistrationClientOperationStepV8metadataAA8MetadataVSgvg",
+                "moduleName": "IdsvrHaapiSdk",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "type",
+            "printedName": "type",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "RepresentationType",
+                "printedName": "IdsvrHaapiSdk.RepresentationType",
+                "usr": "s:13IdsvrHaapiSdk18RepresentationTypeO"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:13IdsvrHaapiSdk39WebAuthnRegistrationClientOperationStepV4typeAA18RepresentationTypeOvp",
+            "mangledName": "$s13IdsvrHaapiSdk39WebAuthnRegistrationClientOperationStepV4typeAA18RepresentationTypeOvp",
+            "moduleName": "IdsvrHaapiSdk",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "RepresentationType",
+                    "printedName": "IdsvrHaapiSdk.RepresentationType",
+                    "usr": "s:13IdsvrHaapiSdk18RepresentationTypeO"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:13IdsvrHaapiSdk39WebAuthnRegistrationClientOperationStepV4typeAA18RepresentationTypeOvg",
+                "mangledName": "$s13IdsvrHaapiSdk39WebAuthnRegistrationClientOperationStepV4typeAA18RepresentationTypeOvg",
+                "moduleName": "IdsvrHaapiSdk",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "actions",
+            "printedName": "actions",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Array",
+                "printedName": "[IdsvrHaapiSdk.Action]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Action",
+                    "printedName": "IdsvrHaapiSdk.Action",
+                    "usr": "s:13IdsvrHaapiSdk6ActionC"
+                  }
+                ],
+                "usr": "s:Sa"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:13IdsvrHaapiSdk39WebAuthnRegistrationClientOperationStepV7actionsSayAA6ActionCGvp",
+            "mangledName": "$s13IdsvrHaapiSdk39WebAuthnRegistrationClientOperationStepV7actionsSayAA6ActionCGvp",
+            "moduleName": "IdsvrHaapiSdk",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Array",
+                    "printedName": "[IdsvrHaapiSdk.Action]",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Action",
+                        "printedName": "IdsvrHaapiSdk.Action",
+                        "usr": "s:13IdsvrHaapiSdk6ActionC"
+                      }
+                    ],
+                    "usr": "s:Sa"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:13IdsvrHaapiSdk39WebAuthnRegistrationClientOperationStepV7actionsSayAA6ActionCGvg",
+                "mangledName": "$s13IdsvrHaapiSdk39WebAuthnRegistrationClientOperationStepV7actionsSayAA6ActionCGvg",
+                "moduleName": "IdsvrHaapiSdk",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "links",
+            "printedName": "links",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Array",
+                "printedName": "[IdsvrHaapiSdk.Link]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Link",
+                    "printedName": "IdsvrHaapiSdk.Link",
+                    "usr": "s:13IdsvrHaapiSdk4LinkV"
+                  }
+                ],
+                "usr": "s:Sa"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:13IdsvrHaapiSdk39WebAuthnRegistrationClientOperationStepV5linksSayAA4LinkVGvp",
+            "mangledName": "$s13IdsvrHaapiSdk39WebAuthnRegistrationClientOperationStepV5linksSayAA4LinkVGvp",
+            "moduleName": "IdsvrHaapiSdk",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Array",
+                    "printedName": "[IdsvrHaapiSdk.Link]",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Link",
+                        "printedName": "IdsvrHaapiSdk.Link",
+                        "usr": "s:13IdsvrHaapiSdk4LinkV"
+                      }
+                    ],
+                    "usr": "s:Sa"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:13IdsvrHaapiSdk39WebAuthnRegistrationClientOperationStepV5linksSayAA4LinkVGvg",
+                "mangledName": "$s13IdsvrHaapiSdk39WebAuthnRegistrationClientOperationStepV5linksSayAA4LinkVGvg",
+                "moduleName": "IdsvrHaapiSdk",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "messages",
+            "printedName": "messages",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Array",
+                "printedName": "[IdsvrHaapiSdk.UserMessage]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "UserMessage",
+                    "printedName": "IdsvrHaapiSdk.UserMessage",
+                    "usr": "s:13IdsvrHaapiSdk11UserMessageV"
+                  }
+                ],
+                "usr": "s:Sa"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:13IdsvrHaapiSdk39WebAuthnRegistrationClientOperationStepV8messagesSayAA11UserMessageVGvp",
+            "mangledName": "$s13IdsvrHaapiSdk39WebAuthnRegistrationClientOperationStepV8messagesSayAA11UserMessageVGvp",
+            "moduleName": "IdsvrHaapiSdk",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Array",
+                    "printedName": "[IdsvrHaapiSdk.UserMessage]",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "UserMessage",
+                        "printedName": "IdsvrHaapiSdk.UserMessage",
+                        "usr": "s:13IdsvrHaapiSdk11UserMessageV"
+                      }
+                    ],
+                    "usr": "s:Sa"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:13IdsvrHaapiSdk39WebAuthnRegistrationClientOperationStepV8messagesSayAA11UserMessageVGvg",
+                "mangledName": "$s13IdsvrHaapiSdk39WebAuthnRegistrationClientOperationStepV8messagesSayAA11UserMessageVGvg",
+                "moduleName": "IdsvrHaapiSdk",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "properties",
+            "printedName": "properties",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "IdsvrHaapiSdk.Properties?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Properties",
+                    "printedName": "IdsvrHaapiSdk.Properties",
+                    "usr": "s:13IdsvrHaapiSdk10PropertiesP"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:13IdsvrHaapiSdk39WebAuthnRegistrationClientOperationStepV10propertiesAA10Properties_pSgvp",
+            "mangledName": "$s13IdsvrHaapiSdk39WebAuthnRegistrationClientOperationStepV10propertiesAA10Properties_pSgvp",
+            "moduleName": "IdsvrHaapiSdk",
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "IdsvrHaapiSdk.Properties?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Properties",
+                        "printedName": "IdsvrHaapiSdk.Properties",
+                        "usr": "s:13IdsvrHaapiSdk10PropertiesP"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:13IdsvrHaapiSdk39WebAuthnRegistrationClientOperationStepV10propertiesAA10Properties_pSgvg",
+                "mangledName": "$s13IdsvrHaapiSdk39WebAuthnRegistrationClientOperationStepV10propertiesAA10Properties_pSgvg",
+                "moduleName": "IdsvrHaapiSdk",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "continueAction",
+            "printedName": "continueAction",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "FormAction",
+                "printedName": "IdsvrHaapiSdk.FormAction",
+                "usr": "s:13IdsvrHaapiSdk10FormActionC"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:13IdsvrHaapiSdk39WebAuthnRegistrationClientOperationStepV14continueActionAA04FormK0Cvp",
+            "mangledName": "$s13IdsvrHaapiSdk39WebAuthnRegistrationClientOperationStepV14continueActionAA04FormK0Cvp",
+            "moduleName": "IdsvrHaapiSdk",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "FormAction",
+                    "printedName": "IdsvrHaapiSdk.FormAction",
+                    "usr": "s:13IdsvrHaapiSdk10FormActionC"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:13IdsvrHaapiSdk39WebAuthnRegistrationClientOperationStepV14continueActionAA04FormK0Cvg",
+                "mangledName": "$s13IdsvrHaapiSdk39WebAuthnRegistrationClientOperationStepV14continueActionAA04FormK0Cvg",
+                "moduleName": "IdsvrHaapiSdk",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "fallbackActions",
+            "printedName": "fallbackActions",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Array",
+                "printedName": "[IdsvrHaapiSdk.Action]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Action",
+                    "printedName": "IdsvrHaapiSdk.Action",
+                    "usr": "s:13IdsvrHaapiSdk6ActionC"
+                  }
+                ],
+                "usr": "s:Sa"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:13IdsvrHaapiSdk39WebAuthnRegistrationClientOperationStepV15fallbackActionsSayAA6ActionCGvp",
+            "mangledName": "$s13IdsvrHaapiSdk39WebAuthnRegistrationClientOperationStepV15fallbackActionsSayAA6ActionCGvp",
+            "moduleName": "IdsvrHaapiSdk",
+            "declAttributes": [
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Array",
+                    "printedName": "[IdsvrHaapiSdk.Action]",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Action",
+                        "printedName": "IdsvrHaapiSdk.Action",
+                        "usr": "s:13IdsvrHaapiSdk6ActionC"
+                      }
+                    ],
+                    "usr": "s:Sa"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:13IdsvrHaapiSdk39WebAuthnRegistrationClientOperationStepV15fallbackActionsSayAA6ActionCGvg",
+                "mangledName": "$s13IdsvrHaapiSdk39WebAuthnRegistrationClientOperationStepV15fallbackActionsSayAA6ActionCGvg",
+                "moduleName": "IdsvrHaapiSdk",
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Function",
+            "name": "formattedParametersForRegistration",
+            "printedName": "formattedParametersForRegistration(credentialOptions:attestationObject:rawClientDataJSON:credentialID:credentialParamType:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Dictionary",
+                "printedName": "[Swift.String : Any]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "ProtocolComposition",
+                    "printedName": "Any"
+                  }
+                ],
+                "usr": "s:SD"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "CredentialRequestOptions",
+                "printedName": "IdsvrHaapiSdk.WebAuthnRegistrationClientOperationActionModel.CredentialRequestOptions",
+                "usr": "s:13IdsvrHaapiSdk46WebAuthnRegistrationClientOperationActionModelC24CredentialRequestOptionsC"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Data",
+                "printedName": "Foundation.Data",
+                "usr": "s:10Foundation4DataV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Data",
+                "printedName": "Foundation.Data",
+                "usr": "s:10Foundation4DataV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Data",
+                "printedName": "Foundation.Data",
+                "usr": "s:10Foundation4DataV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "hasDefaultArg": true,
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:13IdsvrHaapiSdk39WebAuthnRegistrationClientOperationStepV022formattedParametersForF017credentialOptions17attestationObject03rawG8DataJSON0M2ID0M9ParamTypeSDySSypGAA0defgH11ActionModelC017CredentialRequestN0C_10Foundation0R0VA2QSStF",
+            "mangledName": "$s13IdsvrHaapiSdk39WebAuthnRegistrationClientOperationStepV022formattedParametersForF017credentialOptions17attestationObject03rawG8DataJSON0M2ID0M9ParamTypeSDySSypGAA0defgH11ActionModelC017CredentialRequestN0C_10Foundation0R0VA2QSStF",
+            "moduleName": "IdsvrHaapiSdk",
+            "declAttributes": [
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Struct",
+        "usr": "s:13IdsvrHaapiSdk39WebAuthnRegistrationClientOperationStepV",
+        "mangledName": "$s13IdsvrHaapiSdk39WebAuthnRegistrationClientOperationStepV",
+        "moduleName": "IdsvrHaapiSdk",
+        "intro_iOS": "14.0",
+        "declAttributes": [
+          "AccessControl",
+          "Available",
+          "RawDocComment"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "ClientOperationStep",
+            "printedName": "ClientOperationStep",
+            "usr": "s:13IdsvrHaapiSdk19ClientOperationStepP",
+            "mangledName": "$s13IdsvrHaapiSdk19ClientOperationStepP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "HaapiRepresentation",
+            "printedName": "HaapiRepresentation",
+            "usr": "s:13IdsvrHaapiSdk0B14RepresentationP",
+            "mangledName": "$s13IdsvrHaapiSdk0B14RepresentationP"
+          }
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "WebAuthnAuthenticationClientOperationStep",
+        "printedName": "WebAuthnAuthenticationClientOperationStep",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "actionModel",
+            "printedName": "actionModel",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "WebAuthnAuthenticationClientOperationActionModel",
+                "printedName": "IdsvrHaapiSdk.WebAuthnAuthenticationClientOperationActionModel",
+                "usr": "s:13IdsvrHaapiSdk48WebAuthnAuthenticationClientOperationActionModelC"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:13IdsvrHaapiSdk41WebAuthnAuthenticationClientOperationStepV11actionModelAA0defgh6ActionK0Cvp",
+            "mangledName": "$s13IdsvrHaapiSdk41WebAuthnAuthenticationClientOperationStepV11actionModelAA0defgh6ActionK0Cvp",
+            "moduleName": "IdsvrHaapiSdk",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "WebAuthnAuthenticationClientOperationActionModel",
+                    "printedName": "IdsvrHaapiSdk.WebAuthnAuthenticationClientOperationActionModel",
+                    "usr": "s:13IdsvrHaapiSdk48WebAuthnAuthenticationClientOperationActionModelC"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:13IdsvrHaapiSdk41WebAuthnAuthenticationClientOperationStepV11actionModelAA0defgh6ActionK0Cvg",
+                "mangledName": "$s13IdsvrHaapiSdk41WebAuthnAuthenticationClientOperationStepV11actionModelAA0defgh6ActionK0Cvg",
+                "moduleName": "IdsvrHaapiSdk",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "metadata",
+            "printedName": "metadata",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "IdsvrHaapiSdk.Metadata?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metadata",
+                    "printedName": "IdsvrHaapiSdk.Metadata",
+                    "usr": "s:13IdsvrHaapiSdk8MetadataV"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:13IdsvrHaapiSdk41WebAuthnAuthenticationClientOperationStepV8metadataAA8MetadataVSgvp",
+            "mangledName": "$s13IdsvrHaapiSdk41WebAuthnAuthenticationClientOperationStepV8metadataAA8MetadataVSgvp",
+            "moduleName": "IdsvrHaapiSdk",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "IdsvrHaapiSdk.Metadata?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Metadata",
+                        "printedName": "IdsvrHaapiSdk.Metadata",
+                        "usr": "s:13IdsvrHaapiSdk8MetadataV"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:13IdsvrHaapiSdk41WebAuthnAuthenticationClientOperationStepV8metadataAA8MetadataVSgvg",
+                "mangledName": "$s13IdsvrHaapiSdk41WebAuthnAuthenticationClientOperationStepV8metadataAA8MetadataVSgvg",
+                "moduleName": "IdsvrHaapiSdk",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "type",
+            "printedName": "type",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "RepresentationType",
+                "printedName": "IdsvrHaapiSdk.RepresentationType",
+                "usr": "s:13IdsvrHaapiSdk18RepresentationTypeO"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:13IdsvrHaapiSdk41WebAuthnAuthenticationClientOperationStepV4typeAA18RepresentationTypeOvp",
+            "mangledName": "$s13IdsvrHaapiSdk41WebAuthnAuthenticationClientOperationStepV4typeAA18RepresentationTypeOvp",
+            "moduleName": "IdsvrHaapiSdk",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "RepresentationType",
+                    "printedName": "IdsvrHaapiSdk.RepresentationType",
+                    "usr": "s:13IdsvrHaapiSdk18RepresentationTypeO"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:13IdsvrHaapiSdk41WebAuthnAuthenticationClientOperationStepV4typeAA18RepresentationTypeOvg",
+                "mangledName": "$s13IdsvrHaapiSdk41WebAuthnAuthenticationClientOperationStepV4typeAA18RepresentationTypeOvg",
+                "moduleName": "IdsvrHaapiSdk",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "actions",
+            "printedName": "actions",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Array",
+                "printedName": "[IdsvrHaapiSdk.Action]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Action",
+                    "printedName": "IdsvrHaapiSdk.Action",
+                    "usr": "s:13IdsvrHaapiSdk6ActionC"
+                  }
+                ],
+                "usr": "s:Sa"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:13IdsvrHaapiSdk41WebAuthnAuthenticationClientOperationStepV7actionsSayAA6ActionCGvp",
+            "mangledName": "$s13IdsvrHaapiSdk41WebAuthnAuthenticationClientOperationStepV7actionsSayAA6ActionCGvp",
+            "moduleName": "IdsvrHaapiSdk",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Array",
+                    "printedName": "[IdsvrHaapiSdk.Action]",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Action",
+                        "printedName": "IdsvrHaapiSdk.Action",
+                        "usr": "s:13IdsvrHaapiSdk6ActionC"
+                      }
+                    ],
+                    "usr": "s:Sa"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:13IdsvrHaapiSdk41WebAuthnAuthenticationClientOperationStepV7actionsSayAA6ActionCGvg",
+                "mangledName": "$s13IdsvrHaapiSdk41WebAuthnAuthenticationClientOperationStepV7actionsSayAA6ActionCGvg",
+                "moduleName": "IdsvrHaapiSdk",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "links",
+            "printedName": "links",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Array",
+                "printedName": "[IdsvrHaapiSdk.Link]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Link",
+                    "printedName": "IdsvrHaapiSdk.Link",
+                    "usr": "s:13IdsvrHaapiSdk4LinkV"
+                  }
+                ],
+                "usr": "s:Sa"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:13IdsvrHaapiSdk41WebAuthnAuthenticationClientOperationStepV5linksSayAA4LinkVGvp",
+            "mangledName": "$s13IdsvrHaapiSdk41WebAuthnAuthenticationClientOperationStepV5linksSayAA4LinkVGvp",
+            "moduleName": "IdsvrHaapiSdk",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Array",
+                    "printedName": "[IdsvrHaapiSdk.Link]",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Link",
+                        "printedName": "IdsvrHaapiSdk.Link",
+                        "usr": "s:13IdsvrHaapiSdk4LinkV"
+                      }
+                    ],
+                    "usr": "s:Sa"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:13IdsvrHaapiSdk41WebAuthnAuthenticationClientOperationStepV5linksSayAA4LinkVGvg",
+                "mangledName": "$s13IdsvrHaapiSdk41WebAuthnAuthenticationClientOperationStepV5linksSayAA4LinkVGvg",
+                "moduleName": "IdsvrHaapiSdk",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "messages",
+            "printedName": "messages",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Array",
+                "printedName": "[IdsvrHaapiSdk.UserMessage]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "UserMessage",
+                    "printedName": "IdsvrHaapiSdk.UserMessage",
+                    "usr": "s:13IdsvrHaapiSdk11UserMessageV"
+                  }
+                ],
+                "usr": "s:Sa"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:13IdsvrHaapiSdk41WebAuthnAuthenticationClientOperationStepV8messagesSayAA11UserMessageVGvp",
+            "mangledName": "$s13IdsvrHaapiSdk41WebAuthnAuthenticationClientOperationStepV8messagesSayAA11UserMessageVGvp",
+            "moduleName": "IdsvrHaapiSdk",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Array",
+                    "printedName": "[IdsvrHaapiSdk.UserMessage]",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "UserMessage",
+                        "printedName": "IdsvrHaapiSdk.UserMessage",
+                        "usr": "s:13IdsvrHaapiSdk11UserMessageV"
+                      }
+                    ],
+                    "usr": "s:Sa"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:13IdsvrHaapiSdk41WebAuthnAuthenticationClientOperationStepV8messagesSayAA11UserMessageVGvg",
+                "mangledName": "$s13IdsvrHaapiSdk41WebAuthnAuthenticationClientOperationStepV8messagesSayAA11UserMessageVGvg",
+                "moduleName": "IdsvrHaapiSdk",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "properties",
+            "printedName": "properties",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "IdsvrHaapiSdk.Properties?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Properties",
+                    "printedName": "IdsvrHaapiSdk.Properties",
+                    "usr": "s:13IdsvrHaapiSdk10PropertiesP"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:13IdsvrHaapiSdk41WebAuthnAuthenticationClientOperationStepV10propertiesAA10Properties_pSgvp",
+            "mangledName": "$s13IdsvrHaapiSdk41WebAuthnAuthenticationClientOperationStepV10propertiesAA10Properties_pSgvp",
+            "moduleName": "IdsvrHaapiSdk",
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "IdsvrHaapiSdk.Properties?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Properties",
+                        "printedName": "IdsvrHaapiSdk.Properties",
+                        "usr": "s:13IdsvrHaapiSdk10PropertiesP"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:13IdsvrHaapiSdk41WebAuthnAuthenticationClientOperationStepV10propertiesAA10Properties_pSgvg",
+                "mangledName": "$s13IdsvrHaapiSdk41WebAuthnAuthenticationClientOperationStepV10propertiesAA10Properties_pSgvg",
+                "moduleName": "IdsvrHaapiSdk",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "continueAction",
+            "printedName": "continueAction",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "FormAction",
+                "printedName": "IdsvrHaapiSdk.FormAction",
+                "usr": "s:13IdsvrHaapiSdk10FormActionC"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:13IdsvrHaapiSdk41WebAuthnAuthenticationClientOperationStepV14continueActionAA04FormK0Cvp",
+            "mangledName": "$s13IdsvrHaapiSdk41WebAuthnAuthenticationClientOperationStepV14continueActionAA04FormK0Cvp",
+            "moduleName": "IdsvrHaapiSdk",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "FormAction",
+                    "printedName": "IdsvrHaapiSdk.FormAction",
+                    "usr": "s:13IdsvrHaapiSdk10FormActionC"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:13IdsvrHaapiSdk41WebAuthnAuthenticationClientOperationStepV14continueActionAA04FormK0Cvg",
+                "mangledName": "$s13IdsvrHaapiSdk41WebAuthnAuthenticationClientOperationStepV14continueActionAA04FormK0Cvg",
+                "moduleName": "IdsvrHaapiSdk",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "fallbackActions",
+            "printedName": "fallbackActions",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Array",
+                "printedName": "[IdsvrHaapiSdk.Action]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Action",
+                    "printedName": "IdsvrHaapiSdk.Action",
+                    "usr": "s:13IdsvrHaapiSdk6ActionC"
+                  }
+                ],
+                "usr": "s:Sa"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:13IdsvrHaapiSdk41WebAuthnAuthenticationClientOperationStepV15fallbackActionsSayAA6ActionCGvp",
+            "mangledName": "$s13IdsvrHaapiSdk41WebAuthnAuthenticationClientOperationStepV15fallbackActionsSayAA6ActionCGvp",
+            "moduleName": "IdsvrHaapiSdk",
+            "declAttributes": [
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Array",
+                    "printedName": "[IdsvrHaapiSdk.Action]",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Action",
+                        "printedName": "IdsvrHaapiSdk.Action",
+                        "usr": "s:13IdsvrHaapiSdk6ActionC"
+                      }
+                    ],
+                    "usr": "s:Sa"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:13IdsvrHaapiSdk41WebAuthnAuthenticationClientOperationStepV15fallbackActionsSayAA6ActionCGvg",
+                "mangledName": "$s13IdsvrHaapiSdk41WebAuthnAuthenticationClientOperationStepV15fallbackActionsSayAA6ActionCGvg",
+                "moduleName": "IdsvrHaapiSdk",
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Function",
+            "name": "formattedParametersForAssertion",
+            "printedName": "formattedParametersForAssertion(rawAuthenticatorData:rawClientDataJSON:signature:credentialID:credentialParamType:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Dictionary",
+                "printedName": "[Swift.String : Any]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "ProtocolComposition",
+                    "printedName": "Any"
+                  }
+                ],
+                "usr": "s:SD"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Data",
+                "printedName": "Foundation.Data",
+                "usr": "s:10Foundation4DataV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Data",
+                "printedName": "Foundation.Data",
+                "usr": "s:10Foundation4DataV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Data",
+                "printedName": "Foundation.Data",
+                "usr": "s:10Foundation4DataV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Data",
+                "printedName": "Foundation.Data",
+                "usr": "s:10Foundation4DataV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "hasDefaultArg": true,
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:13IdsvrHaapiSdk41WebAuthnAuthenticationClientOperationStepV31formattedParametersForAssertion20rawAuthenticatorData0ngP4JSON9signature12credentialID0S9ParamTypeSDySSypG10Foundation0P0V_A3MSStF",
+            "mangledName": "$s13IdsvrHaapiSdk41WebAuthnAuthenticationClientOperationStepV31formattedParametersForAssertion20rawAuthenticatorData0ngP4JSON9signature12credentialID0S9ParamTypeSDySSypG10Foundation0P0V_A3MSStF",
+            "moduleName": "IdsvrHaapiSdk",
+            "declAttributes": [
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Struct",
+        "usr": "s:13IdsvrHaapiSdk41WebAuthnAuthenticationClientOperationStepV",
+        "mangledName": "$s13IdsvrHaapiSdk41WebAuthnAuthenticationClientOperationStepV",
+        "moduleName": "IdsvrHaapiSdk",
+        "intro_iOS": "14.0",
+        "declAttributes": [
+          "AccessControl",
+          "Available",
+          "RawDocComment"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "ClientOperationStep",
+            "printedName": "ClientOperationStep",
+            "usr": "s:13IdsvrHaapiSdk19ClientOperationStepP",
+            "mangledName": "$s13IdsvrHaapiSdk19ClientOperationStepP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "HaapiRepresentation",
+            "printedName": "HaapiRepresentation",
+            "usr": "s:13IdsvrHaapiSdk0B14RepresentationP",
+            "mangledName": "$s13IdsvrHaapiSdk0B14RepresentationP"
+          }
+        ]
+      },
+      {
+        "kind": "TypeDecl",
         "name": "GenericClientOperationStep",
         "printedName": "GenericClientOperationStep",
         "children": [
@@ -21582,6 +22759,88 @@
           },
           {
             "kind": "Var",
+            "name": "webAuthnRegistration",
+            "printedName": "webAuthnRegistration",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(IdsvrHaapiSdk.ClientOperationName.Type) -> IdsvrHaapiSdk.ClientOperationName",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "ClientOperationName",
+                    "printedName": "IdsvrHaapiSdk.ClientOperationName",
+                    "usr": "s:13IdsvrHaapiSdk19ClientOperationNameO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "IdsvrHaapiSdk.ClientOperationName.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "ClientOperationName",
+                        "printedName": "IdsvrHaapiSdk.ClientOperationName",
+                        "usr": "s:13IdsvrHaapiSdk19ClientOperationNameO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:13IdsvrHaapiSdk19ClientOperationNameO20webAuthnRegistrationyA2CmF",
+            "mangledName": "$s13IdsvrHaapiSdk19ClientOperationNameO20webAuthnRegistrationyA2CmF",
+            "moduleName": "IdsvrHaapiSdk",
+            "declAttributes": [
+              "RawDocComment"
+            ],
+            "fixedbinaryorder": 3
+          },
+          {
+            "kind": "Var",
+            "name": "webAuthnAuthentication",
+            "printedName": "webAuthnAuthentication",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(IdsvrHaapiSdk.ClientOperationName.Type) -> IdsvrHaapiSdk.ClientOperationName",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "ClientOperationName",
+                    "printedName": "IdsvrHaapiSdk.ClientOperationName",
+                    "usr": "s:13IdsvrHaapiSdk19ClientOperationNameO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "IdsvrHaapiSdk.ClientOperationName.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "ClientOperationName",
+                        "printedName": "IdsvrHaapiSdk.ClientOperationName",
+                        "usr": "s:13IdsvrHaapiSdk19ClientOperationNameO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:13IdsvrHaapiSdk19ClientOperationNameO22webAuthnAuthenticationyA2CmF",
+            "mangledName": "$s13IdsvrHaapiSdk19ClientOperationNameO22webAuthnAuthenticationyA2CmF",
+            "moduleName": "IdsvrHaapiSdk",
+            "declAttributes": [
+              "RawDocComment"
+            ],
+            "fixedbinaryorder": 4
+          },
+          {
+            "kind": "Var",
             "name": "unknown",
             "printedName": "unknown",
             "children": [
@@ -21639,7 +22898,7 @@
             "declAttributes": [
               "RawDocComment"
             ],
-            "fixedbinaryorder": 3
+            "fixedbinaryorder": 5
           },
           {
             "kind": "Constructor",
@@ -24236,6 +25495,2148 @@
         "declKind": "Class",
         "usr": "s:13IdsvrHaapiSdk45EncapAutoActivationClientOperationActionModelC",
         "mangledName": "$s13IdsvrHaapiSdk45EncapAutoActivationClientOperationActionModelC",
+        "moduleName": "IdsvrHaapiSdk",
+        "intro_iOS": "14.0",
+        "declAttributes": [
+          "Final",
+          "AccessControl",
+          "Available",
+          "RawDocComment"
+        ],
+        "superclassUsr": "s:13IdsvrHaapiSdk26ClientOperationActionModelC",
+        "inheritsConvenienceInitializers": true,
+        "superclassNames": [
+          "IdsvrHaapiSdk.ClientOperationActionModel"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Decodable",
+            "printedName": "Decodable",
+            "usr": "s:Se",
+            "mangledName": "$sSe"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Equatable",
+            "printedName": "Equatable",
+            "usr": "s:SQ",
+            "mangledName": "$sSQ"
+          }
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "WebAuthnRegistrationClientOperationActionModel",
+        "printedName": "WebAuthnRegistrationClientOperationActionModel",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "arguments",
+            "printedName": "arguments",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Dictionary",
+                "printedName": "[Swift.String : Any]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "ProtocolComposition",
+                    "printedName": "Any"
+                  }
+                ],
+                "usr": "s:SD"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:13IdsvrHaapiSdk46WebAuthnRegistrationClientOperationActionModelC9argumentsSDySSypGvp",
+            "mangledName": "$s13IdsvrHaapiSdk46WebAuthnRegistrationClientOperationActionModelC9argumentsSDySSypGvp",
+            "moduleName": "IdsvrHaapiSdk",
+            "declAttributes": [
+              "Final",
+              "HasStorage",
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Dictionary",
+                    "printedName": "[Swift.String : Any]",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "ProtocolComposition",
+                        "printedName": "Any"
+                      }
+                    ],
+                    "usr": "s:SD"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:13IdsvrHaapiSdk46WebAuthnRegistrationClientOperationActionModelC9argumentsSDySSypGvg",
+                "mangledName": "$s13IdsvrHaapiSdk46WebAuthnRegistrationClientOperationActionModelC9argumentsSDySSypGvg",
+                "moduleName": "IdsvrHaapiSdk",
+                "implicit": true,
+                "declAttributes": [
+                  "Final"
+                ],
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "platformOptions",
+            "printedName": "platformOptions",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "IdsvrHaapiSdk.WebAuthnRegistrationClientOperationActionModel.PlatformCredentialRequestOptions?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "PlatformCredentialRequestOptions",
+                    "printedName": "IdsvrHaapiSdk.WebAuthnRegistrationClientOperationActionModel.PlatformCredentialRequestOptions",
+                    "usr": "s:13IdsvrHaapiSdk46WebAuthnRegistrationClientOperationActionModelC32PlatformCredentialRequestOptionsC"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:13IdsvrHaapiSdk46WebAuthnRegistrationClientOperationActionModelC15platformOptionsAC025PlatformCredentialRequestL0CSgvp",
+            "mangledName": "$s13IdsvrHaapiSdk46WebAuthnRegistrationClientOperationActionModelC15platformOptionsAC025PlatformCredentialRequestL0CSgvp",
+            "moduleName": "IdsvrHaapiSdk",
+            "declAttributes": [
+              "HasInitialValue",
+              "Final",
+              "HasStorage",
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "IdsvrHaapiSdk.WebAuthnRegistrationClientOperationActionModel.PlatformCredentialRequestOptions?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "PlatformCredentialRequestOptions",
+                        "printedName": "IdsvrHaapiSdk.WebAuthnRegistrationClientOperationActionModel.PlatformCredentialRequestOptions",
+                        "usr": "s:13IdsvrHaapiSdk46WebAuthnRegistrationClientOperationActionModelC32PlatformCredentialRequestOptionsC"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:13IdsvrHaapiSdk46WebAuthnRegistrationClientOperationActionModelC15platformOptionsAC025PlatformCredentialRequestL0CSgvg",
+                "mangledName": "$s13IdsvrHaapiSdk46WebAuthnRegistrationClientOperationActionModelC15platformOptionsAC025PlatformCredentialRequestL0CSgvg",
+                "moduleName": "IdsvrHaapiSdk",
+                "implicit": true,
+                "declAttributes": [
+                  "Final"
+                ],
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "IdsvrHaapiSdk.WebAuthnRegistrationClientOperationActionModel.PlatformCredentialRequestOptions?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "PlatformCredentialRequestOptions",
+                        "printedName": "IdsvrHaapiSdk.WebAuthnRegistrationClientOperationActionModel.PlatformCredentialRequestOptions",
+                        "usr": "s:13IdsvrHaapiSdk46WebAuthnRegistrationClientOperationActionModelC32PlatformCredentialRequestOptionsC"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:13IdsvrHaapiSdk46WebAuthnRegistrationClientOperationActionModelC15platformOptionsAC025PlatformCredentialRequestL0CSgvs",
+                "mangledName": "$s13IdsvrHaapiSdk46WebAuthnRegistrationClientOperationActionModelC15platformOptionsAC025PlatformCredentialRequestL0CSgvs",
+                "moduleName": "IdsvrHaapiSdk",
+                "implicit": true,
+                "declAttributes": [
+                  "Final"
+                ],
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:13IdsvrHaapiSdk46WebAuthnRegistrationClientOperationActionModelC15platformOptionsAC025PlatformCredentialRequestL0CSgvM",
+                "mangledName": "$s13IdsvrHaapiSdk46WebAuthnRegistrationClientOperationActionModelC15platformOptionsAC025PlatformCredentialRequestL0CSgvM",
+                "moduleName": "IdsvrHaapiSdk",
+                "implicit": true,
+                "declAttributes": [
+                  "Final"
+                ],
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "crossPlatformOptions",
+            "printedName": "crossPlatformOptions",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "IdsvrHaapiSdk.WebAuthnRegistrationClientOperationActionModel.CrossPlatformCredentialRequestOptions?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "CrossPlatformCredentialRequestOptions",
+                    "printedName": "IdsvrHaapiSdk.WebAuthnRegistrationClientOperationActionModel.CrossPlatformCredentialRequestOptions",
+                    "usr": "s:13IdsvrHaapiSdk46WebAuthnRegistrationClientOperationActionModelC37CrossPlatformCredentialRequestOptionsC"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:13IdsvrHaapiSdk46WebAuthnRegistrationClientOperationActionModelC20crossPlatformOptionsAC05Crossl17CredentialRequestM0CSgvp",
+            "mangledName": "$s13IdsvrHaapiSdk46WebAuthnRegistrationClientOperationActionModelC20crossPlatformOptionsAC05Crossl17CredentialRequestM0CSgvp",
+            "moduleName": "IdsvrHaapiSdk",
+            "declAttributes": [
+              "HasInitialValue",
+              "Final",
+              "HasStorage",
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "IdsvrHaapiSdk.WebAuthnRegistrationClientOperationActionModel.CrossPlatformCredentialRequestOptions?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "CrossPlatformCredentialRequestOptions",
+                        "printedName": "IdsvrHaapiSdk.WebAuthnRegistrationClientOperationActionModel.CrossPlatformCredentialRequestOptions",
+                        "usr": "s:13IdsvrHaapiSdk46WebAuthnRegistrationClientOperationActionModelC37CrossPlatformCredentialRequestOptionsC"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:13IdsvrHaapiSdk46WebAuthnRegistrationClientOperationActionModelC20crossPlatformOptionsAC05Crossl17CredentialRequestM0CSgvg",
+                "mangledName": "$s13IdsvrHaapiSdk46WebAuthnRegistrationClientOperationActionModelC20crossPlatformOptionsAC05Crossl17CredentialRequestM0CSgvg",
+                "moduleName": "IdsvrHaapiSdk",
+                "implicit": true,
+                "declAttributes": [
+                  "Final"
+                ],
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "IdsvrHaapiSdk.WebAuthnRegistrationClientOperationActionModel.CrossPlatformCredentialRequestOptions?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "CrossPlatformCredentialRequestOptions",
+                        "printedName": "IdsvrHaapiSdk.WebAuthnRegistrationClientOperationActionModel.CrossPlatformCredentialRequestOptions",
+                        "usr": "s:13IdsvrHaapiSdk46WebAuthnRegistrationClientOperationActionModelC37CrossPlatformCredentialRequestOptionsC"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:13IdsvrHaapiSdk46WebAuthnRegistrationClientOperationActionModelC20crossPlatformOptionsAC05Crossl17CredentialRequestM0CSgvs",
+                "mangledName": "$s13IdsvrHaapiSdk46WebAuthnRegistrationClientOperationActionModelC20crossPlatformOptionsAC05Crossl17CredentialRequestM0CSgvs",
+                "moduleName": "IdsvrHaapiSdk",
+                "implicit": true,
+                "declAttributes": [
+                  "Final"
+                ],
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:13IdsvrHaapiSdk46WebAuthnRegistrationClientOperationActionModelC20crossPlatformOptionsAC05Crossl17CredentialRequestM0CSgvM",
+                "mangledName": "$s13IdsvrHaapiSdk46WebAuthnRegistrationClientOperationActionModelC20crossPlatformOptionsAC05Crossl17CredentialRequestM0CSgvM",
+                "moduleName": "IdsvrHaapiSdk",
+                "implicit": true,
+                "declAttributes": [
+                  "Final"
+                ],
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "fallbackActions",
+            "printedName": "fallbackActions",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Array",
+                "printedName": "[IdsvrHaapiSdk.Action]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Action",
+                    "printedName": "IdsvrHaapiSdk.Action",
+                    "usr": "s:13IdsvrHaapiSdk6ActionC"
+                  }
+                ],
+                "usr": "s:Sa"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:13IdsvrHaapiSdk46WebAuthnRegistrationClientOperationActionModelC15fallbackActionsSayAA0I0CGvp",
+            "mangledName": "$s13IdsvrHaapiSdk46WebAuthnRegistrationClientOperationActionModelC15fallbackActionsSayAA0I0CGvp",
+            "moduleName": "IdsvrHaapiSdk",
+            "declAttributes": [
+              "Final",
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Array",
+                    "printedName": "[IdsvrHaapiSdk.Action]",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Action",
+                        "printedName": "IdsvrHaapiSdk.Action",
+                        "usr": "s:13IdsvrHaapiSdk6ActionC"
+                      }
+                    ],
+                    "usr": "s:Sa"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:13IdsvrHaapiSdk46WebAuthnRegistrationClientOperationActionModelC15fallbackActionsSayAA0I0CGvg",
+                "mangledName": "$s13IdsvrHaapiSdk46WebAuthnRegistrationClientOperationActionModelC15fallbackActionsSayAA0I0CGvg",
+                "moduleName": "IdsvrHaapiSdk",
+                "declAttributes": [
+                  "Final"
+                ],
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(from:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "WebAuthnRegistrationClientOperationActionModel",
+                "printedName": "IdsvrHaapiSdk.WebAuthnRegistrationClientOperationActionModel",
+                "usr": "s:13IdsvrHaapiSdk46WebAuthnRegistrationClientOperationActionModelC"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Decoder",
+                "printedName": "Swift.Decoder",
+                "usr": "s:s7DecoderP"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:13IdsvrHaapiSdk46WebAuthnRegistrationClientOperationActionModelC4fromACs7Decoder_p_tKcfc",
+            "mangledName": "$s13IdsvrHaapiSdk46WebAuthnRegistrationClientOperationActionModelC4fromACs7Decoder_p_tKcfc",
+            "moduleName": "IdsvrHaapiSdk",
+            "overriding": true,
+            "declAttributes": [
+              "Required",
+              "AccessControl"
+            ],
+            "throwing": true,
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "TypeDecl",
+            "name": "CredentialRequestOptions",
+            "printedName": "CredentialRequestOptions",
+            "children": [
+              {
+                "kind": "Var",
+                "name": "relyingPartyId",
+                "printedName": "relyingPartyId",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Var",
+                "usr": "s:13IdsvrHaapiSdk46WebAuthnRegistrationClientOperationActionModelC24CredentialRequestOptionsC14relyingPartyIdSSSgvp",
+                "mangledName": "$s13IdsvrHaapiSdk46WebAuthnRegistrationClientOperationActionModelC24CredentialRequestOptionsC14relyingPartyIdSSSgvp",
+                "moduleName": "IdsvrHaapiSdk",
+                "declAttributes": [
+                  "Final",
+                  "HasStorage",
+                  "AccessControl",
+                  "RawDocComment"
+                ],
+                "isLet": true,
+                "hasStorage": true,
+                "accessors": [
+                  {
+                    "kind": "Accessor",
+                    "name": "Get",
+                    "printedName": "Get()",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Optional",
+                        "printedName": "Swift.String?",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "String",
+                            "printedName": "Swift.String",
+                            "usr": "s:SS"
+                          }
+                        ],
+                        "usr": "s:Sq"
+                      }
+                    ],
+                    "declKind": "Accessor",
+                    "usr": "s:13IdsvrHaapiSdk46WebAuthnRegistrationClientOperationActionModelC24CredentialRequestOptionsC14relyingPartyIdSSSgvg",
+                    "mangledName": "$s13IdsvrHaapiSdk46WebAuthnRegistrationClientOperationActionModelC24CredentialRequestOptionsC14relyingPartyIdSSSgvg",
+                    "moduleName": "IdsvrHaapiSdk",
+                    "implicit": true,
+                    "declAttributes": [
+                      "Final"
+                    ],
+                    "accessorKind": "get"
+                  }
+                ]
+              },
+              {
+                "kind": "Var",
+                "name": "challengeData",
+                "printedName": "challengeData",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Foundation.Data?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Data",
+                        "printedName": "Foundation.Data",
+                        "usr": "s:10Foundation4DataV"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Var",
+                "usr": "s:13IdsvrHaapiSdk46WebAuthnRegistrationClientOperationActionModelC24CredentialRequestOptionsC13challengeData10Foundation0O0VSgvp",
+                "mangledName": "$s13IdsvrHaapiSdk46WebAuthnRegistrationClientOperationActionModelC24CredentialRequestOptionsC13challengeData10Foundation0O0VSgvp",
+                "moduleName": "IdsvrHaapiSdk",
+                "declAttributes": [
+                  "Final",
+                  "HasStorage",
+                  "AccessControl",
+                  "RawDocComment"
+                ],
+                "isLet": true,
+                "hasStorage": true,
+                "accessors": [
+                  {
+                    "kind": "Accessor",
+                    "name": "Get",
+                    "printedName": "Get()",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Optional",
+                        "printedName": "Foundation.Data?",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "Data",
+                            "printedName": "Foundation.Data",
+                            "usr": "s:10Foundation4DataV"
+                          }
+                        ],
+                        "usr": "s:Sq"
+                      }
+                    ],
+                    "declKind": "Accessor",
+                    "usr": "s:13IdsvrHaapiSdk46WebAuthnRegistrationClientOperationActionModelC24CredentialRequestOptionsC13challengeData10Foundation0O0VSgvg",
+                    "mangledName": "$s13IdsvrHaapiSdk46WebAuthnRegistrationClientOperationActionModelC24CredentialRequestOptionsC13challengeData10Foundation0O0VSgvg",
+                    "moduleName": "IdsvrHaapiSdk",
+                    "implicit": true,
+                    "declAttributes": [
+                      "Final"
+                    ],
+                    "accessorKind": "get"
+                  }
+                ]
+              },
+              {
+                "kind": "Var",
+                "name": "userIdData",
+                "printedName": "userIdData",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Foundation.Data?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Data",
+                        "printedName": "Foundation.Data",
+                        "usr": "s:10Foundation4DataV"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Var",
+                "usr": "s:13IdsvrHaapiSdk46WebAuthnRegistrationClientOperationActionModelC24CredentialRequestOptionsC10userIdData10Foundation0P0VSgvp",
+                "mangledName": "$s13IdsvrHaapiSdk46WebAuthnRegistrationClientOperationActionModelC24CredentialRequestOptionsC10userIdData10Foundation0P0VSgvp",
+                "moduleName": "IdsvrHaapiSdk",
+                "declAttributes": [
+                  "Final",
+                  "HasStorage",
+                  "AccessControl",
+                  "RawDocComment"
+                ],
+                "isLet": true,
+                "hasStorage": true,
+                "accessors": [
+                  {
+                    "kind": "Accessor",
+                    "name": "Get",
+                    "printedName": "Get()",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Optional",
+                        "printedName": "Foundation.Data?",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "Data",
+                            "printedName": "Foundation.Data",
+                            "usr": "s:10Foundation4DataV"
+                          }
+                        ],
+                        "usr": "s:Sq"
+                      }
+                    ],
+                    "declKind": "Accessor",
+                    "usr": "s:13IdsvrHaapiSdk46WebAuthnRegistrationClientOperationActionModelC24CredentialRequestOptionsC10userIdData10Foundation0P0VSgvg",
+                    "mangledName": "$s13IdsvrHaapiSdk46WebAuthnRegistrationClientOperationActionModelC24CredentialRequestOptionsC10userIdData10Foundation0P0VSgvg",
+                    "moduleName": "IdsvrHaapiSdk",
+                    "implicit": true,
+                    "declAttributes": [
+                      "Final"
+                    ],
+                    "accessorKind": "get"
+                  }
+                ]
+              },
+              {
+                "kind": "Var",
+                "name": "userName",
+                "printedName": "userName",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Var",
+                "usr": "s:13IdsvrHaapiSdk46WebAuthnRegistrationClientOperationActionModelC24CredentialRequestOptionsC8userNameSSSgvp",
+                "mangledName": "$s13IdsvrHaapiSdk46WebAuthnRegistrationClientOperationActionModelC24CredentialRequestOptionsC8userNameSSSgvp",
+                "moduleName": "IdsvrHaapiSdk",
+                "declAttributes": [
+                  "Final",
+                  "HasStorage",
+                  "AccessControl",
+                  "RawDocComment"
+                ],
+                "isLet": true,
+                "hasStorage": true,
+                "accessors": [
+                  {
+                    "kind": "Accessor",
+                    "name": "Get",
+                    "printedName": "Get()",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Optional",
+                        "printedName": "Swift.String?",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "String",
+                            "printedName": "Swift.String",
+                            "usr": "s:SS"
+                          }
+                        ],
+                        "usr": "s:Sq"
+                      }
+                    ],
+                    "declKind": "Accessor",
+                    "usr": "s:13IdsvrHaapiSdk46WebAuthnRegistrationClientOperationActionModelC24CredentialRequestOptionsC8userNameSSSgvg",
+                    "mangledName": "$s13IdsvrHaapiSdk46WebAuthnRegistrationClientOperationActionModelC24CredentialRequestOptionsC8userNameSSSgvg",
+                    "moduleName": "IdsvrHaapiSdk",
+                    "implicit": true,
+                    "declAttributes": [
+                      "Final"
+                    ],
+                    "accessorKind": "get"
+                  }
+                ]
+              },
+              {
+                "kind": "Var",
+                "name": "displayName",
+                "printedName": "displayName",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Var",
+                "usr": "s:13IdsvrHaapiSdk46WebAuthnRegistrationClientOperationActionModelC24CredentialRequestOptionsC11displayNameSSSgvp",
+                "mangledName": "$s13IdsvrHaapiSdk46WebAuthnRegistrationClientOperationActionModelC24CredentialRequestOptionsC11displayNameSSSgvp",
+                "moduleName": "IdsvrHaapiSdk",
+                "declAttributes": [
+                  "Final",
+                  "HasStorage",
+                  "AccessControl",
+                  "RawDocComment"
+                ],
+                "isLet": true,
+                "hasStorage": true,
+                "accessors": [
+                  {
+                    "kind": "Accessor",
+                    "name": "Get",
+                    "printedName": "Get()",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Optional",
+                        "printedName": "Swift.String?",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "String",
+                            "printedName": "Swift.String",
+                            "usr": "s:SS"
+                          }
+                        ],
+                        "usr": "s:Sq"
+                      }
+                    ],
+                    "declKind": "Accessor",
+                    "usr": "s:13IdsvrHaapiSdk46WebAuthnRegistrationClientOperationActionModelC24CredentialRequestOptionsC11displayNameSSSgvg",
+                    "mangledName": "$s13IdsvrHaapiSdk46WebAuthnRegistrationClientOperationActionModelC24CredentialRequestOptionsC11displayNameSSSgvg",
+                    "moduleName": "IdsvrHaapiSdk",
+                    "implicit": true,
+                    "declAttributes": [
+                      "Final"
+                    ],
+                    "accessorKind": "get"
+                  }
+                ]
+              },
+              {
+                "kind": "Var",
+                "name": "userVerification",
+                "printedName": "userVerification",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Var",
+                "usr": "s:13IdsvrHaapiSdk46WebAuthnRegistrationClientOperationActionModelC24CredentialRequestOptionsC16userVerificationSSSgvp",
+                "mangledName": "$s13IdsvrHaapiSdk46WebAuthnRegistrationClientOperationActionModelC24CredentialRequestOptionsC16userVerificationSSSgvp",
+                "moduleName": "IdsvrHaapiSdk",
+                "declAttributes": [
+                  "Final",
+                  "HasStorage",
+                  "AccessControl",
+                  "RawDocComment"
+                ],
+                "isLet": true,
+                "hasStorage": true,
+                "accessors": [
+                  {
+                    "kind": "Accessor",
+                    "name": "Get",
+                    "printedName": "Get()",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Optional",
+                        "printedName": "Swift.String?",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "String",
+                            "printedName": "Swift.String",
+                            "usr": "s:SS"
+                          }
+                        ],
+                        "usr": "s:Sq"
+                      }
+                    ],
+                    "declKind": "Accessor",
+                    "usr": "s:13IdsvrHaapiSdk46WebAuthnRegistrationClientOperationActionModelC24CredentialRequestOptionsC16userVerificationSSSgvg",
+                    "mangledName": "$s13IdsvrHaapiSdk46WebAuthnRegistrationClientOperationActionModelC24CredentialRequestOptionsC16userVerificationSSSgvg",
+                    "moduleName": "IdsvrHaapiSdk",
+                    "implicit": true,
+                    "declAttributes": [
+                      "Final"
+                    ],
+                    "accessorKind": "get"
+                  }
+                ]
+              },
+              {
+                "kind": "Var",
+                "name": "attestation",
+                "printedName": "attestation",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Var",
+                "usr": "s:13IdsvrHaapiSdk46WebAuthnRegistrationClientOperationActionModelC24CredentialRequestOptionsC11attestationSSSgvp",
+                "mangledName": "$s13IdsvrHaapiSdk46WebAuthnRegistrationClientOperationActionModelC24CredentialRequestOptionsC11attestationSSSgvp",
+                "moduleName": "IdsvrHaapiSdk",
+                "declAttributes": [
+                  "Final",
+                  "HasStorage",
+                  "AccessControl",
+                  "RawDocComment"
+                ],
+                "isLet": true,
+                "hasStorage": true,
+                "accessors": [
+                  {
+                    "kind": "Accessor",
+                    "name": "Get",
+                    "printedName": "Get()",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Optional",
+                        "printedName": "Swift.String?",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "String",
+                            "printedName": "Swift.String",
+                            "usr": "s:SS"
+                          }
+                        ],
+                        "usr": "s:Sq"
+                      }
+                    ],
+                    "declKind": "Accessor",
+                    "usr": "s:13IdsvrHaapiSdk46WebAuthnRegistrationClientOperationActionModelC24CredentialRequestOptionsC11attestationSSSgvg",
+                    "mangledName": "$s13IdsvrHaapiSdk46WebAuthnRegistrationClientOperationActionModelC24CredentialRequestOptionsC11attestationSSSgvg",
+                    "moduleName": "IdsvrHaapiSdk",
+                    "implicit": true,
+                    "declAttributes": [
+                      "Final"
+                    ],
+                    "accessorKind": "get"
+                  }
+                ]
+              }
+            ],
+            "declKind": "Class",
+            "usr": "s:13IdsvrHaapiSdk46WebAuthnRegistrationClientOperationActionModelC24CredentialRequestOptionsC",
+            "mangledName": "$s13IdsvrHaapiSdk46WebAuthnRegistrationClientOperationActionModelC24CredentialRequestOptionsC",
+            "moduleName": "IdsvrHaapiSdk",
+            "declAttributes": [
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "hasMissingDesignatedInitializers": true
+          },
+          {
+            "kind": "TypeDecl",
+            "name": "PlatformCredentialRequestOptions",
+            "printedName": "PlatformCredentialRequestOptions",
+            "declKind": "Class",
+            "usr": "s:13IdsvrHaapiSdk46WebAuthnRegistrationClientOperationActionModelC32PlatformCredentialRequestOptionsC",
+            "mangledName": "$s13IdsvrHaapiSdk46WebAuthnRegistrationClientOperationActionModelC32PlatformCredentialRequestOptionsC",
+            "moduleName": "IdsvrHaapiSdk",
+            "declAttributes": [
+              "Final",
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "superclassUsr": "s:13IdsvrHaapiSdk46WebAuthnRegistrationClientOperationActionModelC24CredentialRequestOptionsC",
+            "hasMissingDesignatedInitializers": true,
+            "inheritsConvenienceInitializers": true,
+            "superclassNames": [
+              "IdsvrHaapiSdk.WebAuthnRegistrationClientOperationActionModel.CredentialRequestOptions"
+            ]
+          },
+          {
+            "kind": "TypeDecl",
+            "name": "CrossPlatformCredentialRequestOptions",
+            "printedName": "CrossPlatformCredentialRequestOptions",
+            "children": [
+              {
+                "kind": "Var",
+                "name": "publicKeyCredParams",
+                "printedName": "publicKeyCredParams",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "[IdsvrHaapiSdk.WebAuthnRegistrationClientOperationActionModel.CredentialParams]?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Array",
+                        "printedName": "[IdsvrHaapiSdk.WebAuthnRegistrationClientOperationActionModel.CredentialParams]",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "CredentialParams",
+                            "printedName": "IdsvrHaapiSdk.WebAuthnRegistrationClientOperationActionModel.CredentialParams",
+                            "usr": "s:13IdsvrHaapiSdk46WebAuthnRegistrationClientOperationActionModelC16CredentialParamsC"
+                          }
+                        ],
+                        "usr": "s:Sa"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Var",
+                "usr": "s:13IdsvrHaapiSdk46WebAuthnRegistrationClientOperationActionModelC37CrossPlatformCredentialRequestOptionsC19publicKeyCredParamsSayAC0mS0CGSgvp",
+                "mangledName": "$s13IdsvrHaapiSdk46WebAuthnRegistrationClientOperationActionModelC37CrossPlatformCredentialRequestOptionsC19publicKeyCredParamsSayAC0mS0CGSgvp",
+                "moduleName": "IdsvrHaapiSdk",
+                "declAttributes": [
+                  "Final",
+                  "HasStorage",
+                  "AccessControl",
+                  "RawDocComment"
+                ],
+                "isLet": true,
+                "hasStorage": true,
+                "accessors": [
+                  {
+                    "kind": "Accessor",
+                    "name": "Get",
+                    "printedName": "Get()",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Optional",
+                        "printedName": "[IdsvrHaapiSdk.WebAuthnRegistrationClientOperationActionModel.CredentialParams]?",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "Array",
+                            "printedName": "[IdsvrHaapiSdk.WebAuthnRegistrationClientOperationActionModel.CredentialParams]",
+                            "children": [
+                              {
+                                "kind": "TypeNominal",
+                                "name": "CredentialParams",
+                                "printedName": "IdsvrHaapiSdk.WebAuthnRegistrationClientOperationActionModel.CredentialParams",
+                                "usr": "s:13IdsvrHaapiSdk46WebAuthnRegistrationClientOperationActionModelC16CredentialParamsC"
+                              }
+                            ],
+                            "usr": "s:Sa"
+                          }
+                        ],
+                        "usr": "s:Sq"
+                      }
+                    ],
+                    "declKind": "Accessor",
+                    "usr": "s:13IdsvrHaapiSdk46WebAuthnRegistrationClientOperationActionModelC37CrossPlatformCredentialRequestOptionsC19publicKeyCredParamsSayAC0mS0CGSgvg",
+                    "mangledName": "$s13IdsvrHaapiSdk46WebAuthnRegistrationClientOperationActionModelC37CrossPlatformCredentialRequestOptionsC19publicKeyCredParamsSayAC0mS0CGSgvg",
+                    "moduleName": "IdsvrHaapiSdk",
+                    "implicit": true,
+                    "declAttributes": [
+                      "Final"
+                    ],
+                    "accessorKind": "get"
+                  }
+                ]
+              },
+              {
+                "kind": "Var",
+                "name": "excludedCredentials",
+                "printedName": "excludedCredentials",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "[IdsvrHaapiSdk.WebAuthnRegistrationClientOperationActionModel.ExcludedCredential]?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Array",
+                        "printedName": "[IdsvrHaapiSdk.WebAuthnRegistrationClientOperationActionModel.ExcludedCredential]",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "ExcludedCredential",
+                            "printedName": "IdsvrHaapiSdk.WebAuthnRegistrationClientOperationActionModel.ExcludedCredential",
+                            "usr": "s:13IdsvrHaapiSdk46WebAuthnRegistrationClientOperationActionModelC18ExcludedCredentialC"
+                          }
+                        ],
+                        "usr": "s:Sa"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Var",
+                "usr": "s:13IdsvrHaapiSdk46WebAuthnRegistrationClientOperationActionModelC37CrossPlatformCredentialRequestOptionsC19excludedCredentialsSayAC08ExcludedM0CGSgvp",
+                "mangledName": "$s13IdsvrHaapiSdk46WebAuthnRegistrationClientOperationActionModelC37CrossPlatformCredentialRequestOptionsC19excludedCredentialsSayAC08ExcludedM0CGSgvp",
+                "moduleName": "IdsvrHaapiSdk",
+                "declAttributes": [
+                  "Final",
+                  "HasStorage",
+                  "AccessControl",
+                  "RawDocComment"
+                ],
+                "isLet": true,
+                "hasStorage": true,
+                "accessors": [
+                  {
+                    "kind": "Accessor",
+                    "name": "Get",
+                    "printedName": "Get()",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Optional",
+                        "printedName": "[IdsvrHaapiSdk.WebAuthnRegistrationClientOperationActionModel.ExcludedCredential]?",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "Array",
+                            "printedName": "[IdsvrHaapiSdk.WebAuthnRegistrationClientOperationActionModel.ExcludedCredential]",
+                            "children": [
+                              {
+                                "kind": "TypeNominal",
+                                "name": "ExcludedCredential",
+                                "printedName": "IdsvrHaapiSdk.WebAuthnRegistrationClientOperationActionModel.ExcludedCredential",
+                                "usr": "s:13IdsvrHaapiSdk46WebAuthnRegistrationClientOperationActionModelC18ExcludedCredentialC"
+                              }
+                            ],
+                            "usr": "s:Sa"
+                          }
+                        ],
+                        "usr": "s:Sq"
+                      }
+                    ],
+                    "declKind": "Accessor",
+                    "usr": "s:13IdsvrHaapiSdk46WebAuthnRegistrationClientOperationActionModelC37CrossPlatformCredentialRequestOptionsC19excludedCredentialsSayAC08ExcludedM0CGSgvg",
+                    "mangledName": "$s13IdsvrHaapiSdk46WebAuthnRegistrationClientOperationActionModelC37CrossPlatformCredentialRequestOptionsC19excludedCredentialsSayAC08ExcludedM0CGSgvg",
+                    "moduleName": "IdsvrHaapiSdk",
+                    "implicit": true,
+                    "declAttributes": [
+                      "Final"
+                    ],
+                    "accessorKind": "get"
+                  }
+                ]
+              }
+            ],
+            "declKind": "Class",
+            "usr": "s:13IdsvrHaapiSdk46WebAuthnRegistrationClientOperationActionModelC37CrossPlatformCredentialRequestOptionsC",
+            "mangledName": "$s13IdsvrHaapiSdk46WebAuthnRegistrationClientOperationActionModelC37CrossPlatformCredentialRequestOptionsC",
+            "moduleName": "IdsvrHaapiSdk",
+            "declAttributes": [
+              "Final",
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "superclassUsr": "s:13IdsvrHaapiSdk46WebAuthnRegistrationClientOperationActionModelC24CredentialRequestOptionsC",
+            "hasMissingDesignatedInitializers": true,
+            "inheritsConvenienceInitializers": true,
+            "superclassNames": [
+              "IdsvrHaapiSdk.WebAuthnRegistrationClientOperationActionModel.CredentialRequestOptions"
+            ]
+          },
+          {
+            "kind": "TypeDecl",
+            "name": "CredentialParams",
+            "printedName": "CredentialParams",
+            "children": [
+              {
+                "kind": "Var",
+                "name": "algorithmId",
+                "printedName": "algorithmId",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Int",
+                    "printedName": "Swift.Int",
+                    "usr": "s:Si"
+                  }
+                ],
+                "declKind": "Var",
+                "usr": "s:13IdsvrHaapiSdk46WebAuthnRegistrationClientOperationActionModelC16CredentialParamsC11algorithmIdSivp",
+                "mangledName": "$s13IdsvrHaapiSdk46WebAuthnRegistrationClientOperationActionModelC16CredentialParamsC11algorithmIdSivp",
+                "moduleName": "IdsvrHaapiSdk",
+                "declAttributes": [
+                  "Final",
+                  "HasStorage",
+                  "AccessControl",
+                  "RawDocComment"
+                ],
+                "isLet": true,
+                "hasStorage": true,
+                "accessors": [
+                  {
+                    "kind": "Accessor",
+                    "name": "Get",
+                    "printedName": "Get()",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Int",
+                        "printedName": "Swift.Int",
+                        "usr": "s:Si"
+                      }
+                    ],
+                    "declKind": "Accessor",
+                    "usr": "s:13IdsvrHaapiSdk46WebAuthnRegistrationClientOperationActionModelC16CredentialParamsC11algorithmIdSivg",
+                    "mangledName": "$s13IdsvrHaapiSdk46WebAuthnRegistrationClientOperationActionModelC16CredentialParamsC11algorithmIdSivg",
+                    "moduleName": "IdsvrHaapiSdk",
+                    "implicit": true,
+                    "declAttributes": [
+                      "Final"
+                    ],
+                    "accessorKind": "get"
+                  }
+                ]
+              },
+              {
+                "kind": "Var",
+                "name": "type",
+                "printedName": "type",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Var",
+                "usr": "s:13IdsvrHaapiSdk46WebAuthnRegistrationClientOperationActionModelC16CredentialParamsC4typeSSvp",
+                "mangledName": "$s13IdsvrHaapiSdk46WebAuthnRegistrationClientOperationActionModelC16CredentialParamsC4typeSSvp",
+                "moduleName": "IdsvrHaapiSdk",
+                "declAttributes": [
+                  "Final",
+                  "HasStorage",
+                  "AccessControl",
+                  "RawDocComment"
+                ],
+                "isLet": true,
+                "hasStorage": true,
+                "accessors": [
+                  {
+                    "kind": "Accessor",
+                    "name": "Get",
+                    "printedName": "Get()",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "declKind": "Accessor",
+                    "usr": "s:13IdsvrHaapiSdk46WebAuthnRegistrationClientOperationActionModelC16CredentialParamsC4typeSSvg",
+                    "mangledName": "$s13IdsvrHaapiSdk46WebAuthnRegistrationClientOperationActionModelC16CredentialParamsC4typeSSvg",
+                    "moduleName": "IdsvrHaapiSdk",
+                    "implicit": true,
+                    "declAttributes": [
+                      "Final"
+                    ],
+                    "accessorKind": "get"
+                  }
+                ]
+              }
+            ],
+            "declKind": "Class",
+            "usr": "s:13IdsvrHaapiSdk46WebAuthnRegistrationClientOperationActionModelC16CredentialParamsC",
+            "mangledName": "$s13IdsvrHaapiSdk46WebAuthnRegistrationClientOperationActionModelC16CredentialParamsC",
+            "moduleName": "IdsvrHaapiSdk",
+            "declAttributes": [
+              "Final",
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "hasMissingDesignatedInitializers": true
+          },
+          {
+            "kind": "TypeDecl",
+            "name": "ExcludedCredential",
+            "printedName": "ExcludedCredential",
+            "children": [
+              {
+                "kind": "Var",
+                "name": "credentialID",
+                "printedName": "credentialID",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Data",
+                    "printedName": "Foundation.Data",
+                    "usr": "s:10Foundation4DataV"
+                  }
+                ],
+                "declKind": "Var",
+                "usr": "s:13IdsvrHaapiSdk46WebAuthnRegistrationClientOperationActionModelC18ExcludedCredentialC12credentialID10Foundation4DataVvp",
+                "mangledName": "$s13IdsvrHaapiSdk46WebAuthnRegistrationClientOperationActionModelC18ExcludedCredentialC12credentialID10Foundation4DataVvp",
+                "moduleName": "IdsvrHaapiSdk",
+                "declAttributes": [
+                  "Final",
+                  "HasStorage",
+                  "AccessControl",
+                  "RawDocComment"
+                ],
+                "isLet": true,
+                "hasStorage": true,
+                "accessors": [
+                  {
+                    "kind": "Accessor",
+                    "name": "Get",
+                    "printedName": "Get()",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Data",
+                        "printedName": "Foundation.Data",
+                        "usr": "s:10Foundation4DataV"
+                      }
+                    ],
+                    "declKind": "Accessor",
+                    "usr": "s:13IdsvrHaapiSdk46WebAuthnRegistrationClientOperationActionModelC18ExcludedCredentialC12credentialID10Foundation4DataVvg",
+                    "mangledName": "$s13IdsvrHaapiSdk46WebAuthnRegistrationClientOperationActionModelC18ExcludedCredentialC12credentialID10Foundation4DataVvg",
+                    "moduleName": "IdsvrHaapiSdk",
+                    "implicit": true,
+                    "declAttributes": [
+                      "Final"
+                    ],
+                    "accessorKind": "get"
+                  }
+                ]
+              },
+              {
+                "kind": "Var",
+                "name": "type",
+                "printedName": "type",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Var",
+                "usr": "s:13IdsvrHaapiSdk46WebAuthnRegistrationClientOperationActionModelC18ExcludedCredentialC4typeSSvp",
+                "mangledName": "$s13IdsvrHaapiSdk46WebAuthnRegistrationClientOperationActionModelC18ExcludedCredentialC4typeSSvp",
+                "moduleName": "IdsvrHaapiSdk",
+                "declAttributes": [
+                  "Final",
+                  "HasStorage",
+                  "AccessControl",
+                  "RawDocComment"
+                ],
+                "isLet": true,
+                "hasStorage": true,
+                "accessors": [
+                  {
+                    "kind": "Accessor",
+                    "name": "Get",
+                    "printedName": "Get()",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "declKind": "Accessor",
+                    "usr": "s:13IdsvrHaapiSdk46WebAuthnRegistrationClientOperationActionModelC18ExcludedCredentialC4typeSSvg",
+                    "mangledName": "$s13IdsvrHaapiSdk46WebAuthnRegistrationClientOperationActionModelC18ExcludedCredentialC4typeSSvg",
+                    "moduleName": "IdsvrHaapiSdk",
+                    "implicit": true,
+                    "declAttributes": [
+                      "Final"
+                    ],
+                    "accessorKind": "get"
+                  }
+                ]
+              }
+            ],
+            "declKind": "Class",
+            "usr": "s:13IdsvrHaapiSdk46WebAuthnRegistrationClientOperationActionModelC18ExcludedCredentialC",
+            "mangledName": "$s13IdsvrHaapiSdk46WebAuthnRegistrationClientOperationActionModelC18ExcludedCredentialC",
+            "moduleName": "IdsvrHaapiSdk",
+            "declAttributes": [
+              "Final",
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "hasMissingDesignatedInitializers": true
+          }
+        ],
+        "declKind": "Class",
+        "usr": "s:13IdsvrHaapiSdk46WebAuthnRegistrationClientOperationActionModelC",
+        "mangledName": "$s13IdsvrHaapiSdk46WebAuthnRegistrationClientOperationActionModelC",
+        "moduleName": "IdsvrHaapiSdk",
+        "intro_iOS": "14.0",
+        "declAttributes": [
+          "Final",
+          "AccessControl",
+          "Available",
+          "RawDocComment"
+        ],
+        "superclassUsr": "s:13IdsvrHaapiSdk26ClientOperationActionModelC",
+        "inheritsConvenienceInitializers": true,
+        "superclassNames": [
+          "IdsvrHaapiSdk.ClientOperationActionModel"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Decodable",
+            "printedName": "Decodable",
+            "usr": "s:Se",
+            "mangledName": "$sSe"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Equatable",
+            "printedName": "Equatable",
+            "usr": "s:SQ",
+            "mangledName": "$sSQ"
+          }
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "WebAuthnAuthenticationClientOperationActionModel",
+        "printedName": "WebAuthnAuthenticationClientOperationActionModel",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "arguments",
+            "printedName": "arguments",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Dictionary",
+                "printedName": "[Swift.String : Any]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "ProtocolComposition",
+                    "printedName": "Any"
+                  }
+                ],
+                "usr": "s:SD"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:13IdsvrHaapiSdk48WebAuthnAuthenticationClientOperationActionModelC9argumentsSDySSypGvp",
+            "mangledName": "$s13IdsvrHaapiSdk48WebAuthnAuthenticationClientOperationActionModelC9argumentsSDySSypGvp",
+            "moduleName": "IdsvrHaapiSdk",
+            "declAttributes": [
+              "Final",
+              "HasStorage",
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Dictionary",
+                    "printedName": "[Swift.String : Any]",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "ProtocolComposition",
+                        "printedName": "Any"
+                      }
+                    ],
+                    "usr": "s:SD"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:13IdsvrHaapiSdk48WebAuthnAuthenticationClientOperationActionModelC9argumentsSDySSypGvg",
+                "mangledName": "$s13IdsvrHaapiSdk48WebAuthnAuthenticationClientOperationActionModelC9argumentsSDySSypGvg",
+                "moduleName": "IdsvrHaapiSdk",
+                "implicit": true,
+                "declAttributes": [
+                  "Final"
+                ],
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "credentialOptions",
+            "printedName": "credentialOptions",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "CredentialRequestOptions",
+                "printedName": "IdsvrHaapiSdk.WebAuthnAuthenticationClientOperationActionModel.CredentialRequestOptions",
+                "usr": "s:13IdsvrHaapiSdk48WebAuthnAuthenticationClientOperationActionModelC24CredentialRequestOptionsC"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:13IdsvrHaapiSdk48WebAuthnAuthenticationClientOperationActionModelC17credentialOptionsAC017CredentialRequestL0Cvp",
+            "mangledName": "$s13IdsvrHaapiSdk48WebAuthnAuthenticationClientOperationActionModelC17credentialOptionsAC017CredentialRequestL0Cvp",
+            "moduleName": "IdsvrHaapiSdk",
+            "declAttributes": [
+              "Final",
+              "HasStorage",
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "CredentialRequestOptions",
+                    "printedName": "IdsvrHaapiSdk.WebAuthnAuthenticationClientOperationActionModel.CredentialRequestOptions",
+                    "usr": "s:13IdsvrHaapiSdk48WebAuthnAuthenticationClientOperationActionModelC24CredentialRequestOptionsC"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:13IdsvrHaapiSdk48WebAuthnAuthenticationClientOperationActionModelC17credentialOptionsAC017CredentialRequestL0Cvg",
+                "mangledName": "$s13IdsvrHaapiSdk48WebAuthnAuthenticationClientOperationActionModelC17credentialOptionsAC017CredentialRequestL0Cvg",
+                "moduleName": "IdsvrHaapiSdk",
+                "implicit": true,
+                "declAttributes": [
+                  "Final"
+                ],
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "CredentialRequestOptions",
+                    "printedName": "IdsvrHaapiSdk.WebAuthnAuthenticationClientOperationActionModel.CredentialRequestOptions",
+                    "usr": "s:13IdsvrHaapiSdk48WebAuthnAuthenticationClientOperationActionModelC24CredentialRequestOptionsC"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:13IdsvrHaapiSdk48WebAuthnAuthenticationClientOperationActionModelC17credentialOptionsAC017CredentialRequestL0Cvs",
+                "mangledName": "$s13IdsvrHaapiSdk48WebAuthnAuthenticationClientOperationActionModelC17credentialOptionsAC017CredentialRequestL0Cvs",
+                "moduleName": "IdsvrHaapiSdk",
+                "implicit": true,
+                "declAttributes": [
+                  "Final"
+                ],
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:13IdsvrHaapiSdk48WebAuthnAuthenticationClientOperationActionModelC17credentialOptionsAC017CredentialRequestL0CvM",
+                "mangledName": "$s13IdsvrHaapiSdk48WebAuthnAuthenticationClientOperationActionModelC17credentialOptionsAC017CredentialRequestL0CvM",
+                "moduleName": "IdsvrHaapiSdk",
+                "implicit": true,
+                "declAttributes": [
+                  "Final"
+                ],
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "fallbackActions",
+            "printedName": "fallbackActions",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Array",
+                "printedName": "[IdsvrHaapiSdk.Action]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Action",
+                    "printedName": "IdsvrHaapiSdk.Action",
+                    "usr": "s:13IdsvrHaapiSdk6ActionC"
+                  }
+                ],
+                "usr": "s:Sa"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:13IdsvrHaapiSdk48WebAuthnAuthenticationClientOperationActionModelC15fallbackActionsSayAA0I0CGvp",
+            "mangledName": "$s13IdsvrHaapiSdk48WebAuthnAuthenticationClientOperationActionModelC15fallbackActionsSayAA0I0CGvp",
+            "moduleName": "IdsvrHaapiSdk",
+            "declAttributes": [
+              "Final",
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Array",
+                    "printedName": "[IdsvrHaapiSdk.Action]",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Action",
+                        "printedName": "IdsvrHaapiSdk.Action",
+                        "usr": "s:13IdsvrHaapiSdk6ActionC"
+                      }
+                    ],
+                    "usr": "s:Sa"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:13IdsvrHaapiSdk48WebAuthnAuthenticationClientOperationActionModelC15fallbackActionsSayAA0I0CGvg",
+                "mangledName": "$s13IdsvrHaapiSdk48WebAuthnAuthenticationClientOperationActionModelC15fallbackActionsSayAA0I0CGvg",
+                "moduleName": "IdsvrHaapiSdk",
+                "declAttributes": [
+                  "Final"
+                ],
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(from:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "WebAuthnAuthenticationClientOperationActionModel",
+                "printedName": "IdsvrHaapiSdk.WebAuthnAuthenticationClientOperationActionModel",
+                "usr": "s:13IdsvrHaapiSdk48WebAuthnAuthenticationClientOperationActionModelC"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Decoder",
+                "printedName": "Swift.Decoder",
+                "usr": "s:s7DecoderP"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:13IdsvrHaapiSdk48WebAuthnAuthenticationClientOperationActionModelC4fromACs7Decoder_p_tKcfc",
+            "mangledName": "$s13IdsvrHaapiSdk48WebAuthnAuthenticationClientOperationActionModelC4fromACs7Decoder_p_tKcfc",
+            "moduleName": "IdsvrHaapiSdk",
+            "overriding": true,
+            "declAttributes": [
+              "Required",
+              "AccessControl"
+            ],
+            "throwing": true,
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "TypeDecl",
+            "name": "CredentialRequestOptions",
+            "printedName": "CredentialRequestOptions",
+            "children": [
+              {
+                "kind": "Var",
+                "name": "relyingPartyId",
+                "printedName": "relyingPartyId",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Var",
+                "usr": "s:13IdsvrHaapiSdk48WebAuthnAuthenticationClientOperationActionModelC24CredentialRequestOptionsC14relyingPartyIdSSSgvp",
+                "mangledName": "$s13IdsvrHaapiSdk48WebAuthnAuthenticationClientOperationActionModelC24CredentialRequestOptionsC14relyingPartyIdSSSgvp",
+                "moduleName": "IdsvrHaapiSdk",
+                "declAttributes": [
+                  "Final",
+                  "HasStorage",
+                  "AccessControl",
+                  "RawDocComment"
+                ],
+                "isLet": true,
+                "hasStorage": true,
+                "accessors": [
+                  {
+                    "kind": "Accessor",
+                    "name": "Get",
+                    "printedName": "Get()",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Optional",
+                        "printedName": "Swift.String?",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "String",
+                            "printedName": "Swift.String",
+                            "usr": "s:SS"
+                          }
+                        ],
+                        "usr": "s:Sq"
+                      }
+                    ],
+                    "declKind": "Accessor",
+                    "usr": "s:13IdsvrHaapiSdk48WebAuthnAuthenticationClientOperationActionModelC24CredentialRequestOptionsC14relyingPartyIdSSSgvg",
+                    "mangledName": "$s13IdsvrHaapiSdk48WebAuthnAuthenticationClientOperationActionModelC24CredentialRequestOptionsC14relyingPartyIdSSSgvg",
+                    "moduleName": "IdsvrHaapiSdk",
+                    "implicit": true,
+                    "declAttributes": [
+                      "Final"
+                    ],
+                    "accessorKind": "get"
+                  }
+                ]
+              },
+              {
+                "kind": "Var",
+                "name": "challengeData",
+                "printedName": "challengeData",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Foundation.Data?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Data",
+                        "printedName": "Foundation.Data",
+                        "usr": "s:10Foundation4DataV"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Var",
+                "usr": "s:13IdsvrHaapiSdk48WebAuthnAuthenticationClientOperationActionModelC24CredentialRequestOptionsC13challengeData10Foundation0O0VSgvp",
+                "mangledName": "$s13IdsvrHaapiSdk48WebAuthnAuthenticationClientOperationActionModelC24CredentialRequestOptionsC13challengeData10Foundation0O0VSgvp",
+                "moduleName": "IdsvrHaapiSdk",
+                "declAttributes": [
+                  "Final",
+                  "HasStorage",
+                  "AccessControl",
+                  "RawDocComment"
+                ],
+                "isLet": true,
+                "hasStorage": true,
+                "accessors": [
+                  {
+                    "kind": "Accessor",
+                    "name": "Get",
+                    "printedName": "Get()",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Optional",
+                        "printedName": "Foundation.Data?",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "Data",
+                            "printedName": "Foundation.Data",
+                            "usr": "s:10Foundation4DataV"
+                          }
+                        ],
+                        "usr": "s:Sq"
+                      }
+                    ],
+                    "declKind": "Accessor",
+                    "usr": "s:13IdsvrHaapiSdk48WebAuthnAuthenticationClientOperationActionModelC24CredentialRequestOptionsC13challengeData10Foundation0O0VSgvg",
+                    "mangledName": "$s13IdsvrHaapiSdk48WebAuthnAuthenticationClientOperationActionModelC24CredentialRequestOptionsC13challengeData10Foundation0O0VSgvg",
+                    "moduleName": "IdsvrHaapiSdk",
+                    "implicit": true,
+                    "declAttributes": [
+                      "Final"
+                    ],
+                    "accessorKind": "get"
+                  }
+                ]
+              },
+              {
+                "kind": "Var",
+                "name": "platformAllowCredentials",
+                "printedName": "platformAllowCredentials",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "[IdsvrHaapiSdk.WebAuthnAuthenticationClientOperationActionModel.AllowedCredential]?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Array",
+                        "printedName": "[IdsvrHaapiSdk.WebAuthnAuthenticationClientOperationActionModel.AllowedCredential]",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "AllowedCredential",
+                            "printedName": "IdsvrHaapiSdk.WebAuthnAuthenticationClientOperationActionModel.AllowedCredential",
+                            "usr": "s:13IdsvrHaapiSdk48WebAuthnAuthenticationClientOperationActionModelC17AllowedCredentialC"
+                          }
+                        ],
+                        "usr": "s:Sa"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Var",
+                "usr": "s:13IdsvrHaapiSdk48WebAuthnAuthenticationClientOperationActionModelC24CredentialRequestOptionsC24platformAllowCredentialsSayAC07AllowedK0CGSgvp",
+                "mangledName": "$s13IdsvrHaapiSdk48WebAuthnAuthenticationClientOperationActionModelC24CredentialRequestOptionsC24platformAllowCredentialsSayAC07AllowedK0CGSgvp",
+                "moduleName": "IdsvrHaapiSdk",
+                "declAttributes": [
+                  "Final",
+                  "HasStorage",
+                  "AccessControl",
+                  "RawDocComment"
+                ],
+                "isLet": true,
+                "hasStorage": true,
+                "accessors": [
+                  {
+                    "kind": "Accessor",
+                    "name": "Get",
+                    "printedName": "Get()",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Optional",
+                        "printedName": "[IdsvrHaapiSdk.WebAuthnAuthenticationClientOperationActionModel.AllowedCredential]?",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "Array",
+                            "printedName": "[IdsvrHaapiSdk.WebAuthnAuthenticationClientOperationActionModel.AllowedCredential]",
+                            "children": [
+                              {
+                                "kind": "TypeNominal",
+                                "name": "AllowedCredential",
+                                "printedName": "IdsvrHaapiSdk.WebAuthnAuthenticationClientOperationActionModel.AllowedCredential",
+                                "usr": "s:13IdsvrHaapiSdk48WebAuthnAuthenticationClientOperationActionModelC17AllowedCredentialC"
+                              }
+                            ],
+                            "usr": "s:Sa"
+                          }
+                        ],
+                        "usr": "s:Sq"
+                      }
+                    ],
+                    "declKind": "Accessor",
+                    "usr": "s:13IdsvrHaapiSdk48WebAuthnAuthenticationClientOperationActionModelC24CredentialRequestOptionsC24platformAllowCredentialsSayAC07AllowedK0CGSgvg",
+                    "mangledName": "$s13IdsvrHaapiSdk48WebAuthnAuthenticationClientOperationActionModelC24CredentialRequestOptionsC24platformAllowCredentialsSayAC07AllowedK0CGSgvg",
+                    "moduleName": "IdsvrHaapiSdk",
+                    "implicit": true,
+                    "declAttributes": [
+                      "Final"
+                    ],
+                    "accessorKind": "get"
+                  }
+                ]
+              },
+              {
+                "kind": "Var",
+                "name": "crossPlatformAllowCredentials",
+                "printedName": "crossPlatformAllowCredentials",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "[IdsvrHaapiSdk.WebAuthnAuthenticationClientOperationActionModel.AllowedCredential]?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Array",
+                        "printedName": "[IdsvrHaapiSdk.WebAuthnAuthenticationClientOperationActionModel.AllowedCredential]",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "AllowedCredential",
+                            "printedName": "IdsvrHaapiSdk.WebAuthnAuthenticationClientOperationActionModel.AllowedCredential",
+                            "usr": "s:13IdsvrHaapiSdk48WebAuthnAuthenticationClientOperationActionModelC17AllowedCredentialC"
+                          }
+                        ],
+                        "usr": "s:Sa"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Var",
+                "usr": "s:13IdsvrHaapiSdk48WebAuthnAuthenticationClientOperationActionModelC24CredentialRequestOptionsC29crossPlatformAllowCredentialsSayAC07AllowedK0CGSgvp",
+                "mangledName": "$s13IdsvrHaapiSdk48WebAuthnAuthenticationClientOperationActionModelC24CredentialRequestOptionsC29crossPlatformAllowCredentialsSayAC07AllowedK0CGSgvp",
+                "moduleName": "IdsvrHaapiSdk",
+                "declAttributes": [
+                  "Final",
+                  "HasStorage",
+                  "AccessControl",
+                  "RawDocComment"
+                ],
+                "isLet": true,
+                "hasStorage": true,
+                "accessors": [
+                  {
+                    "kind": "Accessor",
+                    "name": "Get",
+                    "printedName": "Get()",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Optional",
+                        "printedName": "[IdsvrHaapiSdk.WebAuthnAuthenticationClientOperationActionModel.AllowedCredential]?",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "Array",
+                            "printedName": "[IdsvrHaapiSdk.WebAuthnAuthenticationClientOperationActionModel.AllowedCredential]",
+                            "children": [
+                              {
+                                "kind": "TypeNominal",
+                                "name": "AllowedCredential",
+                                "printedName": "IdsvrHaapiSdk.WebAuthnAuthenticationClientOperationActionModel.AllowedCredential",
+                                "usr": "s:13IdsvrHaapiSdk48WebAuthnAuthenticationClientOperationActionModelC17AllowedCredentialC"
+                              }
+                            ],
+                            "usr": "s:Sa"
+                          }
+                        ],
+                        "usr": "s:Sq"
+                      }
+                    ],
+                    "declKind": "Accessor",
+                    "usr": "s:13IdsvrHaapiSdk48WebAuthnAuthenticationClientOperationActionModelC24CredentialRequestOptionsC29crossPlatformAllowCredentialsSayAC07AllowedK0CGSgvg",
+                    "mangledName": "$s13IdsvrHaapiSdk48WebAuthnAuthenticationClientOperationActionModelC24CredentialRequestOptionsC29crossPlatformAllowCredentialsSayAC07AllowedK0CGSgvg",
+                    "moduleName": "IdsvrHaapiSdk",
+                    "implicit": true,
+                    "declAttributes": [
+                      "Final"
+                    ],
+                    "accessorKind": "get"
+                  }
+                ]
+              },
+              {
+                "kind": "Var",
+                "name": "userVerificationPreference",
+                "printedName": "userVerificationPreference",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Var",
+                "usr": "s:13IdsvrHaapiSdk48WebAuthnAuthenticationClientOperationActionModelC24CredentialRequestOptionsC26userVerificationPreferenceSSSgvp",
+                "mangledName": "$s13IdsvrHaapiSdk48WebAuthnAuthenticationClientOperationActionModelC24CredentialRequestOptionsC26userVerificationPreferenceSSSgvp",
+                "moduleName": "IdsvrHaapiSdk",
+                "declAttributes": [
+                  "Final",
+                  "HasStorage",
+                  "AccessControl",
+                  "RawDocComment"
+                ],
+                "isLet": true,
+                "hasStorage": true,
+                "accessors": [
+                  {
+                    "kind": "Accessor",
+                    "name": "Get",
+                    "printedName": "Get()",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Optional",
+                        "printedName": "Swift.String?",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "String",
+                            "printedName": "Swift.String",
+                            "usr": "s:SS"
+                          }
+                        ],
+                        "usr": "s:Sq"
+                      }
+                    ],
+                    "declKind": "Accessor",
+                    "usr": "s:13IdsvrHaapiSdk48WebAuthnAuthenticationClientOperationActionModelC24CredentialRequestOptionsC26userVerificationPreferenceSSSgvg",
+                    "mangledName": "$s13IdsvrHaapiSdk48WebAuthnAuthenticationClientOperationActionModelC24CredentialRequestOptionsC26userVerificationPreferenceSSSgvg",
+                    "moduleName": "IdsvrHaapiSdk",
+                    "implicit": true,
+                    "declAttributes": [
+                      "Final"
+                    ],
+                    "accessorKind": "get"
+                  }
+                ]
+              }
+            ],
+            "declKind": "Class",
+            "usr": "s:13IdsvrHaapiSdk48WebAuthnAuthenticationClientOperationActionModelC24CredentialRequestOptionsC",
+            "mangledName": "$s13IdsvrHaapiSdk48WebAuthnAuthenticationClientOperationActionModelC24CredentialRequestOptionsC",
+            "moduleName": "IdsvrHaapiSdk",
+            "declAttributes": [
+              "Final",
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "hasMissingDesignatedInitializers": true
+          },
+          {
+            "kind": "TypeDecl",
+            "name": "AllowedCredential",
+            "printedName": "AllowedCredential",
+            "children": [
+              {
+                "kind": "Var",
+                "name": "credentialID",
+                "printedName": "credentialID",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Data",
+                    "printedName": "Foundation.Data",
+                    "usr": "s:10Foundation4DataV"
+                  }
+                ],
+                "declKind": "Var",
+                "usr": "s:13IdsvrHaapiSdk48WebAuthnAuthenticationClientOperationActionModelC17AllowedCredentialC12credentialID10Foundation4DataVvp",
+                "mangledName": "$s13IdsvrHaapiSdk48WebAuthnAuthenticationClientOperationActionModelC17AllowedCredentialC12credentialID10Foundation4DataVvp",
+                "moduleName": "IdsvrHaapiSdk",
+                "declAttributes": [
+                  "Final",
+                  "HasStorage",
+                  "AccessControl",
+                  "RawDocComment"
+                ],
+                "isLet": true,
+                "hasStorage": true,
+                "accessors": [
+                  {
+                    "kind": "Accessor",
+                    "name": "Get",
+                    "printedName": "Get()",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Data",
+                        "printedName": "Foundation.Data",
+                        "usr": "s:10Foundation4DataV"
+                      }
+                    ],
+                    "declKind": "Accessor",
+                    "usr": "s:13IdsvrHaapiSdk48WebAuthnAuthenticationClientOperationActionModelC17AllowedCredentialC12credentialID10Foundation4DataVvg",
+                    "mangledName": "$s13IdsvrHaapiSdk48WebAuthnAuthenticationClientOperationActionModelC17AllowedCredentialC12credentialID10Foundation4DataVvg",
+                    "moduleName": "IdsvrHaapiSdk",
+                    "implicit": true,
+                    "declAttributes": [
+                      "Final"
+                    ],
+                    "accessorKind": "get"
+                  }
+                ]
+              },
+              {
+                "kind": "Var",
+                "name": "type",
+                "printedName": "type",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Var",
+                "usr": "s:13IdsvrHaapiSdk48WebAuthnAuthenticationClientOperationActionModelC17AllowedCredentialC4typeSSvp",
+                "mangledName": "$s13IdsvrHaapiSdk48WebAuthnAuthenticationClientOperationActionModelC17AllowedCredentialC4typeSSvp",
+                "moduleName": "IdsvrHaapiSdk",
+                "declAttributes": [
+                  "Final",
+                  "HasStorage",
+                  "AccessControl",
+                  "RawDocComment"
+                ],
+                "isLet": true,
+                "hasStorage": true,
+                "accessors": [
+                  {
+                    "kind": "Accessor",
+                    "name": "Get",
+                    "printedName": "Get()",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "declKind": "Accessor",
+                    "usr": "s:13IdsvrHaapiSdk48WebAuthnAuthenticationClientOperationActionModelC17AllowedCredentialC4typeSSvg",
+                    "mangledName": "$s13IdsvrHaapiSdk48WebAuthnAuthenticationClientOperationActionModelC17AllowedCredentialC4typeSSvg",
+                    "moduleName": "IdsvrHaapiSdk",
+                    "implicit": true,
+                    "declAttributes": [
+                      "Final"
+                    ],
+                    "accessorKind": "get"
+                  }
+                ]
+              }
+            ],
+            "declKind": "Class",
+            "usr": "s:13IdsvrHaapiSdk48WebAuthnAuthenticationClientOperationActionModelC17AllowedCredentialC",
+            "mangledName": "$s13IdsvrHaapiSdk48WebAuthnAuthenticationClientOperationActionModelC17AllowedCredentialC",
+            "moduleName": "IdsvrHaapiSdk",
+            "declAttributes": [
+              "Final",
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "hasMissingDesignatedInitializers": true
+          }
+        ],
+        "declKind": "Class",
+        "usr": "s:13IdsvrHaapiSdk48WebAuthnAuthenticationClientOperationActionModelC",
+        "mangledName": "$s13IdsvrHaapiSdk48WebAuthnAuthenticationClientOperationActionModelC",
         "moduleName": "IdsvrHaapiSdk",
         "intro_iOS": "14.0",
         "declAttributes": [
@@ -27632,93 +31033,142 @@
     {
       "filePath": "\/Users\/curity\/build\/jenkins-agent\/workspace\/ios-cat_master\/frameworks\/IdsvrHaapiSdk\/Source\/Models\/Steps.swift",
       "kind": "Array",
-      "offset": 2662,
+      "offset": 2649,
       "length": 2,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/curity\/build\/jenkins-agent\/workspace\/ios-cat_master\/frameworks\/IdsvrHaapiSdk\/Source\/Models\/Steps.swift",
       "kind": "Array",
-      "offset": 2706,
+      "offset": 2693,
       "length": 2,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/curity\/build\/jenkins-agent\/workspace\/ios-cat_master\/frameworks\/IdsvrHaapiSdk\/Source\/Models\/Steps.swift",
       "kind": "Array",
-      "offset": 5291,
+      "offset": 5278,
       "length": 2,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/curity\/build\/jenkins-agent\/workspace\/ios-cat_master\/frameworks\/IdsvrHaapiSdk\/Source\/Models\/Steps.swift",
       "kind": "Array",
-      "offset": 6280,
+      "offset": 6267,
       "length": 2,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/curity\/build\/jenkins-agent\/workspace\/ios-cat_master\/frameworks\/IdsvrHaapiSdk\/Source\/Models\/Steps.swift",
       "kind": "Array",
-      "offset": 6510,
+      "offset": 6497,
       "length": 2,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/curity\/build\/jenkins-agent\/workspace\/ios-cat_master\/frameworks\/IdsvrHaapiSdk\/Source\/Models\/Steps.swift",
       "kind": "Array",
-      "offset": 8397,
+      "offset": 8384,
       "length": 2,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/curity\/build\/jenkins-agent\/workspace\/ios-cat_master\/frameworks\/IdsvrHaapiSdk\/Source\/Models\/Steps.swift",
       "kind": "Array",
-      "offset": 8441,
+      "offset": 8428,
       "length": 2,
       "value": "[]"
+    },
+    {
+      "filePath": "\/Users\/curity\/build\/jenkins-agent\/workspace\/ios-cat_master\/frameworks\/IdsvrHaapiSdk\/Source\/Models\/Steps.swift",
+      "kind": "StringLiteral",
+      "offset": 18468,
+      "length": 12,
+      "value": "\"public-key\""
+    },
+    {
+      "filePath": "\/Users\/curity\/build\/jenkins-agent\/workspace\/ios-cat_master\/frameworks\/IdsvrHaapiSdk\/Source\/Models\/Steps.swift",
+      "kind": "StringLiteral",
+      "offset": 21425,
+      "length": 12,
+      "value": "\"credential\""
+    },
+    {
+      "filePath": "\/Users\/curity\/build\/jenkins-agent\/workspace\/ios-cat_master\/frameworks\/IdsvrHaapiSdk\/Source\/Models\/Steps.swift",
+      "kind": "StringLiteral",
+      "offset": 23501,
+      "length": 12,
+      "value": "\"public-key\""
     },
     {
       "filePath": "\/Users\/curity\/build\/jenkins-agent\/workspace\/ios-cat_master\/frameworks\/IdsvrHaapiSdk\/Source\/Models\/Actions\/ClientOperationName.swift",
       "kind": "StringLiteral",
-      "offset": 907,
+      "offset": 1072,
       "length": 23,
       "value": "\"external-browser-flow\""
     },
     {
       "filePath": "\/Users\/curity\/build\/jenkins-agent\/workspace\/ios-cat_master\/frameworks\/IdsvrHaapiSdk\/Source\/Models\/Actions\/ClientOperationName.swift",
       "kind": "StringLiteral",
-      "offset": 953,
+      "offset": 1118,
       "length": 8,
       "value": "\"bankid\""
     },
     {
       "filePath": "\/Users\/curity\/build\/jenkins-agent\/workspace\/ios-cat_master\/frameworks\/IdsvrHaapiSdk\/Source\/Models\/Actions\/ClientOperationName.swift",
       "kind": "StringLiteral",
-      "offset": 997,
+      "offset": 1162,
       "length": 23,
       "value": "\"encap-auto-activation\""
     },
     {
       "filePath": "\/Users\/curity\/build\/jenkins-agent\/workspace\/ios-cat_master\/frameworks\/IdsvrHaapiSdk\/Source\/Models\/Actions\/ClientOperationName.swift",
       "kind": "StringLiteral",
-      "offset": 907,
+      "offset": 1222,
+      "length": 23,
+      "value": "\"webauthn-registration\""
+    },
+    {
+      "filePath": "\/Users\/curity\/build\/jenkins-agent\/workspace\/ios-cat_master\/frameworks\/IdsvrHaapiSdk\/Source\/Models\/Actions\/ClientOperationName.swift",
+      "kind": "StringLiteral",
+      "offset": 1284,
+      "length": 25,
+      "value": "\"webauthn-authentication\""
+    },
+    {
+      "filePath": "\/Users\/curity\/build\/jenkins-agent\/workspace\/ios-cat_master\/frameworks\/IdsvrHaapiSdk\/Source\/Models\/Actions\/ClientOperationName.swift",
+      "kind": "StringLiteral",
+      "offset": 1072,
       "length": 23,
       "value": "\"external-browser-flow\""
     },
     {
       "filePath": "\/Users\/curity\/build\/jenkins-agent\/workspace\/ios-cat_master\/frameworks\/IdsvrHaapiSdk\/Source\/Models\/Actions\/ClientOperationName.swift",
       "kind": "StringLiteral",
-      "offset": 953,
+      "offset": 1118,
       "length": 8,
       "value": "\"bankid\""
     },
     {
       "filePath": "\/Users\/curity\/build\/jenkins-agent\/workspace\/ios-cat_master\/frameworks\/IdsvrHaapiSdk\/Source\/Models\/Actions\/ClientOperationName.swift",
       "kind": "StringLiteral",
-      "offset": 997,
+      "offset": 1162,
       "length": 23,
       "value": "\"encap-auto-activation\""
+    },
+    {
+      "filePath": "\/Users\/curity\/build\/jenkins-agent\/workspace\/ios-cat_master\/frameworks\/IdsvrHaapiSdk\/Source\/Models\/Actions\/ClientOperationName.swift",
+      "kind": "StringLiteral",
+      "offset": 1222,
+      "length": 23,
+      "value": "\"webauthn-registration\""
+    },
+    {
+      "filePath": "\/Users\/curity\/build\/jenkins-agent\/workspace\/ios-cat_master\/frameworks\/IdsvrHaapiSdk\/Source\/Models\/Actions\/ClientOperationName.swift",
+      "kind": "StringLiteral",
+      "offset": 1284,
+      "length": 25,
+      "value": "\"webauthn-authentication\""
     },
     {
       "filePath": "\/Users\/curity\/build\/jenkins-agent\/workspace\/ios-cat_master\/libraries\/JOSESwift\/JOSESwift\/Sources\/ECKeys.swift",
@@ -27807,28 +31257,28 @@
     {
       "filePath": "\/Users\/curity\/build\/jenkins-agent\/workspace\/ios-cat_master\/frameworks\/IdsvrHaapiSdk\/Source\/Models\/Actions\/ActionModel.swift",
       "kind": "BooleanLiteral",
-      "offset": 13608,
+      "offset": 31598,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/curity\/build\/jenkins-agent\/workspace\/ios-cat_master\/frameworks\/IdsvrHaapiSdk\/Source\/Models\/Actions\/ActionModel.swift",
       "kind": "BooleanLiteral",
-      "offset": 13687,
+      "offset": 31677,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/curity\/build\/jenkins-agent\/workspace\/ios-cat_master\/frameworks\/IdsvrHaapiSdk\/Source\/Models\/Actions\/ActionModel.swift",
       "kind": "StringLiteral",
-      "offset": 14114,
+      "offset": 32104,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/curity\/build\/jenkins-agent\/workspace\/ios-cat_master\/frameworks\/IdsvrHaapiSdk\/Source\/Models\/Actions\/ActionModel.swift",
       "kind": "Array",
-      "offset": 15129,
+      "offset": 33119,
       "length": 2,
       "value": "[]"
     },

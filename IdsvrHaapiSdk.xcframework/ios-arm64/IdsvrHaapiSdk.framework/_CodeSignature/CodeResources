@@ -14,27 +14,27 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		LVqoiqzol5cJApOmCI2QQ+OT/Rw=
+		X8ObzlLadgyd7mJf7HbfWV1k8sM=
 		</data>
 		<key>Modules/IdsvrHaapiSdk.swiftmodule/arm64-apple-ios.abi.json</key>
 		<data>
-		bD2RrZ3fPZb5qB35Uy9bFaNNAbw=
+		r4UK8K98SjlTccy4aLClliSzNK8=
 		</data>
 		<key>Modules/IdsvrHaapiSdk.swiftmodule/arm64-apple-ios.private.swiftinterface</key>
 		<data>
-		43uXwMtJ8TsUkb9u3OaixoB4K8w=
+		GIeyn9JJCTRPZ7LX2rum9xMa5K4=
 		</data>
 		<key>Modules/IdsvrHaapiSdk.swiftmodule/arm64-apple-ios.swiftdoc</key>
 		<data>
-		2zMzcG4Lmwk6gn+aLw3vtVG5MWk=
+		FjpawBAuIgDJ0rJJE6wSTJfQLas=
 		</data>
 		<key>Modules/IdsvrHaapiSdk.swiftmodule/arm64-apple-ios.swiftinterface</key>
 		<data>
-		43uXwMtJ8TsUkb9u3OaixoB4K8w=
+		GIeyn9JJCTRPZ7LX2rum9xMa5K4=
 		</data>
 		<key>Modules/IdsvrHaapiSdk.swiftmodule/arm64-apple-ios.swiftmodule</key>
 		<data>
-		ZTiw2BWh2HP15vtL361PA/d7+wI=
+		M0yiksvIC25pZDgos2XEzXAqgyQ=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -61,35 +61,35 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			Bnox8LXhllZbZp6fzb4WIu/lnsPOtNR1vITwkqODyzU=
+			agtACn0RWWn936LCDWUtL8B5c2u4XpW/7f2uYbgP/Fo=
 			</data>
 		</dict>
 		<key>Modules/IdsvrHaapiSdk.swiftmodule/arm64-apple-ios.private.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			+NpczeJXyq12izYgCm1c7iDfg8EEn5El2DT/8A8ffnQ=
+			iPFIc+xoH6iIBcC11WvxOtqpFA53jSzp7dNdadGEouc=
 			</data>
 		</dict>
 		<key>Modules/IdsvrHaapiSdk.swiftmodule/arm64-apple-ios.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			J+jNCCRyOXBSj4r6bb8YwRcZi7SPsgb5DVf4DzG3QDQ=
+			vUU34PmZepkAr6twOItqwoHC5qB793/sszr+bCGGTXo=
 			</data>
 		</dict>
 		<key>Modules/IdsvrHaapiSdk.swiftmodule/arm64-apple-ios.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			+NpczeJXyq12izYgCm1c7iDfg8EEn5El2DT/8A8ffnQ=
+			iPFIc+xoH6iIBcC11WvxOtqpFA53jSzp7dNdadGEouc=
 			</data>
 		</dict>
 		<key>Modules/IdsvrHaapiSdk.swiftmodule/arm64-apple-ios.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			sCvvtF+Ubjep2INHT+EUswGssvDTSRMX9H56eLp9Ufw=
+			kNLJv4W97GNJ1nNvmV3L7VragqWmPx5D7VAoiYQUjN0=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>

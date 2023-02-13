@@ -694,6 +694,36 @@ public struct EncapClientOperationStep : IdsvrHaapiSdk.ClientOperationStep {
   }
 }
 @available(iOS 14.0, *)
+public struct WebAuthnRegistrationClientOperationStep : IdsvrHaapiSdk.ClientOperationStep {
+  public let actionModel: IdsvrHaapiSdk.WebAuthnRegistrationClientOperationActionModel
+  public let metadata: IdsvrHaapiSdk.Metadata?
+  public let type: IdsvrHaapiSdk.RepresentationType
+  public let actions: [IdsvrHaapiSdk.Action]
+  public let links: [IdsvrHaapiSdk.Link]
+  public let messages: [IdsvrHaapiSdk.UserMessage]
+  public let properties: IdsvrHaapiSdk.Properties?
+  public let continueAction: IdsvrHaapiSdk.FormAction
+  public var fallbackActions: [IdsvrHaapiSdk.Action] {
+    get
+  }
+  public func formattedParametersForRegistration(credentialOptions: IdsvrHaapiSdk.WebAuthnRegistrationClientOperationActionModel.CredentialRequestOptions, attestationObject: Foundation.Data, rawClientDataJSON: Foundation.Data, credentialID: Foundation.Data, credentialParamType: Swift.String = "public-key") -> [Swift.String : Any]
+}
+@available(iOS 14.0, *)
+public struct WebAuthnAuthenticationClientOperationStep : IdsvrHaapiSdk.ClientOperationStep {
+  public let actionModel: IdsvrHaapiSdk.WebAuthnAuthenticationClientOperationActionModel
+  public let metadata: IdsvrHaapiSdk.Metadata?
+  public let type: IdsvrHaapiSdk.RepresentationType
+  public let actions: [IdsvrHaapiSdk.Action]
+  public let links: [IdsvrHaapiSdk.Link]
+  public let messages: [IdsvrHaapiSdk.UserMessage]
+  public let properties: IdsvrHaapiSdk.Properties?
+  public let continueAction: IdsvrHaapiSdk.FormAction
+  public var fallbackActions: [IdsvrHaapiSdk.Action] {
+    get
+  }
+  public func formattedParametersForAssertion(rawAuthenticatorData: Foundation.Data, rawClientDataJSON: Foundation.Data, signature: Foundation.Data, credentialID: Foundation.Data, credentialParamType: Swift.String = "public-key") -> [Swift.String : Any]
+}
+@available(iOS 14.0, *)
 public struct GenericClientOperationStep : IdsvrHaapiSdk.ClientOperationStep {
   public let actionModel: IdsvrHaapiSdk.GenericClientOperationActionModel
   public let metadata: IdsvrHaapiSdk.Metadata?
@@ -718,6 +748,8 @@ public struct GenericRepresentationStep : IdsvrHaapiSdk.HaapiRepresentation, Swi
   case externalBrowser
   case bankId
   case encapAutoActivation
+  case webAuthnRegistration
+  case webAuthnAuthentication
   case unknown(value: Swift.String)
 }
 @available(iOS 14.0, *)
@@ -808,6 +840,68 @@ final public class EncapAutoActivationClientOperationActionModel : IdsvrHaapiSdk
   required public init(from decoder: Swift.Decoder) throws
   final public var urlToLaunch: Foundation.URL? {
     get
+  }
+  @objc deinit
+}
+@_inheritsConvenienceInitializers @available(iOS 14.0, *)
+final public class WebAuthnRegistrationClientOperationActionModel : IdsvrHaapiSdk.ClientOperationActionModel {
+  final public let arguments: [Swift.String : Any]
+  final public var platformOptions: IdsvrHaapiSdk.WebAuthnRegistrationClientOperationActionModel.PlatformCredentialRequestOptions?
+  final public var crossPlatformOptions: IdsvrHaapiSdk.WebAuthnRegistrationClientOperationActionModel.CrossPlatformCredentialRequestOptions?
+  final public var fallbackActions: [IdsvrHaapiSdk.Action] {
+    get
+  }
+  required public init(from decoder: Swift.Decoder) throws
+  @_hasMissingDesignatedInitializers public class CredentialRequestOptions {
+    final public let relyingPartyId: Swift.String?
+    final public let challengeData: Foundation.Data?
+    final public let userIdData: Foundation.Data?
+    final public let userName: Swift.String?
+    final public let displayName: Swift.String?
+    final public let userVerification: Swift.String?
+    final public let attestation: Swift.String?
+    @objc deinit
+  }
+  @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers final public class PlatformCredentialRequestOptions : IdsvrHaapiSdk.WebAuthnRegistrationClientOperationActionModel.CredentialRequestOptions {
+    @objc deinit
+  }
+  @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers final public class CrossPlatformCredentialRequestOptions : IdsvrHaapiSdk.WebAuthnRegistrationClientOperationActionModel.CredentialRequestOptions {
+    final public let publicKeyCredParams: [IdsvrHaapiSdk.WebAuthnRegistrationClientOperationActionModel.CredentialParams]?
+    final public let excludedCredentials: [IdsvrHaapiSdk.WebAuthnRegistrationClientOperationActionModel.ExcludedCredential]?
+    @objc deinit
+  }
+  @_hasMissingDesignatedInitializers final public class CredentialParams {
+    final public let algorithmId: Swift.Int
+    final public let type: Swift.String
+    @objc deinit
+  }
+  @_hasMissingDesignatedInitializers final public class ExcludedCredential {
+    final public let credentialID: Foundation.Data
+    final public let type: Swift.String
+    @objc deinit
+  }
+  @objc deinit
+}
+@_inheritsConvenienceInitializers @available(iOS 14.0, *)
+final public class WebAuthnAuthenticationClientOperationActionModel : IdsvrHaapiSdk.ClientOperationActionModel {
+  final public let arguments: [Swift.String : Any]
+  final public var credentialOptions: IdsvrHaapiSdk.WebAuthnAuthenticationClientOperationActionModel.CredentialRequestOptions
+  final public var fallbackActions: [IdsvrHaapiSdk.Action] {
+    get
+  }
+  required public init(from decoder: Swift.Decoder) throws
+  @_hasMissingDesignatedInitializers final public class CredentialRequestOptions {
+    final public let relyingPartyId: Swift.String?
+    final public let challengeData: Foundation.Data?
+    final public let platformAllowCredentials: [IdsvrHaapiSdk.WebAuthnAuthenticationClientOperationActionModel.AllowedCredential]?
+    final public let crossPlatformAllowCredentials: [IdsvrHaapiSdk.WebAuthnAuthenticationClientOperationActionModel.AllowedCredential]?
+    final public let userVerificationPreference: Swift.String?
+    @objc deinit
+  }
+  @_hasMissingDesignatedInitializers final public class AllowedCredential {
+    final public let credentialID: Foundation.Data
+    final public let type: Swift.String
+    @objc deinit
   }
   @objc deinit
 }
