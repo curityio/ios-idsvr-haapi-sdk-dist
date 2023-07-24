@@ -3,7 +3,7 @@ Pod::Spec.new do |spec|
   spec.version          = '2.5.0'
   spec.license          = { :type => "UNLICENSED", :file => "legal.md" }
   spec.homepage         = 'https://curity.io'
-  spec.authors          = { 'Cuity' => 'info@curity.io' }
+  spec.authors          = { 'Curity' => 'info@curity.io' }
   spec.summary          = 'Hypermedia Authentication API (HAAPI) SDK for the Curity Identity Server'
   spec.description      = <<-DESC
                             This distribution provides the iOS Hypermedia Authentication API (HAAPI) 
