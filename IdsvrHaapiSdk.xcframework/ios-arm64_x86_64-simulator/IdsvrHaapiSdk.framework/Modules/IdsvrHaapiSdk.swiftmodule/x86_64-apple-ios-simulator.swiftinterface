@@ -97,6 +97,9 @@ public struct ResponseAndData {
 }
 @objc @_hasMissingDesignatedInitializers @available(iOS 14.0, *)
 public class HaapiClient : ObjectiveC.NSObject {
+  public var dpop: IdsvrHaapiSdk.Dpop? {
+    get
+  }
   public func performDataTask(for urlRequest: Foundation.URLRequest, completionHandler: @escaping (Swift.Result<IdsvrHaapiSdk.ResponseAndData, any Swift.Error>) -> Swift.Void)
   @available(swift, obsoleted: 1.0)
   @objc public func performDataTask(for urlRequest: Foundation.URLRequest, completionHandler: @escaping (Foundation.Data?, Foundation.URLResponse?, (any Swift.Error)?) -> Swift.Void)
@@ -189,10 +192,10 @@ public protocol OAuthTokenConfigurable {
   var urlSession: Foundation.URLSession { get }
   var revocationEndpointURL: Foundation.URL? { get }
 }
-@available(iOS 14.0, *)
+@_hasMissingDesignatedInitializers @available(iOS 14.0, *)
 final public class OAuthTokenManager {
-  public init(oauthTokenConfiguration: any IdsvrHaapiSdk.OAuthTokenConfigurable)
-  final public func fetchAccessToken(with authorizationCode: Swift.String, completionHandler: @escaping IdsvrHaapiSdk.OAuthCompletion)
+  convenience public init(oauthTokenConfiguration: any IdsvrHaapiSdk.OAuthTokenConfigurable)
+  final public func fetchAccessToken(with authorizationCode: Swift.String, dpop: IdsvrHaapiSdk.Dpop? = nil, completionHandler: @escaping IdsvrHaapiSdk.OAuthCompletion)
   final public func refreshAccessToken(with refreshToken: Swift.String, completionHandler: @escaping IdsvrHaapiSdk.OAuthCompletion)
   final public func revokeAccessToken(with token: Swift.String, completionHandler: @escaping IdsvrHaapiSdk.OAuthRevocationCompletion)
   final public func revokeRefreshToken(with token: Swift.String, completionHandler: @escaping IdsvrHaapiSdk.OAuthRevocationCompletion)
@@ -229,8 +232,11 @@ public struct Metadata : Swift.Decodable, Swift.Equatable {
   public init(from decoder: any Swift.Decoder) throws
 }
 @objc @_hasMissingDesignatedInitializers @available(iOS 14, *)
-@objcMembers public class Dpop : ObjectiveC.NSObject {
+@objcMembers public class Dpop : ObjectiveC.NSObject, Swift.Codable {
   @objc final public let jwkThumbprint: Swift.String
+  @objc override dynamic public func isEqual(_ object: Any?) -> Swift.Bool
+  public func encode(to encoder: any Swift.Encoder) throws
+  required public init(from decoder: any Swift.Decoder) throws
   @objc @available(swift, obsoleted: 0.1, message: "Use `createProof(httpMethod: String, url: URL, nonce: String?, accessToken: String?)` instead")
   public func createProof(httpMethod: Swift.String, url: Foundation.URL) throws -> Swift.String
   @objc public func createProof(httpMethod: Swift.String, url: Foundation.URL, nonce: Swift.String? = nil, accessToken: Swift.String? = nil) throws -> Swift.String
@@ -277,6 +283,9 @@ extension IdsvrHaapiSdk.HaapiError : Foundation.LocalizedError {
 }
 @objc @_hasMissingDesignatedInitializers @available(iOS 14.0, *)
 @objcMembers final public class HaapiTokenManager : ObjectiveC.NSObject {
+  @objc final public var dpop: IdsvrHaapiSdk.Dpop? {
+    @objc get
+  }
   @objc deinit
 }
 @available(iOS 14.0, *)
@@ -325,14 +334,21 @@ public class Action : Swift.Equatable {
 @_hasMissingDesignatedInitializers @available(iOS 14.0, *)
 final public class ClientOperationAction : IdsvrHaapiSdk.Action {
   final public let model: IdsvrHaapiSdk.ClientOperationActionModel
+  final public let properties: IdsvrHaapiSdk.ClientOperationAction.Properties?
+  public struct Properties : Swift.Decodable, Swift.Equatable {
+    public let rawJsonString: Swift.String
+    public static func == (a: IdsvrHaapiSdk.ClientOperationAction.Properties, b: IdsvrHaapiSdk.ClientOperationAction.Properties) -> Swift.Bool
+    public init(from decoder: any Swift.Decoder) throws
+  }
   @objc deinit
 }
 @_hasMissingDesignatedInitializers @available(iOS 14.0, *)
 final public class FormAction : IdsvrHaapiSdk.Action {
-  final public let properties: IdsvrHaapiSdk.FormAction.Properties?
   final public let model: IdsvrHaapiSdk.FormActionModel
+  final public let properties: IdsvrHaapiSdk.FormAction.Properties?
   public struct Properties : Swift.Decodable, Swift.Equatable {
     public let authenticatorType: Swift.String
+    public let rawJsonString: Swift.String
     public static func == (a: IdsvrHaapiSdk.FormAction.Properties, b: IdsvrHaapiSdk.FormAction.Properties) -> Swift.Bool
     public init(from decoder: any Swift.Decoder) throws
   }
@@ -341,6 +357,12 @@ final public class FormAction : IdsvrHaapiSdk.Action {
 @_hasMissingDesignatedInitializers @available(iOS 14.0, *)
 final public class SelectorAction : IdsvrHaapiSdk.Action {
   final public let model: IdsvrHaapiSdk.SelectorActionModel
+  final public let properties: IdsvrHaapiSdk.SelectorAction.Properties?
+  public struct Properties : Swift.Decodable, Swift.Equatable {
+    public let rawJsonString: Swift.String
+    public static func == (a: IdsvrHaapiSdk.SelectorAction.Properties, b: IdsvrHaapiSdk.SelectorAction.Properties) -> Swift.Bool
+    public init(from decoder: any Swift.Decoder) throws
+  }
   @objc deinit
 }
 @available(iOS 14, *)
@@ -367,9 +389,16 @@ public enum MimeTypes : Swift.String {
 }
 @available(iOS 14.0, *)
 public protocol Properties {
+  var rawJsonString: Swift.String { get }
+}
+@available(iOS 14.0, *)
+public struct GenericProperties : IdsvrHaapiSdk.Properties, Swift.Decodable {
+  public let rawJsonString: Swift.String
+  public init(from decoder: any Swift.Decoder) throws
 }
 @available(iOS 14.0, *)
 public struct OAuthAuthorizationResponseProperties : IdsvrHaapiSdk.Properties {
+  public let rawJsonString: Swift.String
   public let scope: Swift.String?
   public let state: Swift.String?
   public let code: Swift.String?
@@ -378,6 +407,7 @@ public struct OAuthAuthorizationResponseProperties : IdsvrHaapiSdk.Properties {
 }
 @available(iOS 14.0, *)
 public struct PollingProperties : IdsvrHaapiSdk.Properties {
+  public let rawJsonString: Swift.String
   public let recipientOfCommunication: Swift.String?
   public let status: IdsvrHaapiSdk.PollingStatus
 }
@@ -422,6 +452,7 @@ extension IdsvrHaapiSdk.FollowUpTag {
   @objc override dynamic public var debugDescription: Swift.String {
     @objc get
   }
+  @objc override dynamic public func isEqual(_ object: Any?) -> Swift.Bool
   @objc deinit
 }
 @objc @_hasMissingDesignatedInitializers @available(iOS 14, *)
@@ -437,6 +468,7 @@ extension IdsvrHaapiSdk.FollowUpTag {
   }
   @objc public func dpopHeaderValue(httpMethod: Swift.String, url: Foundation.URL) throws -> Swift.String
   @objc public func authorizationHeaderValue() -> Swift.String
+  @objc override dynamic public func isEqual(_ object: Any?) -> Swift.Bool
   @objc deinit
 }
 @available(iOS 14.0, *)
@@ -496,6 +528,9 @@ final public class HaapiManager : ObjectiveC.NSObject {
   #if compiler(>=5.3) && $AsyncAwait
   final public func followLink(_ link: IdsvrHaapiSdk.Link) async -> IdsvrHaapiSdk.HaapiResult
   #endif
+  final public var dpop: IdsvrHaapiSdk.Dpop? {
+    get
+  }
 }
 public enum DriverFollowUpTag : Swift.String, IdsvrHaapiSdk.FollowUpTag, Swift.CaseIterable {
   case flow
@@ -672,9 +707,9 @@ public struct PollingStep : IdsvrHaapiSdk.HaapiRepresentation {
   public let actions: [IdsvrHaapiSdk.Action]
   public let messages: [IdsvrHaapiSdk.UserMessage]
   public let links: [IdsvrHaapiSdk.Link]
-  public let properties: (any IdsvrHaapiSdk.Properties)?
+  public let pollingProperties: IdsvrHaapiSdk.PollingProperties
   public let type: IdsvrHaapiSdk.RepresentationType
-  public var pollingProperties: IdsvrHaapiSdk.PollingProperties {
+  public var properties: (any IdsvrHaapiSdk.Properties)? {
     get
   }
 }
@@ -683,10 +718,10 @@ public struct OAuthAuthorizationResponseStep : IdsvrHaapiSdk.HaapiRepresentation
   public let metadata: IdsvrHaapiSdk.Metadata?
   public let messages: [IdsvrHaapiSdk.UserMessage]
   public let links: [IdsvrHaapiSdk.Link]
-  public let properties: (any IdsvrHaapiSdk.Properties)?
+  public let oauthAuthorizationResponseProperties: IdsvrHaapiSdk.OAuthAuthorizationResponseProperties
   public let type: IdsvrHaapiSdk.RepresentationType
   public let actions: [IdsvrHaapiSdk.Action]
-  public var oauthAuthorizationResponseProperties: IdsvrHaapiSdk.OAuthAuthorizationResponseProperties {
+  public var properties: (any IdsvrHaapiSdk.Properties)? {
     get
   }
 }
@@ -694,10 +729,10 @@ public struct OAuthAuthorizationResponseStep : IdsvrHaapiSdk.HaapiRepresentation
 public struct ContinueSameStep : IdsvrHaapiSdk.HaapiRepresentation {
   public let metadata: IdsvrHaapiSdk.Metadata?
   public let messages: [IdsvrHaapiSdk.UserMessage]
-  public let links: [IdsvrHaapiSdk.Link]
   public let properties: (any IdsvrHaapiSdk.Properties)?
   public let type: IdsvrHaapiSdk.RepresentationType
   public let actions: [IdsvrHaapiSdk.Action]
+  public let links: [IdsvrHaapiSdk.Link]
 }
 @available(iOS 14.0, *)
 public struct UserConsentStep : IdsvrHaapiSdk.HaapiRepresentation {
