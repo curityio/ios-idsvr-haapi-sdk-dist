@@ -9013,8 +9013,8 @@
           },
           {
             "kind": "Function",
-            "name": "getHaapiTokenAsync",
-            "printedName": "getHaapiTokenAsync(forceFresh:callbackDispatchQueue:dpopNonce:completionHandler:)",
+            "name": "getHaapiToken",
+            "printedName": "getHaapiToken(forceFresh:dpopNonce:completionHandler:)",
             "children": [
               {
                 "kind": "TypeNominal",
@@ -9027,13 +9027,6 @@
                 "printedName": "Swift.Bool",
                 "hasDefaultArg": true,
                 "usr": "s:Sb"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "DispatchQueue",
-                "printedName": "Dispatch.DispatchQueue",
-                "hasDefaultArg": true,
-                "usr": "c:objc(cs)OS_dispatch_queue"
               },
               {
                 "kind": "TypeNominal",
@@ -9084,67 +9077,8 @@
               }
             ],
             "declKind": "Func",
-            "usr": "s:13IdsvrHaapiSdk0B12TokenManagerC03getbD5Async10forceFresh21callbackDispatchQueue9dpopNonce17completionHandlerySb_So17OS_dispatch_queueCSSSgys6ResultOyAA010DpopAccessD4InfoCAA0B5ErrorOGctF",
-            "mangledName": "$s13IdsvrHaapiSdk0B12TokenManagerC03getbD5Async10forceFresh21callbackDispatchQueue9dpopNonce17completionHandlerySb_So17OS_dispatch_queueCSSSgys6ResultOyAA010DpopAccessD4InfoCAA0B5ErrorOGctF",
-            "moduleName": "IdsvrHaapiSdk",
-            "declAttributes": [
-              "Final",
-              "RawDocComment"
-            ],
-            "isFromExtension": true,
-            "funcSelfKind": "NonMutating"
-          },
-          {
-            "kind": "Function",
-            "name": "getHaapiToken",
-            "printedName": "getHaapiToken(forceFresh:dpopNonce:)",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "Result",
-                "printedName": "Swift.Result<IdsvrHaapiSdk.DpopAccessTokenInfo, IdsvrHaapiSdk.HaapiError>",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "DpopAccessTokenInfo",
-                    "printedName": "IdsvrHaapiSdk.DpopAccessTokenInfo",
-                    "usr": "c:@M@IdsvrHaapiSdk@objc(cs)DpopAccessTokenInfo"
-                  },
-                  {
-                    "kind": "TypeNominal",
-                    "name": "HaapiError",
-                    "printedName": "IdsvrHaapiSdk.HaapiError",
-                    "usr": "s:13IdsvrHaapiSdk0B5ErrorO"
-                  }
-                ],
-                "usr": "s:s6ResultO"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "Bool",
-                "printedName": "Swift.Bool",
-                "hasDefaultArg": true,
-                "usr": "s:Sb"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "Optional",
-                "printedName": "Swift.String?",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "String",
-                    "printedName": "Swift.String",
-                    "usr": "s:SS"
-                  }
-                ],
-                "hasDefaultArg": true,
-                "usr": "s:Sq"
-              }
-            ],
-            "declKind": "Func",
-            "usr": "s:13IdsvrHaapiSdk0B12TokenManagerC03getbD010forceFresh9dpopNonces6ResultOyAA010DpopAccessD4InfoCAA0B5ErrorOGSb_SSSgtF",
-            "mangledName": "$s13IdsvrHaapiSdk0B12TokenManagerC03getbD010forceFresh9dpopNonces6ResultOyAA010DpopAccessD4InfoCAA0B5ErrorOGSb_SSSgtF",
+            "usr": "s:13IdsvrHaapiSdk0B12TokenManagerC03getbD010forceFresh9dpopNonce17completionHandlerySb_SSSgys6ResultOyAA010DpopAccessD4InfoCAA0B5ErrorOGctF",
+            "mangledName": "$s13IdsvrHaapiSdk0B12TokenManagerC03getbD010forceFresh9dpopNonce17completionHandlerySb_SSSgys6ResultOyAA010DpopAccessD4InfoCAA0B5ErrorOGctF",
             "moduleName": "IdsvrHaapiSdk",
             "declAttributes": [
               "Final",
@@ -19843,6 +19777,10 @@
                 "mangledName": "$s13IdsvrHaapiSdk19InteractiveFormStepV7actionsSayAA0E6ActionCGvM",
                 "moduleName": "IdsvrHaapiSdk",
                 "implicit": true,
+                "intro_iOS": "14.0",
+                "declAttributes": [
+                  "Available"
+                ],
                 "accessorKind": "_modify"
               }
             ]
@@ -29360,8 +29298,10 @@
                 "mangledName": "$s13IdsvrHaapiSdk46WebAuthnRegistrationClientOperationActionModelC15platformOptionsAC025PlatformCredentialRequestL0CSgvM",
                 "moduleName": "IdsvrHaapiSdk",
                 "implicit": true,
+                "intro_iOS": "14.0",
                 "declAttributes": [
-                  "Final"
+                  "Final",
+                  "Available"
                 ],
                 "accessorKind": "_modify"
               }
@@ -29481,8 +29421,10 @@
                 "mangledName": "$s13IdsvrHaapiSdk46WebAuthnRegistrationClientOperationActionModelC20crossPlatformOptionsAC05Crossl17CredentialRequestM0CSgvM",
                 "moduleName": "IdsvrHaapiSdk",
                 "implicit": true,
+                "intro_iOS": "14.0",
                 "declAttributes": [
-                  "Final"
+                  "Final",
+                  "Available"
                 ],
                 "accessorKind": "_modify"
               }
@@ -30694,8 +30636,10 @@
                 "mangledName": "$s13IdsvrHaapiSdk48WebAuthnAuthenticationClientOperationActionModelC17credentialOptionsAC017CredentialRequestL0CvM",
                 "moduleName": "IdsvrHaapiSdk",
                 "implicit": true,
+                "intro_iOS": "14.0",
                 "declAttributes": [
-                  "Final"
+                  "Final",
+                  "Available"
                 ],
                 "accessorKind": "_modify"
               }
@@ -32901,33 +32845,19 @@
         "usr": "s:10Foundation4DataV",
         "mangledName": "$s10Foundation4DataV",
         "moduleName": "Foundation",
+        "intro_Macosx": "10.10",
+        "intro_iOS": "8.0",
+        "intro_tvOS": "9.0",
+        "intro_watchOS": "2.0",
         "declAttributes": [
-          "Frozen"
+          "Frozen",
+          "Available",
+          "Available",
+          "Available",
+          "Available"
         ],
         "isExternal": true,
         "conformances": [
-          {
-            "kind": "Conformance",
-            "name": "ReferenceConvertible",
-            "printedName": "ReferenceConvertible",
-            "children": [
-              {
-                "kind": "TypeWitness",
-                "name": "ReferenceType",
-                "printedName": "ReferenceType",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "NSData",
-                    "printedName": "Foundation.NSData",
-                    "usr": "c:objc(cs)NSData"
-                  }
-                ]
-              }
-            ],
-            "usr": "s:10Foundation20ReferenceConvertibleP",
-            "mangledName": "$s10Foundation20ReferenceConvertibleP"
-          },
           {
             "kind": "Conformance",
             "name": "Equatable",
@@ -33327,24 +33257,25 @@
           },
           {
             "kind": "Conformance",
-            "name": "CustomStringConvertible",
-            "printedName": "CustomStringConvertible",
-            "usr": "s:s23CustomStringConvertibleP",
-            "mangledName": "$ss23CustomStringConvertibleP"
-          },
-          {
-            "kind": "Conformance",
-            "name": "CustomDebugStringConvertible",
-            "printedName": "CustomDebugStringConvertible",
-            "usr": "s:s28CustomDebugStringConvertibleP",
-            "mangledName": "$ss28CustomDebugStringConvertibleP"
-          },
-          {
-            "kind": "Conformance",
-            "name": "CustomReflectable",
-            "printedName": "CustomReflectable",
-            "usr": "s:s17CustomReflectableP",
-            "mangledName": "$ss17CustomReflectableP"
+            "name": "ReferenceConvertible",
+            "printedName": "ReferenceConvertible",
+            "children": [
+              {
+                "kind": "TypeWitness",
+                "name": "ReferenceType",
+                "printedName": "ReferenceType",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "NSData",
+                    "printedName": "Foundation.NSData",
+                    "usr": "c:objc(cs)NSData"
+                  }
+                ]
+              }
+            ],
+            "usr": "s:10Foundation20ReferenceConvertibleP",
+            "mangledName": "$s10Foundation20ReferenceConvertibleP"
           },
           {
             "kind": "Conformance",
@@ -33367,6 +33298,27 @@
             ],
             "usr": "s:s21_ObjectiveCBridgeableP",
             "mangledName": "$ss21_ObjectiveCBridgeableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CustomStringConvertible",
+            "printedName": "CustomStringConvertible",
+            "usr": "s:s23CustomStringConvertibleP",
+            "mangledName": "$ss23CustomStringConvertibleP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CustomDebugStringConvertible",
+            "printedName": "CustomDebugStringConvertible",
+            "usr": "s:s28CustomDebugStringConvertibleP",
+            "mangledName": "$ss28CustomDebugStringConvertibleP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "CustomReflectable",
+            "printedName": "CustomReflectable",
+            "usr": "s:s17CustomReflectableP",
+            "mangledName": "$ss17CustomReflectableP"
           },
           {
             "kind": "Conformance",
@@ -33760,6 +33712,16 @@
         "usr": "s:10Foundation10URLRequestV",
         "mangledName": "$s10Foundation10URLRequestV",
         "moduleName": "Foundation",
+        "intro_Macosx": "10.10",
+        "intro_iOS": "8.0",
+        "intro_tvOS": "9.0",
+        "intro_watchOS": "2.0",
+        "declAttributes": [
+          "Available",
+          "Available",
+          "Available",
+          "Available"
+        ],
         "isExternal": true,
         "conformances": [
           {
@@ -33909,6 +33871,16 @@
         "usr": "s:10Foundation3URLV",
         "mangledName": "$s10Foundation3URLV",
         "moduleName": "Foundation",
+        "intro_Macosx": "10.10",
+        "intro_iOS": "8.0",
+        "intro_tvOS": "9.0",
+        "intro_watchOS": "2.0",
+        "declAttributes": [
+          "Available",
+          "Available",
+          "Available",
+          "Available"
+        ],
         "isExternal": true,
         "conformances": [
           {
@@ -34564,217 +34536,217 @@
     {
       "filePath": "\/Users\/curity\/build\/jenkins-agent\/workspace\/ios-cat_master\/frameworks\/IdsvrHaapiDriver\/Source\/HaapiClient.swift",
       "kind": "StringLiteral",
-      "offset": 7631,
+      "offset": 7567,
       "length": 74,
       "value": "\"Cannot fetch and append Haapi Headers due to : \""
     },
     {
       "filePath": "\/Users\/curity\/build\/jenkins-agent\/workspace\/ios-cat_master\/frameworks\/IdsvrHaapiDriver\/Source\/HaapiClient.swift",
       "kind": "StringLiteral",
-      "offset": 7704,
+      "offset": 7640,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/curity\/build\/jenkins-agent\/workspace\/ios-cat_master\/frameworks\/IdsvrHaapiDriver\/Source\/HaapiClient.swift",
       "kind": "StringLiteral",
-      "offset": 8122,
+      "offset": 8058,
       "length": 65,
       "value": "\"DPoP and Authorization headers were set in the request headers.\""
     },
     {
       "filePath": "\/Users\/curity\/build\/jenkins-agent\/workspace\/ios-cat_master\/frameworks\/IdsvrHaapiDriver\/Source\/HaapiClient.swift",
       "kind": "StringLiteral",
-      "offset": 8348,
+      "offset": 8284,
       "length": 78,
       "value": "\"DPoP and Authorization headers cannot be set in the request headers due to: \""
     },
     {
       "filePath": "\/Users\/curity\/build\/jenkins-agent\/workspace\/ios-cat_master\/frameworks\/IdsvrHaapiDriver\/Source\/HaapiClient.swift",
       "kind": "StringLiteral",
-      "offset": 8965,
+      "offset": 8901,
       "length": 51,
       "value": "\"A request is being performed that requires HAAPI.\""
     },
     {
       "filePath": "\/Users\/curity\/build\/jenkins-agent\/workspace\/ios-cat_master\/frameworks\/IdsvrHaapiDriver\/Source\/HaapiClient.swift",
       "kind": "StringLiteral",
-      "offset": 9556,
+      "offset": 9492,
       "length": 53,
       "value": "\"HAAPI setup for request has failed due to: \""
     },
     {
       "filePath": "\/Users\/curity\/build\/jenkins-agent\/workspace\/ios-cat_master\/frameworks\/IdsvrHaapiDriver\/Source\/HaapiClient.swift",
       "kind": "StringLiteral",
-      "offset": 9608,
+      "offset": 9544,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/curity\/build\/jenkins-agent\/workspace\/ios-cat_master\/frameworks\/IdsvrHaapiDriver\/Source\/HaapiClient.swift",
       "kind": "StringLiteral",
-      "offset": 9820,
+      "offset": 9756,
       "length": 38,
       "value": "\"HAAPI setup for request has succeed.\""
     },
     {
       "filePath": "\/Users\/curity\/build\/jenkins-agent\/workspace\/ios-cat_master\/frameworks\/IdsvrHaapiDriver\/Source\/HaapiClient.swift",
       "kind": "StringLiteral",
-      "offset": 10774,
+      "offset": 10710,
       "length": 35,
       "value": "\"Updating DPoP token and retrying.\""
     },
     {
       "filePath": "\/Users\/curity\/build\/jenkins-agent\/workspace\/ios-cat_master\/frameworks\/IdsvrHaapiDriver\/Source\/HaapiClient.swift",
       "kind": "BooleanLiteral",
-      "offset": 10878,
+      "offset": 10814,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/curity\/build\/jenkins-agent\/workspace\/ios-cat_master\/frameworks\/IdsvrHaapiDriver\/Source\/HaapiClient.swift",
       "kind": "StringLiteral",
-      "offset": 11303,
+      "offset": 11239,
       "length": 13,
       "value": "\"No response\""
     },
     {
       "filePath": "\/Users\/curity\/build\/jenkins-agent\/workspace\/ios-cat_master\/frameworks\/IdsvrHaapiDriver\/Source\/HaapiClient.swift",
       "kind": "StringLiteral",
-      "offset": 11593,
+      "offset": 11529,
       "length": 5,
       "value": "\"n.a\""
     },
     {
       "filePath": "\/Users\/curity\/build\/jenkins-agent\/workspace\/ios-cat_master\/frameworks\/IdsvrHaapiDriver\/Source\/HaapiClient.swift",
       "kind": "StringLiteral",
-      "offset": 11649,
+      "offset": 11585,
       "length": 12,
       "value": "\"statusCode\""
     },
     {
       "filePath": "\/Users\/curity\/build\/jenkins-agent\/workspace\/ios-cat_master\/frameworks\/IdsvrHaapiDriver\/Source\/HaapiClient.swift",
       "kind": "StringLiteral",
-      "offset": 11691,
+      "offset": 11627,
       "length": 5,
       "value": "\"n.a\""
     },
     {
       "filePath": "\/Users\/curity\/build\/jenkins-agent\/workspace\/ios-cat_master\/frameworks\/IdsvrHaapiDriver\/Source\/HaapiClient.swift",
       "kind": "StringLiteral",
-      "offset": 11710,
+      "offset": 11646,
       "length": 9,
       "value": "\"headers\""
     },
     {
       "filePath": "\/Users\/curity\/build\/jenkins-agent\/workspace\/ios-cat_master\/frameworks\/IdsvrHaapiDriver\/Source\/HaapiClient.swift",
       "kind": "StringLiteral",
-      "offset": 11799,
+      "offset": 11735,
       "length": 5,
       "value": "\"n.a\""
     },
     {
       "filePath": "\/Users\/curity\/build\/jenkins-agent\/workspace\/ios-cat_master\/frameworks\/IdsvrHaapiDriver\/Source\/HaapiClient.swift",
       "kind": "StringLiteral",
-      "offset": 11818,
+      "offset": 11754,
       "length": 10,
       "value": "\"mimeType\""
     },
     {
       "filePath": "\/Users\/curity\/build\/jenkins-agent\/workspace\/ios-cat_master\/frameworks\/IdsvrHaapiDriver\/Source\/HaapiClient.swift",
       "kind": "StringLiteral",
-      "offset": 11860,
+      "offset": 11796,
       "length": 5,
       "value": "\"n.a\""
     },
     {
       "filePath": "\/Users\/curity\/build\/jenkins-agent\/workspace\/ios-cat_master\/frameworks\/IdsvrHaapiDriver\/Source\/HaapiClient.swift",
       "kind": "StringLiteral",
-      "offset": 11879,
+      "offset": 11815,
       "length": 6,
       "value": "\"data\""
     },
     {
       "filePath": "\/Users\/curity\/build\/jenkins-agent\/workspace\/ios-cat_master\/frameworks\/IdsvrHaapiDriver\/Source\/HaapiClient.swift",
       "kind": "StringLiteral",
-      "offset": 11903,
+      "offset": 11839,
       "length": 5,
       "value": "\"n.a\""
     },
     {
       "filePath": "\/Users\/curity\/build\/jenkins-agent\/workspace\/ios-cat_master\/frameworks\/IdsvrHaapiDriver\/Source\/HaapiClient.swift",
       "kind": "StringLiteral",
-      "offset": 12024,
+      "offset": 11960,
       "length": 30,
       "value": "\"Received response for \""
     },
     {
       "filePath": "\/Users\/curity\/build\/jenkins-agent\/workspace\/ios-cat_master\/frameworks\/IdsvrHaapiDriver\/Source\/HaapiClient.swift",
       "kind": "StringLiteral",
-      "offset": 12053,
+      "offset": 11989,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/curity\/build\/jenkins-agent\/workspace\/ios-cat_master\/frameworks\/IdsvrHaapiDriver\/Source\/HaapiClient.swift",
       "kind": "StringLiteral",
-      "offset": 12154,
+      "offset": 12090,
       "length": 54,
       "value": "\"Response for \""
     },
     {
       "filePath": "\/Users\/curity\/build\/jenkins-agent\/workspace\/ios-cat_master\/frameworks\/IdsvrHaapiDriver\/Source\/HaapiClient.swift",
       "kind": "StringLiteral",
-      "offset": 12174,
+      "offset": 12110,
       "length": 4,
       "value": "\" with: \""
     },
     {
       "filePath": "\/Users\/curity\/build\/jenkins-agent\/workspace\/ios-cat_master\/frameworks\/IdsvrHaapiDriver\/Source\/HaapiClient.swift",
       "kind": "StringLiteral",
-      "offset": 12207,
+      "offset": 12143,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/curity\/build\/jenkins-agent\/workspace\/ios-cat_master\/frameworks\/IdsvrHaapiDriver\/Source\/HaapiClient.swift",
       "kind": "StringLiteral",
-      "offset": 12318,
+      "offset": 12254,
       "length": 5,
       "value": "\"n.a\""
     },
     {
       "filePath": "\/Users\/curity\/build\/jenkins-agent\/workspace\/ios-cat_master\/frameworks\/IdsvrHaapiDriver\/Source\/HaapiClient.swift",
       "kind": "StringLiteral",
-      "offset": 12420,
+      "offset": 12356,
       "length": 30,
       "value": "\"Performing request to \""
     },
     {
       "filePath": "\/Users\/curity\/build\/jenkins-agent\/workspace\/ios-cat_master\/frameworks\/IdsvrHaapiDriver\/Source\/HaapiClient.swift",
       "kind": "StringLiteral",
-      "offset": 12449,
+      "offset": 12385,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/curity\/build\/jenkins-agent\/workspace\/ios-cat_master\/frameworks\/IdsvrHaapiDriver\/Source\/HaapiClient.swift",
       "kind": "StringLiteral",
-      "offset": 12550,
+      "offset": 12486,
       "length": 54,
       "value": "\"Performing request to \""
     },
     {
       "filePath": "\/Users\/curity\/build\/jenkins-agent\/workspace\/ios-cat_master\/frameworks\/IdsvrHaapiDriver\/Source\/HaapiClient.swift",
       "kind": "StringLiteral",
-      "offset": 12579,
+      "offset": 12515,
       "length": 4,
       "value": "\" with: \""
     },
     {
       "filePath": "\/Users\/curity\/build\/jenkins-agent\/workspace\/ios-cat_master\/frameworks\/IdsvrHaapiDriver\/Source\/HaapiClient.swift",
       "kind": "StringLiteral",
-      "offset": 12603,
+      "offset": 12539,
       "length": 2,
       "value": "\"\""
     },
@@ -37084,14 +37056,14 @@
     {
       "filePath": "\/Users\/curity\/build\/jenkins-agent\/workspace\/ios-cat_master\/frameworks\/IdsvrHaapiDriver\/Source\/HaapiTokenManager.swift",
       "kind": "IntegerLiteral",
-      "offset": 3288,
+      "offset": 3280,
       "length": 1,
       "value": "1"
     },
     {
       "filePath": "\/Users\/curity\/build\/jenkins-agent\/workspace\/ios-cat_master\/frameworks\/IdsvrHaapiDriver\/Source\/HaapiTokenManager.swift",
       "kind": "BooleanLiteral",
-      "offset": 3423,
+      "offset": 3415,
       "length": 5,
       "value": "false"
     },
@@ -37105,616 +37077,679 @@
     {
       "filePath": "\/Users\/curity\/build\/jenkins-agent\/workspace\/ios-cat_master\/frameworks\/IdsvrHaapiDriver\/Source\/HaapiTokenManager.swift",
       "kind": "BooleanLiteral",
-      "offset": 6077,
+      "offset": 5962,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/curity\/build\/jenkins-agent\/workspace\/ios-cat_master\/frameworks\/IdsvrHaapiDriver\/Source\/HaapiTokenManager.swift",
       "kind": "BooleanLiteral",
-      "offset": 7746,
+      "offset": 7056,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/curity\/build\/jenkins-agent\/workspace\/ios-cat_master\/frameworks\/IdsvrHaapiDriver\/Source\/HaapiTokenManager.swift",
       "kind": "BooleanLiteral",
-      "offset": 9347,
-      "length": 5,
-      "value": "false"
-    },
-    {
-      "filePath": "\/Users\/curity\/build\/jenkins-agent\/workspace\/ios-cat_master\/frameworks\/IdsvrHaapiDriver\/Source\/HaapiTokenManager.swift",
-      "kind": "BooleanLiteral",
-      "offset": 10580,
+      "offset": 8261,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/curity\/build\/jenkins-agent\/workspace\/ios-cat_master\/frameworks\/IdsvrHaapiDriver\/Source\/HaapiTokenManager.swift",
       "kind": "StringLiteral",
-      "offset": 11201,
+      "offset": 9319,
       "length": 37,
       "value": "\"Force refreshing HAAPI Access Token\""
     },
     {
       "filePath": "\/Users\/curity\/build\/jenkins-agent\/workspace\/ios-cat_master\/frameworks\/IdsvrHaapiDriver\/Source\/HaapiTokenManager.swift",
       "kind": "StringLiteral",
-      "offset": 11446,
+      "offset": 9576,
       "length": 48,
       "value": "\"The HAAPI Access Token has expired; refreshing\""
     },
     {
       "filePath": "\/Users\/curity\/build\/jenkins-agent\/workspace\/ios-cat_master\/frameworks\/IdsvrHaapiDriver\/Source\/HaapiTokenManager.swift",
       "kind": "StringLiteral",
-      "offset": 11629,
+      "offset": 9771,
       "length": 39,
       "value": "\"The HAAPI Access Token is being used.\""
     },
     {
       "filePath": "\/Users\/curity\/build\/jenkins-agent\/workspace\/ios-cat_master\/frameworks\/IdsvrHaapiDriver\/Source\/HaapiTokenManager.swift",
       "kind": "StringLiteral",
-      "offset": 12176,
+      "offset": 10481,
       "length": 42,
       "value": "\"No stored HAAPI Access Token; refreshing\""
     },
     {
       "filePath": "\/Users\/curity\/build\/jenkins-agent\/workspace\/ios-cat_master\/frameworks\/IdsvrHaapiDriver\/Source\/HaapiTokenManager.swift",
       "kind": "IntegerLiteral",
-      "offset": 12288,
+      "offset": 10593,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/curity\/build\/jenkins-agent\/workspace\/ios-cat_master\/frameworks\/IdsvrHaapiDriver\/Source\/HaapiTokenManager.swift",
       "kind": "StringLiteral",
-      "offset": 12508,
+      "offset": 10821,
       "length": 11,
       "value": "\"client_id\""
     },
     {
       "filePath": "\/Users\/curity\/build\/jenkins-agent\/workspace\/ios-cat_master\/frameworks\/IdsvrHaapiDriver\/Source\/HaapiTokenManager.swift",
       "kind": "StringLiteral",
-      "offset": 12687,
-      "length": 38,
-      "value": "\"Failed to construct CAT endpoint URL\""
+      "offset": 11129,
+      "length": 31,
+      "value": "\"Cannot build url by appending\""
+    },
+    {
+      "filePath": "\/Users\/curity\/build\/jenkins-agent\/workspace\/ios-cat_master\/frameworks\/IdsvrHaapiDriver\/Source\/HaapiTokenManager.swift",
+      "kind": "StringLiteral",
+      "offset": 11215,
+      "length": 44,
+      "value": "\" \""
+    },
+    {
+      "filePath": "\/Users\/curity\/build\/jenkins-agent\/workspace\/ios-cat_master\/frameworks\/IdsvrHaapiDriver\/Source\/HaapiTokenManager.swift",
+      "kind": "StringLiteral",
+      "offset": 11258,
+      "length": 2,
+      "value": "\"\""
     },
     {
       "filePath": "\/Users\/curity\/build\/jenkins-agent\/workspace\/ios-cat_master\/frameworks\/IdsvrHaapiDriver\/Source\/HaapiTokenManager.swift",
       "kind": "BooleanLiteral",
-      "offset": 12793,
+      "offset": 11415,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/curity\/build\/jenkins-agent\/workspace\/ios-cat_master\/frameworks\/IdsvrHaapiDriver\/Source\/HaapiTokenManager.swift",
       "kind": "StringLiteral",
-      "offset": 13255,
+      "offset": 12048,
       "length": 16,
       "value": "\"No HAAPI token\""
     },
     {
       "filePath": "\/Users\/curity\/build\/jenkins-agent\/workspace\/ios-cat_master\/frameworks\/IdsvrHaapiDriver\/Source\/HaapiTokenManager.swift",
       "kind": "BooleanLiteral",
-      "offset": 13643,
-      "length": 5,
-      "value": "false"
-    },
-    {
-      "filePath": "\/Users\/curity\/build\/jenkins-agent\/workspace\/ios-cat_master\/frameworks\/IdsvrHaapiDriver\/Source\/HaapiTokenManager.swift",
-      "kind": "BooleanLiteral",
-      "offset": 14675,
-      "length": 5,
-      "value": "false"
-    },
-    {
-      "filePath": "\/Users\/curity\/build\/jenkins-agent\/workspace\/ios-cat_master\/frameworks\/IdsvrHaapiDriver\/Source\/HaapiTokenManager.swift",
-      "kind": "BooleanLiteral",
-      "offset": 15525,
+      "offset": 12400,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/curity\/build\/jenkins-agent\/workspace\/ios-cat_master\/frameworks\/IdsvrHaapiDriver\/Source\/HaapiTokenManager.swift",
       "kind": "StringLiteral",
-      "offset": 15690,
+      "offset": 12565,
       "length": 30,
       "value": "\"HaapiTokenManager is closed.\""
     },
     {
       "filePath": "\/Users\/curity\/build\/jenkins-agent\/workspace\/ios-cat_master\/frameworks\/IdsvrHaapiDriver\/Source\/HaapiTokenManager.swift",
       "kind": "StringLiteral",
-      "offset": 15974,
+      "offset": 12849,
       "length": 42,
       "value": "\"HaapiTokenManager is clearing its state.\""
     },
     {
       "filePath": "\/Users\/curity\/build\/jenkins-agent\/workspace\/ios-cat_master\/frameworks\/IdsvrHaapiDriver\/Source\/HaapiTokenManager.swift",
+      "kind": "BooleanLiteral",
+      "offset": 13687,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/curity\/build\/jenkins-agent\/workspace\/ios-cat_master\/frameworks\/IdsvrHaapiDriver\/Source\/HaapiTokenManager.swift",
       "kind": "StringLiteral",
-      "offset": 16697,
+      "offset": 13964,
+      "length": 79,
+      "value": "\"Deprecated. Please use getHaapiToken(forceFresh:dpopNonce:completionHandler:)\""
+    },
+    {
+      "filePath": "\/Users\/curity\/build\/jenkins-agent\/workspace\/ios-cat_master\/frameworks\/IdsvrHaapiDriver\/Source\/HaapiTokenManager.swift",
+      "kind": "BooleanLiteral",
+      "offset": 14419,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/curity\/build\/jenkins-agent\/workspace\/ios-cat_master\/frameworks\/IdsvrHaapiDriver\/Source\/HaapiTokenManager.swift",
+      "kind": "StringLiteral",
+      "offset": 14631,
+      "length": 81,
+      "value": "\"Deprecated. Please use getHaapiTokenWithForceFresh:dpopNonce:completionHandler:\""
+    },
+    {
+      "filePath": "\/Users\/curity\/build\/jenkins-agent\/workspace\/ios-cat_master\/frameworks\/IdsvrHaapiDriver\/Source\/HaapiTokenManager.swift",
+      "kind": "BooleanLiteral",
+      "offset": 15090,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/curity\/build\/jenkins-agent\/workspace\/ios-cat_master\/frameworks\/IdsvrHaapiDriver\/Source\/HaapiTokenManager.swift",
+      "kind": "StringLiteral",
+      "offset": 15356,
+      "length": 81,
+      "value": "\"Deprecated. Please use getHaapiTokenWithForceFresh:dpopNonce:completionHandler:\""
+    },
+    {
+      "filePath": "\/Users\/curity\/build\/jenkins-agent\/workspace\/ios-cat_master\/frameworks\/IdsvrHaapiDriver\/Source\/HaapiTokenManager.swift",
+      "kind": "BooleanLiteral",
+      "offset": 15810,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/curity\/build\/jenkins-agent\/workspace\/ios-cat_master\/frameworks\/IdsvrHaapiDriver\/Source\/HaapiTokenManager.swift",
+      "kind": "StringLiteral",
+      "offset": 15859,
+      "length": 81,
+      "value": "\"Deprecated. Please use getHaapiTokenWithForceFresh:dpopNonce:completionHandler:\""
+    },
+    {
+      "filePath": "\/Users\/curity\/build\/jenkins-agent\/workspace\/ios-cat_master\/frameworks\/IdsvrHaapiDriver\/Source\/HaapiTokenManager.swift",
+      "kind": "BooleanLiteral",
+      "offset": 16313,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/curity\/build\/jenkins-agent\/workspace\/ios-cat_master\/frameworks\/IdsvrHaapiDriver\/Source\/HaapiTokenManager.swift",
+      "kind": "StringLiteral",
+      "offset": 16465,
+      "length": 81,
+      "value": "\"Deprecated. Please use getHaapiTokenWithForceFresh:dpopNonce:completionHandler:\""
+    },
+    {
+      "filePath": "\/Users\/curity\/build\/jenkins-agent\/workspace\/ios-cat_master\/frameworks\/IdsvrHaapiDriver\/Source\/HaapiTokenManager.swift",
+      "kind": "StringLiteral",
+      "offset": 16862,
       "length": 41,
       "value": "\"Requesting challenge from \""
     },
     {
       "filePath": "\/Users\/curity\/build\/jenkins-agent\/workspace\/ios-cat_master\/frameworks\/IdsvrHaapiDriver\/Source\/HaapiTokenManager.swift",
       "kind": "StringLiteral",
-      "offset": 16737,
+      "offset": 16902,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/curity\/build\/jenkins-agent\/workspace\/ios-cat_master\/frameworks\/IdsvrHaapiDriver\/Source\/HaapiTokenManager.swift",
       "kind": "IntegerLiteral",
-      "offset": 16972,
+      "offset": 17137,
       "length": 3,
       "value": "200"
     },
     {
       "filePath": "\/Users\/curity\/build\/jenkins-agent\/workspace\/ios-cat_master\/frameworks\/IdsvrHaapiDriver\/Source\/HaapiTokenManager.swift",
       "kind": "IntegerLiteral",
-      "offset": 16978,
+      "offset": 17143,
       "length": 3,
       "value": "299"
     },
     {
       "filePath": "\/Users\/curity\/build\/jenkins-agent\/workspace\/ios-cat_master\/frameworks\/IdsvrHaapiDriver\/Source\/HaapiTokenManager.swift",
       "kind": "StringLiteral",
-      "offset": 17354,
+      "offset": 17519,
       "length": 52,
       "value": "\"Challenge failed due to: \""
     },
     {
       "filePath": "\/Users\/curity\/build\/jenkins-agent\/workspace\/ios-cat_master\/frameworks\/IdsvrHaapiDriver\/Source\/HaapiTokenManager.swift",
       "kind": "StringLiteral",
-      "offset": 17405,
+      "offset": 17570,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/curity\/build\/jenkins-agent\/workspace\/ios-cat_master\/frameworks\/IdsvrHaapiDriver\/Source\/HaapiTokenManager.swift",
       "kind": "StringLiteral",
-      "offset": 17936,
+      "offset": 18101,
       "length": 65,
       "value": "\"Challenge failed due to client error: \""
     },
     {
       "filePath": "\/Users\/curity\/build\/jenkins-agent\/workspace\/ios-cat_master\/frameworks\/IdsvrHaapiDriver\/Source\/HaapiTokenManager.swift",
       "kind": "StringLiteral",
-      "offset": 18000,
+      "offset": 18165,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/curity\/build\/jenkins-agent\/workspace\/ios-cat_master\/frameworks\/IdsvrHaapiDriver\/Source\/HaapiTokenManager.swift",
       "kind": "StringLiteral",
-      "offset": 18066,
+      "offset": 18231,
       "length": 25,
       "value": "\"Error sending challenge\""
     },
     {
       "filePath": "\/Users\/curity\/build\/jenkins-agent\/workspace\/ios-cat_master\/frameworks\/IdsvrHaapiDriver\/Source\/HaapiTokenManager.swift",
       "kind": "IntegerLiteral",
-      "offset": 18639,
+      "offset": 18804,
       "length": 3,
       "value": "200"
     },
     {
       "filePath": "\/Users\/curity\/build\/jenkins-agent\/workspace\/ios-cat_master\/frameworks\/IdsvrHaapiDriver\/Source\/HaapiTokenManager.swift",
       "kind": "IntegerLiteral",
-      "offset": 18645,
+      "offset": 18810,
       "length": 3,
       "value": "299"
     },
     {
       "filePath": "\/Users\/curity\/build\/jenkins-agent\/workspace\/ios-cat_master\/frameworks\/IdsvrHaapiDriver\/Source\/HaapiTokenManager.swift",
       "kind": "StringLiteral",
-      "offset": 18986,
+      "offset": 19151,
       "length": 40,
       "value": "\"Server error \""
     },
     {
       "filePath": "\/Users\/curity\/build\/jenkins-agent\/workspace\/ios-cat_master\/frameworks\/IdsvrHaapiDriver\/Source\/HaapiTokenManager.swift",
       "kind": "StringLiteral",
-      "offset": 19025,
+      "offset": 19190,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/curity\/build\/jenkins-agent\/workspace\/ios-cat_master\/frameworks\/IdsvrHaapiDriver\/Source\/HaapiTokenManager.swift",
       "kind": "StringLiteral",
-      "offset": 19367,
+      "offset": 19532,
       "length": 57,
       "value": "\"Challenge response did not have the expected mime-type \""
     },
     {
       "filePath": "\/Users\/curity\/build\/jenkins-agent\/workspace\/ios-cat_master\/frameworks\/IdsvrHaapiDriver\/Source\/HaapiTokenManager.swift",
       "kind": "StringLiteral",
-      "offset": 19471,
+      "offset": 19636,
       "length": 70,
       "value": "\"'\""
     },
     {
       "filePath": "\/Users\/curity\/build\/jenkins-agent\/workspace\/ios-cat_master\/frameworks\/IdsvrHaapiDriver\/Source\/HaapiTokenManager.swift",
       "kind": "StringLiteral",
-      "offset": 19499,
+      "offset": 19664,
       "length": 8,
       "value": "\"'. Got '\""
     },
     {
       "filePath": "\/Users\/curity\/build\/jenkins-agent\/workspace\/ios-cat_master\/frameworks\/IdsvrHaapiDriver\/Source\/HaapiTokenManager.swift",
       "kind": "StringLiteral",
-      "offset": 19534,
+      "offset": 19699,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/curity\/build\/jenkins-agent\/workspace\/ios-cat_master\/frameworks\/IdsvrHaapiDriver\/Source\/HaapiTokenManager.swift",
       "kind": "StringLiteral",
-      "offset": 19537,
+      "offset": 19702,
       "length": 4,
       "value": "\"'. \""
     },
     {
       "filePath": "\/Users\/curity\/build\/jenkins-agent\/workspace\/ios-cat_master\/frameworks\/IdsvrHaapiDriver\/Source\/HaapiTokenManager.swift",
       "kind": "StringLiteral",
-      "offset": 19588,
+      "offset": 19753,
       "length": 36,
       "value": "\"Treating response as JSON anyways.\""
     },
     {
       "filePath": "\/Users\/curity\/build\/jenkins-agent\/workspace\/ios-cat_master\/frameworks\/IdsvrHaapiDriver\/Source\/HaapiTokenManager.swift",
       "kind": "StringLiteral",
-      "offset": 20277,
+      "offset": 20442,
       "length": 62,
       "value": "\"Request Haapi failed due to error: \""
     },
     {
       "filePath": "\/Users\/curity\/build\/jenkins-agent\/workspace\/ios-cat_master\/frameworks\/IdsvrHaapiDriver\/Source\/HaapiTokenManager.swift",
       "kind": "StringLiteral",
-      "offset": 20338,
+      "offset": 20503,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/curity\/build\/jenkins-agent\/workspace\/ios-cat_master\/frameworks\/IdsvrHaapiDriver\/Source\/HaapiTokenManager.swift",
       "kind": "StringLiteral",
-      "offset": 21090,
+      "offset": 21255,
       "length": 61,
       "value": "\"Development error: Cancellable should be nil at this stage.\""
     },
     {
       "filePath": "\/Users\/curity\/build\/jenkins-agent\/workspace\/ios-cat_master\/frameworks\/IdsvrHaapiDriver\/Source\/HaapiTokenManager.swift",
       "kind": "StringLiteral",
-      "offset": 22678,
+      "offset": 22843,
       "length": 50,
       "value": "\"Attestation data is not included in CAT request.\""
     },
     {
       "filePath": "\/Users\/curity\/build\/jenkins-agent\/workspace\/ios-cat_master\/frameworks\/IdsvrHaapiDriver\/Source\/HaapiTokenManager.swift",
       "kind": "StringLiteral",
-      "offset": 23493,
+      "offset": 23658,
       "length": 46,
       "value": "\"Requesting CAT from \""
     },
     {
       "filePath": "\/Users\/curity\/build\/jenkins-agent\/workspace\/ios-cat_master\/frameworks\/IdsvrHaapiDriver\/Source\/HaapiTokenManager.swift",
       "kind": "StringLiteral",
-      "offset": 23538,
+      "offset": 23703,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/curity\/build\/jenkins-agent\/workspace\/ios-cat_master\/frameworks\/IdsvrHaapiDriver\/Source\/HaapiTokenManager.swift",
       "kind": "StringLiteral",
-      "offset": 23653,
+      "offset": 23818,
       "length": 17,
       "value": "\"Requesting CAT.\""
     },
     {
       "filePath": "\/Users\/curity\/build\/jenkins-agent\/workspace\/ios-cat_master\/frameworks\/IdsvrHaapiDriver\/Source\/HaapiTokenManager.swift",
       "kind": "StringLiteral",
-      "offset": 24059,
+      "offset": 24224,
       "length": 41,
       "value": "\"CAT request body is: \""
     },
     {
       "filePath": "\/Users\/curity\/build\/jenkins-agent\/workspace\/ios-cat_master\/frameworks\/IdsvrHaapiDriver\/Source\/HaapiTokenManager.swift",
       "kind": "StringLiteral",
-      "offset": 24099,
+      "offset": 24264,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/curity\/build\/jenkins-agent\/workspace\/ios-cat_master\/frameworks\/IdsvrHaapiDriver\/Source\/HaapiTokenManager.swift",
       "kind": "StringLiteral",
-      "offset": 24272,
+      "offset": 24437,
       "length": 47,
       "value": "\"Failed to serialize CAT request body due to: \""
     },
     {
       "filePath": "\/Users\/curity\/build\/jenkins-agent\/workspace\/ios-cat_master\/frameworks\/IdsvrHaapiDriver\/Source\/HaapiTokenManager.swift",
       "kind": "StringLiteral",
-      "offset": 24459,
+      "offset": 24624,
       "length": 38,
       "value": "\"Failed to serialize CAT request body\""
     },
     {
       "filePath": "\/Users\/curity\/build\/jenkins-agent\/workspace\/ios-cat_master\/frameworks\/IdsvrHaapiDriver\/Source\/HaapiTokenManager.swift",
       "kind": "StringLiteral",
-      "offset": 24688,
+      "offset": 24853,
       "length": 22,
       "value": "\"Error requesting CAT\""
     },
     {
       "filePath": "\/Users\/curity\/build\/jenkins-agent\/workspace\/ios-cat_master\/frameworks\/IdsvrHaapiDriver\/Source\/HaapiTokenManager.swift",
       "kind": "StringLiteral",
-      "offset": 25282,
+      "offset": 25447,
       "length": 51,
       "value": "\"CAT request succeeded: \""
     },
     {
       "filePath": "\/Users\/curity\/build\/jenkins-agent\/workspace\/ios-cat_master\/frameworks\/IdsvrHaapiDriver\/Source\/HaapiTokenManager.swift",
       "kind": "StringLiteral",
-      "offset": 25332,
+      "offset": 25497,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/curity\/build\/jenkins-agent\/workspace\/ios-cat_master\/frameworks\/IdsvrHaapiDriver\/Source\/HaapiTokenManager.swift",
       "kind": "StringLiteral",
-      "offset": 25447,
+      "offset": 25612,
       "length": 24,
       "value": "\"CAT request succeeded.\""
     },
     {
       "filePath": "\/Users\/curity\/build\/jenkins-agent\/workspace\/ios-cat_master\/frameworks\/IdsvrHaapiDriver\/Source\/HaapiTokenManager.swift",
       "kind": "StringLiteral",
-      "offset": 25988,
+      "offset": 26153,
       "length": 6,
       "value": "\"POST\""
     },
     {
       "filePath": "\/Users\/curity\/build\/jenkins-agent\/workspace\/ios-cat_master\/frameworks\/IdsvrHaapiDriver\/Source\/HaapiTokenManager.swift",
       "kind": "StringLiteral",
-      "offset": 26728,
+      "offset": 26893,
       "length": 65,
       "value": "\"Requesting HAAPI token to \""
     },
     {
       "filePath": "\/Users\/curity\/build\/jenkins-agent\/workspace\/ios-cat_master\/frameworks\/IdsvrHaapiDriver\/Source\/HaapiTokenManager.swift",
       "kind": "StringLiteral",
-      "offset": 26786,
+      "offset": 26951,
       "length": 4,
       "value": "\" with \""
     },
     {
       "filePath": "\/Users\/curity\/build\/jenkins-agent\/workspace\/ios-cat_master\/frameworks\/IdsvrHaapiDriver\/Source\/HaapiTokenManager.swift",
       "kind": "StringLiteral",
-      "offset": 26954,
+      "offset": 27119,
       "length": 30,
       "value": "\"Error requesting HAAPI token\""
     },
     {
       "filePath": "\/Users\/curity\/build\/jenkins-agent\/workspace\/ios-cat_master\/frameworks\/IdsvrHaapiDriver\/Source\/HaapiTokenManager.swift",
       "kind": "StringLiteral",
-      "offset": 27371,
+      "offset": 27536,
       "length": 35,
       "value": "\"Trying to handle HaapiFlow error.\""
     },
     {
       "filePath": "\/Users\/curity\/build\/jenkins-agent\/workspace\/ios-cat_master\/frameworks\/IdsvrHaapiDriver\/Source\/HaapiTokenManager.swift",
       "kind": "StringLiteral",
-      "offset": 27530,
+      "offset": 27695,
       "length": 43,
       "value": "\"Handling error: \""
     },
     {
       "filePath": "\/Users\/curity\/build\/jenkins-agent\/workspace\/ios-cat_master\/frameworks\/IdsvrHaapiDriver\/Source\/HaapiTokenManager.swift",
       "kind": "StringLiteral",
-      "offset": 27572,
+      "offset": 27737,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/curity\/build\/jenkins-agent\/workspace\/ios-cat_master\/frameworks\/IdsvrHaapiDriver\/Source\/HaapiTokenManager.swift",
       "kind": "StringLiteral",
-      "offset": 28082,
+      "offset": 28247,
       "length": 53,
       "value": "\"DPoP has been rejected by the server. Refreshing...\""
     },
     {
       "filePath": "\/Users\/curity\/build\/jenkins-agent\/workspace\/ios-cat_master\/frameworks\/IdsvrHaapiDriver\/Source\/HaapiTokenManager.swift",
       "kind": "BooleanLiteral",
-      "offset": 28429,
+      "offset": 28594,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/curity\/build\/jenkins-agent\/workspace\/ios-cat_master\/frameworks\/IdsvrHaapiDriver\/Source\/HaapiTokenManager.swift",
       "kind": "StringLiteral",
-      "offset": 28780,
+      "offset": 28945,
       "length": 43,
       "value": "\"Server Error Unable to complete Dpop flow\""
     },
     {
       "filePath": "\/Users\/curity\/build\/jenkins-agent\/workspace\/ios-cat_master\/frameworks\/IdsvrHaapiDriver\/Source\/HaapiTokenManager.swift",
       "kind": "StringLiteral",
-      "offset": 28983,
+      "offset": 29148,
       "length": 39,
       "value": "\" : \""
     },
     {
       "filePath": "\/Users\/curity\/build\/jenkins-agent\/workspace\/ios-cat_master\/frameworks\/IdsvrHaapiDriver\/Source\/HaapiTokenManager.swift",
       "kind": "StringLiteral",
-      "offset": 29021,
+      "offset": 29186,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/curity\/build\/jenkins-agent\/workspace\/ios-cat_master\/frameworks\/IdsvrHaapiDriver\/Source\/HaapiTokenManager.swift",
       "kind": "StringLiteral",
-      "offset": 29779,
+      "offset": 29944,
       "length": 28,
       "value": "\"CAT is invalid: \""
     },
     {
       "filePath": "\/Users\/curity\/build\/jenkins-agent\/workspace\/ios-cat_master\/frameworks\/IdsvrHaapiDriver\/Source\/HaapiTokenManager.swift",
       "kind": "StringLiteral",
-      "offset": 29806,
+      "offset": 29971,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/curity\/build\/jenkins-agent\/workspace\/ios-cat_master\/frameworks\/IdsvrHaapiDriver\/Source\/HaapiTokenManager.swift",
       "kind": "StringLiteral",
-      "offset": 29961,
+      "offset": 30126,
       "length": 38,
       "value": "\"CAT has been rejected by the server.\""
     },
     {
       "filePath": "\/Users\/curity\/build\/jenkins-agent\/workspace\/ios-cat_master\/frameworks\/IdsvrHaapiDriver\/Source\/HaapiTokenManager.swift",
       "kind": "BooleanLiteral",
-      "offset": 30449,
+      "offset": 30614,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/curity\/build\/jenkins-agent\/workspace\/ios-cat_master\/frameworks\/IdsvrHaapiDriver\/Source\/HaapiTokenManager.swift",
       "kind": "StringLiteral",
-      "offset": 30800,
+      "offset": 30965,
       "length": 50,
       "value": "\"Server Error Unable to complete Attestation flow\""
     },
     {
       "filePath": "\/Users\/curity\/build\/jenkins-agent\/workspace\/ios-cat_master\/frameworks\/IdsvrHaapiDriver\/Source\/HaapiTokenManager.swift",
       "kind": "StringLiteral",
-      "offset": 31010,
+      "offset": 31175,
       "length": 39,
       "value": "\" : \""
     },
     {
       "filePath": "\/Users\/curity\/build\/jenkins-agent\/workspace\/ios-cat_master\/frameworks\/IdsvrHaapiDriver\/Source\/HaapiTokenManager.swift",
       "kind": "StringLiteral",
-      "offset": 31048,
+      "offset": 31213,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/curity\/build\/jenkins-agent\/workspace\/ios-cat_master\/frameworks\/IdsvrHaapiDriver\/Source\/HaapiTokenManager.swift",
       "kind": "StringLiteral",
-      "offset": 31665,
+      "offset": 31830,
       "length": 36,
       "value": "\"At this stage, a dpop should exist\""
     },
     {
       "filePath": "\/Users\/curity\/build\/jenkins-agent\/workspace\/ios-cat_master\/frameworks\/IdsvrHaapiDriver\/Source\/HaapiTokenManager.swift",
       "kind": "StringLiteral",
-      "offset": 32055,
+      "offset": 32220,
       "length": 49,
       "value": "\"HAAPI token was received: \""
     },
     {
       "filePath": "\/Users\/curity\/build\/jenkins-agent\/workspace\/ios-cat_master\/frameworks\/IdsvrHaapiDriver\/Source\/HaapiTokenManager.swift",
       "kind": "StringLiteral",
-      "offset": 32103,
+      "offset": 32268,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/curity\/build\/jenkins-agent\/workspace\/ios-cat_master\/frameworks\/IdsvrHaapiDriver\/Source\/HaapiTokenManager.swift",
       "kind": "IntegerLiteral",
-      "offset": 32641,
+      "offset": 32806,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/curity\/build\/jenkins-agent\/workspace\/ios-cat_master\/frameworks\/IdsvrHaapiDriver\/Source\/HaapiTokenManager.swift",
       "kind": "StringLiteral",
-      "offset": 32905,
+      "offset": 33070,
       "length": 7,
       "value": "\"error\""
     },
     {
       "filePath": "\/Users\/curity\/build\/jenkins-agent\/workspace\/ios-cat_master\/frameworks\/IdsvrHaapiDriver\/Source\/HaapiTokenManager.swift",
       "kind": "StringLiteral",
-      "offset": 32975,
+      "offset": 33140,
       "length": 19,
       "value": "\"error_description\""
     },
     {
       "filePath": "\/Users\/curity\/build\/jenkins-agent\/workspace\/ios-cat_master\/frameworks\/IdsvrHaapiDriver\/Source\/HaapiTokenManager.swift",
       "kind": "StringLiteral",
-      "offset": 33010,
+      "offset": 33175,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/curity\/build\/jenkins-agent\/workspace\/ios-cat_master\/frameworks\/IdsvrHaapiDriver\/Source\/HaapiTokenManager.swift",
       "kind": "IntegerLiteral",
-      "offset": 33519,
+      "offset": 33684,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/curity\/build\/jenkins-agent\/workspace\/ios-cat_master\/frameworks\/IdsvrHaapiDriver\/Source\/HaapiTokenManager.swift",
       "kind": "StringLiteral",
-      "offset": 33569,
+      "offset": 33734,
       "length": 12,
       "value": "\"error_code\""
     },
     {
       "filePath": "\/Users\/curity\/build\/jenkins-agent\/workspace\/ios-cat_master\/frameworks\/IdsvrHaapiDriver\/Source\/HaapiTokenManager.swift",
       "kind": "StringLiteral",
-      "offset": 33644,
+      "offset": 33809,
       "length": 19,
       "value": "\"error_description\""
     },
     {
       "filePath": "\/Users\/curity\/build\/jenkins-agent\/workspace\/ios-cat_master\/frameworks\/IdsvrHaapiDriver\/Source\/HaapiTokenManager.swift",
       "kind": "StringLiteral",
-      "offset": 33679,
+      "offset": 33844,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/curity\/build\/jenkins-agent\/workspace\/ios-cat_master\/frameworks\/IdsvrHaapiDriver\/Source\/HaapiTokenManager.swift",
       "kind": "IntegerLiteral",
-      "offset": 34224,
+      "offset": 34389,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/curity\/build\/jenkins-agent\/workspace\/ios-cat_master\/frameworks\/IdsvrHaapiDriver\/Source\/HaapiTokenManager.swift",
       "kind": "IntegerLiteral",
-      "offset": 34324,
+      "offset": 34489,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/curity\/build\/jenkins-agent\/workspace\/ios-cat_master\/frameworks\/IdsvrHaapiDriver\/Source\/HaapiTokenManager.swift",
       "kind": "StringLiteral",
-      "offset": 34469,
+      "offset": 34634,
       "length": 42,
       "value": "\"Failed to extract error due to: \""
     },
     {
       "filePath": "\/Users\/curity\/build\/jenkins-agent\/workspace\/ios-cat_master\/frameworks\/IdsvrHaapiDriver\/Source\/HaapiTokenManager.swift",
       "kind": "StringLiteral",
-      "offset": 34510,
+      "offset": 34675,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/curity\/build\/jenkins-agent\/workspace\/ios-cat_master\/frameworks\/IdsvrHaapiDriver\/Source\/HaapiTokenManager.swift",
       "kind": "IntegerLiteral",
-      "offset": 34585,
+      "offset": 34750,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/curity\/build\/jenkins-agent\/workspace\/ios-cat_master\/frameworks\/IdsvrHaapiDriver\/Source\/HaapiTokenManager.swift",
       "kind": "StringLiteral",
-      "offset": 34723,
+      "offset": 34888,
       "length": 5,
       "value": "\"cat\""
     },
@@ -41452,287 +41487,287 @@
     {
       "filePath": "\/Users\/curity\/build\/jenkins-agent\/workspace\/ios-cat_master\/frameworks\/IdsvrHaapiSdk\/Source\/Models\/Steps.swift",
       "kind": "Array",
-      "offset": 6581,
+      "offset": 6580,
       "length": 2,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/curity\/build\/jenkins-agent\/workspace\/ios-cat_master\/frameworks\/IdsvrHaapiSdk\/Source\/Models\/Steps.swift",
       "kind": "Array",
-      "offset": 6615,
+      "offset": 6614,
       "length": 2,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/curity\/build\/jenkins-agent\/workspace\/ios-cat_master\/frameworks\/IdsvrHaapiSdk\/Source\/Models\/Steps.swift",
       "kind": "Array",
-      "offset": 8493,
+      "offset": 8492,
       "length": 2,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/curity\/build\/jenkins-agent\/workspace\/ios-cat_master\/frameworks\/IdsvrHaapiSdk\/Source\/Models\/Steps.swift",
       "kind": "Array",
-      "offset": 8537,
+      "offset": 8536,
       "length": 2,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/curity\/build\/jenkins-agent\/workspace\/ios-cat_master\/frameworks\/IdsvrHaapiSdk\/Source\/Models\/Steps.swift",
       "kind": "BooleanLiteral",
-      "offset": 9565,
+      "offset": 9564,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/curity\/build\/jenkins-agent\/workspace\/ios-cat_master\/frameworks\/IdsvrHaapiSdk\/Source\/Models\/Steps.swift",
       "kind": "StringLiteral",
-      "offset": 9635,
+      "offset": 9634,
       "length": 13,
       "value": "\"Invalid url\""
     },
     {
       "filePath": "\/Users\/curity\/build\/jenkins-agent\/workspace\/ios-cat_master\/frameworks\/IdsvrHaapiSdk\/Source\/Models\/Steps.swift",
       "kind": "StringLiteral",
-      "offset": 10070,
+      "offset": 10069,
       "length": 46,
       "value": "\"Missing key-value for key: \""
     },
     {
       "filePath": "\/Users\/curity\/build\/jenkins-agent\/workspace\/ios-cat_master\/frameworks\/IdsvrHaapiSdk\/Source\/Models\/Steps.swift",
       "kind": "StringLiteral",
-      "offset": 10115,
+      "offset": 10114,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/curity\/build\/jenkins-agent\/workspace\/ios-cat_master\/frameworks\/IdsvrHaapiSdk\/Source\/Models\/Steps.swift",
       "kind": "StringLiteral",
-      "offset": 17488,
+      "offset": 17487,
       "length": 89,
       "value": "\"Missing webAuthn continueAction data for WebAuthnRegistrationClientOperationActionModel\""
     },
     {
       "filePath": "\/Users\/curity\/build\/jenkins-agent\/workspace\/ios-cat_master\/frameworks\/IdsvrHaapiSdk\/Source\/Models\/Steps.swift",
       "kind": "StringLiteral",
-      "offset": 18841,
+      "offset": 18840,
       "length": 12,
       "value": "\"public-key\""
     },
     {
       "filePath": "\/Users\/curity\/build\/jenkins-agent\/workspace\/ios-cat_master\/frameworks\/IdsvrHaapiSdk\/Source\/Models\/Steps.swift",
       "kind": "StringLiteral",
-      "offset": 18916,
+      "offset": 18915,
       "length": 19,
       "value": "\"attestationObject\""
     },
     {
       "filePath": "\/Users\/curity\/build\/jenkins-agent\/workspace\/ios-cat_master\/frameworks\/IdsvrHaapiSdk\/Source\/Models\/Steps.swift",
       "kind": "StringLiteral",
-      "offset": 18993,
+      "offset": 18992,
       "length": 16,
       "value": "\"clientDataJSON\""
     },
     {
       "filePath": "\/Users\/curity\/build\/jenkins-agent\/workspace\/ios-cat_master\/frameworks\/IdsvrHaapiSdk\/Source\/Models\/Steps.swift",
       "kind": "StringLiteral",
-      "offset": 19127,
+      "offset": 19126,
       "length": 6,
       "value": "\"type\""
     },
     {
       "filePath": "\/Users\/curity\/build\/jenkins-agent\/workspace\/ios-cat_master\/frameworks\/IdsvrHaapiSdk\/Source\/Models\/Steps.swift",
       "kind": "StringLiteral",
-      "offset": 19168,
+      "offset": 19167,
       "length": 4,
       "value": "\"id\""
     },
     {
       "filePath": "\/Users\/curity\/build\/jenkins-agent\/workspace\/ios-cat_master\/frameworks\/IdsvrHaapiSdk\/Source\/Models\/Steps.swift",
       "kind": "StringLiteral",
-      "offset": 19225,
+      "offset": 19224,
       "length": 7,
       "value": "\"rawId\""
     },
     {
       "filePath": "\/Users\/curity\/build\/jenkins-agent\/workspace\/ios-cat_master\/frameworks\/IdsvrHaapiSdk\/Source\/Models\/Steps.swift",
       "kind": "StringLiteral",
-      "offset": 19285,
+      "offset": 19284,
       "length": 10,
       "value": "\"response\""
     },
     {
       "filePath": "\/Users\/curity\/build\/jenkins-agent\/workspace\/ios-cat_master\/frameworks\/IdsvrHaapiSdk\/Source\/Models\/Steps.swift",
       "kind": "StringLiteral",
-      "offset": 19319,
+      "offset": 19318,
       "length": 25,
       "value": "\"authenticatorAttachment\""
     },
     {
       "filePath": "\/Users\/curity\/build\/jenkins-agent\/workspace\/ios-cat_master\/frameworks\/IdsvrHaapiSdk\/Source\/Models\/Steps.swift",
       "kind": "StringLiteral",
-      "offset": 19401,
+      "offset": 19400,
       "length": 24,
       "value": "\"clientExtensionResults\""
     },
     {
       "filePath": "\/Users\/curity\/build\/jenkins-agent\/workspace\/ios-cat_master\/frameworks\/IdsvrHaapiSdk\/Source\/Models\/Steps.swift",
       "kind": "Dictionary",
-      "offset": 19427,
+      "offset": 19426,
       "length": 3,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/curity\/build\/jenkins-agent\/workspace\/ios-cat_master\/frameworks\/IdsvrHaapiSdk\/Source\/Models\/Steps.swift",
       "kind": "StringLiteral",
-      "offset": 21844,
+      "offset": 21843,
       "length": 12,
       "value": "\"credential\""
     },
     {
       "filePath": "\/Users\/curity\/build\/jenkins-agent\/workspace\/ios-cat_master\/frameworks\/IdsvrHaapiSdk\/Source\/Models\/Steps.swift",
       "kind": "StringLiteral",
-      "offset": 22524,
+      "offset": 22523,
       "length": 86,
       "value": "\"Missing webAuthn continueAction data for WebAuthnAssertionClientOperationActionModel\""
     },
     {
       "filePath": "\/Users\/curity\/build\/jenkins-agent\/workspace\/ios-cat_master\/frameworks\/IdsvrHaapiSdk\/Source\/Models\/Steps.swift",
       "kind": "StringLiteral",
-      "offset": 23991,
+      "offset": 23990,
       "length": 12,
       "value": "\"public-key\""
     },
     {
       "filePath": "\/Users\/curity\/build\/jenkins-agent\/workspace\/ios-cat_master\/frameworks\/IdsvrHaapiSdk\/Source\/Models\/Steps.swift",
       "kind": "StringLiteral",
-      "offset": 24067,
+      "offset": 24066,
       "length": 19,
       "value": "\"authenticatorData\""
     },
     {
       "filePath": "\/Users\/curity\/build\/jenkins-agent\/workspace\/ios-cat_master\/frameworks\/IdsvrHaapiSdk\/Source\/Models\/Steps.swift",
       "kind": "StringLiteral",
-      "offset": 24147,
+      "offset": 24146,
       "length": 16,
       "value": "\"clientDataJSON\""
     },
     {
       "filePath": "\/Users\/curity\/build\/jenkins-agent\/workspace\/ios-cat_master\/frameworks\/IdsvrHaapiSdk\/Source\/Models\/Steps.swift",
       "kind": "StringLiteral",
-      "offset": 24221,
+      "offset": 24220,
       "length": 11,
       "value": "\"signature\""
     },
     {
       "filePath": "\/Users\/curity\/build\/jenkins-agent\/workspace\/ios-cat_master\/frameworks\/IdsvrHaapiSdk\/Source\/Models\/Steps.swift",
       "kind": "StringLiteral",
-      "offset": 24426,
+      "offset": 24425,
       "length": 6,
       "value": "\"type\""
     },
     {
       "filePath": "\/Users\/curity\/build\/jenkins-agent\/workspace\/ios-cat_master\/frameworks\/IdsvrHaapiSdk\/Source\/Models\/Steps.swift",
       "kind": "StringLiteral",
-      "offset": 24467,
+      "offset": 24466,
       "length": 4,
       "value": "\"id\""
     },
     {
       "filePath": "\/Users\/curity\/build\/jenkins-agent\/workspace\/ios-cat_master\/frameworks\/IdsvrHaapiSdk\/Source\/Models\/Steps.swift",
       "kind": "StringLiteral",
-      "offset": 24495,
+      "offset": 24494,
       "length": 7,
       "value": "\"rawId\""
     },
     {
       "filePath": "\/Users\/curity\/build\/jenkins-agent\/workspace\/ios-cat_master\/frameworks\/IdsvrHaapiSdk\/Source\/Models\/Steps.swift",
       "kind": "StringLiteral",
-      "offset": 24526,
+      "offset": 24525,
       "length": 10,
       "value": "\"response\""
     },
     {
       "filePath": "\/Users\/curity\/build\/jenkins-agent\/workspace\/ios-cat_master\/frameworks\/IdsvrHaapiSdk\/Source\/Models\/Steps.swift",
       "kind": "StringLiteral",
-      "offset": 24560,
+      "offset": 24559,
       "length": 24,
       "value": "\"clientExtensionResults\""
     },
     {
       "filePath": "\/Users\/curity\/build\/jenkins-agent\/workspace\/ios-cat_master\/frameworks\/IdsvrHaapiSdk\/Source\/Models\/Steps.swift",
       "kind": "Dictionary",
-      "offset": 24586,
+      "offset": 24585,
       "length": 3,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/curity\/build\/jenkins-agent\/workspace\/ios-cat_master\/frameworks\/IdsvrHaapiSdk\/Source\/Models\/Steps.swift",
       "kind": "StringLiteral",
-      "offset": 27814,
+      "offset": 27813,
       "length": 7,
       "value": "\"scope\""
     },
     {
       "filePath": "\/Users\/curity\/build\/jenkins-agent\/workspace\/ios-cat_master\/frameworks\/IdsvrHaapiSdk\/Source\/Models\/Steps.swift",
       "kind": "StringLiteral",
-      "offset": 27911,
+      "offset": 27910,
       "length": 7,
       "value": "\"state\""
     },
     {
       "filePath": "\/Users\/curity\/build\/jenkins-agent\/workspace\/ios-cat_master\/frameworks\/IdsvrHaapiSdk\/Source\/Models\/Steps.swift",
       "kind": "StringLiteral",
-      "offset": 28007,
+      "offset": 28006,
       "length": 6,
       "value": "\"code\""
     },
     {
       "filePath": "\/Users\/curity\/build\/jenkins-agent\/workspace\/ios-cat_master\/frameworks\/IdsvrHaapiSdk\/Source\/Models\/Steps.swift",
       "kind": "StringLiteral",
-      "offset": 28105,
+      "offset": 28104,
       "length": 10,
       "value": "\"id_token\""
     },
     {
       "filePath": "\/Users\/curity\/build\/jenkins-agent\/workspace\/ios-cat_master\/frameworks\/IdsvrHaapiSdk\/Source\/Models\/Steps.swift",
       "kind": "StringLiteral",
-      "offset": 28332,
+      "offset": 28331,
       "length": 8,
       "value": "\"status\""
     },
     {
       "filePath": "\/Users\/curity\/build\/jenkins-agent\/workspace\/ios-cat_master\/frameworks\/IdsvrHaapiSdk\/Source\/Models\/Steps.swift",
       "kind": "StringLiteral",
-      "offset": 28345,
+      "offset": 28344,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/curity\/build\/jenkins-agent\/workspace\/ios-cat_master\/frameworks\/IdsvrHaapiSdk\/Source\/Models\/Steps.swift",
       "kind": "StringLiteral",
-      "offset": 28531,
+      "offset": 28530,
       "length": 26,
       "value": "\"recipientOfCommunication\""
     },
     {
       "filePath": "\/Users\/curity\/build\/jenkins-agent\/workspace\/ios-cat_master\/frameworks\/IdsvrHaapiSdk\/Source\/Models\/Steps.swift",
       "kind": "Array",
-      "offset": 28904,
+      "offset": 28903,
       "length": 2,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/curity\/build\/jenkins-agent\/workspace\/ios-cat_master\/frameworks\/IdsvrHaapiSdk\/Source\/Models\/Steps.swift",
       "kind": "Array",
-      "offset": 29028,
+      "offset": 29027,
       "length": 2,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/curity\/build\/jenkins-agent\/workspace\/ios-cat_master\/frameworks\/IdsvrHaapiSdk\/Source\/Models\/Steps.swift",
       "kind": "Array",
-      "offset": 29122,
+      "offset": 29121,
       "length": 2,
       "value": "[]"
     },

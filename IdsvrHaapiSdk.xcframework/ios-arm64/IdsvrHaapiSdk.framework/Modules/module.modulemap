@@ -1,7 +1,7 @@
 framework module IdsvrHaapiSdk {
   umbrella header "IdsvrHaapiSdk.h"
-
   export *
+
   module * { export * }
 }
 

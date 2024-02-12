@@ -1,5 +1,5 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.8.1 (swiftlang-5.8.0.124.5 clang-1403.0.22.11.100)
+// swift-compiler-version: Apple Swift version 5.9.2 (swiftlang-5.9.2.2.56 clang-1500.1.0.2.5)
 // swift-module-flags: -target arm64-apple-ios12.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name IdsvrHaapiSdk
 // swift-module-flags-ignorable: -enable-bare-slash-regex
 import Combine
@@ -16,6 +16,7 @@ import Swift
 import UIKit
 import _Concurrency
 import _StringProcessing
+import _SwiftConcurrencyShims
 @_hasMissingDesignatedInitializers @available(iOS 14.0, *)
 public class FormField : Swift.Equatable {
   final public let name: Swift.String
@@ -291,18 +292,23 @@ extension IdsvrHaapiSdk.HaapiError : Foundation.LocalizedError {
 @available(iOS 14.0, *)
 extension IdsvrHaapiSdk.HaapiTokenManager {
   @objc final public func createClient(urlSession: Foundation.URLSession? = nil) -> IdsvrHaapiSdk.HaapiClient
-  final public func getHaapiTokenAsync(forceFresh: Swift.Bool = false, callbackDispatchQueue: Dispatch.DispatchQueue = DispatchQueue.main, dpopNonce: Swift.String? = nil, completionHandler: @escaping (Swift.Result<IdsvrHaapiSdk.DpopAccessTokenInfo, IdsvrHaapiSdk.HaapiError>) -> Swift.Void)
   @objc @available(swift, obsoleted: 1.0)
-  final public func getHaapiTokenAsync(forceFresh: Swift.Bool = false, callbackDispatchQueue: Dispatch.DispatchQueue = DispatchQueue.main, completionHandler: @escaping (IdsvrHaapiSdk.DpopAccessTokenInfo?, (any Swift.Error)?) -> Swift.Void)
+  final public func getHaapiToken(forceFresh: Swift.Bool = false, dpopNonce: Swift.String? = nil, completionHandler: @escaping (IdsvrHaapiSdk.DpopAccessTokenInfo?, (any Swift.Error)?) -> Swift.Void)
   @objc @available(swift, obsoleted: 1.0)
-  final public func getHaapiTokenAsync(forceFresh: Swift.Bool = false, callbackDispatchQueue: Dispatch.DispatchQueue = DispatchQueue.main, dpopNonce: Swift.String? = nil, completionHandler: @escaping (IdsvrHaapiSdk.DpopAccessTokenInfo?, (any Swift.Error)?) -> Swift.Void)
-  final public func getHaapiToken(forceFresh: Swift.Bool = false, dpopNonce: Swift.String? = nil) -> Swift.Result<IdsvrHaapiSdk.DpopAccessTokenInfo, IdsvrHaapiSdk.HaapiError>
-  @objc @available(swift, obsoleted: 1.0)
-  final public func getHaapiToken(forceFresh: Swift.Bool = false) -> IdsvrHaapiSdk.HaapiTokenResult?
-  @objc @available(swift, obsoleted: 1.0)
-  final public func getHaapiToken(forceFresh: Swift.Bool = false, dpopNonce: Swift.String?) -> IdsvrHaapiSdk.HaapiTokenResult?
+  final public func getHaapiToken(forceFresh: Swift.Bool = false, completionHandler: @escaping (IdsvrHaapiSdk.DpopAccessTokenInfo?, (any Swift.Error)?) -> Swift.Void)
+  final public func getHaapiToken(forceFresh: Swift.Bool = false, dpopNonce: Swift.String? = nil, completionHandler: @escaping (Swift.Result<IdsvrHaapiSdk.DpopAccessTokenInfo, IdsvrHaapiSdk.HaapiError>) -> Swift.Void)
   @objc final public func close()
   @objc final public func clearState()
+  @available(*, unavailable, renamed: "getHaapiToken(forceFresh:dpopNonce:completionHandler:)", message: "Deprecated. Please use getHaapiToken(forceFresh:dpopNonce:completionHandler:)")
+  final public func getHaapiTokenAsync(forceFresh: Swift.Bool = false, callbackDispatchQueue: Dispatch.DispatchQueue = DispatchQueue.main, dpopNonce: Swift.String? = nil, completionHandler: @escaping (Swift.Result<IdsvrHaapiSdk.DpopAccessTokenInfo, IdsvrHaapiSdk.HaapiError>) -> Swift.Void)
+  @objc @available(*, unavailable, renamed: "getHaapiTokenWithForceFresh", message: "Deprecated. Please use getHaapiTokenWithForceFresh:dpopNonce:completionHandler:")
+  final public func getHaapiTokenAsync(forceFresh: Swift.Bool = false, callbackDispatchQueue: Dispatch.DispatchQueue = DispatchQueue.main, completionHandler: @escaping (IdsvrHaapiSdk.DpopAccessTokenInfo?, (any Swift.Error)?) -> Swift.Void)
+  @objc @available(*, unavailable, renamed: "getHaapiTokenWithForceFresh", message: "Deprecated. Please use getHaapiTokenWithForceFresh:dpopNonce:completionHandler:")
+  final public func getHaapiTokenAsync(forceFresh: Swift.Bool = false, callbackDispatchQueue: Dispatch.DispatchQueue = DispatchQueue.main, dpopNonce: Swift.String? = nil, completionHandler: @escaping (IdsvrHaapiSdk.DpopAccessTokenInfo?, (any Swift.Error)?) -> Swift.Void)
+  @objc @available(*, unavailable, renamed: "getHaapiTokenWithForceFresh", message: "Deprecated. Please use getHaapiTokenWithForceFresh:dpopNonce:completionHandler:")
+  final public func getHaapiToken(forceFresh: Swift.Bool = false) -> IdsvrHaapiSdk.HaapiTokenResult?
+  @objc @available(*, unavailable, renamed: "getHaapiTokenWithForceFresh", message: "Deprecated. Please use getHaapiTokenWithForceFresh:dpopNonce:completionHandler:")
+  final public func getHaapiToken(forceFresh: Swift.Bool = false, dpopNonce: Swift.String?) -> IdsvrHaapiSdk.HaapiTokenResult?
 }
 @available(iOS 14.0, *)
 @frozen public enum ProblemType : Swift.Decodable, Swift.Equatable {
