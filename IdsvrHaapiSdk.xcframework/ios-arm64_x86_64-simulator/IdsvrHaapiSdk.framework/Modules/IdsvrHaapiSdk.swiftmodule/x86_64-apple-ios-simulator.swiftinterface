@@ -297,6 +297,20 @@ public struct Metadata : Swift.Codable, Swift.Equatable {
   @objc public static var isSensitiveValueMasked: Swift.Bool
   @objc deinit
 }
+public enum LogType : Swift.String {
+  case debug
+  case error
+  case info
+  case warning
+  public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+public protocol LogSink {
+  func writeLog(logType: IdsvrHaapiSdk.LogType, followUpTag: any IdsvrHaapiSdk.FollowUpTag, message: Swift.String, file: Swift.String, line: Swift.Int)
+}
 @available(iOS 14, *)
 public enum HaapiError : Swift.Error {
   case communication(message: Swift.String, cause: (any Swift.Error)? = nil)
@@ -1264,6 +1278,9 @@ extension IdsvrHaapiSdk.HaapiModel {
 extension IdsvrHaapiSdk.TextFormField.Kind : Swift.Sendable {}
 @available(iOS 14.0, *)
 extension IdsvrHaapiSdk.TokenRevocationResponse : Swift.Sendable {}
+extension IdsvrHaapiSdk.LogType : Swift.Equatable {}
+extension IdsvrHaapiSdk.LogType : Swift.Hashable {}
+extension IdsvrHaapiSdk.LogType : Swift.RawRepresentable {}
 @available(iOS 14.0, *)
 extension IdsvrHaapiSdk.ProblemType : Swift.Sendable {}
 @available(iOS 14, *)
