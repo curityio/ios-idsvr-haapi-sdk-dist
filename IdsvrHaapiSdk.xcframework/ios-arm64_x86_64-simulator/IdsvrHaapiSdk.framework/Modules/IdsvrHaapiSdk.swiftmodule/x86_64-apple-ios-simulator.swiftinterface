@@ -295,6 +295,7 @@ public struct Metadata : Swift.Codable, Swift.Equatable {
   @objc public static var isWarningEnabled: Swift.Bool
   @objc public static var isErrorEnabled: Swift.Bool
   @objc public static var isSensitiveValueMasked: Swift.Bool
+  public static func appendLogSink(_ logSink: any IdsvrHaapiSdk.LogSink)
   @objc deinit
 }
 public enum LogType : Swift.String {

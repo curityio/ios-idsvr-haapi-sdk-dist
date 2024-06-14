@@ -11991,6 +11991,35 @@
                 "accessorKind": "_modify"
               }
             ]
+          },
+          {
+            "kind": "Function",
+            "name": "appendLogSink",
+            "printedName": "appendLogSink(_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "LogSink",
+                "printedName": "IdsvrHaapiSdk.LogSink",
+                "usr": "s:13IdsvrHaapiSdk7LogSinkP"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:13IdsvrHaapiSdk0B6LoggerC13appendLogSinkyyAA0fG0_pFZ",
+            "mangledName": "$s13IdsvrHaapiSdk0B6LoggerC13appendLogSinkyyAA0fG0_pFZ",
+            "moduleName": "IdsvrHaapiSdk",
+            "static": true,
+            "declAttributes": [
+              "Final",
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "funcSelfKind": "NonMutating"
           }
         ],
         "declKind": "Class",
