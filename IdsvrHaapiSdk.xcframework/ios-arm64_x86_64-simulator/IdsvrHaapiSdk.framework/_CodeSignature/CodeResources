@@ -6,7 +6,7 @@
 	<dict>
 		<key>Headers/IdsvrHaapiSdk-Swift.h</key>
 		<data>
-		v53LoXcmxtpU76xF2kPZJDkdtuM=
+		+TnKwUuyGrC8qdqCNccvjWGYR6E=
 		</data>
 		<key>Headers/IdsvrHaapiSdk.h</key>
 		<data>
@@ -14,47 +14,47 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		lc/ErV9mp2hGyLfXR1I5kNMCZgs=
+		Wx+IhZl+4/E3bZsUHlW+/WOh3cs=
 		</data>
 		<key>Modules/IdsvrHaapiSdk.swiftmodule/arm64-apple-ios-simulator.abi.json</key>
 		<data>
-		yXE417M+8rwkAjQdFvtcXFl63RU=
+		/7UMNpYbnWKVr/uUzvQioag/chk=
 		</data>
 		<key>Modules/IdsvrHaapiSdk.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
-		9etEhmaFhUyC/gKR6Z6LGqoWqAs=
+		rhahgZdIyC8Ao2XltNMDhlXqenc=
 		</data>
 		<key>Modules/IdsvrHaapiSdk.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<data>
-		YM4poRqcsXh2QrQft/sLE/nEXrA=
+		JmLmwP0bd7deu0vO0QVCac2Y1HY=
 		</data>
 		<key>Modules/IdsvrHaapiSdk.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		9etEhmaFhUyC/gKR6Z6LGqoWqAs=
+		rhahgZdIyC8Ao2XltNMDhlXqenc=
 		</data>
 		<key>Modules/IdsvrHaapiSdk.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		GuYRoDDlMgVprlzNZSf6pClowGg=
+		/TkqTgPDgPd9ERmT3Ui9PAON+fM=
 		</data>
 		<key>Modules/IdsvrHaapiSdk.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<data>
-		yXE417M+8rwkAjQdFvtcXFl63RU=
+		/7UMNpYbnWKVr/uUzvQioag/chk=
 		</data>
 		<key>Modules/IdsvrHaapiSdk.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
-		q194uNb2vhapbxdGuAuWCWjdKn8=
+		b/M5/8piSK4E48WJQfymlSOow8w=
 		</data>
 		<key>Modules/IdsvrHaapiSdk.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<data>
-		b9hZzNfYK3yCkCSc7bhANMoE/zU=
+		oIaD+Xur+myap9QDMebhd/KGSBY=
 		</data>
 		<key>Modules/IdsvrHaapiSdk.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		q194uNb2vhapbxdGuAuWCWjdKn8=
+		b/M5/8piSK4E48WJQfymlSOow8w=
 		</data>
 		<key>Modules/IdsvrHaapiSdk.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		druuW/lE68zmAwvig4o+FZGQ9r4=
+		woUg4s5BFb8eVA+cs1dHAyrysgg=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -67,7 +67,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			DzZu36d3tkTp/pwj9mvGNewqgwgT6MfHN1zufvLj6Es=
+			y1T3FIOcCvF1CfUe2HvjXUjBoY5q1eks2FokLyG7Krc=
 			</data>
 		</dict>
 		<key>Headers/IdsvrHaapiSdk.h</key>
@@ -81,70 +81,70 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			q8y/GXScRW3nyeYORlIZxhr5/BRz2r8TptbIJxNBoio=
+			5xxgW0dJd9/mdvzKxeOWrhUrQKubhJyzjmzQGpaIPoM=
 			</data>
 		</dict>
 		<key>Modules/IdsvrHaapiSdk.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			8Upd06ah43doUJZTXZVnQjqD2Ll/RrOoi5gP//b/vfk=
+			yN0O8rtcJNySwN7Zkh6sKZwQA6aNKV5+N4+LS6gNYgg=
 			</data>
 		</dict>
 		<key>Modules/IdsvrHaapiSdk.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			R0wO1jHDnHb/iDHySgpUF1MoLmC/Ok3HIJDwKKDUkLM=
+			uileeqHsa+LCsD9OUQvZ0BeuxYHIWJYEHDjFLz98yQg=
 			</data>
 		</dict>
 		<key>Modules/IdsvrHaapiSdk.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			8Upd06ah43doUJZTXZVnQjqD2Ll/RrOoi5gP//b/vfk=
+			yN0O8rtcJNySwN7Zkh6sKZwQA6aNKV5+N4+LS6gNYgg=
 			</data>
 		</dict>
 		<key>Modules/IdsvrHaapiSdk.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			Ws/ERJNbg7Mx05J2JYDhCO6Nzh1huYmgY+D1H66A7Lk=
+			w5PTBz9YMoCMxwhyuG08XgSsTjTVUYdSKUZsEfVQkQ8=
 			</data>
 		</dict>
 		<key>Modules/IdsvrHaapiSdk.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			q8y/GXScRW3nyeYORlIZxhr5/BRz2r8TptbIJxNBoio=
+			5xxgW0dJd9/mdvzKxeOWrhUrQKubhJyzjmzQGpaIPoM=
 			</data>
 		</dict>
 		<key>Modules/IdsvrHaapiSdk.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			Y7IAMSuO1gwa3gbyg+Vg7PKJHLUrA0IGf0tEzxyw9Os=
+			ZMkUwMSJLWxv2H+lvT5z/MpZuyXhhSoynNcqKrxUJ0w=
 			</data>
 		</dict>
 		<key>Modules/IdsvrHaapiSdk.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			Yaph4DwPcaBQTTo6A6BdwtaHkzZO50y3r+7/EWusKjc=
+			hd8E5H0jFrVw8/KUDlVsJpzEUpkt0oWxV9iTH95D42Q=
 			</data>
 		</dict>
 		<key>Modules/IdsvrHaapiSdk.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			Y7IAMSuO1gwa3gbyg+Vg7PKJHLUrA0IGf0tEzxyw9Os=
+			ZMkUwMSJLWxv2H+lvT5z/MpZuyXhhSoynNcqKrxUJ0w=
 			</data>
 		</dict>
 		<key>Modules/IdsvrHaapiSdk.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			dkiDz6BkC4XkGUdozT89pvgsTLsl8tbSV1hKr4WdIcU=
+			pQX55ktl8nTTZKJRUiLciZx/TNQg7s1zXTxq1CAugoc=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>

@@ -332,12 +332,47 @@ SWIFT_CLASS("_TtC13IdsvrHaapiSdk11AccessToken") SWIFT_AVAILABILITY(ios,introduce
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
 
+enum CryptoKeyType : NSInteger;
+
+/// The configuration when using <code>issue-token-bound-authorization-code</code> in OAuth client configuration on server side.
+SWIFT_PROTOCOL("_TtP13IdsvrHaapiSdk23TokenBoundConfiguration_") SWIFT_AVAILABILITY(ios,introduced=14.0)
+@protocol TokenBoundConfiguration
+/// The KeyPair type to use when creating the dpop proof keypair.
+@property (nonatomic, readonly) enum CryptoKeyType keyPairType;
+@end
+
+
+/// The configuration used when the client is required to enforce Token binding when interacting with the token endpoint.
+SWIFT_CLASS("_TtC13IdsvrHaapiSdk25BoundedTokenConfiguration") SWIFT_AVAILABILITY(ios,introduced=14.0)
+@interface BoundedTokenConfiguration : NSObject <TokenBoundConfiguration>
+@property (nonatomic, readonly) enum CryptoKeyType keyPairType;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+/// The configuration that is used to generate the Dpop proof KeyPair.
+/// note:
+/// <code>SecureEnclave</code> keypairs are the most secure option for dpop proof signatures. The use of a different type of keypair should be only considered
+/// if the use of SecureEnclave produces an unstable app setup for the users.
+/// warning:
+/// <code>CryptoKeyType.secureEnclave</code> option only works on real physical devices, make sure to take that into account while developing and testing the application.
+typedef SWIFT_ENUM(NSInteger, CryptoKeyType, open) {
+/// A software NIST-P256 keypair
+  CryptoKeyTypeP256 = 0,
+/// A hardware bound <code>Secure Enclave</code> keypair
+  CryptoKeyTypeSecureEnclave = 1,
+/// A legacy Security framework <code>SecKey</code> keypair
+  CryptoKeyTypeSecurity = 2,
+};
+
 @class NSURL;
 
 /// The <code>Dpop</code> class represents the context used for the Demonstrating Proof of Possession protocol used for authenticating requests that prove ownership of a private key
 SWIFT_CLASS("_TtC13IdsvrHaapiSdk4Dpop") SWIFT_AVAILABILITY(ios,introduced=14)
 @interface Dpop : NSObject
-/// The JWK Thumbprint of the DPoP public key
+/// The JWK Thumbprint of the DPoP public key.
+/// note:
+/// if it is not possible to load the thumbprint from the currently held key, an empty string is returned.
 @property (nonatomic, readonly, copy) NSString * _Nonnull jwkThumbprint;
 - (BOOL)isEqual:(id _Nullable)object SWIFT_WARN_UNUSED_RESULT;
 /// Create a DPoP proof token (a signed JWT) for the provided HTTP-method and URL. To sign the JWT, the cryptographic key of the <code>Dpop</code> context is used.
@@ -560,6 +595,7 @@ SWIFT_CLASS("_TtC13IdsvrHaapiSdk12HaapiManager") SWIFT_AVAILABILITY(ios,introduc
 
 
 
+
 /// <code>HaapiTokenManager</code> instances manage HAAPI tokens and facilitate interacting with the HAAPI service.
 /// If needed, the <code>HaapiTokenManager</code> performs the attestation flow, by using the Device Check services on the iOS device.
 /// The <code>HaapiTokenManager</code> is created by using the <code>HaapiTokenManagerBuilder</code>, like
@@ -703,6 +739,8 @@ SWIFT_CLASS("_TtC13IdsvrHaapiSdk24HaapiTokenManagerBuilder") SWIFT_AVAILABILITY(
 /// <code>DeviceCheck</code> attestation API can sometimes fail and return an error due to device roaming networks or poor connectivity.
 /// When nothing is set, a value of 3 is used as the maximum allowed retry count. Providing a value lower than <code>1</code> disables the retry mechanism.
 - (HaapiTokenManagerBuilder * _Nonnull)setAttestationMaxRetryCountWithMaxRetries:(NSInteger)maxRetries;
+/// Sets the TokenBoundConfiguration when the the client configuration for Haapi in the Identity Server has this key <code>issue-token-bound-authorization-code</code> set to true.
+- (HaapiTokenManagerBuilder * _Nonnull)setTokenBoundConfigurationWithConfig:(id <TokenBoundConfiguration> _Nonnull)config;
 /// Build a new <code>HaapiTokenManager</code> instance from the state that is created inside the <code>Builder</code>
 /// This method can abort your application if the desired name for a <code>HaapiTokenManager</code> already exists within the current context.
 ///
@@ -733,6 +771,16 @@ SWIFT_CLASS("_TtC13IdsvrHaapiSdk16HaapiTokenResult") SWIFT_AVAILABILITY(ios,intr
 
 
 
+
+
+
+
+/// The configuration used when the client is not required to use Token binding when interacting with the token endpoint.
+SWIFT_CLASS("_TtC13IdsvrHaapiSdk27UnboundedTokenConfiguration") SWIFT_AVAILABILITY(ios,introduced=14.0)
+@interface UnboundedTokenConfiguration : NSObject <TokenBoundConfiguration>
+@property (nonatomic) enum CryptoKeyType keyPairType;
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
 
 #endif
 #if __has_attribute(external_source_symbol)
