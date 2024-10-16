@@ -127,6 +127,13 @@ extension Foundation.Data {
     get
   }
 }
+@_hasMissingDesignatedInitializers @available(iOS 14, *)
+public class KeychainStorage : IdsvrHaapiSdk.Storage {
+  public func write(key: Swift.String, data: Foundation.Data) throws
+  public func read(key: Swift.String) throws -> Foundation.Data?
+  public func delete(key: Swift.String) throws
+  @objc deinit
+}
 @available(iOS 14.0, *)
 public enum HaapiModel {
   public enum ContentFactory {
@@ -432,13 +439,6 @@ public protocol Storage {
   func write(key: Swift.String, data: Foundation.Data) throws
   func delete(key: Swift.String) throws
 }
-@_hasMissingDesignatedInitializers @available(iOS 14, *)
-public class KeychainStorage : IdsvrHaapiSdk.Storage {
-  public func write(key: Swift.String, data: Foundation.Data) throws
-  public func read(key: Swift.String) throws -> Foundation.Data?
-  public func delete(key: Swift.String) throws
-  @objc deinit
-}
 @available(iOS 14.0, *)
 public protocol Properties : Swift.Decodable, Swift.Encodable {
   var rawJsonString: Swift.String { get }
@@ -493,10 +493,12 @@ public enum SdkFollowUpTag : Swift.String, IdsvrHaapiSdk.FollowUpTag, Swift.Case
   }
 }
 @available(iOS 14, *)
-public enum HaapiError : Swift.Error {
+public enum HaapiError : IdsvrHaapiSdk.IdsvrError, Swift.Error {
   case communication(message: Swift.String, cause: (any Swift.Error)? = nil)
   case serverError(_: Swift.String, errorDescription: Swift.String, statusCode: Swift.Int)
+  @available(*, deprecated, message: "This case is being replaced by `serverError`.")
   case invalidStatusCode(_: Swift.Int)
+  case invalidURLResponse(_: Foundation.URLResponse?, reason: Swift.String, cause: (any Swift.Error)? = nil)
   case attestationNotSupported
   case attestationFailure(cause: (any Swift.Error)? = nil)
   case attestationKeyGenFailure(cause: (any Swift.Error)? = nil)
@@ -510,10 +512,19 @@ public enum HaapiError : Swift.Error {
   case illegalState(message: Swift.String)
   case invalidConfiguration(reason: Swift.String)
   case haapiTokenManagerAlreadyExists(name: Swift.String)
-}
-@available(iOS 14, *)
-extension IdsvrHaapiSdk.HaapiError : Foundation.LocalizedError {
+  public var failureReason: Swift.String {
+    get
+  }
   public var errorDescription: Swift.String? {
+    get
+  }
+  public var error: Swift.String {
+    get
+  }
+  public var cause: (any Swift.Error)? {
+    get
+  }
+  public var recoverySuggestion: IdsvrHaapiSdk.IdsvrErrorHandling {
     get
   }
 }
@@ -530,6 +541,33 @@ public struct UserMessage : Swift.Codable, Swift.Equatable {
   public init(from decoder: any Swift.Decoder) throws
   public func encode(to encoder: any Swift.Encoder) throws
   public static func == (a: IdsvrHaapiSdk.UserMessage, b: IdsvrHaapiSdk.UserMessage) -> Swift.Bool
+}
+public enum RetryCondition {
+  case now
+  case whenAppInForeground
+  public static func == (a: IdsvrHaapiSdk.RetryCondition, b: IdsvrHaapiSdk.RetryCondition) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+public enum UnrecoverableAction : Swift.Equatable {
+  case modifyConfiguration(reason: Swift.String)
+  case introspectCause
+  case invalidPlatform
+  public static func == (a: IdsvrHaapiSdk.UnrecoverableAction, b: IdsvrHaapiSdk.UnrecoverableAction) -> Swift.Bool
+}
+public enum IdsvrErrorHandling {
+  case retryable(condition: IdsvrHaapiSdk.RetryCondition)
+  case newHaapiFlow
+  case unrecoverable(action: IdsvrHaapiSdk.UnrecoverableAction)
+}
+public protocol IdsvrError : Swift.Error {
+  var error: Swift.String { get }
+  var errorDescription: Swift.String? { get }
+  var failureReason: Swift.String { get }
+  var recoverySuggestion: IdsvrHaapiSdk.IdsvrErrorHandling { get }
+  var cause: (any Swift.Error)? { get }
 }
 public protocol Masking {
   var masked: Swift.String { get }
@@ -964,7 +1002,7 @@ public struct WebAuthnAuthenticationClientOperationStep : IdsvrHaapiSdk.ClientOp
   public init(from decoder: any Swift.Decoder) throws
   public func encode(to encoder: any Swift.Encoder) throws
   public static func == (lhs: IdsvrHaapiSdk.WebAuthnAuthenticationClientOperationStep, rhs: IdsvrHaapiSdk.WebAuthnAuthenticationClientOperationStep) -> Swift.Bool
-  public func formattedParametersForAssertion(rawAuthenticatorData: Foundation.Data, rawClientDataJSON: Foundation.Data, signature: Foundation.Data, credentialID: Foundation.Data, credentialParamType: Swift.String = "public-key") -> [Swift.String : Any]
+  public func formattedParametersForAssertion(rawAuthenticatorData: Foundation.Data, rawClientDataJSON: Foundation.Data, signature: Foundation.Data, credentialID: Foundation.Data, credentialParamType: Swift.String = "public-key", userId: Foundation.Data? = nil) -> [Swift.String : Any]
 }
 @available(iOS 14.0, *)
 public struct GenericClientOperationStep : IdsvrHaapiSdk.ClientOperationStep, Swift.Equatable {
@@ -1050,13 +1088,13 @@ public protocol LogSink {
   @objc var keyPairType: IdsvrHaapiSdk.CryptoKeyType { get }
 }
 @_inheritsConvenienceInitializers @available(iOS 14.0, *)
-@objc public class UnboundedTokenConfiguration : ObjectiveC.NSObject, IdsvrHaapiSdk.TokenBoundConfiguration {
-  @objc public var keyPairType: IdsvrHaapiSdk.CryptoKeyType
+@objc final public class UnboundedTokenConfiguration : ObjectiveC.NSObject, IdsvrHaapiSdk.TokenBoundConfiguration {
+  @objc final public var keyPairType: IdsvrHaapiSdk.CryptoKeyType
   @objc override dynamic public init()
   @objc deinit
 }
 @available(iOS 14.0, *)
-@objc public class BoundedTokenConfiguration : ObjectiveC.NSObject, IdsvrHaapiSdk.TokenBoundConfiguration {
+@objc final public class BoundedTokenConfiguration : ObjectiveC.NSObject, IdsvrHaapiSdk.TokenBoundConfiguration {
   @objc final public let keyPairType: IdsvrHaapiSdk.CryptoKeyType
   public init(keyPairType: IdsvrHaapiSdk.CryptoKeyType = .secureEnclave)
   @objc deinit
@@ -1356,6 +1394,8 @@ extension IdsvrHaapiSdk.ProblemType : Swift.Sendable {}
 extension IdsvrHaapiSdk.SdkFollowUpTag : Swift.Equatable {}
 extension IdsvrHaapiSdk.SdkFollowUpTag : Swift.Hashable {}
 extension IdsvrHaapiSdk.SdkFollowUpTag : Swift.RawRepresentable {}
+extension IdsvrHaapiSdk.RetryCondition : Swift.Equatable {}
+extension IdsvrHaapiSdk.RetryCondition : Swift.Hashable {}
 @available(iOS 14.0, *)
 extension IdsvrHaapiSdk.ActionKind : Swift.Sendable {}
 extension IdsvrHaapiSdk.DriverFollowUpTag : Swift.Equatable {}
