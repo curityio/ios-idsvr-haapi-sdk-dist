@@ -1,6 +1,7 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.10 (swiftlang-5.10.0.13 clang-1500.3.9.4)
+// swift-compiler-version: Apple Swift version 6.0.2 effective-5.10 (swiftlang-6.0.2.1.2 clang-1600.0.26.4)
 // swift-module-flags: -target x86_64-apple-ios12.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -enable-bare-slash-regex -module-name IdsvrHaapiSdk
+// swift-module-flags-ignorable: -no-verify-emitted-module-interface
 import Combine
 import CommonCrypto
 import Compression
@@ -16,7 +17,7 @@ import UIKit
 import _Concurrency
 import _StringProcessing
 import _SwiftConcurrencyShims
-@_hasMissingDesignatedInitializers public class HTTPURLResponseContent {
+@objc @_hasMissingDesignatedInitializers public class HTTPURLResponseContent : ObjectiveC.NSObject {
   final public let data: Foundation.Data?
   final public let httpURLResponse: Foundation.HTTPURLResponse?
   public var dataAsDictionary: [Swift.String : Any] {
@@ -25,7 +26,7 @@ import _SwiftConcurrencyShims
   }
   @objc deinit
 }
-@_hasMissingDesignatedInitializers public class ErrorHTTPURLResponseContent : IdsvrHaapiSdk.HTTPURLResponseContent {
+@objc @_hasMissingDesignatedInitializers public class ErrorHTTPURLResponseContent : IdsvrHaapiSdk.HTTPURLResponseContent {
   final public let error: any Swift.Error
   @objc deinit
 }
@@ -104,6 +105,10 @@ final public class HiddenFormField : IdsvrHaapiSdk.FormField {
   override final public func encode(to encoder: any Swift.Encoder) throws
   @objc deinit
 }
+@objc final public class DCRConfiguration : ObjectiveC.NSObject {
+  @objc public init(templateClientId: Swift.String, clientRegistrationEndpointUrl: Foundation.URL)
+  @objc deinit
+}
 public protocol FollowUpTag {
   var subsystem: Swift.String { get }
   var tagName: Swift.String { get }
@@ -119,6 +124,9 @@ extension Swift.StringProtocol {
     get
   }
   public var dataUtf8Encoding: Foundation.Data {
+    get
+  }
+  public var base64URLEncodedStringOfSHA256Hash: Swift.String {
     get
   }
 }
@@ -186,39 +194,43 @@ public typealias HttpHeadersProvider = () -> [Swift.String : Swift.String]
 @available(iOS 14.0, *)
 public typealias OAuthAuthorizationParametersProvider = () -> IdsvrHaapiSdk.OAuthAuthorizationParameters
 @available(iOS 14.0, *)
-public protocol HaapiConfigurable {
-  var name: Swift.String { get }
-  var clientId: Swift.String { get }
-  var baseURL: Foundation.URL { get }
-  var tokenEndpointURL: Foundation.URL { get }
-  var authorizationEndpointURL: Foundation.URL { get }
-  var appRedirect: Swift.String { get }
-  var urlSession: Foundation.URLSession { get }
-  var isAutoRedirect: Swift.Bool { get }
-  var httpHeadersProvider: IdsvrHaapiSdk.HttpHeadersProvider? { get }
-  var authorizationParametersProvider: IdsvrHaapiSdk.OAuthAuthorizationParametersProvider? { get }
-  var minTokenTtl: Foundation.TimeInterval { get }
-  var attestationConfiguration: IdsvrHaapiSdk.AttestationConfiguration { get }
-  var tokenBoundConfiguration: any IdsvrHaapiSdk.TokenBoundConfiguration { get }
+@objc public protocol HaapiConfigurable {
+  @objc var name: Swift.String { get }
+  @objc var clientId: Swift.String { get }
+  @objc var baseURL: Foundation.URL { get }
+  @objc var tokenEndpointURL: Foundation.URL { get }
+  @objc var authorizationEndpointURL: Foundation.URL { get }
+  @objc var appRedirect: Swift.String { get }
+  @objc var urlSession: Foundation.URLSession { get }
+  @objc var isAutoRedirect: Swift.Bool { get }
+  @objc var httpHeadersProvider: IdsvrHaapiSdk.HttpHeadersProvider? { get }
+  @objc var authorizationParametersProvider: IdsvrHaapiSdk.OAuthAuthorizationParametersProvider? { get }
+  @objc var minTokenTtl: Foundation.TimeInterval { get }
+  @objc var attestationConfiguration: IdsvrHaapiSdk.AttestationConfiguration { get }
+  @objc var tokenBoundConfiguration: any IdsvrHaapiSdk.TokenBoundConfiguration { get }
+  @objc var clientAuthenticationMethod: any IdsvrHaapiSdk.ClientAuthenticationMethod { get }
+  @objc var applicationBundle: Foundation.Bundle? { get }
 }
-@available(iOS 14.0, *)
-final public class HaapiConfiguration : IdsvrHaapiSdk.HaapiConfigurable, IdsvrHaapiSdk.OAuthTokenConfigurable {
-  final public let name: Swift.String
-  final public let clientId: Swift.String
-  final public let baseURL: Foundation.URL
-  final public let tokenEndpointURL: Foundation.URL
-  final public let authorizationEndpointURL: Foundation.URL
-  final public let appRedirect: Swift.String
-  final public let httpHeadersProvider: IdsvrHaapiSdk.HttpHeadersProvider?
-  final public let isAutoRedirect: Swift.Bool
-  final public let urlSession: Foundation.URLSession
-  final public let revocationEndpointURL: Foundation.URL?
-  final public let authorizationParametersProvider: IdsvrHaapiSdk.OAuthAuthorizationParametersProvider?
-  final public let minTokenTtl: Foundation.TimeInterval
-  final public let attestationConfiguration: IdsvrHaapiSdk.AttestationConfiguration
-  final public let tokenBoundConfiguration: any IdsvrHaapiSdk.TokenBoundConfiguration
-  final public let tokenEndpointResponseListener: (any IdsvrHaapiSdk.OAuthTokenManager.TokenEndpointResponseListener)?
-  public init(name: Swift.String, clientId: Swift.String, baseURL: Foundation.URL, tokenEndpointURL: Foundation.URL, authorizationEndpointURL: Foundation.URL, appRedirect: Swift.String, httpHeadersProvider: IdsvrHaapiSdk.HttpHeadersProvider?, authorizationParametersProvider: IdsvrHaapiSdk.OAuthAuthorizationParametersProvider?, isAutoRedirect: Swift.Bool = true, urlSession: Foundation.URLSession = URLSession(configuration: .haapi), revocationEndpointURL: Foundation.URL? = nil, minTokenTtl: Foundation.TimeInterval = TimeInterval(floatLiteral: 10.0), attestationConfiguration: IdsvrHaapiSdk.AttestationConfiguration = AttestationConfiguration(), tokenBoundConfiguration: any IdsvrHaapiSdk.TokenBoundConfiguration = UnboundedTokenConfiguration(), tokenEndpointResponseListener: (any IdsvrHaapiSdk.OAuthTokenManager.TokenEndpointResponseListener)? = nil)
+@objc @available(iOS 14.0, *)
+@objcMembers final public class HaapiConfiguration : ObjectiveC.NSObject, IdsvrHaapiSdk.HaapiConfigurable, IdsvrHaapiSdk.OAuthTokenConfigurable {
+  @objc final public let name: Swift.String
+  @objc final public let clientId: Swift.String
+  @objc final public let baseURL: Foundation.URL
+  @objc final public let tokenEndpointURL: Foundation.URL
+  @objc final public let authorizationEndpointURL: Foundation.URL
+  @objc final public let appRedirect: Swift.String
+  @objc final public let httpHeadersProvider: IdsvrHaapiSdk.HttpHeadersProvider?
+  @objc final public let isAutoRedirect: Swift.Bool
+  @objc final public let urlSession: Foundation.URLSession
+  @objc final public let revocationEndpointURL: Foundation.URL?
+  @objc final public let authorizationParametersProvider: IdsvrHaapiSdk.OAuthAuthorizationParametersProvider?
+  @objc final public let minTokenTtl: Foundation.TimeInterval
+  @objc final public let attestationConfiguration: IdsvrHaapiSdk.AttestationConfiguration
+  @objc final public let tokenBoundConfiguration: any IdsvrHaapiSdk.TokenBoundConfiguration
+  @objc final public let tokenEndpointResponseListener: (any IdsvrHaapiSdk.OAuthTokenManager.TokenEndpointResponseListener)?
+  @objc final public let clientAuthenticationMethod: any IdsvrHaapiSdk.ClientAuthenticationMethod
+  @objc final public let applicationBundle: Foundation.Bundle?
+  @objc public init(name: Swift.String, clientId: Swift.String, baseURL: Foundation.URL, tokenEndpointURL: Foundation.URL, authorizationEndpointURL: Foundation.URL, appRedirect: Swift.String, httpHeadersProvider: IdsvrHaapiSdk.HttpHeadersProvider?, authorizationParametersProvider: IdsvrHaapiSdk.OAuthAuthorizationParametersProvider?, isAutoRedirect: Swift.Bool = true, urlSession: Foundation.URLSession = URLSession(configuration: .haapi), revocationEndpointURL: Foundation.URL? = nil, minTokenTtl: Foundation.TimeInterval = TimeInterval(floatLiteral: 10.0), attestationConfiguration: IdsvrHaapiSdk.AttestationConfiguration = AttestationConfiguration(), tokenBoundConfiguration: any IdsvrHaapiSdk.TokenBoundConfiguration = UnboundedTokenConfiguration(), tokenEndpointResponseListener: (any IdsvrHaapiSdk.OAuthTokenManager.TokenEndpointResponseListener)? = nil, clientAuthenticationMethod: any IdsvrHaapiSdk.ClientAuthenticationMethod = ClientAuthenticationMethodNone(), applicationBundle: Foundation.Bundle? = nil)
   @objc deinit
 }
 @available(iOS 14.0, *)
@@ -227,20 +239,21 @@ extension Foundation.URLSessionConfiguration {
     get
   }
 }
-@available(iOS 14.0, *)
-public struct AttestationConfiguration {
-  public init(useAttestation: Swift.Bool = true, attestationMaxRetries: Swift.Int = 3)
+@objc @available(iOS 14.0, *)
+final public class AttestationConfiguration : ObjectiveC.NSObject {
+  @objc public init(useAttestation: Swift.Bool = true, attestationMaxRetries: Swift.Int = 3)
+  @objc deinit
 }
-@_hasMissingDesignatedInitializers @available(iOS 14.0, *)
-public class Problem : IdsvrHaapiSdk.ProblemRepresentation, Swift.Equatable {
+@objc @_hasMissingDesignatedInitializers @available(iOS 14.0, *)
+@objcMembers public class Problem : ObjectiveC.NSObject, IdsvrHaapiSdk.ProblemRepresentation {
   final public let type: IdsvrHaapiSdk.ProblemType
-  final public let metadata: IdsvrHaapiSdk.Metadata?
-  final public let title: IdsvrHaapiSdk.Message?
+  @objc final public let metadata: IdsvrHaapiSdk.Metadata?
+  @objc final public let title: IdsvrHaapiSdk.Message?
   final public let messages: [IdsvrHaapiSdk.UserMessage]
   final public let links: [IdsvrHaapiSdk.Link]
   required public init(from decoder: any Swift.Decoder) throws
   public func encode(to encoder: any Swift.Encoder) throws
-  public static func == (lhs: IdsvrHaapiSdk.Problem, rhs: IdsvrHaapiSdk.Problem) -> Swift.Bool
+  @objc override dynamic public func isEqual(_ object: Any?) -> Swift.Bool
   @objc deinit
 }
 @available(iOS 14.0, *)
@@ -259,36 +272,43 @@ public typealias OAuthRevocationCompletion = (_ response: IdsvrHaapiSdk.TokenRev
   case error(any Swift.Error)
 }
 @available(iOS 14.0, *)
-public protocol OAuthTokenConfigurable {
-  var clientId: Swift.String { get }
-  var tokenEndpointURL: Foundation.URL { get }
-  var appRedirect: Swift.String { get }
-  var urlSession: Foundation.URLSession { get }
-  var revocationEndpointURL: Foundation.URL? { get }
-  var tokenBoundConfiguration: any IdsvrHaapiSdk.TokenBoundConfiguration { get }
-  var tokenEndpointResponseListener: (any IdsvrHaapiSdk.OAuthTokenManager.TokenEndpointResponseListener)? { get }
+@objc public protocol OAuthTokenConfigurable {
+  @objc var clientId: Swift.String { get }
+  @objc var tokenEndpointURL: Foundation.URL { get }
+  @objc var appRedirect: Swift.String { get }
+  @objc var urlSession: Foundation.URLSession { get }
+  @objc var revocationEndpointURL: Foundation.URL? { get }
+  @objc var tokenBoundConfiguration: any IdsvrHaapiSdk.TokenBoundConfiguration { get }
+  @objc var tokenEndpointResponseListener: (any IdsvrHaapiSdk.OAuthTokenManager.TokenEndpointResponseListener)? { get }
+  @objc var clientAuthenticationMethod: any IdsvrHaapiSdk.ClientAuthenticationMethod { get }
 }
-@_hasMissingDesignatedInitializers @available(iOS 14.0, *)
-final public class OAuthTokenManager {
-  convenience public init(oauthTokenConfiguration: any IdsvrHaapiSdk.OAuthTokenConfigurable)
+@objc @_hasMissingDesignatedInitializers @available(iOS 14.0, *)
+@objcMembers final public class OAuthTokenManager : ObjectiveC.NSObject {
+  @objc convenience public init(oauthTokenConfiguration: any IdsvrHaapiSdk.OAuthTokenConfigurable)
   final public func fetchAccessToken(with authorizationCode: Swift.String, dpop: IdsvrHaapiSdk.Dpop? = nil, additionalParameters: [Swift.String : Swift.String]? = nil, completionHandler: @escaping IdsvrHaapiSdk.OAuthCompletion)
   final public func refreshAccessToken(with refreshToken: Swift.String, additionalParameters: [Swift.String : Swift.String]? = nil, completionHandler: @escaping IdsvrHaapiSdk.OAuthCompletion)
   final public func revokeAccessToken(with token: Swift.String, completionHandler: @escaping IdsvrHaapiSdk.OAuthRevocationCompletion)
   final public func revokeRefreshToken(with token: Swift.String, completionHandler: @escaping IdsvrHaapiSdk.OAuthRevocationCompletion)
-  public protocol TokenEndpointResponseListener : AnyObject {
-    func onSuccess(_ value: IdsvrHaapiSdk.OAuthTokenManager.SuccessTokenHTTPURLResponseContent)
-    func onError(_ value: IdsvrHaapiSdk.ErrorHTTPURLResponseContent)
-    func onTokenError(_ value: IdsvrHaapiSdk.OAuthTokenManager.ErrorTokenHTTPURLResponseContent)
+  @objc public protocol TokenEndpointResponseListener {
+    @objc func onSuccess(_ value: IdsvrHaapiSdk.OAuthTokenManager.SuccessTokenHTTPURLResponseContent)
+    @objc func onError(_ value: IdsvrHaapiSdk.ErrorHTTPURLResponseContent)
+    @objc func onTokenError(_ value: IdsvrHaapiSdk.OAuthTokenManager.ErrorTokenHTTPURLResponseContent)
   }
-  @_hasMissingDesignatedInitializers public class SuccessTokenHTTPURLResponseContent : IdsvrHaapiSdk.HTTPURLResponseContent {
+  @objc @_hasMissingDesignatedInitializers public class SuccessTokenHTTPURLResponseContent : IdsvrHaapiSdk.HTTPURLResponseContent {
     final public let successfulTokenResponse: IdsvrHaapiSdk.SuccessfulTokenResponse
     @objc deinit
   }
-  @_hasMissingDesignatedInitializers public class ErrorTokenHTTPURLResponseContent : IdsvrHaapiSdk.HTTPURLResponseContent {
+  @objc @_hasMissingDesignatedInitializers public class ErrorTokenHTTPURLResponseContent : IdsvrHaapiSdk.HTTPURLResponseContent {
     final public let errorTokenResponse: IdsvrHaapiSdk.ErrorTokenResponse
     @objc deinit
   }
   @objc deinit
+}
+@available(*, unavailable)
+@objc extension IdsvrHaapiSdk.OAuthTokenManager {
+  @objc final public func fetchAccessToken(with authorizationCode: Swift.String, dpop: IdsvrHaapiSdk.Dpop? = nil, additionalParameters: [Swift.String : Swift.String]? = nil, completionHandler: @escaping (IdsvrHaapiSdk.SuccessfulTokenResponse?, IdsvrHaapiSdk.ErrorTokenResponse?, (any Swift.Error)?) -> Swift.Void)
+  @objc final public func refreshAccessToken(with refreshToken: Swift.String, additionalParameters: [Swift.String : Swift.String]? = nil, completionHandler: @escaping (IdsvrHaapiSdk.SuccessfulTokenResponse?, IdsvrHaapiSdk.ErrorTokenResponse?, (any Swift.Error)?) -> Swift.Void)
+  @objc final public func revokeRefreshToken(with token: Swift.String, completionHandler: @escaping (Swift.Bool, (any Swift.Error)?) -> Swift.Void)
 }
 @available(iOS 14.0, *)
 @frozen public enum HaapiResult {
@@ -315,10 +335,11 @@ public protocol ProblemRepresentation : Swift.Decodable, Swift.Encodable {
 @available(iOS 14.0, *)
 public protocol ClientOperationStep : IdsvrHaapiSdk.HaapiRepresentation {
 }
-@available(iOS 14.0, *)
-public struct Metadata : Swift.Codable, Swift.Equatable {
-  public static func == (a: IdsvrHaapiSdk.Metadata, b: IdsvrHaapiSdk.Metadata) -> Swift.Bool
-  public func encode(to encoder: any Swift.Encoder) throws
+@objc @_hasMissingDesignatedInitializers @available(iOS 14.0, *)
+final public class Metadata : ObjectiveC.NSObject, Swift.Codable {
+  @objc override final public func isEqual(_ object: Any?) -> Swift.Bool
+  @objc deinit
+  final public func encode(to encoder: any Swift.Encoder) throws
   public init(from decoder: any Swift.Decoder) throws
 }
 @available(iOS 14.0, *)
@@ -350,7 +371,9 @@ extension IdsvrHaapiSdk.ProblemType : Swift.RawRepresentable {
 }
 @available(iOS 14.0, *)
 extension IdsvrHaapiSdk.HaapiTokenManager {
-  @objc final public func createClient(urlSession: Foundation.URLSession? = nil) -> IdsvrHaapiSdk.HaapiClient
+  @objc @available(*, deprecated, renamed: "createClient()", message: "  This method doesn't work with the current API design for Dpop and Client Authentication\n  management and it will be removed on next major version.")
+  final public func createClient(urlSession: Foundation.URLSession? = nil) -> IdsvrHaapiSdk.HaapiClient
+  @objc final public func createClient() -> IdsvrHaapiSdk.HaapiClient
   @objc @available(swift, obsoleted: 1.0)
   final public func getHaapiToken(forceFresh: Swift.Bool = false, dpopNonce: Swift.String? = nil, completionHandler: @escaping (IdsvrHaapiSdk.DpopAccessTokenInfo?, (any Swift.Error)?) -> Swift.Void)
   @objc @available(swift, obsoleted: 1.0)
@@ -421,6 +444,76 @@ final public class SelectorAction : IdsvrHaapiSdk.Action {
   override final public func encode(to encoder: any Swift.Encoder) throws
   @objc deinit
 }
+@objc public protocol ClientAuthenticationMethod {
+}
+@objc @_inheritsConvenienceInitializers final public class ClientAuthenticationMethodNone : ObjectiveC.NSObject, IdsvrHaapiSdk.ClientAuthenticationMethod {
+  @objc override dynamic public init()
+  @objc deinit
+}
+@objc final public class ClientAuthenticationMethodSecret : ObjectiveC.NSObject, IdsvrHaapiSdk.ClientAuthenticationMethod {
+  @objc public init(secret: Swift.String)
+  @objc deinit
+}
+@objc @available(iOS 14.0, *)
+final public class KeyPinning : ObjectiveC.NSObject {
+  @objc public init(hostname: Swift.String, publicKeyHash: Swift.String)
+  @objc deinit
+}
+@objc @_hasMissingDesignatedInitializers @available(iOS 14.0, *)
+final public class ClientAuthenticationMethodMTLS : ObjectiveC.NSObject, IdsvrHaapiSdk.ClientAuthenticationMethod {
+  @objc convenience public init(pkcs12Filename: Swift.String, pkcs12Passphrase: Swift.String, serverPEMFilename: Swift.String, isValidatingHostname: Swift.Bool, bundle: Foundation.Bundle = Bundle.main) throws
+  @objc convenience public init(pkcs12Filename: Swift.String, pkcs12Passphrase: Swift.String, serverKeyPinnings: [IdsvrHaapiSdk.KeyPinning], bundle: Foundation.Bundle = Bundle.main) throws
+  @objc deinit
+}
+@available(iOS 14.0, *)
+@objc public enum JWTAsymmetricAlgorithm : Swift.Int {
+  case rs256
+  case rs384
+  case rs512
+  case ps256
+  case ps384
+  case ps512
+  case es256
+  case es384
+  case es512
+  public init?(rawValue: Swift.Int)
+  @available(iOS 14.0, *)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+@objc @available(iOS 14.0, *)
+final public class ClientAuthenticationMethodJWTAsymmetric : ObjectiveC.NSObject, IdsvrHaapiSdk.ClientAuthenticationMethod {
+  final public let signatureAlgorithm: IdsvrHaapiSdk.JWTAsymmetricAlgorithm
+  final public let privateKey: Security.SecKey
+  @objc public init(pemFilename: Swift.String, signatureAlgorithm: IdsvrHaapiSdk.JWTAsymmetricAlgorithm, bundle: Foundation.Bundle = Bundle.main) throws
+  @objc deinit
+}
+@available(iOS 14.0, *)
+@objc public enum JWTSymmetricAlgorithm : Swift.Int, Swift.CaseIterable {
+  case hs256
+  case hs384
+  case hs512
+  public init?(rawValue: Swift.Int)
+  @available(iOS 14.0, *)
+  public typealias AllCases = [IdsvrHaapiSdk.JWTSymmetricAlgorithm]
+  @available(iOS 14.0, *)
+  public typealias RawValue = Swift.Int
+  nonisolated public static var allCases: [IdsvrHaapiSdk.JWTSymmetricAlgorithm] {
+    get
+  }
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+@objc @available(iOS 14.0, *)
+final public class ClientAuthenticationMethodJWTSymmetric : ObjectiveC.NSObject, IdsvrHaapiSdk.ClientAuthenticationMethod {
+  final public let signatureAlgorithm: IdsvrHaapiSdk.JWTSymmetricAlgorithm
+  final public let secretKey: Swift.String
+  @objc public init(signatureAlgorithm: IdsvrHaapiSdk.JWTSymmetricAlgorithm, secretKey: Swift.String)
+  @objc deinit
+}
 @available(iOS 14, *)
 public enum StorageError : Swift.Error {
   case writeError(cause: any Swift.Error)
@@ -485,7 +578,7 @@ public enum SdkFollowUpTag : Swift.String, IdsvrHaapiSdk.FollowUpTag, Swift.Case
   public init?(rawValue: Swift.String)
   public typealias AllCases = [IdsvrHaapiSdk.SdkFollowUpTag]
   public typealias RawValue = Swift.String
-  public static var allCases: [IdsvrHaapiSdk.SdkFollowUpTag] {
+  nonisolated public static var allCases: [IdsvrHaapiSdk.SdkFollowUpTag] {
     get
   }
   public var rawValue: Swift.String {
@@ -638,28 +731,22 @@ extension IdsvrHaapiSdk.ActionKind : Swift.RawRepresentable {
 }
 @available(iOS 14.0, *)
 public typealias HaapiCompletionHandler = (_ haapiResult: IdsvrHaapiSdk.HaapiResult) -> Swift.Void
-@objc @available(iOS 14.0, *)
-final public class HaapiManager : ObjectiveC.NSObject {
-  public init(haapiConfiguration: any IdsvrHaapiSdk.HaapiConfigurable) throws
+@objc @_hasMissingDesignatedInitializers @available(iOS 14.0, *)
+@objcMembers final public class HaapiManager : ObjectiveC.NSObject {
+  @objc convenience public init(haapiConfiguration: any IdsvrHaapiSdk.HaapiConfigurable) throws
   @objc deinit
-  final public func close()
-  public static var isSupported: Swift.Bool {
-    get
+  @objc final public func close()
+  @objc public static var isSupported: Swift.Bool {
+    @objc get
   }
   final public func start(completionHandler: @escaping IdsvrHaapiSdk.HaapiCompletionHandler)
-  #if compiler(>=5.3) && $AsyncAwait
   final public func start() async -> IdsvrHaapiSdk.HaapiResult
-  #endif
   final public func submitForm(_ form: IdsvrHaapiSdk.FormActionModel, parameters: [Swift.String : Any], completionHandler: @escaping IdsvrHaapiSdk.HaapiCompletionHandler)
-  #if compiler(>=5.3) && $AsyncAwait
   final public func submitForm(_ form: IdsvrHaapiSdk.FormActionModel, parameters: [Swift.String : Any]) async -> IdsvrHaapiSdk.HaapiResult
-  #endif
   final public func followLink(_ link: IdsvrHaapiSdk.Link, completionHandler: @escaping IdsvrHaapiSdk.HaapiCompletionHandler)
-  #if compiler(>=5.3) && $AsyncAwait
   final public func followLink(_ link: IdsvrHaapiSdk.Link) async -> IdsvrHaapiSdk.HaapiResult
-  #endif
-  final public var dpop: IdsvrHaapiSdk.Dpop? {
-    get
+  @objc final public var dpop: IdsvrHaapiSdk.Dpop? {
+    @objc get
   }
 }
 public enum DriverFollowUpTag : Swift.String, IdsvrHaapiSdk.FollowUpTag, Swift.CaseIterable {
@@ -676,7 +763,7 @@ public enum DriverFollowUpTag : Swift.String, IdsvrHaapiSdk.FollowUpTag, Swift.C
   public init?(rawValue: Swift.String)
   public typealias AllCases = [IdsvrHaapiSdk.DriverFollowUpTag]
   public typealias RawValue = Swift.String
-  public static var allCases: [IdsvrHaapiSdk.DriverFollowUpTag] {
+  nonisolated public static var allCases: [IdsvrHaapiSdk.DriverFollowUpTag] {
     get
   }
   public var rawValue: Swift.String {
@@ -693,13 +780,25 @@ public struct Link : IdsvrHaapiSdk.RepresentationActionModel {
   public func encode(to encoder: any Swift.Encoder) throws
   public static func == (a: IdsvrHaapiSdk.Link, b: IdsvrHaapiSdk.Link) -> Swift.Bool
 }
-@available(iOS 14.0, *)
-public struct OAuthAuthorizationParameters {
-  public let scopes: [Swift.String]
-  public let nonce: Swift.String?
-  public let acrValues: [Swift.String]
-  public let extraRequestParameters: [Swift.String : Swift.String]
-  public init(scopes: [Swift.String] = [], nonce: Swift.String? = nil, acrValues: [Swift.String] = [], extraRequestParameters: [Swift.String : Swift.String] = [:])
+@objc @available(iOS 14.0, *)
+@objcMembers final public class OAuthAuthorizationParameters : ObjectiveC.NSObject {
+  @objc final public let scopes: [Swift.String]
+  @objc final public let nonce: Swift.String?
+  @objc final public let acrValues: [Swift.String]
+  @objc final public let extraRequestParameters: [Swift.String : Swift.String]
+  @objc public init(scopes: [Swift.String] = [], nonce: Swift.String? = nil, acrValues: [Swift.String] = [], extraRequestParameters: [Swift.String : Swift.String] = [:])
+  @objc deinit
+}
+public enum CryptoImportError : Swift.Error, Swift.CustomDebugStringConvertible {
+  case invalidPath(_: Swift.String)
+  case invalidPEMString(_: Swift.String, cause: (any Swift.Error)?)
+  case invalidPassphrase
+  case invalidType(_: Swift.String)
+  case outOfBounds
+  case failedToImport(_: Swift.String)
+  public var debugDescription: Swift.String {
+    get
+  }
 }
 @available(iOS 14.0, *)
 extension IdsvrHaapiSdk.HaapiModel {
@@ -738,6 +837,7 @@ public enum HttpHeaderNames {
   public static let haapiSetSessionId: Swift.String
   public static let dpopNonce: Swift.String
   public static let wwwAuthenticate: Swift.String
+  public static let clientInfo: Swift.String
 }
 @available(iOS 14, *)
 public enum MimeTypes : Swift.String {
@@ -745,33 +845,36 @@ public enum MimeTypes : Swift.String {
   case json
   case xWwwFormUrlEncoded
   public init?(rawValue: Swift.String)
+  @available(iOS 14, *)
   public typealias RawValue = Swift.String
   public var rawValue: Swift.String {
     get
   }
 }
-@available(iOS 14.0, *)
-public struct SuccessfulTokenResponse : Swift.Codable, Swift.Equatable {
-  public let accessToken: Swift.String
-  public let tokenType: Swift.String?
-  public let scope: Swift.String?
-  public let expiresIn: Swift.Int
-  public let refreshToken: Swift.String?
-  public let idToken: Swift.String?
+@objc @_hasMissingDesignatedInitializers @available(iOS 14.0, *)
+@objcMembers final public class SuccessfulTokenResponse : ObjectiveC.NSObject, Swift.Codable {
+  @objc final public let accessToken: Swift.String
+  @objc final public let tokenType: Swift.String?
+  @objc final public let scope: Swift.String?
+  @objc final public let expiresIn: Swift.Int
+  @objc final public let refreshToken: Swift.String?
+  @objc final public let idToken: Swift.String?
   public init(from decoder: any Swift.Decoder) throws
-  public static func == (a: IdsvrHaapiSdk.SuccessfulTokenResponse, b: IdsvrHaapiSdk.SuccessfulTokenResponse) -> Swift.Bool
-  public func encode(to encoder: any Swift.Encoder) throws
+  @objc override final public func isEqual(_ object: Any?) -> Swift.Bool
+  @objc deinit
+  final public func encode(to encoder: any Swift.Encoder) throws
 }
-@available(iOS 14.0, *)
-public struct ErrorTokenResponse : Swift.Codable, Swift.CustomDebugStringConvertible, Swift.Equatable {
-  public let error: Swift.String
-  public let errorDescription: Swift.String
+@objc @_hasMissingDesignatedInitializers @available(iOS 14.0, *)
+@objcMembers final public class ErrorTokenResponse : ObjectiveC.NSObject, Swift.Codable {
+  @objc final public let error: Swift.String
+  @objc final public let errorDescription: Swift.String
   public init(from decoder: any Swift.Decoder) throws
-  public var debugDescription: Swift.String {
-    get
+  @objc override final public var debugDescription: Swift.String {
+    @objc get
   }
-  public static func == (a: IdsvrHaapiSdk.ErrorTokenResponse, b: IdsvrHaapiSdk.ErrorTokenResponse) -> Swift.Bool
-  public func encode(to encoder: any Swift.Encoder) throws
+  @objc override final public func isEqual(_ object: Any?) -> Swift.Bool
+  @objc deinit
+  final public func encode(to encoder: any Swift.Encoder) throws
 }
 @available(iOS 14, *)
 public struct ResponseAndData {
@@ -1096,7 +1199,7 @@ public protocol LogSink {
 @available(iOS 14.0, *)
 @objc final public class BoundedTokenConfiguration : ObjectiveC.NSObject, IdsvrHaapiSdk.TokenBoundConfiguration {
   @objc final public let keyPairType: IdsvrHaapiSdk.CryptoKeyType
-  public init(keyPairType: IdsvrHaapiSdk.CryptoKeyType = .secureEnclave)
+  @objc public init(keyPairType: IdsvrHaapiSdk.CryptoKeyType = .secureEnclave)
   @objc deinit
 }
 @available(iOS 14.0, *)
@@ -1114,18 +1217,18 @@ extension IdsvrHaapiSdk.HaapiModel {
     public static func link(href: Swift.String, rel: Swift.String, title: IdsvrHaapiSdk.Message?, type: Swift.String?) -> IdsvrHaapiSdk.Link
   }
 }
-@_hasMissingDesignatedInitializers @available(iOS 14.0, *)
+@objc @_hasMissingDesignatedInitializers @available(iOS 14.0, *)
 final public class AuthorizationProblem : IdsvrHaapiSdk.Problem {
-  final public let error: Swift.String
-  final public let errorDescription: Swift.String?
+  @objc final public let error: Swift.String
+  @objc final public let errorDescription: Swift.String?
   required public init(from decoder: any Swift.Decoder) throws
   override final public func encode(to encoder: any Swift.Encoder) throws
   @objc deinit
 }
-@_hasMissingDesignatedInitializers @available(iOS 14.0, *)
+@objc @_hasMissingDesignatedInitializers @available(iOS 14.0, *)
 final public class InvalidInputProblem : IdsvrHaapiSdk.Problem {
   final public let invalidFields: [IdsvrHaapiSdk.InvalidInputProblem.InvalidField]
-  final public let errorDescription: Swift.String?
+  @objc final public let errorDescription: Swift.String?
   public struct InvalidField : Swift.Codable, Swift.Equatable {
     public let name: Swift.String
     public let reason: Swift.String?
@@ -1138,15 +1241,16 @@ final public class InvalidInputProblem : IdsvrHaapiSdk.Problem {
   override final public func encode(to encoder: any Swift.Encoder) throws
   @objc deinit
 }
-@available(iOS 14.0, *)
-public struct Message : Swift.Codable, Swift.Equatable, Swift.CustomStringConvertible {
-  public let key: Swift.String?
-  public let literal: Swift.String
-  public var description: Swift.String {
-    get
+@objc @_hasMissingDesignatedInitializers @available(iOS 14.0, *)
+final public class Message : ObjectiveC.NSObject, Swift.Codable {
+  final public let key: Swift.String?
+  final public let literal: Swift.String
+  @objc override final public var description: Swift.String {
+    @objc get
   }
-  public static func == (a: IdsvrHaapiSdk.Message, b: IdsvrHaapiSdk.Message) -> Swift.Bool
-  public func encode(to encoder: any Swift.Encoder) throws
+  @objc override final public func isEqual(_ object: Any?) -> Swift.Bool
+  @objc deinit
+  final public func encode(to encoder: any Swift.Encoder) throws
   public init(from decoder: any Swift.Decoder) throws
 }
 @available(iOS 14.0, *)
@@ -1304,6 +1408,42 @@ extension IdsvrHaapiSdk.PollingStatus : Swift.RawRepresentable {
     get
   }
 }
+@available(iOS 14.0, *)
+@objc public protocol HaapiManagerAccessor {
+}
+@available(iOS 14.0, *)
+@objc public protocol OAuthAccessor : IdsvrHaapiSdk.HaapiManagerAccessor {
+  @objc var oAuthTokenManager: IdsvrHaapiSdk.OAuthTokenManager { get }
+}
+@available(iOS 14.0, *)
+@objc public protocol HaapiAccessor : IdsvrHaapiSdk.OAuthAccessor {
+  @objc var haapiManager: IdsvrHaapiSdk.HaapiManager { get }
+  @objc func close()
+}
+@objc public enum HaapiAccessorOption : Swift.Int {
+  case all
+  case oauth
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+@objc @available(iOS 14.0, *)
+@objcMembers final public class HaapiAccessorBuilder : ObjectiveC.NSObject {
+  @objc public init(haapiConfiguration: IdsvrHaapiSdk.HaapiConfiguration)
+  @objc @discardableResult
+  final public func setHaapiAccessorOption(option: IdsvrHaapiSdk.HaapiAccessorOption) -> IdsvrHaapiSdk.HaapiAccessorBuilder
+  @objc @discardableResult
+  final public func setDCRConfiguration(configuration: IdsvrHaapiSdk.DCRConfiguration) -> IdsvrHaapiSdk.HaapiAccessorBuilder
+  final public func build<T>(shouldClearExistingDCRClient: Swift.Bool = false, completionHandler: @escaping (Swift.Result<T, IdsvrHaapiSdk.HaapiError>) -> Swift.Void) where T : IdsvrHaapiSdk.HaapiManagerAccessor
+  final public func build<T>(shouldClearExistingDCRClient: Swift.Bool = false) async throws -> T where T : IdsvrHaapiSdk.HaapiManagerAccessor
+  @objc deinit
+}
+@available(*, unavailable)
+@objc extension IdsvrHaapiSdk.HaapiAccessorBuilder {
+  @objc final public func build(shouldClearExistingDCRClient: Swift.Bool = false, completionHandler: @escaping ((any IdsvrHaapiSdk.HaapiManagerAccessor)?, (any Swift.Error)?) -> Swift.Void)
+}
 @objc @_hasMissingDesignatedInitializers @available(iOS 14, *)
 @objcMembers public class AccessToken : ObjectiveC.NSObject {
   @objc final public let value: Swift.String
@@ -1343,6 +1483,7 @@ extension Foundation.URLResponse {
 extension Foundation.URLRequest {
   public mutating func addAuthorizationHeader(headerValue: Swift.String)
   public mutating func addDpopHeader(headerValue: Swift.String)
+  public mutating func addClientInfoHeader(headerValue: Swift.String)
   public mutating func addDpopAccessTokenHeaders(from dpopAccessTokenInfo: IdsvrHaapiSdk.DpopAccessTokenInfo, httpMethod: Swift.String, url: Foundation.URL) throws
   public mutating func addHaapiMediaTypeAcceptHeader()
   public mutating func addHaapiSessionIdHeader(_ sessionId: Swift.String)
@@ -1380,6 +1521,10 @@ extension IdsvrHaapiSdk.HaapiModel {
   public func setAttestationMaxRetryCount(maxRetries: Swift.Int) -> IdsvrHaapiSdk.HaapiTokenManagerBuilder
   @objc @discardableResult
   public func setTokenBoundConfiguration(config: any IdsvrHaapiSdk.TokenBoundConfiguration) -> IdsvrHaapiSdk.HaapiTokenManagerBuilder
+  @objc @discardableResult
+  public func setClientAuthenticationMethod(method: any IdsvrHaapiSdk.ClientAuthenticationMethod) -> IdsvrHaapiSdk.HaapiTokenManagerBuilder
+  @objc @discardableResult
+  public func setApplicationBundle(_ bundle: Foundation.Bundle?) -> IdsvrHaapiSdk.HaapiTokenManagerBuilder
   @objc public func build() throws -> IdsvrHaapiSdk.HaapiTokenManager
   @objc deinit
 }
@@ -1391,6 +1536,18 @@ extension IdsvrHaapiSdk.CryptoKeyType : Swift.Hashable {}
 extension IdsvrHaapiSdk.TokenRevocationResponse : Swift.Sendable {}
 @available(iOS 14.0, *)
 extension IdsvrHaapiSdk.ProblemType : Swift.Sendable {}
+@available(iOS 14.0, *)
+extension IdsvrHaapiSdk.JWTAsymmetricAlgorithm : Swift.Equatable {}
+@available(iOS 14.0, *)
+extension IdsvrHaapiSdk.JWTAsymmetricAlgorithm : Swift.Hashable {}
+@available(iOS 14.0, *)
+extension IdsvrHaapiSdk.JWTAsymmetricAlgorithm : Swift.RawRepresentable {}
+@available(iOS 14.0, *)
+extension IdsvrHaapiSdk.JWTSymmetricAlgorithm : Swift.Equatable {}
+@available(iOS 14.0, *)
+extension IdsvrHaapiSdk.JWTSymmetricAlgorithm : Swift.Hashable {}
+@available(iOS 14.0, *)
+extension IdsvrHaapiSdk.JWTSymmetricAlgorithm : Swift.RawRepresentable {}
 extension IdsvrHaapiSdk.SdkFollowUpTag : Swift.Equatable {}
 extension IdsvrHaapiSdk.SdkFollowUpTag : Swift.Hashable {}
 extension IdsvrHaapiSdk.SdkFollowUpTag : Swift.RawRepresentable {}
@@ -1405,6 +1562,8 @@ extension IdsvrHaapiSdk.DriverFollowUpTag : Swift.RawRepresentable {}
 extension IdsvrHaapiSdk.RepresentationType : Swift.Hashable {}
 @available(iOS 14.0, *)
 extension IdsvrHaapiSdk.RepresentationType : Swift.Sendable {}
+@available(iOS 14.0, *)
+extension IdsvrHaapiSdk.RepresentationType : Swift.BitwiseCopyable {}
 @available(iOS 14, *)
 extension IdsvrHaapiSdk.MimeTypes : Swift.Equatable {}
 @available(iOS 14, *)
@@ -1420,3 +1579,8 @@ extension IdsvrHaapiSdk.LogType : Swift.RawRepresentable {}
 extension IdsvrHaapiSdk.PollingStatus : Swift.Hashable {}
 @available(iOS 14.0, *)
 extension IdsvrHaapiSdk.PollingStatus : Swift.Sendable {}
+@available(iOS 14.0, *)
+extension IdsvrHaapiSdk.PollingStatus : Swift.BitwiseCopyable {}
+extension IdsvrHaapiSdk.HaapiAccessorOption : Swift.Equatable {}
+extension IdsvrHaapiSdk.HaapiAccessorOption : Swift.Hashable {}
+extension IdsvrHaapiSdk.HaapiAccessorOption : Swift.RawRepresentable {}
