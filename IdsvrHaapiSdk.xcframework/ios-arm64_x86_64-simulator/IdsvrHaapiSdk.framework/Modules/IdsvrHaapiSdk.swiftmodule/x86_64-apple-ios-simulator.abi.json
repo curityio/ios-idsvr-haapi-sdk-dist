@@ -15,6 +15,488 @@
         ]
       },
       {
+        "kind": "TypeDecl",
+        "name": "InternalTestUtility",
+        "printedName": "InternalTestUtility",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "isEnabled",
+            "printedName": "isEnabled",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:13IdsvrHaapiSdk19InternalTestUtilityC9isEnabledSbvpZ",
+            "mangledName": "$s13IdsvrHaapiSdk19InternalTestUtilityC9isEnabledSbvpZ",
+            "moduleName": "IdsvrHaapiSdk",
+            "static": true,
+            "declAttributes": [
+              "HasInitialValue",
+              "Final",
+              "HasStorage",
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:13IdsvrHaapiSdk19InternalTestUtilityC9isEnabledSbvgZ",
+                "mangledName": "$s13IdsvrHaapiSdk19InternalTestUtilityC9isEnabledSbvgZ",
+                "moduleName": "IdsvrHaapiSdk",
+                "static": true,
+                "implicit": true,
+                "declAttributes": [
+                  "Final"
+                ],
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:13IdsvrHaapiSdk19InternalTestUtilityC9isEnabledSbvsZ",
+                "mangledName": "$s13IdsvrHaapiSdk19InternalTestUtilityC9isEnabledSbvsZ",
+                "moduleName": "IdsvrHaapiSdk",
+                "static": true,
+                "implicit": true,
+                "declAttributes": [
+                  "Final"
+                ],
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:13IdsvrHaapiSdk19InternalTestUtilityC9isEnabledSbvMZ",
+                "mangledName": "$s13IdsvrHaapiSdk19InternalTestUtilityC9isEnabledSbvMZ",
+                "moduleName": "IdsvrHaapiSdk",
+                "static": true,
+                "deprecated": true,
+                "implicit": true,
+                "intro_iOS": "14",
+                "declAttributes": [
+                  "Final",
+                  "Available"
+                ],
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(oauthTokenManager:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "InternalTestUtility",
+                "printedName": "IdsvrHaapiSdk.InternalTestUtility",
+                "usr": "s:13IdsvrHaapiSdk19InternalTestUtilityC"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "OAuthTokenManager",
+                "printedName": "IdsvrHaapiSdk.OAuthTokenManager",
+                "usr": "c:@M@IdsvrHaapiSdk@objc(cs)OAuthTokenManager"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:13IdsvrHaapiSdk19InternalTestUtilityC17oauthTokenManagerAcA05OAuthhI0C_tcfc",
+            "mangledName": "$s13IdsvrHaapiSdk19InternalTestUtilityC17oauthTokenManagerAcA05OAuthhI0C_tcfc",
+            "moduleName": "IdsvrHaapiSdk",
+            "declAttributes": [
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Function",
+            "name": "createDPoP",
+            "printedName": "createDPoP(keyType:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Dpop",
+                "printedName": "IdsvrHaapiSdk.Dpop",
+                "usr": "c:@M@IdsvrHaapiSdk@objc(cs)Dpop"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "CryptoKeyType",
+                "printedName": "IdsvrHaapiSdk.CryptoKeyType",
+                "usr": "c:@M@IdsvrHaapiSdk@E@CryptoKeyType"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:13IdsvrHaapiSdk19InternalTestUtilityC10createDPoP7keyTypeAA4DpopCAA09CryptoKeyJ0O_tKF",
+            "mangledName": "$s13IdsvrHaapiSdk19InternalTestUtilityC10createDPoP7keyTypeAA4DpopCAA09CryptoKeyJ0O_tKF",
+            "moduleName": "IdsvrHaapiSdk",
+            "declAttributes": [
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "throwing": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "hasDPoPForRefreshToken",
+            "printedName": "hasDPoPForRefreshToken(_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:13IdsvrHaapiSdk19InternalTestUtilityC22hasDPoPForRefreshTokenySbSSKF",
+            "mangledName": "$s13IdsvrHaapiSdk19InternalTestUtilityC22hasDPoPForRefreshTokenySbSSKF",
+            "moduleName": "IdsvrHaapiSdk",
+            "declAttributes": [
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "throwing": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "save",
+            "printedName": "save(dpop:for:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Dpop",
+                "printedName": "IdsvrHaapiSdk.Dpop",
+                "usr": "c:@M@IdsvrHaapiSdk@objc(cs)Dpop"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:13IdsvrHaapiSdk19InternalTestUtilityC4save4dpop3foryAA4DpopC_SStF",
+            "mangledName": "$s13IdsvrHaapiSdk19InternalTestUtilityC4save4dpop3foryAA4DpopC_SStF",
+            "moduleName": "IdsvrHaapiSdk",
+            "declAttributes": [
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "deleteDPopForRefreshToken",
+            "printedName": "deleteDPopForRefreshToken(_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:13IdsvrHaapiSdk19InternalTestUtilityC25deleteDPopForRefreshTokenySbSSF",
+            "mangledName": "$s13IdsvrHaapiSdk19InternalTestUtilityC25deleteDPopForRefreshTokenySbSSF",
+            "moduleName": "IdsvrHaapiSdk",
+            "declAttributes": [
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "applyCredentials",
+            "printedName": "applyCredentials(urlSession:for:with:and:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "URLSession",
+                "printedName": "Foundation.URLSession",
+                "usr": "c:objc(cs)NSURLSession"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "URLSession",
+                "printedName": "Foundation.URLSession",
+                "usr": "c:objc(cs)NSURLSession"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "ClientAuthenticationMethod",
+                "printedName": "any IdsvrHaapiSdk.ClientAuthenticationMethod",
+                "usr": "c:@M@IdsvrHaapiSdk@objc(pl)ClientAuthenticationMethod"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "URL",
+                "printedName": "Foundation.URL",
+                "usr": "s:10Foundation3URLV"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:13IdsvrHaapiSdk19InternalTestUtilityC16applyCredentials10urlSession3for4with3andSo12NSURLSessionCAJ_AA26ClientAuthenticationMethod_pSS10Foundation3URLVtF",
+            "mangledName": "$s13IdsvrHaapiSdk19InternalTestUtilityC16applyCredentials10urlSession3for4with3andSo12NSURLSessionCAJ_AA26ClientAuthenticationMethod_pSS10Foundation3URLVtF",
+            "moduleName": "IdsvrHaapiSdk",
+            "declAttributes": [
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "applyCredentials",
+            "printedName": "applyCredentials(urlRequest:for:with:and:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "URLRequest",
+                "printedName": "Foundation.URLRequest",
+                "usr": "s:10Foundation10URLRequestV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "URLRequest",
+                "printedName": "Foundation.URLRequest",
+                "usr": "s:10Foundation10URLRequestV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "ClientAuthenticationMethod",
+                "printedName": "any IdsvrHaapiSdk.ClientAuthenticationMethod",
+                "usr": "c:@M@IdsvrHaapiSdk@objc(pl)ClientAuthenticationMethod"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "URL",
+                "printedName": "Foundation.URL",
+                "usr": "s:10Foundation3URLV"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:13IdsvrHaapiSdk19InternalTestUtilityC16applyCredentials10urlRequest3for4with3and10Foundation10URLRequestVAK_AA26ClientAuthenticationMethod_pSSAI3URLVtF",
+            "mangledName": "$s13IdsvrHaapiSdk19InternalTestUtilityC16applyCredentials10urlRequest3for4with3and10Foundation10URLRequestVAK_AA26ClientAuthenticationMethod_pSSAI3URLVtF",
+            "moduleName": "IdsvrHaapiSdk",
+            "declAttributes": [
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "dataTask",
+            "printedName": "dataTask(on:with:completionHandler:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "URLSessionDataTask",
+                "printedName": "Foundation.URLSessionDataTask",
+                "usr": "c:objc(cs)NSURLSessionDataTask"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "URLSession",
+                "printedName": "Foundation.URLSession",
+                "usr": "c:objc(cs)NSURLSession"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "URLRequest",
+                "printedName": "Foundation.URLRequest",
+                "usr": "s:10Foundation10URLRequestV"
+              },
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(Foundation.Data?, Foundation.URLResponse?, (any Swift.Error)?) -> ()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Tuple",
+                    "printedName": "(Foundation.Data?, Foundation.URLResponse?, (any Swift.Error)?)",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Optional",
+                        "printedName": "Foundation.Data?",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "Data",
+                            "printedName": "Foundation.Data",
+                            "usr": "s:10Foundation4DataV"
+                          }
+                        ],
+                        "usr": "s:Sq"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Optional",
+                        "printedName": "Foundation.URLResponse?",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "URLResponse",
+                            "printedName": "Foundation.URLResponse",
+                            "usr": "c:objc(cs)NSURLResponse"
+                          }
+                        ],
+                        "usr": "s:Sq"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Optional",
+                        "printedName": "(any Swift.Error)?",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "Error",
+                            "printedName": "any Swift.Error",
+                            "usr": "s:s5ErrorP"
+                          }
+                        ],
+                        "usr": "s:Sq"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:13IdsvrHaapiSdk19InternalTestUtilityC8dataTask2on4with17completionHandlerSo016NSURLSessionDataH0CSo0M0C_10Foundation10URLRequestVyAL0N0VSg_So13NSURLResponseCSgs5Error_pSgtctF",
+            "mangledName": "$s13IdsvrHaapiSdk19InternalTestUtilityC8dataTask2on4with17completionHandlerSo016NSURLSessionDataH0CSo0M0C_10Foundation10URLRequestVyAL0N0VSg_So13NSURLResponseCSgs5Error_pSgtctF",
+            "moduleName": "IdsvrHaapiSdk",
+            "declAttributes": [
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Class",
+        "usr": "s:13IdsvrHaapiSdk19InternalTestUtilityC",
+        "mangledName": "$s13IdsvrHaapiSdk19InternalTestUtilityC",
+        "moduleName": "IdsvrHaapiSdk",
+        "deprecated": true,
+        "intro_iOS": "14",
+        "declAttributes": [
+          "AccessControl",
+          "Available",
+          "RawDocComment"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          }
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "IdsvrHaapiSdk",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
         "kind": "Import",
         "name": "Foundation",
         "printedName": "Foundation",
@@ -3716,7 +4198,7 @@
               {
                 "kind": "Function",
                 "name": "authenticatorSelector",
-                "printedName": "authenticatorSelector(title:authenticators:metadata:actions:messages:links:properties:)",
+                "printedName": "authenticatorSelector(title:authenticators:metadata:actions:messages:links:properties:rawJsonString:)",
                 "children": [
                   {
                     "kind": "TypeNominal",
@@ -3813,11 +4295,26 @@
                       }
                     ],
                     "usr": "s:Sq"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "hasDefaultArg": true,
+                    "usr": "s:Sq"
                   }
                 ],
                 "declKind": "Func",
-                "usr": "s:13IdsvrHaapiSdk0B5ModelO11StepFactoryO21authenticatorSelector5title14authenticators8metadata7actions8messages5links10propertiesAA013AuthenticatorhE0VAA7MessageC_SayAO0P6OptionVGAA8MetadataCSgSayAA6ActionCGSayAA04UserQ0VGSayAA4LinkVGAA17GenericPropertiesVSgtFZ",
-                "mangledName": "$s13IdsvrHaapiSdk0B5ModelO11StepFactoryO21authenticatorSelector5title14authenticators8metadata7actions8messages5links10propertiesAA013AuthenticatorhE0VAA7MessageC_SayAO0P6OptionVGAA8MetadataCSgSayAA6ActionCGSayAA04UserQ0VGSayAA4LinkVGAA17GenericPropertiesVSgtFZ",
+                "usr": "s:13IdsvrHaapiSdk0B5ModelO11StepFactoryO21authenticatorSelector5title14authenticators8metadata7actions8messages5links10properties13rawJsonStringAA013AuthenticatorhE0VAA7MessageC_SayAP0S6OptionVGAA8MetadataCSgSayAA6ActionCGSayAA04UserT0VGSayAA4LinkVGAA17GenericPropertiesVSgSSSgtFZ",
+                "mangledName": "$s13IdsvrHaapiSdk0B5ModelO11StepFactoryO21authenticatorSelector5title14authenticators8metadata7actions8messages5links10properties13rawJsonStringAA013AuthenticatorhE0VAA7MessageC_SayAP0S6OptionVGAA8MetadataCSgSayAA6ActionCGSayAA04UserT0VGSayAA4LinkVGAA17GenericPropertiesVSgSSSgtFZ",
                 "moduleName": "IdsvrHaapiSdk",
                 "static": true,
                 "declAttributes": [
@@ -3829,7 +4326,7 @@
               {
                 "kind": "Function",
                 "name": "interactiveForm",
-                "printedName": "interactiveForm(actions:type:metadata:messages:links:properties:)",
+                "printedName": "interactiveForm(actions:type:metadata:messages:links:properties:rawJsonString:)",
                 "children": [
                   {
                     "kind": "TypeNominal",
@@ -3912,11 +4409,26 @@
                       }
                     ],
                     "usr": "s:Sq"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "hasDefaultArg": true,
+                    "usr": "s:Sq"
                   }
                 ],
                 "declKind": "Func",
-                "usr": "s:13IdsvrHaapiSdk0B5ModelO11StepFactoryO15interactiveForm7actions4type8metadata8messages5links10propertiesAA011InteractivehE0VSayAA0H6ActionCG_AA18RepresentationTypeOAA8MetadataCSgSayAA11UserMessageVGSayAA4LinkVGAA17GenericPropertiesVSgtFZ",
-                "mangledName": "$s13IdsvrHaapiSdk0B5ModelO11StepFactoryO15interactiveForm7actions4type8metadata8messages5links10propertiesAA011InteractivehE0VSayAA0H6ActionCG_AA18RepresentationTypeOAA8MetadataCSgSayAA11UserMessageVGSayAA4LinkVGAA17GenericPropertiesVSgtFZ",
+                "usr": "s:13IdsvrHaapiSdk0B5ModelO11StepFactoryO15interactiveForm7actions4type8metadata8messages5links10properties13rawJsonStringAA011InteractivehE0VSayAA0H6ActionCG_AA18RepresentationTypeOAA8MetadataCSgSayAA11UserMessageVGSayAA4LinkVGAA17GenericPropertiesVSgSSSgtFZ",
+                "mangledName": "$s13IdsvrHaapiSdk0B5ModelO11StepFactoryO15interactiveForm7actions4type8metadata8messages5links10properties13rawJsonStringAA011InteractivehE0VSayAA0H6ActionCG_AA18RepresentationTypeOAA8MetadataCSgSayAA11UserMessageVGSayAA4LinkVGAA17GenericPropertiesVSgSSSgtFZ",
                 "moduleName": "IdsvrHaapiSdk",
                 "static": true,
                 "declAttributes": [
@@ -3928,7 +4440,7 @@
               {
                 "kind": "Function",
                 "name": "redirection",
-                "printedName": "redirection(redirectAction:metadata:actions:properties:)",
+                "printedName": "redirection(redirectAction:metadata:actions:properties:rawJsonString:)",
                 "children": [
                   {
                     "kind": "TypeNominal",
@@ -3983,11 +4495,26 @@
                       }
                     ],
                     "usr": "s:Sq"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "hasDefaultArg": true,
+                    "usr": "s:Sq"
                   }
                 ],
                 "declKind": "Func",
-                "usr": "s:13IdsvrHaapiSdk0B5ModelO11StepFactoryO11redirection14redirectAction8metadata7actions10propertiesAA011RedirectionE0VAA04FormI0C_AA8MetadataCSgSayAA0I0CGAA17GenericPropertiesVSgtFZ",
-                "mangledName": "$s13IdsvrHaapiSdk0B5ModelO11StepFactoryO11redirection14redirectAction8metadata7actions10propertiesAA011RedirectionE0VAA04FormI0C_AA8MetadataCSgSayAA0I0CGAA17GenericPropertiesVSgtFZ",
+                "usr": "s:13IdsvrHaapiSdk0B5ModelO11StepFactoryO11redirection14redirectAction8metadata7actions10properties13rawJsonStringAA011RedirectionE0VAA04FormI0C_AA8MetadataCSgSayAA0I0CGAA17GenericPropertiesVSgSSSgtFZ",
+                "mangledName": "$s13IdsvrHaapiSdk0B5ModelO11StepFactoryO11redirection14redirectAction8metadata7actions10properties13rawJsonStringAA011RedirectionE0VAA04FormI0C_AA8MetadataCSgSayAA0I0CGAA17GenericPropertiesVSgSSSgtFZ",
                 "moduleName": "IdsvrHaapiSdk",
                 "static": true,
                 "declAttributes": [
@@ -3999,7 +4526,7 @@
               {
                 "kind": "Function",
                 "name": "polling",
-                "printedName": "polling(mainAction:cancelAction:metadata:actions:messages:links:properties:)",
+                "printedName": "polling(mainAction:cancelAction:metadata:actions:messages:links:properties:rawJsonString:)",
                 "children": [
                   {
                     "kind": "TypeNominal",
@@ -4088,11 +4615,26 @@
                     "name": "PollingProperties",
                     "printedName": "IdsvrHaapiSdk.PollingProperties",
                     "usr": "s:13IdsvrHaapiSdk17PollingPropertiesV"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "hasDefaultArg": true,
+                    "usr": "s:Sq"
                   }
                 ],
                 "declKind": "Func",
-                "usr": "s:13IdsvrHaapiSdk0B5ModelO11StepFactoryO7polling10mainAction06cancelI08metadata7actions8messages5links10propertiesAA07PollingE0VAA04FormI0C_AQSgAA8MetadataCSgSayAA0I0CGSayAA11UserMessageVGSayAA4LinkVGAA0P10PropertiesVtFZ",
-                "mangledName": "$s13IdsvrHaapiSdk0B5ModelO11StepFactoryO7polling10mainAction06cancelI08metadata7actions8messages5links10propertiesAA07PollingE0VAA04FormI0C_AQSgAA8MetadataCSgSayAA0I0CGSayAA11UserMessageVGSayAA4LinkVGAA0P10PropertiesVtFZ",
+                "usr": "s:13IdsvrHaapiSdk0B5ModelO11StepFactoryO7polling10mainAction06cancelI08metadata7actions8messages5links10properties13rawJsonStringAA07PollingE0VAA04FormI0C_ARSgAA8MetadataCSgSayAA0I0CGSayAA11UserMessageVGSayAA4LinkVGAA0S10PropertiesVSSSgtFZ",
+                "mangledName": "$s13IdsvrHaapiSdk0B5ModelO11StepFactoryO7polling10mainAction06cancelI08metadata7actions8messages5links10properties13rawJsonStringAA07PollingE0VAA04FormI0C_ARSgAA8MetadataCSgSayAA0I0CGSayAA11UserMessageVGSayAA4LinkVGAA0S10PropertiesVSSSgtFZ",
                 "moduleName": "IdsvrHaapiSdk",
                 "static": true,
                 "declAttributes": [
@@ -4104,7 +4646,7 @@
               {
                 "kind": "Function",
                 "name": "oAuthAuthorization",
-                "printedName": "oAuthAuthorization(metadata:messages:links:properties:)",
+                "printedName": "oAuthAuthorization(metadata:messages:links:properties:rawJsonString:)",
                 "children": [
                   {
                     "kind": "TypeNominal",
@@ -4159,11 +4701,26 @@
                     "name": "OAuthAuthorizationResponseProperties",
                     "printedName": "IdsvrHaapiSdk.OAuthAuthorizationResponseProperties",
                     "usr": "s:13IdsvrHaapiSdk36OAuthAuthorizationResponsePropertiesV"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "hasDefaultArg": true,
+                    "usr": "s:Sq"
                   }
                 ],
                 "declKind": "Func",
-                "usr": "s:13IdsvrHaapiSdk0B5ModelO11StepFactoryO18oAuthAuthorization8metadata8messages5links10propertiesAA05OAuthh8ResponseE0VAA8MetadataCSg_SayAA11UserMessageVGSayAA4LinkVGAA0mhN10PropertiesVtFZ",
-                "mangledName": "$s13IdsvrHaapiSdk0B5ModelO11StepFactoryO18oAuthAuthorization8metadata8messages5links10propertiesAA05OAuthh8ResponseE0VAA8MetadataCSg_SayAA11UserMessageVGSayAA4LinkVGAA0mhN10PropertiesVtFZ",
+                "usr": "s:13IdsvrHaapiSdk0B5ModelO11StepFactoryO18oAuthAuthorization8metadata8messages5links10properties13rawJsonStringAA05OAuthh8ResponseE0VAA8MetadataCSg_SayAA11UserMessageVGSayAA4LinkVGAA0phQ10PropertiesVSSSgtFZ",
+                "mangledName": "$s13IdsvrHaapiSdk0B5ModelO11StepFactoryO18oAuthAuthorization8metadata8messages5links10properties13rawJsonStringAA05OAuthh8ResponseE0VAA8MetadataCSg_SayAA11UserMessageVGSayAA4LinkVGAA0phQ10PropertiesVSSSgtFZ",
                 "moduleName": "IdsvrHaapiSdk",
                 "static": true,
                 "declAttributes": [
@@ -4175,7 +4732,7 @@
               {
                 "kind": "Function",
                 "name": "continueSame",
-                "printedName": "continueSame(metadata:messages:properties:)",
+                "printedName": "continueSame(metadata:messages:properties:rawJsonString:)",
                 "children": [
                   {
                     "kind": "TypeNominal",
@@ -4224,11 +4781,26 @@
                       }
                     ],
                     "usr": "s:Sq"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "hasDefaultArg": true,
+                    "usr": "s:Sq"
                   }
                 ],
                 "declKind": "Func",
-                "usr": "s:13IdsvrHaapiSdk0B5ModelO11StepFactoryO12continueSame8metadata8messages10propertiesAA08ContinuehE0VAA8MetadataCSg_SayAA11UserMessageVGAA17GenericPropertiesVSgtFZ",
-                "mangledName": "$s13IdsvrHaapiSdk0B5ModelO11StepFactoryO12continueSame8metadata8messages10propertiesAA08ContinuehE0VAA8MetadataCSg_SayAA11UserMessageVGAA17GenericPropertiesVSgtFZ",
+                "usr": "s:13IdsvrHaapiSdk0B5ModelO11StepFactoryO12continueSame8metadata8messages10properties13rawJsonStringAA08ContinuehE0VAA8MetadataCSg_SayAA11UserMessageVGAA17GenericPropertiesVSgSSSgtFZ",
+                "mangledName": "$s13IdsvrHaapiSdk0B5ModelO11StepFactoryO12continueSame8metadata8messages10properties13rawJsonStringAA08ContinuehE0VAA8MetadataCSg_SayAA11UserMessageVGAA17GenericPropertiesVSgSSSgtFZ",
                 "moduleName": "IdsvrHaapiSdk",
                 "static": true,
                 "declAttributes": [
@@ -4240,7 +4812,7 @@
               {
                 "kind": "Function",
                 "name": "userConsent",
-                "printedName": "userConsent(metadata:actions:messages:links:properties:)",
+                "printedName": "userConsent(metadata:actions:messages:links:properties:rawJsonString:)",
                 "children": [
                   {
                     "kind": "TypeNominal",
@@ -4317,11 +4889,26 @@
                       }
                     ],
                     "usr": "s:Sq"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "hasDefaultArg": true,
+                    "usr": "s:Sq"
                   }
                 ],
                 "declKind": "Func",
-                "usr": "s:13IdsvrHaapiSdk0B5ModelO11StepFactoryO11userConsent8metadata7actions8messages5links10propertiesAA04UserhE0VAA8MetadataCSg_SayAA6ActionCGSayAA0N7MessageVGSayAA4LinkVGAA17GenericPropertiesVSgtFZ",
-                "mangledName": "$s13IdsvrHaapiSdk0B5ModelO11StepFactoryO11userConsent8metadata7actions8messages5links10propertiesAA04UserhE0VAA8MetadataCSg_SayAA6ActionCGSayAA0N7MessageVGSayAA4LinkVGAA17GenericPropertiesVSgtFZ",
+                "usr": "s:13IdsvrHaapiSdk0B5ModelO11StepFactoryO11userConsent8metadata7actions8messages5links10properties13rawJsonStringAA04UserhE0VAA8MetadataCSg_SayAA6ActionCGSayAA0Q7MessageVGSayAA4LinkVGAA17GenericPropertiesVSgSSSgtFZ",
+                "mangledName": "$s13IdsvrHaapiSdk0B5ModelO11StepFactoryO11userConsent8metadata7actions8messages5links10properties13rawJsonStringAA04UserhE0VAA8MetadataCSg_SayAA6ActionCGSayAA0Q7MessageVGSayAA4LinkVGAA17GenericPropertiesVSgSSSgtFZ",
                 "moduleName": "IdsvrHaapiSdk",
                 "static": true,
                 "declAttributes": [
@@ -4333,7 +4920,7 @@
               {
                 "kind": "Function",
                 "name": "externalBrowserClientOperation",
-                "printedName": "externalBrowserClientOperation(actionModel:metadata:type:actions:properties:)",
+                "printedName": "externalBrowserClientOperation(actionModel:metadata:type:actions:properties:rawJsonString:)",
                 "children": [
                   {
                     "kind": "TypeNominal",
@@ -4394,11 +4981,26 @@
                       }
                     ],
                     "usr": "s:Sq"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "hasDefaultArg": true,
+                    "usr": "s:Sq"
                   }
                 ],
                 "declKind": "Func",
-                "usr": "s:13IdsvrHaapiSdk0B5ModelO11StepFactoryO30externalBrowserClientOperation06actionD08metadata4type7actions10propertiesAA08ExternalhijE0VAA0phij6ActionD0C_AA8MetadataCSgAA18RepresentationTypeOSayAA0Q0CGAA17GenericPropertiesVSgtFZ",
-                "mangledName": "$s13IdsvrHaapiSdk0B5ModelO11StepFactoryO30externalBrowserClientOperation06actionD08metadata4type7actions10propertiesAA08ExternalhijE0VAA0phij6ActionD0C_AA8MetadataCSgAA18RepresentationTypeOSayAA0Q0CGAA17GenericPropertiesVSgtFZ",
+                "usr": "s:13IdsvrHaapiSdk0B5ModelO11StepFactoryO30externalBrowserClientOperation06actionD08metadata4type7actions10properties13rawJsonStringAA08ExternalhijE0VAA0shij6ActionD0C_AA8MetadataCSgAA18RepresentationTypeOSayAA0T0CGAA17GenericPropertiesVSgSSSgtFZ",
+                "mangledName": "$s13IdsvrHaapiSdk0B5ModelO11StepFactoryO30externalBrowserClientOperation06actionD08metadata4type7actions10properties13rawJsonStringAA08ExternalhijE0VAA0shij6ActionD0C_AA8MetadataCSgAA18RepresentationTypeOSayAA0T0CGAA17GenericPropertiesVSgSSSgtFZ",
                 "moduleName": "IdsvrHaapiSdk",
                 "static": true,
                 "declAttributes": [
@@ -4410,7 +5012,7 @@
               {
                 "kind": "Function",
                 "name": "bankIdClientOperation",
-                "printedName": "bankIdClientOperation(activationLink:actionModel:metadata:type:actions:messages:links:properties:)",
+                "printedName": "bankIdClientOperation(activationLink:actionModel:metadata:type:actions:messages:links:properties:rawJsonString:)",
                 "children": [
                   {
                     "kind": "TypeNominal",
@@ -4513,11 +5115,26 @@
                       }
                     ],
                     "usr": "s:Sq"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "hasDefaultArg": true,
+                    "usr": "s:Sq"
                   }
                 ],
                 "declKind": "Func",
-                "usr": "s:13IdsvrHaapiSdk0B5ModelO11StepFactoryO21bankIdClientOperation14activationLink06actionD08metadata4type7actions8messages5links10propertiesAA04BankhijE0VAA0L0VSg_AA0thij6ActionD0CAA8MetadataCSgAA18RepresentationTypeOSayAA0U0CGSayAA11UserMessageVGSayARGAA17GenericPropertiesVSgtFZ",
-                "mangledName": "$s13IdsvrHaapiSdk0B5ModelO11StepFactoryO21bankIdClientOperation14activationLink06actionD08metadata4type7actions8messages5links10propertiesAA04BankhijE0VAA0L0VSg_AA0thij6ActionD0CAA8MetadataCSgAA18RepresentationTypeOSayAA0U0CGSayAA11UserMessageVGSayARGAA17GenericPropertiesVSgtFZ",
+                "usr": "s:13IdsvrHaapiSdk0B5ModelO11StepFactoryO21bankIdClientOperation14activationLink06actionD08metadata4type7actions8messages5links10properties13rawJsonStringAA04BankhijE0VAA0L0VSg_AA0whij6ActionD0CAA8MetadataCSgAA18RepresentationTypeOSayAA0X0CGSayAA11UserMessageVGSayASGAA17GenericPropertiesVSgSSSgtFZ",
+                "mangledName": "$s13IdsvrHaapiSdk0B5ModelO11StepFactoryO21bankIdClientOperation14activationLink06actionD08metadata4type7actions8messages5links10properties13rawJsonStringAA04BankhijE0VAA0L0VSg_AA0whij6ActionD0CAA8MetadataCSgAA18RepresentationTypeOSayAA0X0CGSayAA11UserMessageVGSayASGAA17GenericPropertiesVSgSSSgtFZ",
                 "moduleName": "IdsvrHaapiSdk",
                 "static": true,
                 "declAttributes": [
@@ -4529,7 +5146,7 @@
               {
                 "kind": "Function",
                 "name": "encapClientOperation",
-                "printedName": "encapClientOperation(actionModel:metadata:type:actions:messages:links:properties:)",
+                "printedName": "encapClientOperation(actionModel:metadata:type:actions:messages:links:properties:rawJsonString:)",
                 "children": [
                   {
                     "kind": "TypeNominal",
@@ -4618,11 +5235,26 @@
                       }
                     ],
                     "usr": "s:Sq"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "hasDefaultArg": true,
+                    "usr": "s:Sq"
                   }
                 ],
                 "declKind": "Func",
-                "usr": "s:13IdsvrHaapiSdk0B5ModelO11StepFactoryO20encapClientOperation06actionD08metadata4type7actions8messages5links10propertiesAA05EncaphiE0VAA0q14AutoActivationhi6ActionD0C_AA8MetadataCSgAA18RepresentationTypeOSayAA0T0CGSayAA11UserMessageVGSayAA4LinkVGAA17GenericPropertiesVSgtFZ",
-                "mangledName": "$s13IdsvrHaapiSdk0B5ModelO11StepFactoryO20encapClientOperation06actionD08metadata4type7actions8messages5links10propertiesAA05EncaphiE0VAA0q14AutoActivationhi6ActionD0C_AA8MetadataCSgAA18RepresentationTypeOSayAA0T0CGSayAA11UserMessageVGSayAA4LinkVGAA17GenericPropertiesVSgtFZ",
+                "usr": "s:13IdsvrHaapiSdk0B5ModelO11StepFactoryO20encapClientOperation06actionD08metadata4type7actions8messages5links10properties13rawJsonStringAA05EncaphiE0VAA0t14AutoActivationhi6ActionD0C_AA8MetadataCSgAA18RepresentationTypeOSayAA0W0CGSayAA11UserMessageVGSayAA4LinkVGAA17GenericPropertiesVSgSSSgtFZ",
+                "mangledName": "$s13IdsvrHaapiSdk0B5ModelO11StepFactoryO20encapClientOperation06actionD08metadata4type7actions8messages5links10properties13rawJsonStringAA05EncaphiE0VAA0t14AutoActivationhi6ActionD0C_AA8MetadataCSgAA18RepresentationTypeOSayAA0W0CGSayAA11UserMessageVGSayAA4LinkVGAA17GenericPropertiesVSgSSSgtFZ",
                 "moduleName": "IdsvrHaapiSdk",
                 "static": true,
                 "declAttributes": [
@@ -4634,7 +5266,7 @@
               {
                 "kind": "Function",
                 "name": "webauthnRegistrationClientOperation",
-                "printedName": "webauthnRegistrationClientOperation(actionModel:metadata:type:actions:messages:links:properties:)",
+                "printedName": "webauthnRegistrationClientOperation(actionModel:metadata:type:actions:messages:links:properties:rawJsonString:)",
                 "children": [
                   {
                     "kind": "TypeNominal",
@@ -4723,11 +5355,26 @@
                       }
                     ],
                     "usr": "s:Sq"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "hasDefaultArg": true,
+                    "usr": "s:Sq"
                   }
                 ],
                 "declKind": "Func",
-                "usr": "s:13IdsvrHaapiSdk0B5ModelO11StepFactoryO35webauthnRegistrationClientOperation06actionD08metadata4type7actions8messages5links10propertiesAA08WebAuthnhijE0VAA0rshij6ActionD0C_AA8MetadataCSgAA18RepresentationTypeOSayAA0T0CGSayAA11UserMessageVGSayAA4LinkVGAA17GenericPropertiesVSgtKFZ",
-                "mangledName": "$s13IdsvrHaapiSdk0B5ModelO11StepFactoryO35webauthnRegistrationClientOperation06actionD08metadata4type7actions8messages5links10propertiesAA08WebAuthnhijE0VAA0rshij6ActionD0C_AA8MetadataCSgAA18RepresentationTypeOSayAA0T0CGSayAA11UserMessageVGSayAA4LinkVGAA17GenericPropertiesVSgtKFZ",
+                "usr": "s:13IdsvrHaapiSdk0B5ModelO11StepFactoryO35webauthnRegistrationClientOperation06actionD08metadata4type7actions8messages5links10properties13rawJsonStringAA08WebAuthnhijE0VAA0uvhij6ActionD0C_AA8MetadataCSgAA18RepresentationTypeOSayAA0W0CGSayAA11UserMessageVGSayAA4LinkVGAA17GenericPropertiesVSgSSSgtKFZ",
+                "mangledName": "$s13IdsvrHaapiSdk0B5ModelO11StepFactoryO35webauthnRegistrationClientOperation06actionD08metadata4type7actions8messages5links10properties13rawJsonStringAA08WebAuthnhijE0VAA0uvhij6ActionD0C_AA8MetadataCSgAA18RepresentationTypeOSayAA0W0CGSayAA11UserMessageVGSayAA4LinkVGAA17GenericPropertiesVSgSSSgtKFZ",
                 "moduleName": "IdsvrHaapiSdk",
                 "static": true,
                 "declAttributes": [
@@ -4740,7 +5387,7 @@
               {
                 "kind": "Function",
                 "name": "webAuthnAuthenticationClientOperation",
-                "printedName": "webAuthnAuthenticationClientOperation(actionModel:metadata:type:actions:messages:links:properties:)",
+                "printedName": "webAuthnAuthenticationClientOperation(actionModel:metadata:type:actions:messages:links:properties:rawJsonString:)",
                 "children": [
                   {
                     "kind": "TypeNominal",
@@ -4829,11 +5476,26 @@
                       }
                     ],
                     "usr": "s:Sq"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "hasDefaultArg": true,
+                    "usr": "s:Sq"
                   }
                 ],
                 "declKind": "Func",
-                "usr": "s:13IdsvrHaapiSdk0B5ModelO11StepFactoryO37webAuthnAuthenticationClientOperation06actionD08metadata4type7actions8messages5links10propertiesAA03WebhijkE0VAA0shijk6ActionD0C_AA8MetadataCSgAA18RepresentationTypeOSayAA0T0CGSayAA11UserMessageVGSayAA4LinkVGAA17GenericPropertiesVSgtKFZ",
-                "mangledName": "$s13IdsvrHaapiSdk0B5ModelO11StepFactoryO37webAuthnAuthenticationClientOperation06actionD08metadata4type7actions8messages5links10propertiesAA03WebhijkE0VAA0shijk6ActionD0C_AA8MetadataCSgAA18RepresentationTypeOSayAA0T0CGSayAA11UserMessageVGSayAA4LinkVGAA17GenericPropertiesVSgtKFZ",
+                "usr": "s:13IdsvrHaapiSdk0B5ModelO11StepFactoryO37webAuthnAuthenticationClientOperation06actionD08metadata4type7actions8messages5links10properties13rawJsonStringAA03WebhijkE0VAA0vhijk6ActionD0C_AA8MetadataCSgAA18RepresentationTypeOSayAA0W0CGSayAA11UserMessageVGSayAA4LinkVGAA17GenericPropertiesVSgSSSgtKFZ",
+                "mangledName": "$s13IdsvrHaapiSdk0B5ModelO11StepFactoryO37webAuthnAuthenticationClientOperation06actionD08metadata4type7actions8messages5links10properties13rawJsonStringAA03WebhijkE0VAA0vhijk6ActionD0C_AA8MetadataCSgAA18RepresentationTypeOSayAA0W0CGSayAA11UserMessageVGSayAA4LinkVGAA17GenericPropertiesVSgSSSgtKFZ",
                 "moduleName": "IdsvrHaapiSdk",
                 "static": true,
                 "declAttributes": [
@@ -4846,7 +5508,7 @@
               {
                 "kind": "Function",
                 "name": "genericClientOperation",
-                "printedName": "genericClientOperation(actionModel:metadata:type:actions:messages:links:properties:)",
+                "printedName": "genericClientOperation(actionModel:metadata:type:actions:messages:links:properties:rawJsonString:)",
                 "children": [
                   {
                     "kind": "TypeNominal",
@@ -4935,11 +5597,26 @@
                       }
                     ],
                     "usr": "s:Sq"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "hasDefaultArg": true,
+                    "usr": "s:Sq"
                   }
                 ],
                 "declKind": "Func",
-                "usr": "s:13IdsvrHaapiSdk0B5ModelO11StepFactoryO22genericClientOperation06actionD08metadata4type7actions8messages5links10propertiesAA07GenerichiE0VAA0qhi6ActionD0C_AA8MetadataCSgAA18RepresentationTypeOSayAA0R0CGSayAA11UserMessageVGSayAA4LinkVGAA0Q10PropertiesVSgtFZ",
-                "mangledName": "$s13IdsvrHaapiSdk0B5ModelO11StepFactoryO22genericClientOperation06actionD08metadata4type7actions8messages5links10propertiesAA07GenerichiE0VAA0qhi6ActionD0C_AA8MetadataCSgAA18RepresentationTypeOSayAA0R0CGSayAA11UserMessageVGSayAA4LinkVGAA0Q10PropertiesVSgtFZ",
+                "usr": "s:13IdsvrHaapiSdk0B5ModelO11StepFactoryO22genericClientOperation06actionD08metadata4type7actions8messages5links10properties13rawJsonStringAA07GenerichiE0VAA0thi6ActionD0C_AA8MetadataCSgAA18RepresentationTypeOSayAA0U0CGSayAA11UserMessageVGSayAA4LinkVGAA0T10PropertiesVSgSSSgtFZ",
+                "mangledName": "$s13IdsvrHaapiSdk0B5ModelO11StepFactoryO22genericClientOperation06actionD08metadata4type7actions8messages5links10properties13rawJsonStringAA07GenerichiE0VAA0thi6ActionD0C_AA8MetadataCSgAA18RepresentationTypeOSayAA0U0CGSayAA11UserMessageVGSayAA4LinkVGAA0T10PropertiesVSgSSSgtFZ",
                 "moduleName": "IdsvrHaapiSdk",
                 "static": true,
                 "declAttributes": [
@@ -4951,7 +5628,7 @@
               {
                 "kind": "Function",
                 "name": "genericRepresentation",
-                "printedName": "genericRepresentation(type:metadata:actions:messages:links:properties:)",
+                "printedName": "genericRepresentation(type:metadata:actions:messages:links:properties:rawJsonString:)",
                 "children": [
                   {
                     "kind": "TypeNominal",
@@ -5034,11 +5711,26 @@
                       }
                     ],
                     "usr": "s:Sq"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "hasDefaultArg": true,
+                    "usr": "s:Sq"
                   }
                 ],
                 "declKind": "Func",
-                "usr": "s:13IdsvrHaapiSdk0B5ModelO11StepFactoryO21genericRepresentation4type8metadata7actions8messages5links10propertiesAA07GenerichE0VAA0H4TypeO_AA8MetadataCSgSayAA6ActionCGSayAA11UserMessageVGSayAA4LinkVGAA10Properties_pSgtFZ",
-                "mangledName": "$s13IdsvrHaapiSdk0B5ModelO11StepFactoryO21genericRepresentation4type8metadata7actions8messages5links10propertiesAA07GenerichE0VAA0H4TypeO_AA8MetadataCSgSayAA6ActionCGSayAA11UserMessageVGSayAA4LinkVGAA10Properties_pSgtFZ",
+                "usr": "s:13IdsvrHaapiSdk0B5ModelO11StepFactoryO21genericRepresentation4type8metadata7actions8messages5links10properties13rawJsonStringAA07GenerichE0VAA0H4TypeO_AA8MetadataCSgSayAA6ActionCGSayAA11UserMessageVGSayAA4LinkVGAA10Properties_pSgSSSgtFZ",
+                "mangledName": "$s13IdsvrHaapiSdk0B5ModelO11StepFactoryO21genericRepresentation4type8metadata7actions8messages5links10properties13rawJsonStringAA07GenerichE0VAA0H4TypeO_AA8MetadataCSgSayAA6ActionCGSayAA11UserMessageVGSayAA4LinkVGAA10Properties_pSgSSSgtFZ",
                 "moduleName": "IdsvrHaapiSdk",
                 "static": true,
                 "declAttributes": [
@@ -6566,7 +7258,7 @@
               {
                 "kind": "Function",
                 "name": "problem",
-                "printedName": "problem(type:metadata:title:messages:links:)",
+                "printedName": "problem(type:metadata:title:messages:links:rawJsonString:)",
                 "children": [
                   {
                     "kind": "TypeNominal",
@@ -6635,11 +7327,26 @@
                       }
                     ],
                     "usr": "s:Sa"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "hasDefaultArg": true,
+                    "usr": "s:Sq"
                   }
                 ],
                 "declKind": "Func",
-                "usr": "s:13IdsvrHaapiSdk0B5ModelO14ProblemFactoryO7problem4type8metadata5title8messages5linksAA0E0CAA0E4TypeO_AA8MetadataCSgAA7MessageCSgSayAA04UserO0VGSayAA4LinkVGtFZ",
-                "mangledName": "$s13IdsvrHaapiSdk0B5ModelO14ProblemFactoryO7problem4type8metadata5title8messages5linksAA0E0CAA0E4TypeO_AA8MetadataCSgAA7MessageCSgSayAA04UserO0VGSayAA4LinkVGtFZ",
+                "usr": "s:13IdsvrHaapiSdk0B5ModelO14ProblemFactoryO7problem4type8metadata5title8messages5links13rawJsonStringAA0E0CAA0E4TypeO_AA8MetadataCSgAA7MessageCSgSayAA04UserR0VGSayAA4LinkVGSSSgtFZ",
+                "mangledName": "$s13IdsvrHaapiSdk0B5ModelO14ProblemFactoryO7problem4type8metadata5title8messages5links13rawJsonStringAA0E0CAA0E4TypeO_AA8MetadataCSgAA7MessageCSgSayAA04UserR0VGSayAA4LinkVGSSSgtFZ",
                 "moduleName": "IdsvrHaapiSdk",
                 "static": true,
                 "declAttributes": [
@@ -6700,7 +7407,7 @@
               {
                 "kind": "Function",
                 "name": "invalidInput",
-                "printedName": "invalidInput(invalidFields:errorDescription:type:metadata:title:messages:links:)",
+                "printedName": "invalidInput(invalidFields:errorDescription:type:metadata:title:messages:links:rawJsonString:)",
                 "children": [
                   {
                     "kind": "TypeNominal",
@@ -6797,11 +7504,26 @@
                       }
                     ],
                     "usr": "s:Sa"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "hasDefaultArg": true,
+                    "usr": "s:Sq"
                   }
                 ],
                 "declKind": "Func",
-                "usr": "s:13IdsvrHaapiSdk0B5ModelO14ProblemFactoryO12invalidInput0G6Fields16errorDescription4type8metadata5title8messages5linksAA07InvalidhE0CSayAO0Q5FieldVG_SSSgAA0E4TypeOAA8MetadataCSgAA7MessageCSgSayAA04UserU0VGSayAA4LinkVGtFZ",
-                "mangledName": "$s13IdsvrHaapiSdk0B5ModelO14ProblemFactoryO12invalidInput0G6Fields16errorDescription4type8metadata5title8messages5linksAA07InvalidhE0CSayAO0Q5FieldVG_SSSgAA0E4TypeOAA8MetadataCSgAA7MessageCSgSayAA04UserU0VGSayAA4LinkVGtFZ",
+                "usr": "s:13IdsvrHaapiSdk0B5ModelO14ProblemFactoryO12invalidInput0G6Fields16errorDescription4type8metadata5title8messages5links13rawJsonStringAA07InvalidhE0CSayAP0T5FieldVG_SSSgAA0E4TypeOAA8MetadataCSgAA7MessageCSgSayAA04UserX0VGSayAA4LinkVGATtFZ",
+                "mangledName": "$s13IdsvrHaapiSdk0B5ModelO14ProblemFactoryO12invalidInput0G6Fields16errorDescription4type8metadata5title8messages5links13rawJsonStringAA07InvalidhE0CSayAP0T5FieldVG_SSSgAA0E4TypeOAA8MetadataCSgAA7MessageCSgSayAA04UserX0VGSayAA4LinkVGATtFZ",
                 "moduleName": "IdsvrHaapiSdk",
                 "static": true,
                 "declAttributes": [
@@ -6813,7 +7535,7 @@
               {
                 "kind": "Function",
                 "name": "authorization",
-                "printedName": "authorization(error:errorDescription:type:metadata:title:messages:links:)",
+                "printedName": "authorization(error:errorDescription:type:metadata:title:messages:links:rawJsonString:)",
                 "children": [
                   {
                     "kind": "TypeNominal",
@@ -6902,11 +7624,26 @@
                       }
                     ],
                     "usr": "s:Sa"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "hasDefaultArg": true,
+                    "usr": "s:Sq"
                   }
                 ],
                 "declKind": "Func",
-                "usr": "s:13IdsvrHaapiSdk0B5ModelO14ProblemFactoryO13authorization5error0H11Description4type8metadata5title8messages5linksAA013AuthorizationE0CSS_SSSgAA0E4TypeOAA8MetadataCSgAA7MessageCSgSayAA04UserR0VGSayAA4LinkVGtFZ",
-                "mangledName": "$s13IdsvrHaapiSdk0B5ModelO14ProblemFactoryO13authorization5error0H11Description4type8metadata5title8messages5linksAA013AuthorizationE0CSS_SSSgAA0E4TypeOAA8MetadataCSgAA7MessageCSgSayAA04UserR0VGSayAA4LinkVGtFZ",
+                "usr": "s:13IdsvrHaapiSdk0B5ModelO14ProblemFactoryO13authorization5error0H11Description4type8metadata5title8messages5links13rawJsonStringAA013AuthorizationE0CSS_SSSgAA0E4TypeOAA8MetadataCSgAA7MessageCSgSayAA04UserU0VGSayAA4LinkVGAQtFZ",
+                "mangledName": "$s13IdsvrHaapiSdk0B5ModelO14ProblemFactoryO13authorization5error0H11Description4type8metadata5title8messages5links13rawJsonStringAA013AuthorizationE0CSS_SSSgAA0E4TypeOAA8MetadataCSgAA7MessageCSgSayAA04UserU0VGSayAA4LinkVGAQtFZ",
                 "moduleName": "IdsvrHaapiSdk",
                 "static": true,
                 "declAttributes": [
@@ -8023,6 +8760,108 @@
         "printedName": "CryptoKit",
         "declKind": "Import",
         "moduleName": "IdsvrHaapiSdk"
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "IdsvrHaapiSdk",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "RawJsonRepresentable",
+        "printedName": "RawJsonRepresentable",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "rawJsonString",
+            "printedName": "rawJsonString",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:13IdsvrHaapiSdk20RawJsonRepresentableP03rawE6StringSSSgvp",
+            "mangledName": "$s13IdsvrHaapiSdk20RawJsonRepresentableP03rawE6StringSSSgvp",
+            "moduleName": "IdsvrHaapiSdk",
+            "protocolReq": true,
+            "declAttributes": [
+              "RawDocComment"
+            ],
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:13IdsvrHaapiSdk20RawJsonRepresentableP03rawE6StringSSSgvg",
+                "mangledName": "$s13IdsvrHaapiSdk20RawJsonRepresentableP03rawE6StringSSSgvg",
+                "moduleName": "IdsvrHaapiSdk",
+                "genericSig": "<τ_0_0 where τ_0_0 : IdsvrHaapiSdk.RawJsonRepresentable>",
+                "sugared_genericSig": "<Self where Self : IdsvrHaapiSdk.RawJsonRepresentable>",
+                "protocolReq": true,
+                "reqNewWitnessTableEntry": true,
+                "accessorKind": "get"
+              }
+            ]
+          }
+        ],
+        "declKind": "Protocol",
+        "usr": "s:13IdsvrHaapiSdk20RawJsonRepresentableP",
+        "mangledName": "$s13IdsvrHaapiSdk20RawJsonRepresentableP",
+        "moduleName": "IdsvrHaapiSdk",
+        "declAttributes": [
+          "AccessControl",
+          "RawDocComment"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          }
+        ]
       },
       {
         "kind": "Import",
@@ -10825,6 +11664,72 @@
             ]
           },
           {
+            "kind": "Var",
+            "name": "rawJsonString",
+            "printedName": "rawJsonString",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "c:@M@IdsvrHaapiSdk@objc(cs)Problem(py)rawJsonString",
+            "mangledName": "$s13IdsvrHaapiSdk7ProblemC13rawJsonStringSSSgvp",
+            "moduleName": "IdsvrHaapiSdk",
+            "declAttributes": [
+              "Final",
+              "HasStorage",
+              "AccessControl",
+              "ObjC"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@IdsvrHaapiSdk@objc(cs)Problem(im)rawJsonString",
+                "mangledName": "$s13IdsvrHaapiSdk7ProblemC13rawJsonStringSSSgvg",
+                "moduleName": "IdsvrHaapiSdk",
+                "implicit": true,
+                "declAttributes": [
+                  "Final",
+                  "ObjC"
+                ],
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
             "kind": "Constructor",
             "name": "init",
             "printedName": "init(from:)",
@@ -11041,6 +11946,13 @@
             "printedName": "CustomDebugStringConvertible",
             "usr": "s:s28CustomDebugStringConvertibleP",
             "mangledName": "$ss28CustomDebugStringConvertibleP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "RawJsonRepresentable",
+            "printedName": "RawJsonRepresentable",
+            "usr": "s:13IdsvrHaapiSdk20RawJsonRepresentableP",
+            "mangledName": "$s13IdsvrHaapiSdk20RawJsonRepresentableP"
           },
           {
             "kind": "Conformance",
@@ -11881,6 +12793,57 @@
         "name": "OAuthTokenManager",
         "printedName": "OAuthTokenManager",
         "children": [
+          {
+            "kind": "Var",
+            "name": "oauthTokenConfiguration",
+            "printedName": "oauthTokenConfiguration",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "OAuthTokenConfigurable",
+                "printedName": "any IdsvrHaapiSdk.OAuthTokenConfigurable",
+                "usr": "c:@M@IdsvrHaapiSdk@objc(pl)OAuthTokenConfigurable"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "c:@M@IdsvrHaapiSdk@objc(cs)OAuthTokenManager(py)oauthTokenConfiguration",
+            "mangledName": "$s13IdsvrHaapiSdk17OAuthTokenManagerC05oauthE13ConfigurationAA0dE12Configurable_pvp",
+            "moduleName": "IdsvrHaapiSdk",
+            "declAttributes": [
+              "Final",
+              "HasStorage",
+              "AccessControl",
+              "RawDocComment",
+              "ObjC"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "OAuthTokenConfigurable",
+                    "printedName": "any IdsvrHaapiSdk.OAuthTokenConfigurable",
+                    "usr": "c:@M@IdsvrHaapiSdk@objc(pl)OAuthTokenConfigurable"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "c:@M@IdsvrHaapiSdk@objc(cs)OAuthTokenManager(im)oauthTokenConfiguration",
+                "mangledName": "$s13IdsvrHaapiSdk17OAuthTokenManagerC05oauthE13ConfigurationAA0dE12Configurable_pvg",
+                "moduleName": "IdsvrHaapiSdk",
+                "implicit": true,
+                "declAttributes": [
+                  "Final",
+                  "ObjC"
+                ],
+                "accessorKind": "get"
+              }
+            ]
+          },
           {
             "kind": "Constructor",
             "name": "init",
@@ -13263,8 +14226,8 @@
         "usr": "s:13IdsvrHaapiSdk0B14RepresentationP",
         "mangledName": "$s13IdsvrHaapiSdk0B14RepresentationP",
         "moduleName": "IdsvrHaapiSdk",
-        "genericSig": "<τ_0_0 : Swift.Decodable, τ_0_0 : Swift.Encodable>",
-        "sugared_genericSig": "<Self : Swift.Decodable, Self : Swift.Encodable>",
+        "genericSig": "<τ_0_0 : IdsvrHaapiSdk.RawJsonRepresentable, τ_0_0 : Swift.Decodable, τ_0_0 : Swift.Encodable>",
+        "sugared_genericSig": "<Self : IdsvrHaapiSdk.RawJsonRepresentable, Self : Swift.Decodable, Self : Swift.Encodable>",
         "intro_iOS": "14.0",
         "declAttributes": [
           "AccessControl",
@@ -13299,6 +14262,13 @@
             "printedName": "Decodable",
             "usr": "s:Se",
             "mangledName": "$sSe"
+          },
+          {
+            "kind": "Conformance",
+            "name": "RawJsonRepresentable",
+            "printedName": "RawJsonRepresentable",
+            "usr": "s:13IdsvrHaapiSdk20RawJsonRepresentableP",
+            "mangledName": "$s13IdsvrHaapiSdk20RawJsonRepresentableP"
           }
         ]
       },
@@ -13601,8 +14571,8 @@
         "usr": "s:13IdsvrHaapiSdk21ProblemRepresentationP",
         "mangledName": "$s13IdsvrHaapiSdk21ProblemRepresentationP",
         "moduleName": "IdsvrHaapiSdk",
-        "genericSig": "<τ_0_0 : Swift.Decodable, τ_0_0 : Swift.Encodable>",
-        "sugared_genericSig": "<Self : Swift.Decodable, Self : Swift.Encodable>",
+        "genericSig": "<τ_0_0 : IdsvrHaapiSdk.RawJsonRepresentable, τ_0_0 : Swift.Decodable, τ_0_0 : Swift.Encodable>",
+        "sugared_genericSig": "<Self : IdsvrHaapiSdk.RawJsonRepresentable, Self : Swift.Decodable, Self : Swift.Encodable>",
         "intro_iOS": "14.0",
         "declAttributes": [
           "AccessControl",
@@ -13637,6 +14607,13 @@
             "printedName": "Decodable",
             "usr": "s:Se",
             "mangledName": "$sSe"
+          },
+          {
+            "kind": "Conformance",
+            "name": "RawJsonRepresentable",
+            "printedName": "RawJsonRepresentable",
+            "usr": "s:13IdsvrHaapiSdk20RawJsonRepresentableP",
+            "mangledName": "$s13IdsvrHaapiSdk20RawJsonRepresentableP"
           }
         ]
       },
@@ -13691,6 +14668,13 @@
             "printedName": "Decodable",
             "usr": "s:Se",
             "mangledName": "$sSe"
+          },
+          {
+            "kind": "Conformance",
+            "name": "RawJsonRepresentable",
+            "printedName": "RawJsonRepresentable",
+            "usr": "s:13IdsvrHaapiSdk20RawJsonRepresentableP",
+            "mangledName": "$s13IdsvrHaapiSdk20RawJsonRepresentableP"
           }
         ]
       },
@@ -30339,6 +31323,66 @@
           },
           {
             "kind": "Var",
+            "name": "rawJsonString",
+            "printedName": "rawJsonString",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:13IdsvrHaapiSdk25AuthenticatorSelectorStepV13rawJsonStringSSSgvp",
+            "mangledName": "$s13IdsvrHaapiSdk25AuthenticatorSelectorStepV13rawJsonStringSSSgvp",
+            "moduleName": "IdsvrHaapiSdk",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:13IdsvrHaapiSdk25AuthenticatorSelectorStepV13rawJsonStringSSSgvg",
+                "mangledName": "$s13IdsvrHaapiSdk25AuthenticatorSelectorStepV13rawJsonStringSSSgvg",
+                "moduleName": "IdsvrHaapiSdk",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
             "name": "type",
             "printedName": "type",
             "children": [
@@ -30799,6 +31843,13 @@
           },
           {
             "kind": "Conformance",
+            "name": "RawJsonRepresentable",
+            "printedName": "RawJsonRepresentable",
+            "usr": "s:13IdsvrHaapiSdk20RawJsonRepresentableP",
+            "mangledName": "$s13IdsvrHaapiSdk20RawJsonRepresentableP"
+          },
+          {
+            "kind": "Conformance",
             "name": "Decodable",
             "printedName": "Decodable",
             "usr": "s:Se",
@@ -31217,6 +32268,66 @@
             ]
           },
           {
+            "kind": "Var",
+            "name": "rawJsonString",
+            "printedName": "rawJsonString",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:13IdsvrHaapiSdk19InteractiveFormStepV13rawJsonStringSSSgvp",
+            "mangledName": "$s13IdsvrHaapiSdk19InteractiveFormStepV13rawJsonStringSSSgvp",
+            "moduleName": "IdsvrHaapiSdk",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:13IdsvrHaapiSdk19InteractiveFormStepV13rawJsonStringSSSgvg",
+                "mangledName": "$s13IdsvrHaapiSdk19InteractiveFormStepV13rawJsonStringSSSgvg",
+                "moduleName": "IdsvrHaapiSdk",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
             "kind": "Constructor",
             "name": "init",
             "printedName": "init(from:)",
@@ -31344,6 +32455,13 @@
             "printedName": "Equatable",
             "usr": "s:SQ",
             "mangledName": "$sSQ"
+          },
+          {
+            "kind": "Conformance",
+            "name": "RawJsonRepresentable",
+            "printedName": "RawJsonRepresentable",
+            "usr": "s:13IdsvrHaapiSdk20RawJsonRepresentableP",
+            "mangledName": "$s13IdsvrHaapiSdk20RawJsonRepresentableP"
           },
           {
             "kind": "Conformance",
@@ -31760,6 +32878,66 @@
             ]
           },
           {
+            "kind": "Var",
+            "name": "rawJsonString",
+            "printedName": "rawJsonString",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:13IdsvrHaapiSdk15RedirectionStepV13rawJsonStringSSSgvp",
+            "mangledName": "$s13IdsvrHaapiSdk15RedirectionStepV13rawJsonStringSSSgvp",
+            "moduleName": "IdsvrHaapiSdk",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:13IdsvrHaapiSdk15RedirectionStepV13rawJsonStringSSSgvg",
+                "mangledName": "$s13IdsvrHaapiSdk15RedirectionStepV13rawJsonStringSSSgvg",
+                "moduleName": "IdsvrHaapiSdk",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
             "kind": "Constructor",
             "name": "init",
             "printedName": "init(from:)",
@@ -31887,6 +33065,13 @@
             "printedName": "Equatable",
             "usr": "s:SQ",
             "mangledName": "$sSQ"
+          },
+          {
+            "kind": "Conformance",
+            "name": "RawJsonRepresentable",
+            "printedName": "RawJsonRepresentable",
+            "usr": "s:13IdsvrHaapiSdk20RawJsonRepresentableP",
+            "mangledName": "$s13IdsvrHaapiSdk20RawJsonRepresentableP"
           },
           {
             "kind": "Conformance",
@@ -32303,6 +33488,66 @@
           },
           {
             "kind": "Var",
+            "name": "rawJsonString",
+            "printedName": "rawJsonString",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:13IdsvrHaapiSdk11PollingStepV13rawJsonStringSSSgvp",
+            "mangledName": "$s13IdsvrHaapiSdk11PollingStepV13rawJsonStringSSSgvp",
+            "moduleName": "IdsvrHaapiSdk",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:13IdsvrHaapiSdk11PollingStepV13rawJsonStringSSSgvg",
+                "mangledName": "$s13IdsvrHaapiSdk11PollingStepV13rawJsonStringSSSgvg",
+                "moduleName": "IdsvrHaapiSdk",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
             "name": "type",
             "printedName": "type",
             "children": [
@@ -32531,6 +33776,13 @@
             "printedName": "Equatable",
             "usr": "s:SQ",
             "mangledName": "$sSQ"
+          },
+          {
+            "kind": "Conformance",
+            "name": "RawJsonRepresentable",
+            "printedName": "RawJsonRepresentable",
+            "usr": "s:13IdsvrHaapiSdk20RawJsonRepresentableP",
+            "mangledName": "$s13IdsvrHaapiSdk20RawJsonRepresentableP"
           },
           {
             "kind": "Conformance",
@@ -32943,6 +34195,66 @@
             ]
           },
           {
+            "kind": "Var",
+            "name": "rawJsonString",
+            "printedName": "rawJsonString",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:13IdsvrHaapiSdk30OAuthAuthorizationResponseStepV13rawJsonStringSSSgvp",
+            "mangledName": "$s13IdsvrHaapiSdk30OAuthAuthorizationResponseStepV13rawJsonStringSSSgvp",
+            "moduleName": "IdsvrHaapiSdk",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:13IdsvrHaapiSdk30OAuthAuthorizationResponseStepV13rawJsonStringSSSgvg",
+                "mangledName": "$s13IdsvrHaapiSdk30OAuthAuthorizationResponseStepV13rawJsonStringSSSgvg",
+                "moduleName": "IdsvrHaapiSdk",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
             "kind": "Constructor",
             "name": "init",
             "printedName": "init(from:)",
@@ -33070,6 +34382,13 @@
             "printedName": "Equatable",
             "usr": "s:SQ",
             "mangledName": "$sSQ"
+          },
+          {
+            "kind": "Conformance",
+            "name": "RawJsonRepresentable",
+            "printedName": "RawJsonRepresentable",
+            "usr": "s:13IdsvrHaapiSdk20RawJsonRepresentableP",
+            "mangledName": "$s13IdsvrHaapiSdk20RawJsonRepresentableP"
           },
           {
             "kind": "Conformance",
@@ -33441,6 +34760,66 @@
             ]
           },
           {
+            "kind": "Var",
+            "name": "rawJsonString",
+            "printedName": "rawJsonString",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:13IdsvrHaapiSdk16ContinueSameStepV13rawJsonStringSSSgvp",
+            "mangledName": "$s13IdsvrHaapiSdk16ContinueSameStepV13rawJsonStringSSSgvp",
+            "moduleName": "IdsvrHaapiSdk",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:13IdsvrHaapiSdk16ContinueSameStepV13rawJsonStringSSSgvg",
+                "mangledName": "$s13IdsvrHaapiSdk16ContinueSameStepV13rawJsonStringSSSgvg",
+                "moduleName": "IdsvrHaapiSdk",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
             "kind": "Constructor",
             "name": "init",
             "printedName": "init(from:)",
@@ -33568,6 +34947,13 @@
             "printedName": "Equatable",
             "usr": "s:SQ",
             "mangledName": "$sSQ"
+          },
+          {
+            "kind": "Conformance",
+            "name": "RawJsonRepresentable",
+            "printedName": "RawJsonRepresentable",
+            "usr": "s:13IdsvrHaapiSdk20RawJsonRepresentableP",
+            "mangledName": "$s13IdsvrHaapiSdk20RawJsonRepresentableP"
           },
           {
             "kind": "Conformance",
@@ -33937,6 +35323,66 @@
             ]
           },
           {
+            "kind": "Var",
+            "name": "rawJsonString",
+            "printedName": "rawJsonString",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:13IdsvrHaapiSdk15UserConsentStepV13rawJsonStringSSSgvp",
+            "mangledName": "$s13IdsvrHaapiSdk15UserConsentStepV13rawJsonStringSSSgvp",
+            "moduleName": "IdsvrHaapiSdk",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:13IdsvrHaapiSdk15UserConsentStepV13rawJsonStringSSSgvg",
+                "mangledName": "$s13IdsvrHaapiSdk15UserConsentStepV13rawJsonStringSSSgvg",
+                "moduleName": "IdsvrHaapiSdk",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
             "kind": "Constructor",
             "name": "init",
             "printedName": "init(from:)",
@@ -34064,6 +35510,13 @@
             "printedName": "Equatable",
             "usr": "s:SQ",
             "mangledName": "$sSQ"
+          },
+          {
+            "kind": "Conformance",
+            "name": "RawJsonRepresentable",
+            "printedName": "RawJsonRepresentable",
+            "usr": "s:13IdsvrHaapiSdk20RawJsonRepresentableP",
+            "mangledName": "$s13IdsvrHaapiSdk20RawJsonRepresentableP"
           },
           {
             "kind": "Conformance",
@@ -34479,6 +35932,66 @@
             ]
           },
           {
+            "kind": "Var",
+            "name": "rawJsonString",
+            "printedName": "rawJsonString",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:13IdsvrHaapiSdk34ExternalBrowserClientOperationStepV13rawJsonStringSSSgvp",
+            "mangledName": "$s13IdsvrHaapiSdk34ExternalBrowserClientOperationStepV13rawJsonStringSSSgvp",
+            "moduleName": "IdsvrHaapiSdk",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:13IdsvrHaapiSdk34ExternalBrowserClientOperationStepV13rawJsonStringSSSgvg",
+                "mangledName": "$s13IdsvrHaapiSdk34ExternalBrowserClientOperationStepV13rawJsonStringSSSgvg",
+                "moduleName": "IdsvrHaapiSdk",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
             "kind": "Constructor",
             "name": "init",
             "printedName": "init(from:)",
@@ -34790,6 +36303,13 @@
             "printedName": "HaapiRepresentation",
             "usr": "s:13IdsvrHaapiSdk0B14RepresentationP",
             "mangledName": "$s13IdsvrHaapiSdk0B14RepresentationP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "RawJsonRepresentable",
+            "printedName": "RawJsonRepresentable",
+            "usr": "s:13IdsvrHaapiSdk20RawJsonRepresentableP",
+            "mangledName": "$s13IdsvrHaapiSdk20RawJsonRepresentableP"
           },
           {
             "kind": "Conformance",
@@ -35264,6 +36784,66 @@
             ]
           },
           {
+            "kind": "Var",
+            "name": "rawJsonString",
+            "printedName": "rawJsonString",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:13IdsvrHaapiSdk25BankIdClientOperationStepV13rawJsonStringSSSgvp",
+            "mangledName": "$s13IdsvrHaapiSdk25BankIdClientOperationStepV13rawJsonStringSSSgvp",
+            "moduleName": "IdsvrHaapiSdk",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:13IdsvrHaapiSdk25BankIdClientOperationStepV13rawJsonStringSSSgvg",
+                "mangledName": "$s13IdsvrHaapiSdk25BankIdClientOperationStepV13rawJsonStringSSSgvg",
+                "moduleName": "IdsvrHaapiSdk",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
             "kind": "Constructor",
             "name": "init",
             "printedName": "init(from:)",
@@ -35548,6 +37128,13 @@
             "printedName": "HaapiRepresentation",
             "usr": "s:13IdsvrHaapiSdk0B14RepresentationP",
             "mangledName": "$s13IdsvrHaapiSdk0B14RepresentationP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "RawJsonRepresentable",
+            "printedName": "RawJsonRepresentable",
+            "usr": "s:13IdsvrHaapiSdk20RawJsonRepresentableP",
+            "mangledName": "$s13IdsvrHaapiSdk20RawJsonRepresentableP"
           },
           {
             "kind": "Conformance",
@@ -35961,6 +37548,66 @@
             ]
           },
           {
+            "kind": "Var",
+            "name": "rawJsonString",
+            "printedName": "rawJsonString",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:13IdsvrHaapiSdk24EncapClientOperationStepV13rawJsonStringSSSgvp",
+            "mangledName": "$s13IdsvrHaapiSdk24EncapClientOperationStepV13rawJsonStringSSSgvp",
+            "moduleName": "IdsvrHaapiSdk",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:13IdsvrHaapiSdk24EncapClientOperationStepV13rawJsonStringSSSgvg",
+                "mangledName": "$s13IdsvrHaapiSdk24EncapClientOperationStepV13rawJsonStringSSSgvg",
+                "moduleName": "IdsvrHaapiSdk",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
             "kind": "Constructor",
             "name": "init",
             "printedName": "init(from:)",
@@ -36266,6 +37913,13 @@
             "printedName": "HaapiRepresentation",
             "usr": "s:13IdsvrHaapiSdk0B14RepresentationP",
             "mangledName": "$s13IdsvrHaapiSdk0B14RepresentationP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "RawJsonRepresentable",
+            "printedName": "RawJsonRepresentable",
+            "usr": "s:13IdsvrHaapiSdk20RawJsonRepresentableP",
+            "mangledName": "$s13IdsvrHaapiSdk20RawJsonRepresentableP"
           },
           {
             "kind": "Conformance",
@@ -36680,6 +38334,66 @@
           },
           {
             "kind": "Var",
+            "name": "rawJsonString",
+            "printedName": "rawJsonString",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:13IdsvrHaapiSdk39WebAuthnRegistrationClientOperationStepV13rawJsonStringSSSgvp",
+            "mangledName": "$s13IdsvrHaapiSdk39WebAuthnRegistrationClientOperationStepV13rawJsonStringSSSgvp",
+            "moduleName": "IdsvrHaapiSdk",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:13IdsvrHaapiSdk39WebAuthnRegistrationClientOperationStepV13rawJsonStringSSSgvg",
+                "mangledName": "$s13IdsvrHaapiSdk39WebAuthnRegistrationClientOperationStepV13rawJsonStringSSSgvg",
+                "moduleName": "IdsvrHaapiSdk",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
             "name": "continueAction",
             "printedName": "continueAction",
             "children": [
@@ -36981,6 +38695,13 @@
             "printedName": "HaapiRepresentation",
             "usr": "s:13IdsvrHaapiSdk0B14RepresentationP",
             "mangledName": "$s13IdsvrHaapiSdk0B14RepresentationP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "RawJsonRepresentable",
+            "printedName": "RawJsonRepresentable",
+            "usr": "s:13IdsvrHaapiSdk20RawJsonRepresentableP",
+            "mangledName": "$s13IdsvrHaapiSdk20RawJsonRepresentableP"
           },
           {
             "kind": "Conformance",
@@ -37496,6 +39217,66 @@
             ]
           },
           {
+            "kind": "Var",
+            "name": "rawJsonString",
+            "printedName": "rawJsonString",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:13IdsvrHaapiSdk41WebAuthnAuthenticationClientOperationStepV13rawJsonStringSSSgvp",
+            "mangledName": "$s13IdsvrHaapiSdk41WebAuthnAuthenticationClientOperationStepV13rawJsonStringSSSgvp",
+            "moduleName": "IdsvrHaapiSdk",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:13IdsvrHaapiSdk41WebAuthnAuthenticationClientOperationStepV13rawJsonStringSSSgvg",
+                "mangledName": "$s13IdsvrHaapiSdk41WebAuthnAuthenticationClientOperationStepV13rawJsonStringSSSgvg",
+                "moduleName": "IdsvrHaapiSdk",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
             "kind": "Constructor",
             "name": "init",
             "printedName": "init(from:)",
@@ -37711,6 +39492,13 @@
             "printedName": "HaapiRepresentation",
             "usr": "s:13IdsvrHaapiSdk0B14RepresentationP",
             "mangledName": "$s13IdsvrHaapiSdk0B14RepresentationP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "RawJsonRepresentable",
+            "printedName": "RawJsonRepresentable",
+            "usr": "s:13IdsvrHaapiSdk20RawJsonRepresentableP",
+            "mangledName": "$s13IdsvrHaapiSdk20RawJsonRepresentableP"
           },
           {
             "kind": "Conformance",
@@ -38124,6 +39912,66 @@
             ]
           },
           {
+            "kind": "Var",
+            "name": "rawJsonString",
+            "printedName": "rawJsonString",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:13IdsvrHaapiSdk26GenericClientOperationStepV13rawJsonStringSSSgvp",
+            "mangledName": "$s13IdsvrHaapiSdk26GenericClientOperationStepV13rawJsonStringSSSgvp",
+            "moduleName": "IdsvrHaapiSdk",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:13IdsvrHaapiSdk26GenericClientOperationStepV13rawJsonStringSSSgvg",
+                "mangledName": "$s13IdsvrHaapiSdk26GenericClientOperationStepV13rawJsonStringSSSgvg",
+                "moduleName": "IdsvrHaapiSdk",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
             "kind": "Constructor",
             "name": "init",
             "printedName": "init(from:)",
@@ -38258,6 +40106,13 @@
             "printedName": "HaapiRepresentation",
             "usr": "s:13IdsvrHaapiSdk0B14RepresentationP",
             "mangledName": "$s13IdsvrHaapiSdk0B14RepresentationP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "RawJsonRepresentable",
+            "printedName": "RawJsonRepresentable",
+            "usr": "s:13IdsvrHaapiSdk20RawJsonRepresentableP",
+            "mangledName": "$s13IdsvrHaapiSdk20RawJsonRepresentableP"
           },
           {
             "kind": "Conformance",
@@ -38626,6 +40481,66 @@
             ]
           },
           {
+            "kind": "Var",
+            "name": "rawJsonString",
+            "printedName": "rawJsonString",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:13IdsvrHaapiSdk25GenericRepresentationStepV13rawJsonStringSSSgvp",
+            "mangledName": "$s13IdsvrHaapiSdk25GenericRepresentationStepV13rawJsonStringSSSgvp",
+            "moduleName": "IdsvrHaapiSdk",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:13IdsvrHaapiSdk25GenericRepresentationStepV13rawJsonStringSSSgvg",
+                "mangledName": "$s13IdsvrHaapiSdk25GenericRepresentationStepV13rawJsonStringSSSgvg",
+                "moduleName": "IdsvrHaapiSdk",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
             "kind": "Constructor",
             "name": "init",
             "printedName": "init(from:)",
@@ -38753,6 +40668,13 @@
             "printedName": "Equatable",
             "usr": "s:SQ",
             "mangledName": "$sSQ"
+          },
+          {
+            "kind": "Conformance",
+            "name": "RawJsonRepresentable",
+            "printedName": "RawJsonRepresentable",
+            "usr": "s:13IdsvrHaapiSdk20RawJsonRepresentableP",
+            "mangledName": "$s13IdsvrHaapiSdk20RawJsonRepresentableP"
           },
           {
             "kind": "Conformance",
@@ -41276,6 +43198,246 @@
         ]
       },
       {
+        "kind": "Import",
+        "name": "Combine",
+        "printedName": "Combine",
+        "declKind": "Import",
+        "moduleName": "IdsvrHaapiSdk"
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "IdsvrHaapiSdk",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "IdsvrHaapiSdkTestUtils",
+        "printedName": "IdsvrHaapiSdkTestUtils",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "isEnabled",
+            "printedName": "isEnabled",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:13IdsvrHaapiSdk0abC9TestUtilsC9isEnabledSbvpZ",
+            "mangledName": "$s13IdsvrHaapiSdk0abC9TestUtilsC9isEnabledSbvpZ",
+            "moduleName": "IdsvrHaapiSdk",
+            "static": true,
+            "declAttributes": [
+              "HasInitialValue",
+              "Final",
+              "HasStorage",
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:13IdsvrHaapiSdk0abC9TestUtilsC9isEnabledSbvgZ",
+                "mangledName": "$s13IdsvrHaapiSdk0abC9TestUtilsC9isEnabledSbvgZ",
+                "moduleName": "IdsvrHaapiSdk",
+                "static": true,
+                "implicit": true,
+                "declAttributes": [
+                  "Final"
+                ],
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:13IdsvrHaapiSdk0abC9TestUtilsC9isEnabledSbvsZ",
+                "mangledName": "$s13IdsvrHaapiSdk0abC9TestUtilsC9isEnabledSbvsZ",
+                "moduleName": "IdsvrHaapiSdk",
+                "static": true,
+                "implicit": true,
+                "declAttributes": [
+                  "Final"
+                ],
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:13IdsvrHaapiSdk0abC9TestUtilsC9isEnabledSbvMZ",
+                "mangledName": "$s13IdsvrHaapiSdk0abC9TestUtilsC9isEnabledSbvMZ",
+                "moduleName": "IdsvrHaapiSdk",
+                "static": true,
+                "implicit": true,
+                "intro_iOS": "14",
+                "declAttributes": [
+                  "Final",
+                  "Available"
+                ],
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Function",
+            "name": "createHaapiAccessorBuilderForAttestationFailure",
+            "printedName": "createHaapiAccessorBuilderForAttestationFailure(haapiConfiguration:failure:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "HaapiAccessorBuilder",
+                "printedName": "IdsvrHaapiSdk.HaapiAccessorBuilder",
+                "usr": "c:@M@IdsvrHaapiSdk@objc(cs)HaapiAccessorBuilder"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "HaapiConfiguration",
+                "printedName": "IdsvrHaapiSdk.HaapiConfiguration",
+                "usr": "c:@M@IdsvrHaapiSdk@objc(cs)HaapiConfiguration"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "HaapiError",
+                "printedName": "IdsvrHaapiSdk.HaapiError",
+                "hasDefaultArg": true,
+                "usr": "s:13IdsvrHaapiSdk0B5ErrorO"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:13IdsvrHaapiSdk0abC9TestUtilsC06createB36AccessorBuilderForAttestationFailure18haapiConfiguration7failureAA0bgH0CAA0bM0C_AA0B5ErrorOtKFZ",
+            "mangledName": "$s13IdsvrHaapiSdk0abC9TestUtilsC06createB36AccessorBuilderForAttestationFailure18haapiConfiguration7failureAA0bgH0CAA0bM0C_AA0B5ErrorOtKFZ",
+            "moduleName": "IdsvrHaapiSdk",
+            "static": true,
+            "declAttributes": [
+              "Final",
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "isFromExtension": true,
+            "throwing": true,
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Class",
+        "usr": "s:13IdsvrHaapiSdk0abC9TestUtilsC",
+        "mangledName": "$s13IdsvrHaapiSdk0abC9TestUtilsC",
+        "moduleName": "IdsvrHaapiSdk",
+        "intro_iOS": "14",
+        "declAttributes": [
+          "AccessControl",
+          "Available",
+          "RawDocComment"
+        ],
+        "hasMissingDesignatedInitializers": true,
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          }
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "IdsvrHaapiSdk",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Combine",
+        "printedName": "Combine",
+        "declKind": "Import",
+        "moduleName": "IdsvrHaapiSdk"
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "IdsvrHaapiSdk",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "IdsvrHaapiSdk",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "IdsvrHaapiSdk",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
         "kind": "TypeDecl",
         "name": "AuthorizationProblem",
         "printedName": "AuthorizationProblem",
@@ -41554,6 +43716,13 @@
             "printedName": "CustomDebugStringConvertible",
             "usr": "s:s28CustomDebugStringConvertibleP",
             "mangledName": "$ss28CustomDebugStringConvertibleP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "RawJsonRepresentable",
+            "printedName": "RawJsonRepresentable",
+            "usr": "s:13IdsvrHaapiSdk20RawJsonRepresentableP",
+            "mangledName": "$s13IdsvrHaapiSdk20RawJsonRepresentableP"
           },
           {
             "kind": "Conformance",
@@ -42181,6 +44350,13 @@
             "printedName": "CustomDebugStringConvertible",
             "usr": "s:s28CustomDebugStringConvertibleP",
             "mangledName": "$ss28CustomDebugStringConvertibleP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "RawJsonRepresentable",
+            "printedName": "RawJsonRepresentable",
+            "usr": "s:13IdsvrHaapiSdk20RawJsonRepresentableP",
+            "mangledName": "$s13IdsvrHaapiSdk20RawJsonRepresentableP"
           },
           {
             "kind": "Conformance",
@@ -51379,13 +53555,6 @@
           },
           {
             "kind": "Conformance",
-            "name": "Equatable",
-            "printedName": "Equatable",
-            "usr": "s:SQ",
-            "mangledName": "$sSQ"
-          },
-          {
-            "kind": "Conformance",
             "name": "Decodable",
             "printedName": "Decodable",
             "usr": "s:Se",
@@ -51740,6 +53909,13 @@
             ],
             "usr": "s:ST",
             "mangledName": "$sST"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Equatable",
+            "printedName": "Equatable",
+            "usr": "s:SQ",
+            "mangledName": "$sSQ"
           },
           {
             "kind": "Conformance",
@@ -52601,6 +54777,41 @@
   },
   "ConstValues": [
     {
+      "filePath": "\/Users\/curity\/build\/jenkins-agent\/workspace\/ios-cat_version_4.4\/frameworks\/IdsvrHaapiSdk\/Source\/Internal\/InternalTestUtility.swift",
+      "kind": "StringLiteral",
+      "offset": 1126,
+      "length": 9,
+      "value": "\"enabled\""
+    },
+    {
+      "filePath": "\/Users\/curity\/build\/jenkins-agent\/workspace\/ios-cat_version_4.4\/frameworks\/IdsvrHaapiSdk\/Source\/Internal\/InternalTestUtility.swift",
+      "kind": "StringLiteral",
+      "offset": 1138,
+      "length": 10,
+      "value": "\"disabled\""
+    },
+    {
+      "filePath": "\/Users\/curity\/build\/jenkins-agent\/workspace\/ios-cat_version_4.4\/frameworks\/IdsvrHaapiSdk\/Source\/Internal\/InternalTestUtility.swift",
+      "kind": "StringLiteral",
+      "offset": 1256,
+      "length": 33,
+      "value": "\"InternalTestUtility is \""
+    },
+    {
+      "filePath": "\/Users\/curity\/build\/jenkins-agent\/workspace\/ios-cat_version_4.4\/frameworks\/IdsvrHaapiSdk\/Source\/Internal\/InternalTestUtility.swift",
+      "kind": "StringLiteral",
+      "offset": 1288,
+      "length": 2,
+      "value": "\"\""
+    },
+    {
+      "filePath": "\/Users\/curity\/build\/jenkins-agent\/workspace\/ios-cat_version_4.4\/frameworks\/IdsvrHaapiSdk\/Source\/Internal\/InternalTestUtility.swift",
+      "kind": "BooleanLiteral",
+      "offset": 1065,
+      "length": 5,
+      "value": "false"
+    },
+    {
       "filePath": "\/Users\/curity\/build\/jenkins-agent\/workspace\/ios-cat_version_4.4\/frameworks\/IdsvrHaapiSdk\/Source\/Models\/HTTPURLResponseContent.swift",
       "kind": "Dictionary",
       "offset": 1023,
@@ -52820,70 +55031,70 @@
     {
       "filePath": "\/Users\/curity\/build\/jenkins-agent\/workspace\/ios-cat_version_4.4\/frameworks\/IdsvrHaapiSdk\/Source\/OAuthTokenManager.swift",
       "kind": "StringLiteral",
-      "offset": 3718,
+      "offset": 3709,
       "length": 43,
       "value": "\"A DPoP should not be provided when using \""
     },
     {
       "filePath": "\/Users\/curity\/build\/jenkins-agent\/workspace\/ios-cat_version_4.4\/frameworks\/IdsvrHaapiSdk\/Source\/OAuthTokenManager.swift",
       "kind": "StringLiteral",
-      "offset": 3776,
+      "offset": 3767,
       "length": 97,
       "value": "\"UnboundedTokenConfiguration. Either do not provided DPoP or change to BoundedTokenConfiguration\""
     },
     {
       "filePath": "\/Users\/curity\/build\/jenkins-agent\/workspace\/ios-cat_version_4.4\/frameworks\/IdsvrHaapiSdk\/Source\/OAuthTokenManager.swift",
       "kind": "StringLiteral",
-      "offset": 3939,
+      "offset": 3930,
       "length": 69,
       "value": "\"Configuration for token bound requires Dpop but it is not present. \""
     },
     {
       "filePath": "\/Users\/curity\/build\/jenkins-agent\/workspace\/ios-cat_version_4.4\/frameworks\/IdsvrHaapiSdk\/Source\/OAuthTokenManager.swift",
       "kind": "StringLiteral",
-      "offset": 4023,
+      "offset": 4014,
       "length": 78,
       "value": "\"The refresh_token may be invalid or the DPoP was removed due to a revocation\""
     },
     {
       "filePath": "\/Users\/curity\/build\/jenkins-agent\/workspace\/ios-cat_version_4.4\/frameworks\/IdsvrHaapiSdk\/Source\/OAuthTokenManager.swift",
       "kind": "StringLiteral",
-      "offset": 4148,
+      "offset": 4139,
       "length": 36,
       "value": "\"The revokeEndpointURL must be set.\""
     },
     {
       "filePath": "\/Users\/curity\/build\/jenkins-agent\/workspace\/ios-cat_version_4.4\/frameworks\/IdsvrHaapiSdk\/Source\/OAuthTokenManager.swift",
       "kind": "StringLiteral",
-      "offset": 4388,
+      "offset": 4379,
       "length": 27,
       "value": "\"Dpop could not be loaded.\""
     },
     {
       "filePath": "\/Users\/curity\/build\/jenkins-agent\/workspace\/ios-cat_version_4.4\/frameworks\/IdsvrHaapiSdk\/Source\/OAuthTokenManager.swift",
       "kind": "StringLiteral",
-      "offset": 4626,
+      "offset": 4617,
       "length": 47,
       "value": "\"Invalid representation for the token response\""
     },
     {
       "filePath": "\/Users\/curity\/build\/jenkins-agent\/workspace\/ios-cat_version_4.4\/frameworks\/IdsvrHaapiSdk\/Source\/OAuthTokenManager.swift",
       "kind": "StringLiteral",
-      "offset": 35646,
+      "offset": 35637,
       "length": 14,
       "value": "\"access_token\""
     },
     {
       "filePath": "\/Users\/curity\/build\/jenkins-agent\/workspace\/ios-cat_version_4.4\/frameworks\/IdsvrHaapiSdk\/Source\/OAuthTokenManager.swift",
       "kind": "StringLiteral",
-      "offset": 35685,
+      "offset": 35676,
       "length": 15,
       "value": "\"refresh_token\""
     },
     {
       "filePath": "\/Users\/curity\/build\/jenkins-agent\/workspace\/ios-cat_version_4.4\/frameworks\/IdsvrHaapiSdk\/Source\/OAuthTokenManager.swift",
       "kind": "StringLiteral",
-      "offset": 35731,
+      "offset": 35722,
       "length": 17,
       "value": "\"token_type_hint\""
     },
@@ -53996,70 +56207,70 @@
     {
       "filePath": "\/Users\/curity\/build\/jenkins-agent\/workspace\/ios-cat_version_4.4\/frameworks\/IdsvrHaapiSdk\/Source\/Models\/Steps.swift",
       "kind": "Array",
-      "offset": 9122,
+      "offset": 9698,
       "length": 2,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/curity\/build\/jenkins-agent\/workspace\/ios-cat_version_4.4\/frameworks\/IdsvrHaapiSdk\/Source\/Models\/Steps.swift",
       "kind": "Array",
-      "offset": 9166,
+      "offset": 9742,
       "length": 2,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/curity\/build\/jenkins-agent\/workspace\/ios-cat_version_4.4\/frameworks\/IdsvrHaapiSdk\/Source\/Models\/Steps.swift",
       "kind": "Array",
-      "offset": 17076,
+      "offset": 18259,
       "length": 2,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/curity\/build\/jenkins-agent\/workspace\/ios-cat_version_4.4\/frameworks\/IdsvrHaapiSdk\/Source\/Models\/Steps.swift",
       "kind": "Array",
-      "offset": 20352,
+      "offset": 21857,
       "length": 2,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/curity\/build\/jenkins-agent\/workspace\/ios-cat_version_4.4\/frameworks\/IdsvrHaapiSdk\/Source\/Models\/Steps.swift",
       "kind": "Array",
-      "offset": 20386,
+      "offset": 21891,
       "length": 2,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/curity\/build\/jenkins-agent\/workspace\/ios-cat_version_4.4\/frameworks\/IdsvrHaapiSdk\/Source\/Models\/Steps.swift",
       "kind": "Array",
-      "offset": 26750,
+      "offset": 28899,
       "length": 2,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/curity\/build\/jenkins-agent\/workspace\/ios-cat_version_4.4\/frameworks\/IdsvrHaapiSdk\/Source\/Models\/Steps.swift",
       "kind": "Array",
-      "offset": 26794,
+      "offset": 28943,
       "length": 2,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/curity\/build\/jenkins-agent\/workspace\/ios-cat_version_4.4\/frameworks\/IdsvrHaapiSdk\/Source\/Models\/Steps.swift",
       "kind": "StringLiteral",
-      "offset": 49029,
+      "offset": 52318,
       "length": 12,
       "value": "\"public-key\""
     },
     {
       "filePath": "\/Users\/curity\/build\/jenkins-agent\/workspace\/ios-cat_version_4.4\/frameworks\/IdsvrHaapiSdk\/Source\/Models\/Steps.swift",
       "kind": "StringLiteral",
-      "offset": 52055,
+      "offset": 55382,
       "length": 12,
       "value": "\"credential\""
     },
     {
       "filePath": "\/Users\/curity\/build\/jenkins-agent\/workspace\/ios-cat_version_4.4\/frameworks\/IdsvrHaapiSdk\/Source\/Models\/Steps.swift",
       "kind": "StringLiteral",
-      "offset": 57821,
+      "offset": 61395,
       "length": 12,
       "value": "\"public-key\""
     },
@@ -54155,16 +56366,65 @@
       "value": "2"
     },
     {
+      "filePath": "\/Users\/curity\/build\/jenkins-agent\/workspace\/ios-cat_version_4.4\/frameworks\/IdsvrHaapiSdk\/Source\/Internal\/TestUtils\/TestUtilsHaapiAccessorBuilder.swift",
+      "kind": "StringLiteral",
+      "offset": 1065,
+      "length": 31,
+      "value": "\"FailureAttestationManagerMock\""
+    },
+    {
+      "filePath": "\/Users\/curity\/build\/jenkins-agent\/workspace\/ios-cat_version_4.4\/frameworks\/IdsvrHaapiSdk\/Source\/Internal\/TestUtils\/TestUtilsHaapiAccessorBuilder.swift",
+      "kind": "Dictionary",
+      "offset": 2180,
+      "length": 3,
+      "value": "[]"
+    },
+    {
+      "filePath": "\/Users\/curity\/build\/jenkins-agent\/workspace\/ios-cat_version_4.4\/frameworks\/IdsvrHaapiSdk\/Source\/Internal\/IdsvrHaapiSdkTestUtils.swift",
+      "kind": "StringLiteral",
+      "offset": 1595,
+      "length": 9,
+      "value": "\"enabled\""
+    },
+    {
+      "filePath": "\/Users\/curity\/build\/jenkins-agent\/workspace\/ios-cat_version_4.4\/frameworks\/IdsvrHaapiSdk\/Source\/Internal\/IdsvrHaapiSdkTestUtils.swift",
+      "kind": "StringLiteral",
+      "offset": 1607,
+      "length": 10,
+      "value": "\"disabled\""
+    },
+    {
+      "filePath": "\/Users\/curity\/build\/jenkins-agent\/workspace\/ios-cat_version_4.4\/frameworks\/IdsvrHaapiSdk\/Source\/Internal\/IdsvrHaapiSdkTestUtils.swift",
+      "kind": "StringLiteral",
+      "offset": 1725,
+      "length": 36,
+      "value": "\"IdsvrHaapiSdkTestUtils is \""
+    },
+    {
+      "filePath": "\/Users\/curity\/build\/jenkins-agent\/workspace\/ios-cat_version_4.4\/frameworks\/IdsvrHaapiSdk\/Source\/Internal\/IdsvrHaapiSdkTestUtils.swift",
+      "kind": "StringLiteral",
+      "offset": 1760,
+      "length": 2,
+      "value": "\"\""
+    },
+    {
+      "filePath": "\/Users\/curity\/build\/jenkins-agent\/workspace\/ios-cat_version_4.4\/frameworks\/IdsvrHaapiSdk\/Source\/Internal\/IdsvrHaapiSdkTestUtils.swift",
+      "kind": "BooleanLiteral",
+      "offset": 1534,
+      "length": 5,
+      "value": "false"
+    },
+    {
       "filePath": "\/Users\/curity\/build\/jenkins-agent\/workspace\/ios-cat_version_4.4\/frameworks\/IdsvrHaapiSdk\/Source\/Models\/Problems\/AuthorizationProblem.swift",
       "kind": "StringLiteral",
-      "offset": 1705,
+      "offset": 1966,
       "length": 19,
       "value": "\"error_description\""
     },
     {
       "filePath": "\/Users\/curity\/build\/jenkins-agent\/workspace\/ios-cat_version_4.4\/frameworks\/IdsvrHaapiSdk\/Source\/Models\/Problems\/InvalidInputProblem.swift",
       "kind": "StringLiteral",
-      "offset": 3801,
+      "offset": 4062,
       "length": 19,
       "value": "\"error_description\""
     },
@@ -54290,7 +56550,7 @@
     {
       "filePath": "\/Users\/curity\/build\/jenkins-agent\/workspace\/ios-cat_version_4.4\/frameworks\/IdsvrHaapiSdk\/Source\/HaapiAccessorBuilder.swift",
       "kind": "BooleanLiteral",
-      "offset": 22290,
+      "offset": 22333,
       "length": 5,
       "value": "false"
     },
