@@ -1,6 +1,6 @@
 Pod::Spec.new do |spec|
   spec.name             = 'IdsvrHaapiSdk'
-  spec.version          = '4.4.1'
+  spec.version          = '4.5.0'
   spec.license          = { :type => "UNLICENSED", :file => "legal.md" }
   spec.homepage         = 'https://curity.io'
   spec.authors          = { 'Curity' => 'info@curity.io' }
@@ -14,7 +14,7 @@ Pod::Spec.new do |spec|
                             SDK is meant to make the security aspects of consuming this API easier.
                           DESC
   spec.documentation_url = 'https://developer.curity.io/docs/latest/index.html'
-  spec.social_media_url = 'https://twitter.com/curityio'
+  spec.social_media_url = 'https://x.com/curityio'
   spec.swift_version = "5.0"
   spec.source           = { :git => 'https://github.com/curityio/ios-idsvr-haapi-sdk-dist.git', :tag => spec.version }
 

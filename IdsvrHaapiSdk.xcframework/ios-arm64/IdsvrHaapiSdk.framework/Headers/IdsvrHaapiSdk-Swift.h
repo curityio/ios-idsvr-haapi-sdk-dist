@@ -769,6 +769,11 @@ SWIFT_CLASS("_TtC13IdsvrHaapiSdk20HaapiAccessorBuilder") SWIFT_AVAILABILITY(ios,
 /// \param configuration The dcr configuration to use.
 ///
 - (HaapiAccessorBuilder * _Nonnull)setDCRConfigurationWithConfiguration:(DCRConfiguration * _Nonnull)configuration;
+/// Set the maximum number of retries to perform when validating the attestation capability.
+/// By default, it is set to 1 which should be enough to validate any transient errors that may occur during validation procedure.
+/// \param maxRetries The maximum number of retries to perform.
+///
+- (HaapiAccessorBuilder * _Nonnull)setAttestationValidationRetryCountWithMaxRetries:(NSInteger)maxRetries;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end

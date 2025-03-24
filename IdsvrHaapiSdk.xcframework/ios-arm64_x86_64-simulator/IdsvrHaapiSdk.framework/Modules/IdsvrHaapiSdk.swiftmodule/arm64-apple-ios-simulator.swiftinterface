@@ -337,8 +337,10 @@ public typealias OAuthRevocationCompletion = (_ response: IdsvrHaapiSdk.TokenRev
   case problem(any IdsvrHaapiSdk.ProblemRepresentation)
   case error(any Swift.Error)
 }
+public protocol HaapiResponse : IdsvrHaapiSdk.RawJsonRepresentable, Swift.Decodable, Swift.Encodable {
+}
 @available(iOS 14.0, *)
-public protocol HaapiRepresentation : IdsvrHaapiSdk.RawJsonRepresentable, Swift.Decodable, Swift.Encodable {
+public protocol HaapiRepresentation : IdsvrHaapiSdk.HaapiResponse {
   var metadata: IdsvrHaapiSdk.Metadata? { get }
   var type: IdsvrHaapiSdk.RepresentationType { get }
   var properties: (any IdsvrHaapiSdk.Properties)? { get }
@@ -346,7 +348,7 @@ public protocol HaapiRepresentation : IdsvrHaapiSdk.RawJsonRepresentable, Swift.
   var messages: [IdsvrHaapiSdk.UserMessage] { get }
 }
 @available(iOS 14.0, *)
-public protocol ProblemRepresentation : IdsvrHaapiSdk.RawJsonRepresentable, Swift.Decodable, Swift.Encodable {
+public protocol ProblemRepresentation : IdsvrHaapiSdk.HaapiResponse {
   var metadata: IdsvrHaapiSdk.Metadata? { get }
   var type: IdsvrHaapiSdk.ProblemType { get }
   var title: IdsvrHaapiSdk.Message? { get }
@@ -872,8 +874,10 @@ public enum MimeTypes : Swift.String {
     get
   }
 }
+public protocol OAuthResponse : Swift.Decodable, Swift.Encodable, Swift.Equatable {
+}
 @objc @_hasMissingDesignatedInitializers @available(iOS 14.0, *)
-@objcMembers final public class SuccessfulTokenResponse : ObjectiveC.NSObject, Swift.Codable {
+@objcMembers final public class SuccessfulTokenResponse : ObjectiveC.NSObject, IdsvrHaapiSdk.OAuthResponse {
   @objc final public let accessToken: Swift.String
   @objc final public let tokenType: Swift.String?
   @objc final public let scope: Swift.String?
@@ -886,7 +890,7 @@ public enum MimeTypes : Swift.String {
   final public func encode(to encoder: any Swift.Encoder) throws
 }
 @objc @_hasMissingDesignatedInitializers @available(iOS 14.0, *)
-@objcMembers final public class ErrorTokenResponse : ObjectiveC.NSObject, Swift.Codable {
+@objcMembers final public class ErrorTokenResponse : ObjectiveC.NSObject, IdsvrHaapiSdk.OAuthResponse {
   @objc final public let error: Swift.String
   @objc final public let errorDescription: Swift.String
   public init(from decoder: any Swift.Decoder) throws
@@ -1237,16 +1241,13 @@ public protocol LogSink {
   @objc public init(keyPairType: IdsvrHaapiSdk.CryptoKeyType = .secureEnclave)
   @objc deinit
 }
-@available(iOS 14, *)
-extension IdsvrHaapiSdk.IdsvrHaapiSdkTestUtils {
-  public static func createHaapiAccessorBuilderForAttestationFailure(haapiConfiguration: IdsvrHaapiSdk.HaapiConfiguration, failure: IdsvrHaapiSdk.HaapiError = HaapiError.attestationNotSupported) throws -> IdsvrHaapiSdk.HaapiAccessorBuilder
-}
 @_hasMissingDesignatedInitializers @available(iOS, introduced: 14, message: "This class is experimental and for Internal/Testing purposes only. Please do not use in production.")
 public class IdsvrHaapiSdkTestUtils {
   public static var isEnabled: Swift.Bool {
     get
     set
   }
+  public static func createHaapiAccessorBuilderForAttestationFailure(haapiConfiguration: IdsvrHaapiSdk.HaapiConfiguration, failure: IdsvrHaapiSdk.HaapiError = HaapiError.attestationNotSupported) throws -> IdsvrHaapiSdk.HaapiAccessorBuilder
   @objc deinit
 }
 @available(iOS 14.0, *)
@@ -1483,6 +1484,8 @@ extension IdsvrHaapiSdk.PollingStatus : Swift.RawRepresentable {
   final public func setHaapiAccessorOption(option: IdsvrHaapiSdk.HaapiAccessorOption) -> IdsvrHaapiSdk.HaapiAccessorBuilder
   @objc @discardableResult
   final public func setDCRConfiguration(configuration: IdsvrHaapiSdk.DCRConfiguration) -> IdsvrHaapiSdk.HaapiAccessorBuilder
+  @objc @discardableResult
+  final public func setAttestationValidationRetryCount(maxRetries: Swift.Int) -> IdsvrHaapiSdk.HaapiAccessorBuilder
   final public func build<T>(shouldClearExistingDCRClient: Swift.Bool = false, completionHandler: @escaping (Swift.Result<T, IdsvrHaapiSdk.HaapiError>) -> Swift.Void) where T : IdsvrHaapiSdk.HaapiManagerAccessor
   final public func build<T>(shouldClearExistingDCRClient: Swift.Bool = false) async throws -> T where T : IdsvrHaapiSdk.HaapiManagerAccessor
   @objc deinit
