@@ -121,8 +121,10 @@ final public class HiddenFormField : IdsvrHaapiSdk.FormField {
   override final public func encode(to encoder: any Swift.Encoder) throws
   @objc deinit
 }
-@objc final public class DCRConfiguration : ObjectiveC.NSObject {
-  @objc public init(templateClientId: Swift.String, clientRegistrationEndpointUrl: Foundation.URL)
+@objc @available(iOS 14, *)
+final public class DCRConfiguration : ObjectiveC.NSObject {
+  @objc convenience public init(templateClientId: Swift.String, clientRegistrationEndpointUrl: Foundation.URL)
+  public init(templateClientId: Swift.String, clientRegistrationEndpointUrl: Foundation.URL, storage: any IdsvrHaapiSdk.Storage)
   @objc deinit
 }
 public protocol FollowUpTag {
@@ -1486,6 +1488,8 @@ extension IdsvrHaapiSdk.PollingStatus : Swift.RawRepresentable {
   final public func setDCRConfiguration(configuration: IdsvrHaapiSdk.DCRConfiguration) -> IdsvrHaapiSdk.HaapiAccessorBuilder
   @objc @discardableResult
   final public func setAttestationValidationRetryCount(maxRetries: Swift.Int) -> IdsvrHaapiSdk.HaapiAccessorBuilder
+  @objc @discardableResult
+  final public func setAttestationValidationKeyName(keyName: Swift.String) -> IdsvrHaapiSdk.HaapiAccessorBuilder
   final public func build<T>(shouldClearExistingDCRClient: Swift.Bool = false, completionHandler: @escaping (Swift.Result<T, IdsvrHaapiSdk.HaapiError>) -> Swift.Void) where T : IdsvrHaapiSdk.HaapiManagerAccessor
   final public func build<T>(shouldClearExistingDCRClient: Swift.Bool = false) async throws -> T where T : IdsvrHaapiSdk.HaapiManagerAccessor
   @objc deinit
