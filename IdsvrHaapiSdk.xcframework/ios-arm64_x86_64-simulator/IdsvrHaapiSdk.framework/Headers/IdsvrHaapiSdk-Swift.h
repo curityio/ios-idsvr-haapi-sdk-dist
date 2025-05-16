@@ -517,9 +517,9 @@ typedef SWIFT_ENUM(NSInteger, CryptoKeyType, open) {
 ///
 /// \param clientRegistrationEndpointUrl The client registration endpoint URI.
 ///
-SWIFT_CLASS("_TtC13IdsvrHaapiSdk16DCRConfiguration")
+SWIFT_CLASS("_TtC13IdsvrHaapiSdk16DCRConfiguration") SWIFT_AVAILABILITY(ios,introduced=14)
 @interface DCRConfiguration : NSObject
-- (nonnull instancetype)initWithTemplateClientId:(NSString * _Nonnull)templateClientId clientRegistrationEndpointUrl:(NSURL * _Nonnull)clientRegistrationEndpointUrl OBJC_DESIGNATED_INITIALIZER;
+- (nonnull instancetype)initWithTemplateClientId:(NSString * _Nonnull)templateClientId clientRegistrationEndpointUrl:(NSURL * _Nonnull)clientRegistrationEndpointUrl;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
@@ -774,6 +774,11 @@ SWIFT_CLASS("_TtC13IdsvrHaapiSdk20HaapiAccessorBuilder") SWIFT_AVAILABILITY(ios,
 /// \param maxRetries The maximum number of retries to perform.
 ///
 - (HaapiAccessorBuilder * _Nonnull)setAttestationValidationRetryCountWithMaxRetries:(NSInteger)maxRetries;
+/// Set the <code>keyName</code> to use when validating the attestation capability. It is used to store attestation key state.
+/// By default, it is set to <code>##TryOrFailAttestationValidation##</code>.
+/// \param keyName The new attestation validation key name.
+///
+- (HaapiAccessorBuilder * _Nonnull)setAttestationValidationKeyNameWithKeyName:(NSString * _Nonnull)keyName;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
@@ -1973,9 +1978,9 @@ typedef SWIFT_ENUM(NSInteger, CryptoKeyType, open) {
 ///
 /// \param clientRegistrationEndpointUrl The client registration endpoint URI.
 ///
-SWIFT_CLASS("_TtC13IdsvrHaapiSdk16DCRConfiguration")
+SWIFT_CLASS("_TtC13IdsvrHaapiSdk16DCRConfiguration") SWIFT_AVAILABILITY(ios,introduced=14)
 @interface DCRConfiguration : NSObject
-- (nonnull instancetype)initWithTemplateClientId:(NSString * _Nonnull)templateClientId clientRegistrationEndpointUrl:(NSURL * _Nonnull)clientRegistrationEndpointUrl OBJC_DESIGNATED_INITIALIZER;
+- (nonnull instancetype)initWithTemplateClientId:(NSString * _Nonnull)templateClientId clientRegistrationEndpointUrl:(NSURL * _Nonnull)clientRegistrationEndpointUrl;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
@@ -2230,6 +2235,11 @@ SWIFT_CLASS("_TtC13IdsvrHaapiSdk20HaapiAccessorBuilder") SWIFT_AVAILABILITY(ios,
 /// \param maxRetries The maximum number of retries to perform.
 ///
 - (HaapiAccessorBuilder * _Nonnull)setAttestationValidationRetryCountWithMaxRetries:(NSInteger)maxRetries;
+/// Set the <code>keyName</code> to use when validating the attestation capability. It is used to store attestation key state.
+/// By default, it is set to <code>##TryOrFailAttestationValidation##</code>.
+/// \param keyName The new attestation validation key name.
+///
+- (HaapiAccessorBuilder * _Nonnull)setAttestationValidationKeyNameWithKeyName:(NSString * _Nonnull)keyName;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
