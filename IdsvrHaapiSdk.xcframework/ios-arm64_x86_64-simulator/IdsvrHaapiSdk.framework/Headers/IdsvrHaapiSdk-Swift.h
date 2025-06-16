@@ -315,6 +315,13 @@ SWIFT_CLASS("_TtC13IdsvrHaapiSdk11AccessToken") SWIFT_AVAILABILITY(ios,introduce
 @property (nonatomic, readonly, copy) NSString * _Nonnull value;
 /// The expiration date of the Access Token
 @property (nonatomic, readonly, copy) NSDate * _Nonnull expiresOn;
+/// Return a <code>String</code> representation of the <code>AccessToken</code> instance, for example to be used for debugging
+///
+/// returns:
+/// a <code>String</code> representation of the <code>AccessToken</code> instance,
+@property (nonatomic, readonly, copy) NSString * _Nonnull description;
+/// Return a <code>String</code> representation of the <code>AccessToken</code> instance, for example to be used for debugging.
+@property (nonatomic, readonly, copy) NSString * _Nonnull debugDescription;
 /// Calculate whether the Access Token is valid on a particular moment.
 /// The <code>minTtl</code> is used as threshold: the Access Token is considered valid if it is valid for at least <code>minTtl</code> seconds before it expires.
 /// \param atTime the moment that validity of the Access Token is calculated for
@@ -325,12 +332,6 @@ SWIFT_CLASS("_TtC13IdsvrHaapiSdk11AccessToken") SWIFT_AVAILABILITY(ios,introduce
 /// returns:
 /// true if the token is valid for the given <code>atTime</code> and <code>minTtl</code>, false if not
 - (BOOL)isValidAtTime:(NSDate * _Nonnull)atTime minTtl:(NSTimeInterval)minTtl SWIFT_WARN_UNUSED_RESULT;
-/// Return a <code>String</code> representation of the <code>AccessToken</code> instance, for example to be used for debugging
-///
-/// returns:
-/// a <code>String</code> representation of the <code>AccessToken</code> instance,
-@property (nonatomic, readonly, copy) NSString * _Nonnull description;
-@property (nonatomic, readonly, copy) NSString * _Nonnull debugDescription;
 - (BOOL)isEqual:(id _Nullable)object SWIFT_WARN_UNUSED_RESULT;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
@@ -358,11 +359,10 @@ SWIFT_CLASS("_TtC13IdsvrHaapiSdk24AttestationConfiguration") SWIFT_AVAILABILITY(
 /// Responses of this type obey the schema defined in <a href="https://tools.ietf.org/html/rfc7807">RFC-7807</a> (Problem Details for HTTP APIs).
 SWIFT_CLASS("_TtC13IdsvrHaapiSdk7Problem") SWIFT_AVAILABILITY(ios,introduced=14.0)
 @interface Problem : NSObject
-/// An optional object with additional information about the response. A client may ignore the information present in this object.
 @property (nonatomic, readonly, strong) Metadata * _Nullable metadata;
-/// An optional <code>Message</code> that represents the title of the problem.
-@property (nonatomic, readonly, strong) Message * _Nullable title;
 @property (nonatomic, readonly, copy) NSString * _Nullable rawJsonString;
+@property (nonatomic, readonly, strong) Message * _Nullable title;
+/// Returns a <code>Bool</code> value that indicates whether the receiver and a given object are equal.
 - (BOOL)isEqual:(id _Nullable)object SWIFT_WARN_UNUSED_RESULT;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
@@ -376,6 +376,7 @@ SWIFT_CLASS("_TtC13IdsvrHaapiSdk20AuthorizationProblem") SWIFT_AVAILABILITY(ios,
 @property (nonatomic, readonly, copy) NSString * _Nonnull error;
 /// A human-readable description of the error.
 @property (nonatomic, readonly, copy) NSString * _Nullable errorDescription;
+- (BOOL)isEqual:(id _Nullable)object SWIFT_WARN_UNUSED_RESULT;
 @end
 
 enum CryptoKeyType : NSInteger;
@@ -614,9 +615,9 @@ SWIFT_CLASS("_TtC13IdsvrHaapiSdk19DpopAccessTokenInfo") SWIFT_AVAILABILITY(ios,i
 @interface DpopAccessTokenInfo : NSObject
 /// An <code>AccessToken</code> instance
 @property (nonatomic, readonly, strong) AccessToken * _Nonnull accessToken;
-/// An <code>Dpop</code> instance
+/// A <code>Dpop</code> instance
 @property (nonatomic, readonly, strong) Dpop * _Nonnull dpop;
-/// An <code>String</code> instance that represents the most recent DPoP nonce. Any Identity Server response may contain a
+/// A <code>String</code> instance that represents the most recent DPoP nonce. Any Identity Server response may contain a
 /// DPoP-Nonce header with a nonce string. This nonce needs be provided to all subsequent calls to the server.
 @property (nonatomic, readonly, copy) NSString * _Nullable dpopNonce;
 /// Return a String representation of the <code>DpopAccessTokenInfo</code> instance.
@@ -635,7 +636,7 @@ SWIFT_CLASS("_TtC13IdsvrHaapiSdk19DpopAccessTokenInfo") SWIFT_AVAILABILITY(ios,i
 /// returns:
 /// a String value with the <code>DPoP</code> proof token value
 - (NSString * _Nullable)dpopHeaderValueWithHttpMethod:(NSString * _Nonnull)httpMethod url:(NSURL * _Nonnull)url error:(NSError * _Nullable * _Nullable)error SWIFT_WARN_UNUSED_RESULT;
-/// Calculate the value that can be used when the DPoP-bound Access Token is to be included in the <code>Authorization</code> HTTP request header.
+/// Calculates the value that can be used when the DPoP-bound Access Token is to be included in the <code>Authorization</code> HTTP request header.
 ///
 /// returns:
 /// the value that can be used in a <code>AuthorizationHeader</code> HTTP request header.
@@ -649,6 +650,7 @@ SWIFT_CLASS("_TtC13IdsvrHaapiSdk19DpopAccessTokenInfo") SWIFT_AVAILABILITY(ios,i
 /// The contents of a URL based HTTP response.
 SWIFT_CLASS("_TtC13IdsvrHaapiSdk22HTTPURLResponseContent")
 @interface HTTPURLResponseContent : NSObject
+- (BOOL)isEqual:(id _Nullable)object SWIFT_WARN_UNUSED_RESULT;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
@@ -1246,6 +1248,7 @@ SWIFT_CLASS("_TtC13IdsvrHaapiSdk19InvalidInputProblem") SWIFT_AVAILABILITY(ios,i
 @interface InvalidInputProblem : Problem
 /// Description of the error.
 @property (nonatomic, readonly, copy) NSString * _Nullable errorDescription;
+- (BOOL)isEqual:(id _Nullable)object SWIFT_WARN_UNUSED_RESULT;
 @end
 
 /// Supported algorithms for Asymmetric JWT.
@@ -1299,6 +1302,7 @@ SWIFT_CLASS("_TtC13IdsvrHaapiSdk10KeyPinning") SWIFT_AVAILABILITY(ios,introduced
 /// to resolve its own message literals.
 SWIFT_CLASS("_TtC13IdsvrHaapiSdk7Message") SWIFT_AVAILABILITY(ios,introduced=14.0)
 @interface Message : NSObject
+/// The text contained in the message. This is the same as <code>literal</code>.
 @property (nonatomic, readonly, copy) NSString * _Nonnull description;
 - (BOOL)isEqual:(id _Nullable)object SWIFT_WARN_UNUSED_RESULT;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
@@ -1421,16 +1425,16 @@ SWIFT_CLASS("_TtC13IdsvrHaapiSdk23SuccessfulTokenResponse") SWIFT_AVAILABILITY(i
 @interface SuccessfulTokenResponse : NSObject
 /// The access token.
 @property (nonatomic, readonly, copy) NSString * _Nonnull accessToken;
-/// The token type.
-@property (nonatomic, readonly, copy) NSString * _Nullable tokenType;
-/// The resulting scope.
-@property (nonatomic, readonly, copy) NSString * _Nullable scope;
 /// The lifetime of the access token, in seconds.
 @property (nonatomic, readonly) NSInteger expiresIn;
-/// The refresh token.
-@property (nonatomic, readonly, copy) NSString * _Nullable refreshToken;
 /// The ID Token value associated with the authenticated session.
 @property (nonatomic, readonly, copy) NSString * _Nullable idToken;
+/// The refresh token.
+@property (nonatomic, readonly, copy) NSString * _Nullable refreshToken;
+/// The resulting scope.
+@property (nonatomic, readonly, copy) NSString * _Nullable scope;
+/// The token type.
+@property (nonatomic, readonly, copy) NSString * _Nullable tokenType;
 - (BOOL)isEqual:(id _Nullable)object SWIFT_WARN_UNUSED_RESULT;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
@@ -1776,6 +1780,13 @@ SWIFT_CLASS("_TtC13IdsvrHaapiSdk11AccessToken") SWIFT_AVAILABILITY(ios,introduce
 @property (nonatomic, readonly, copy) NSString * _Nonnull value;
 /// The expiration date of the Access Token
 @property (nonatomic, readonly, copy) NSDate * _Nonnull expiresOn;
+/// Return a <code>String</code> representation of the <code>AccessToken</code> instance, for example to be used for debugging
+///
+/// returns:
+/// a <code>String</code> representation of the <code>AccessToken</code> instance,
+@property (nonatomic, readonly, copy) NSString * _Nonnull description;
+/// Return a <code>String</code> representation of the <code>AccessToken</code> instance, for example to be used for debugging.
+@property (nonatomic, readonly, copy) NSString * _Nonnull debugDescription;
 /// Calculate whether the Access Token is valid on a particular moment.
 /// The <code>minTtl</code> is used as threshold: the Access Token is considered valid if it is valid for at least <code>minTtl</code> seconds before it expires.
 /// \param atTime the moment that validity of the Access Token is calculated for
@@ -1786,12 +1797,6 @@ SWIFT_CLASS("_TtC13IdsvrHaapiSdk11AccessToken") SWIFT_AVAILABILITY(ios,introduce
 /// returns:
 /// true if the token is valid for the given <code>atTime</code> and <code>minTtl</code>, false if not
 - (BOOL)isValidAtTime:(NSDate * _Nonnull)atTime minTtl:(NSTimeInterval)minTtl SWIFT_WARN_UNUSED_RESULT;
-/// Return a <code>String</code> representation of the <code>AccessToken</code> instance, for example to be used for debugging
-///
-/// returns:
-/// a <code>String</code> representation of the <code>AccessToken</code> instance,
-@property (nonatomic, readonly, copy) NSString * _Nonnull description;
-@property (nonatomic, readonly, copy) NSString * _Nonnull debugDescription;
 - (BOOL)isEqual:(id _Nullable)object SWIFT_WARN_UNUSED_RESULT;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
@@ -1819,11 +1824,10 @@ SWIFT_CLASS("_TtC13IdsvrHaapiSdk24AttestationConfiguration") SWIFT_AVAILABILITY(
 /// Responses of this type obey the schema defined in <a href="https://tools.ietf.org/html/rfc7807">RFC-7807</a> (Problem Details for HTTP APIs).
 SWIFT_CLASS("_TtC13IdsvrHaapiSdk7Problem") SWIFT_AVAILABILITY(ios,introduced=14.0)
 @interface Problem : NSObject
-/// An optional object with additional information about the response. A client may ignore the information present in this object.
 @property (nonatomic, readonly, strong) Metadata * _Nullable metadata;
-/// An optional <code>Message</code> that represents the title of the problem.
-@property (nonatomic, readonly, strong) Message * _Nullable title;
 @property (nonatomic, readonly, copy) NSString * _Nullable rawJsonString;
+@property (nonatomic, readonly, strong) Message * _Nullable title;
+/// Returns a <code>Bool</code> value that indicates whether the receiver and a given object are equal.
 - (BOOL)isEqual:(id _Nullable)object SWIFT_WARN_UNUSED_RESULT;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
@@ -1837,6 +1841,7 @@ SWIFT_CLASS("_TtC13IdsvrHaapiSdk20AuthorizationProblem") SWIFT_AVAILABILITY(ios,
 @property (nonatomic, readonly, copy) NSString * _Nonnull error;
 /// A human-readable description of the error.
 @property (nonatomic, readonly, copy) NSString * _Nullable errorDescription;
+- (BOOL)isEqual:(id _Nullable)object SWIFT_WARN_UNUSED_RESULT;
 @end
 
 enum CryptoKeyType : NSInteger;
@@ -2075,9 +2080,9 @@ SWIFT_CLASS("_TtC13IdsvrHaapiSdk19DpopAccessTokenInfo") SWIFT_AVAILABILITY(ios,i
 @interface DpopAccessTokenInfo : NSObject
 /// An <code>AccessToken</code> instance
 @property (nonatomic, readonly, strong) AccessToken * _Nonnull accessToken;
-/// An <code>Dpop</code> instance
+/// A <code>Dpop</code> instance
 @property (nonatomic, readonly, strong) Dpop * _Nonnull dpop;
-/// An <code>String</code> instance that represents the most recent DPoP nonce. Any Identity Server response may contain a
+/// A <code>String</code> instance that represents the most recent DPoP nonce. Any Identity Server response may contain a
 /// DPoP-Nonce header with a nonce string. This nonce needs be provided to all subsequent calls to the server.
 @property (nonatomic, readonly, copy) NSString * _Nullable dpopNonce;
 /// Return a String representation of the <code>DpopAccessTokenInfo</code> instance.
@@ -2096,7 +2101,7 @@ SWIFT_CLASS("_TtC13IdsvrHaapiSdk19DpopAccessTokenInfo") SWIFT_AVAILABILITY(ios,i
 /// returns:
 /// a String value with the <code>DPoP</code> proof token value
 - (NSString * _Nullable)dpopHeaderValueWithHttpMethod:(NSString * _Nonnull)httpMethod url:(NSURL * _Nonnull)url error:(NSError * _Nullable * _Nullable)error SWIFT_WARN_UNUSED_RESULT;
-/// Calculate the value that can be used when the DPoP-bound Access Token is to be included in the <code>Authorization</code> HTTP request header.
+/// Calculates the value that can be used when the DPoP-bound Access Token is to be included in the <code>Authorization</code> HTTP request header.
 ///
 /// returns:
 /// the value that can be used in a <code>AuthorizationHeader</code> HTTP request header.
@@ -2110,6 +2115,7 @@ SWIFT_CLASS("_TtC13IdsvrHaapiSdk19DpopAccessTokenInfo") SWIFT_AVAILABILITY(ios,i
 /// The contents of a URL based HTTP response.
 SWIFT_CLASS("_TtC13IdsvrHaapiSdk22HTTPURLResponseContent")
 @interface HTTPURLResponseContent : NSObject
+- (BOOL)isEqual:(id _Nullable)object SWIFT_WARN_UNUSED_RESULT;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
@@ -2707,6 +2713,7 @@ SWIFT_CLASS("_TtC13IdsvrHaapiSdk19InvalidInputProblem") SWIFT_AVAILABILITY(ios,i
 @interface InvalidInputProblem : Problem
 /// Description of the error.
 @property (nonatomic, readonly, copy) NSString * _Nullable errorDescription;
+- (BOOL)isEqual:(id _Nullable)object SWIFT_WARN_UNUSED_RESULT;
 @end
 
 /// Supported algorithms for Asymmetric JWT.
@@ -2760,6 +2767,7 @@ SWIFT_CLASS("_TtC13IdsvrHaapiSdk10KeyPinning") SWIFT_AVAILABILITY(ios,introduced
 /// to resolve its own message literals.
 SWIFT_CLASS("_TtC13IdsvrHaapiSdk7Message") SWIFT_AVAILABILITY(ios,introduced=14.0)
 @interface Message : NSObject
+/// The text contained in the message. This is the same as <code>literal</code>.
 @property (nonatomic, readonly, copy) NSString * _Nonnull description;
 - (BOOL)isEqual:(id _Nullable)object SWIFT_WARN_UNUSED_RESULT;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
@@ -2882,16 +2890,16 @@ SWIFT_CLASS("_TtC13IdsvrHaapiSdk23SuccessfulTokenResponse") SWIFT_AVAILABILITY(i
 @interface SuccessfulTokenResponse : NSObject
 /// The access token.
 @property (nonatomic, readonly, copy) NSString * _Nonnull accessToken;
-/// The token type.
-@property (nonatomic, readonly, copy) NSString * _Nullable tokenType;
-/// The resulting scope.
-@property (nonatomic, readonly, copy) NSString * _Nullable scope;
 /// The lifetime of the access token, in seconds.
 @property (nonatomic, readonly) NSInteger expiresIn;
-/// The refresh token.
-@property (nonatomic, readonly, copy) NSString * _Nullable refreshToken;
 /// The ID Token value associated with the authenticated session.
 @property (nonatomic, readonly, copy) NSString * _Nullable idToken;
+/// The refresh token.
+@property (nonatomic, readonly, copy) NSString * _Nullable refreshToken;
+/// The resulting scope.
+@property (nonatomic, readonly, copy) NSString * _Nullable scope;
+/// The token type.
+@property (nonatomic, readonly, copy) NSString * _Nullable tokenType;
 - (BOOL)isEqual:(id _Nullable)object SWIFT_WARN_UNUSED_RESULT;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
