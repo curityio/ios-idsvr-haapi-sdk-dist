@@ -394,6 +394,18 @@ public typealias OAuthRevocationCompletion = @Sendable (_ response: IdsvrHaapiSd
 @objcMembers final public class OAuthTokenManager : ObjectiveC.NSObject, Swift.Sendable {
   @objc final public let oauthTokenConfiguration: any IdsvrHaapiSdk.OAuthTokenConfigurable
   @objc convenience public init(oauthTokenConfiguration: any IdsvrHaapiSdk.OAuthTokenConfigurable)
+  #if compiler(>=5.3) && $NonescapableTypes && $AsyncExecutionBehaviorAttributes
+  nonisolated(nonsending) final public func fetchAccessToken(with authorizationCode: Swift.String, dpop: IdsvrHaapiSdk.Dpop? = nil, additionalParameters: [Swift.String : Swift.String]? = nil) async -> IdsvrHaapiSdk.TokenResponse
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes && $AsyncExecutionBehaviorAttributes
+  nonisolated(nonsending) final public func refreshAccessToken(with refreshToken: Swift.String, additionalParameters: [Swift.String : Swift.String]? = nil) async -> IdsvrHaapiSdk.TokenResponse
+  #endif
+  #if compiler(>=5.3) && $AsyncExecutionBehaviorAttributes
+  nonisolated(nonsending) final public func revokeAccessToken(with token: Swift.String) async -> IdsvrHaapiSdk.TokenRevocationResponse
+  #endif
+  #if compiler(>=5.3) && $AsyncExecutionBehaviorAttributes
+  nonisolated(nonsending) final public func revokeRefreshToken(with token: Swift.String) async -> IdsvrHaapiSdk.TokenRevocationResponse
+  #endif
   @objc public protocol TokenEndpointResponseListener : Swift.Sendable {
     @objc func onSuccess(_ value: IdsvrHaapiSdk.OAuthTokenManager.SuccessTokenHTTPURLResponseContent)
     @objc func onError(_ value: IdsvrHaapiSdk.ErrorHTTPURLResponseContent)
@@ -1727,6 +1739,7 @@ public struct WebAuthnRegistrationClientOperationActionModel : IdsvrHaapiSdk.Cli
     public let attestation: Swift.String?
     public let publicKeyCredParams: [IdsvrHaapiSdk.WebAuthnRegistrationClientOperationActionModel.CredentialParams]?
     public let excludedCredentials: [IdsvrHaapiSdk.WebAuthnRegistrationClientOperationActionModel.ExcludedCredential]?
+    public let residentKey: Swift.String?
   }
   public struct CredentialParams : Swift.Sendable {
     public let algorithmId: Swift.Int
@@ -1809,12 +1822,14 @@ extension IdsvrHaapiSdk.PollingStatus : Swift.RawRepresentable {
   @objc var haapiManager: IdsvrHaapiSdk.HaapiManager { get }
   @objc func close()
 }
-@objc public enum HaapiAccessorOption : Swift.Int, Swift.Sendable {
+@available(*, deprecated, message: "    This enum will not be supported in the next major version and will be removed.\n    Please use the provided specific build methods instead.")
+public enum HaapiAccessorOption : Swift.Int, Swift.Sendable {
   case all
   case oauth
   #if compiler(>=5.3) && $NonescapableTypes
   public init?(rawValue: Swift.Int)
   #endif
+  @available(*, deprecated, message: "    This enum will not be supported in the next major version and will be removed.\n    Please use the provided specific build methods instead.")
   public typealias RawValue = Swift.Int
   public var rawValue: Swift.Int {
     get
@@ -1823,7 +1838,8 @@ extension IdsvrHaapiSdk.PollingStatus : Swift.RawRepresentable {
 @objc @available(iOS 14.0, *)
 @objcMembers final public class HaapiAccessorBuilder : ObjectiveC.NSObject, Swift.Sendable {
   @objc public init(haapiConfiguration: IdsvrHaapiSdk.HaapiConfiguration)
-  @objc @discardableResult
+  @discardableResult
+  @available(*, deprecated, message: "    This method will not be supported in the next major version and will be removed.\n    Please use specific `buildFor` methods instead.")
   final public func setHaapiAccessorOption(option: IdsvrHaapiSdk.HaapiAccessorOption) -> IdsvrHaapiSdk.HaapiAccessorBuilder
   @objc @discardableResult
   final public func setDCRConfiguration(configuration: IdsvrHaapiSdk.DCRConfiguration) -> IdsvrHaapiSdk.HaapiAccessorBuilder
@@ -1832,11 +1848,18 @@ extension IdsvrHaapiSdk.PollingStatus : Swift.RawRepresentable {
   @objc @discardableResult
   final public func setAttestationValidationKeyName(keyName: Swift.String) -> IdsvrHaapiSdk.HaapiAccessorBuilder
   #if compiler(>=5.3) && $NonescapableTypes
-  @available(*, deprecated, message: "This function will not be supported in the next major version. Please use async build")
+  @available(*, deprecated, message: "    This function will not be supported in the next major version and will be removed.\n    Please use async `buildFor` method appropriate for usage context.")
   final public func build<T>(shouldClearExistingDCRClient: Swift.Bool = false, completionHandler: @escaping @Sendable (Swift.Result<T, IdsvrHaapiSdk.HaapiError>) -> Swift.Void) where T : IdsvrHaapiSdk.HaapiManagerAccessor
   #endif
   #if compiler(>=5.3) && $AsyncExecutionBehaviorAttributes
+  @available(*, deprecated, message: "    This function will not be supported in the next major version and will be removed.\n    Please use async `buildFor` method appropriate for usage context.")
   nonisolated(nonsending) final public func build<T>(shouldClearExistingDCRClient: Swift.Bool = false) async throws -> T where T : IdsvrHaapiSdk.HaapiManagerAccessor
+  #endif
+  #if compiler(>=5.3) && $AsyncExecutionBehaviorAttributes
+  @objc nonisolated(nonsending) final public func buildForHaapi(shouldClearExistingDCRClient: Swift.Bool = false) async throws -> any IdsvrHaapiSdk.HaapiAccessor
+  #endif
+  #if compiler(>=5.3) && $AsyncExecutionBehaviorAttributes
+  @objc nonisolated(nonsending) final public func buildForOAuth() async throws -> any IdsvrHaapiSdk.OAuthAccessor
   #endif
   @objc deinit
 }
@@ -2001,6 +2024,9 @@ extension IdsvrHaapiSdk.PollingStatus : Swift.Hashable {}
 extension IdsvrHaapiSdk.PollingStatus : Swift.Sendable {}
 @available(iOS 14.0, *)
 extension IdsvrHaapiSdk.PollingStatus : Swift.BitwiseCopyable {}
+@available(*, deprecated, message: "    This enum will not be supported in the next major version and will be removed.\n    Please use the provided specific build methods instead.")
 extension IdsvrHaapiSdk.HaapiAccessorOption : Swift.Equatable {}
+@available(*, deprecated, message: "    This enum will not be supported in the next major version and will be removed.\n    Please use the provided specific build methods instead.")
 extension IdsvrHaapiSdk.HaapiAccessorOption : Swift.Hashable {}
+@available(*, deprecated, message: "    This enum will not be supported in the next major version and will be removed.\n    Please use the provided specific build methods instead.")
 extension IdsvrHaapiSdk.HaapiAccessorOption : Swift.RawRepresentable {}
