@@ -679,11 +679,17 @@ SWIFT_PROTOCOL("_TtP13IdsvrHaapiSdk13HaapiAccessor_") SWIFT_AVAILABILITY(ios,int
 @end
 
 @class HaapiConfiguration;
-enum HaapiAccessorOption : NSInteger;
-/// HaapiAccessorBuilder  allows obtaining the accessors to access HAAPI from the current device, based on an initial static configuration and the device capabilities.
+/// HaapiAccessorBuilder allows obtaining the accessors to access HAAPI from the current device, based on an initial static configuration and the device capabilities.
 /// The preferred access strategy is to obtain HAAPI access tokens using client attestation, i.e. the device’s key attestation capabilities. If attestation is not supported, or if the Curity Identity Server deems the attestation data as invalid, an optional fallback strategy based on Dynamic Client Registration can be used.
 /// The DCR-based fallback uses templatized client registration: the client configured in [haapiConfiguration] is used to register a dynamic client based on a template ID configured via [setDcrConfiguration]. The registration happens on the first time the fallback is used for a given template client ID. The resulting client data is stored on the device and considered by [HaapiAccessorBuilder] on subsequent runs.
-/// The HaapiAccessor instances created by this class include:
+/// When the DCR-based access is used, these credentials will be different from what’s supplied in the initial configuration.
+/// Depending on the use case requirements, the builder can create two types of accessors:
+/// <ol>
+///   <li>
+///     HaapiAccessor: to be used when going through an HAAPI authorization flow and also for the OAuth token management operations.
+///     The HaapiAccessor instances created by this class include:
+///   </li>
+/// </ol>
 /// <ul>
 ///   <li>
 ///     A ready-to-use HaapiManager to execute authorization flows.
@@ -692,24 +698,41 @@ enum HaapiAccessorOption : NSInteger;
 ///     A ready-to-use OAuthTokenManager to execute OAuth requests like refreshToken and revoke.
 ///   </li>
 /// </ul>
-/// When the DCR-based access is used, these credentials will be different from what’s supplied in the initial configuration.
-/// The recommended way to use [HaapiAccessorBuilder] is to create a single instance and invoke <code>build</code> once before going through an authorization flow via HAAPI.
+/// <ol>
+///   <li>
+///     OAuthAccessor: to be used when only OAuth token management operations are required.
+///     The OAuthAccessor instances created by this class include:
+///   </li>
+/// </ol>
+/// <ul>
+///   <li>
+///     A ready-to-use OAuthTokenManager to execute OAuth requests like refreshToken and revokeToken.
+///   </li>
+/// </ul>
+/// The recommended way to use [HaapiAccessorBuilder] is to create a single instance and invoke the respective <code>buildFor...</code> method once before either going through an authorization flow via HAAPI or executing token management operations.
+/// Note that when using the <code>buildForHaapi</code> method, if the accessor needs to be created multiple times for the same configuration, be sure to invoke <code>HaapiAccessor.close</code>
 /// \code
 /// let haapiConfiguration: HaapiConfiguration = ...
 /// let dcrConfiguration: DcrConfiguration = ...
 ///
+/// // HAAPI flow
 /// let haapiAccessor = HaapiAccessorBuilder(haapiConfiguration)
 ///    .setDcrConfiguration(dcrConfiguration)
-///    .build()
-///
-///  // HAAPI flow
+///    .buildForHaapi()
 /// let haapiManager: HaapiManager = haapiAccessor.haapiManager
 /// haapiManager.start()
 /// // ... haapiManager.submit/follow ...
-///
+/// // ...
 /// // Fetch token with OAuthTokenManager
 /// let oAuthTokenManager: OAuthTokenManager = haapiAccessor.oAuthTokenManager
-/// ... oAuthTokenManager.fetch/refresh ...
+/// oAuthTokenManager.fetchAccessToken(...)
+///
+/// // Manage tokens with OAuthTokenManager
+/// let oauthAccessor = HaapiAccessorBuilder(haapiConfiguration)
+///    .setDcrConfiguration(dcrConfiguration)
+///    .buildForOAuth()
+/// let oAuthTokenManager: OAuthTokenManager = oauthAccessor.oAuthTokenManager
+/// ... oAuthTokenManager.refresh/revoke ...
 ///
 /// \endcode
 SWIFT_CLASS("_TtC13IdsvrHaapiSdk20HaapiAccessorBuilder") SWIFT_AVAILABILITY(ios,introduced=14.0)
@@ -718,10 +741,6 @@ SWIFT_CLASS("_TtC13IdsvrHaapiSdk20HaapiAccessorBuilder") SWIFT_AVAILABILITY(ios,
 /// \param haapiConfiguration The configuration used to build this instance.
 ///
 - (nonnull instancetype)initWithHaapiConfiguration:(HaapiConfiguration * _Nonnull)haapiConfiguration OBJC_DESIGNATED_INITIALIZER;
-/// Set the option that instructs which <code>HaapiAccessor</code> members  are to be created. By defaulf value is <code>HaapiAccessorOption.all</code>.
-/// \param option The new HaapiAccessorOption setting.
-///
-- (HaapiAccessorBuilder * _Nonnull)setHaapiAccessorOptionWithOption:(enum HaapiAccessorOption)option;
 /// Set the dcr configuration to use. By default, it is set to nil.
 /// \param configuration The dcr configuration to use.
 ///
@@ -736,16 +755,38 @@ SWIFT_CLASS("_TtC13IdsvrHaapiSdk20HaapiAccessorBuilder") SWIFT_AVAILABILITY(ios,
 /// \param keyName The new attestation validation key name.
 ///
 - (HaapiAccessorBuilder * _Nonnull)setAttestationValidationKeyNameWithKeyName:(NSString * _Nonnull)keyName;
+/// Creates a <code>HaapiAccessor</code>. This method checks if the device supports key-attestation or not and sets up the accessor configuration based on an initial static configuration and the device capabilities.
+/// Use this method when the accessor is going to be used to make Haapi requests and the user is going through an Authentication flow.
+/// note:
+/// This method should be invoked only once for any configuration. If it has to be invoked multiple times for the same configuration, be sure
+/// to invoke <code>HaapiAccessor.close</code> before invoking <code>build</code> again otherwise an <code>HaapiError.haapiTokenManagerAlreadyExists</code> is thrown.
+/// \param shouldClearExistingDCRClient Instructs the framework to clear the existing Dcr Client. <code>False</code> is the default value.
+///
+///
+/// throws:
+/// An HaapiError is thrown if any error occurs while instantiating the Haapi and OAuth for the provided configuration.
+///
+/// returns:
+/// a configured <code>HaapiAccessor</code> containing both <code>HaapiManager</code> and <code>OAuthTokenManager</code> instances.
+- (void)buildForHaapiWithShouldClearExistingDCRClient:(BOOL)shouldClearExistingDCRClient completionHandler:(void (^ _Nonnull)(id <HaapiAccessor> _Nullable, NSError * _Nullable))completionHandler;
+/// Creates a <code>OAuthAccessor</code>. Uses the existing client stored state for the provided configuration and return an accessor instance.
+/// Use this method when the accessor is going to be used only for token management purposes.
+///
+/// throws:
+/// An HaapiError is thrown if any error occurs while instantiating the <code>OAuthTokenManager</code> for the provided configuration.
+///
+/// returns:
+/// a configured <code>OAuthAccessor</code> containing an <code>OAuthTokenManager</code> instance.
+- (void)buildForOAuthWithCompletionHandler:(void (^ _Nonnull)(id <OAuthAccessor> _Nullable, NSError * _Nullable))completionHandler;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
 
 SWIFT_UNAVAILABLE
 @interface HaapiAccessorBuilder (SWIFT_EXTENSION(IdsvrHaapiSdk))
-/// Creates a <code>HaapiManagerAccessor</code>. It will check if the device supports key-attestation or not and it will return a configured <code>HaapiAccessor</code>.
+/// Creates a <code>HaapiManagerAccessor</code>. It will check if the device supports key-attestation or not and it will return a configured <code>HaapiAccessor</code> or <code>OAuthAccessor</code> instance depending on the current configuration.
 /// note:
-/// This method should be invoked only once for any configuration. If it has to be invoked multiple times for the same configuration and <code>HaapiAccessorOption.all</code> was configured, be sure to invoke <code>HaapiAccessor.close</code>
-/// before invoking <code>build</code> again otherwise an <code>HaapiError.haapiTokenManagerAlreadyExists</code> is returned.
+/// This method should be invoked only once for any configuration. If it has to be invoked multiple times for the same configuration and <code>HaapiAccessorOption.all</code> was configured, be sure to invoke <code>HaapiAccessor.close</code> before invoking <code>build</code> again otherwise an <code>HaapiError.haapiTokenManagerAlreadyExists</code> is returned.
 /// important:
 /// Method overload for Objective-C usage.
 /// \param shouldClearExistingDCRClient Instructs the framework to clear the existing Dcr Client. <code>False</code> is the default value.
@@ -754,16 +795,6 @@ SWIFT_UNAVAILABLE
 ///
 - (void)buildWithShouldClearExistingDCRClient:(BOOL)shouldClearExistingDCRClient completionHandler:(void (^ _Nonnull)(id <HaapiManagerAccessor> _Nullable, NSError * _Nullable))completionHandler SWIFT_DEPRECATED_MSG("This function will not be supported in the next major version. Please use async build");
 @end
-
-/// Lists the accessor creation options to instruct the framework which accessor to provide.
-/// note:
-/// When providing option <code>.all</code> an instance of type <code>HaapiAccessor</code> is returned. When providing option <code>.oauth</code> an instance of type <code>OAuthAccessor</code> is returned.
-typedef SWIFT_ENUM(NSInteger, HaapiAccessorOption, open) {
-/// Creates accessor of type <code>HaapiAccessor</code> with both HaapiManager and OAuthTokenManager
-  HaapiAccessorOptionAll = 0,
-/// Creates accessor of type <code>OAuthAccessor</code> containing only the OAuthTokenManager.
-  HaapiAccessorOptionOauth = 1,
-};
 
 @class NSURLRequest;
 @class NSData;
@@ -1945,11 +1976,17 @@ SWIFT_PROTOCOL("_TtP13IdsvrHaapiSdk13HaapiAccessor_") SWIFT_AVAILABILITY(ios,int
 @end
 
 @class HaapiConfiguration;
-enum HaapiAccessorOption : NSInteger;
-/// HaapiAccessorBuilder  allows obtaining the accessors to access HAAPI from the current device, based on an initial static configuration and the device capabilities.
+/// HaapiAccessorBuilder allows obtaining the accessors to access HAAPI from the current device, based on an initial static configuration and the device capabilities.
 /// The preferred access strategy is to obtain HAAPI access tokens using client attestation, i.e. the device’s key attestation capabilities. If attestation is not supported, or if the Curity Identity Server deems the attestation data as invalid, an optional fallback strategy based on Dynamic Client Registration can be used.
 /// The DCR-based fallback uses templatized client registration: the client configured in [haapiConfiguration] is used to register a dynamic client based on a template ID configured via [setDcrConfiguration]. The registration happens on the first time the fallback is used for a given template client ID. The resulting client data is stored on the device and considered by [HaapiAccessorBuilder] on subsequent runs.
-/// The HaapiAccessor instances created by this class include:
+/// When the DCR-based access is used, these credentials will be different from what’s supplied in the initial configuration.
+/// Depending on the use case requirements, the builder can create two types of accessors:
+/// <ol>
+///   <li>
+///     HaapiAccessor: to be used when going through an HAAPI authorization flow and also for the OAuth token management operations.
+///     The HaapiAccessor instances created by this class include:
+///   </li>
+/// </ol>
 /// <ul>
 ///   <li>
 ///     A ready-to-use HaapiManager to execute authorization flows.
@@ -1958,24 +1995,41 @@ enum HaapiAccessorOption : NSInteger;
 ///     A ready-to-use OAuthTokenManager to execute OAuth requests like refreshToken and revoke.
 ///   </li>
 /// </ul>
-/// When the DCR-based access is used, these credentials will be different from what’s supplied in the initial configuration.
-/// The recommended way to use [HaapiAccessorBuilder] is to create a single instance and invoke <code>build</code> once before going through an authorization flow via HAAPI.
+/// <ol>
+///   <li>
+///     OAuthAccessor: to be used when only OAuth token management operations are required.
+///     The OAuthAccessor instances created by this class include:
+///   </li>
+/// </ol>
+/// <ul>
+///   <li>
+///     A ready-to-use OAuthTokenManager to execute OAuth requests like refreshToken and revokeToken.
+///   </li>
+/// </ul>
+/// The recommended way to use [HaapiAccessorBuilder] is to create a single instance and invoke the respective <code>buildFor...</code> method once before either going through an authorization flow via HAAPI or executing token management operations.
+/// Note that when using the <code>buildForHaapi</code> method, if the accessor needs to be created multiple times for the same configuration, be sure to invoke <code>HaapiAccessor.close</code>
 /// \code
 /// let haapiConfiguration: HaapiConfiguration = ...
 /// let dcrConfiguration: DcrConfiguration = ...
 ///
+/// // HAAPI flow
 /// let haapiAccessor = HaapiAccessorBuilder(haapiConfiguration)
 ///    .setDcrConfiguration(dcrConfiguration)
-///    .build()
-///
-///  // HAAPI flow
+///    .buildForHaapi()
 /// let haapiManager: HaapiManager = haapiAccessor.haapiManager
 /// haapiManager.start()
 /// // ... haapiManager.submit/follow ...
-///
+/// // ...
 /// // Fetch token with OAuthTokenManager
 /// let oAuthTokenManager: OAuthTokenManager = haapiAccessor.oAuthTokenManager
-/// ... oAuthTokenManager.fetch/refresh ...
+/// oAuthTokenManager.fetchAccessToken(...)
+///
+/// // Manage tokens with OAuthTokenManager
+/// let oauthAccessor = HaapiAccessorBuilder(haapiConfiguration)
+///    .setDcrConfiguration(dcrConfiguration)
+///    .buildForOAuth()
+/// let oAuthTokenManager: OAuthTokenManager = oauthAccessor.oAuthTokenManager
+/// ... oAuthTokenManager.refresh/revoke ...
 ///
 /// \endcode
 SWIFT_CLASS("_TtC13IdsvrHaapiSdk20HaapiAccessorBuilder") SWIFT_AVAILABILITY(ios,introduced=14.0)
@@ -1984,10 +2038,6 @@ SWIFT_CLASS("_TtC13IdsvrHaapiSdk20HaapiAccessorBuilder") SWIFT_AVAILABILITY(ios,
 /// \param haapiConfiguration The configuration used to build this instance.
 ///
 - (nonnull instancetype)initWithHaapiConfiguration:(HaapiConfiguration * _Nonnull)haapiConfiguration OBJC_DESIGNATED_INITIALIZER;
-/// Set the option that instructs which <code>HaapiAccessor</code> members  are to be created. By defaulf value is <code>HaapiAccessorOption.all</code>.
-/// \param option The new HaapiAccessorOption setting.
-///
-- (HaapiAccessorBuilder * _Nonnull)setHaapiAccessorOptionWithOption:(enum HaapiAccessorOption)option;
 /// Set the dcr configuration to use. By default, it is set to nil.
 /// \param configuration The dcr configuration to use.
 ///
@@ -2002,16 +2052,38 @@ SWIFT_CLASS("_TtC13IdsvrHaapiSdk20HaapiAccessorBuilder") SWIFT_AVAILABILITY(ios,
 /// \param keyName The new attestation validation key name.
 ///
 - (HaapiAccessorBuilder * _Nonnull)setAttestationValidationKeyNameWithKeyName:(NSString * _Nonnull)keyName;
+/// Creates a <code>HaapiAccessor</code>. This method checks if the device supports key-attestation or not and sets up the accessor configuration based on an initial static configuration and the device capabilities.
+/// Use this method when the accessor is going to be used to make Haapi requests and the user is going through an Authentication flow.
+/// note:
+/// This method should be invoked only once for any configuration. If it has to be invoked multiple times for the same configuration, be sure
+/// to invoke <code>HaapiAccessor.close</code> before invoking <code>build</code> again otherwise an <code>HaapiError.haapiTokenManagerAlreadyExists</code> is thrown.
+/// \param shouldClearExistingDCRClient Instructs the framework to clear the existing Dcr Client. <code>False</code> is the default value.
+///
+///
+/// throws:
+/// An HaapiError is thrown if any error occurs while instantiating the Haapi and OAuth for the provided configuration.
+///
+/// returns:
+/// a configured <code>HaapiAccessor</code> containing both <code>HaapiManager</code> and <code>OAuthTokenManager</code> instances.
+- (void)buildForHaapiWithShouldClearExistingDCRClient:(BOOL)shouldClearExistingDCRClient completionHandler:(void (^ _Nonnull)(id <HaapiAccessor> _Nullable, NSError * _Nullable))completionHandler;
+/// Creates a <code>OAuthAccessor</code>. Uses the existing client stored state for the provided configuration and return an accessor instance.
+/// Use this method when the accessor is going to be used only for token management purposes.
+///
+/// throws:
+/// An HaapiError is thrown if any error occurs while instantiating the <code>OAuthTokenManager</code> for the provided configuration.
+///
+/// returns:
+/// a configured <code>OAuthAccessor</code> containing an <code>OAuthTokenManager</code> instance.
+- (void)buildForOAuthWithCompletionHandler:(void (^ _Nonnull)(id <OAuthAccessor> _Nullable, NSError * _Nullable))completionHandler;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
 
 SWIFT_UNAVAILABLE
 @interface HaapiAccessorBuilder (SWIFT_EXTENSION(IdsvrHaapiSdk))
-/// Creates a <code>HaapiManagerAccessor</code>. It will check if the device supports key-attestation or not and it will return a configured <code>HaapiAccessor</code>.
+/// Creates a <code>HaapiManagerAccessor</code>. It will check if the device supports key-attestation or not and it will return a configured <code>HaapiAccessor</code> or <code>OAuthAccessor</code> instance depending on the current configuration.
 /// note:
-/// This method should be invoked only once for any configuration. If it has to be invoked multiple times for the same configuration and <code>HaapiAccessorOption.all</code> was configured, be sure to invoke <code>HaapiAccessor.close</code>
-/// before invoking <code>build</code> again otherwise an <code>HaapiError.haapiTokenManagerAlreadyExists</code> is returned.
+/// This method should be invoked only once for any configuration. If it has to be invoked multiple times for the same configuration and <code>HaapiAccessorOption.all</code> was configured, be sure to invoke <code>HaapiAccessor.close</code> before invoking <code>build</code> again otherwise an <code>HaapiError.haapiTokenManagerAlreadyExists</code> is returned.
 /// important:
 /// Method overload for Objective-C usage.
 /// \param shouldClearExistingDCRClient Instructs the framework to clear the existing Dcr Client. <code>False</code> is the default value.
@@ -2020,16 +2092,6 @@ SWIFT_UNAVAILABLE
 ///
 - (void)buildWithShouldClearExistingDCRClient:(BOOL)shouldClearExistingDCRClient completionHandler:(void (^ _Nonnull)(id <HaapiManagerAccessor> _Nullable, NSError * _Nullable))completionHandler SWIFT_DEPRECATED_MSG("This function will not be supported in the next major version. Please use async build");
 @end
-
-/// Lists the accessor creation options to instruct the framework which accessor to provide.
-/// note:
-/// When providing option <code>.all</code> an instance of type <code>HaapiAccessor</code> is returned. When providing option <code>.oauth</code> an instance of type <code>OAuthAccessor</code> is returned.
-typedef SWIFT_ENUM(NSInteger, HaapiAccessorOption, open) {
-/// Creates accessor of type <code>HaapiAccessor</code> with both HaapiManager and OAuthTokenManager
-  HaapiAccessorOptionAll = 0,
-/// Creates accessor of type <code>OAuthAccessor</code> containing only the OAuthTokenManager.
-  HaapiAccessorOptionOauth = 1,
-};
 
 @class NSURLRequest;
 @class NSData;
