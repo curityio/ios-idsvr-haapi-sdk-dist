@@ -59,37 +59,55 @@ public protocol FormField : Swift.Decodable, Swift.Encodable, Swift.Equatable, S
   #if compiler(>=5.3) && $NonescapableTypes
   var placeholder: IdsvrHaapiSdk.Message? { get }
   #endif
+  var isRequired: Swift.Bool { get }
   func isEqualTo(_ other: any IdsvrHaapiSdk.FormField) -> Swift.Bool
 }
 @available(iOS 14.0, *)
 extension IdsvrHaapiSdk.FormField {
   public func isEqualTo(_ other: any IdsvrHaapiSdk.FormField) -> Swift.Bool
 }
+public protocol TextLengthRestriction {
+  #if compiler(>=5.3) && $NonescapableTypes
+  var minLength: Swift.Int? { get }
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
+  var maxLength: Swift.Int? { get }
+  #endif
+}
 @available(iOS 14.0, *)
-public struct PasswordFormField : IdsvrHaapiSdk.FormField {
+public struct PasswordFormField : IdsvrHaapiSdk.FormField, IdsvrHaapiSdk.TextLengthRestriction {
   public let name: Swift.String
   public let label: IdsvrHaapiSdk.Message?
   public let placeholder: IdsvrHaapiSdk.Message?
+  public let isRequired: Swift.Bool
+  public let maxLength: Swift.Int?
+  public let minLength: Swift.Int?
   public let value: Swift.String?
   public init(from decoder: any Swift.Decoder) throws
   public func encode(to encoder: any Swift.Encoder) throws
   public static func == (lhs: IdsvrHaapiSdk.PasswordFormField, rhs: IdsvrHaapiSdk.PasswordFormField) -> Swift.Bool
 }
 @available(iOS 14.0, *)
-public struct UsernameFormField : IdsvrHaapiSdk.FormField {
+public struct UsernameFormField : IdsvrHaapiSdk.FormField, IdsvrHaapiSdk.TextLengthRestriction {
   public let name: Swift.String
   public let label: IdsvrHaapiSdk.Message?
   public let placeholder: IdsvrHaapiSdk.Message?
+  public let isRequired: Swift.Bool
+  public let maxLength: Swift.Int?
+  public let minLength: Swift.Int?
   public let value: Swift.String?
   public init(from decoder: any Swift.Decoder) throws
   public func encode(to encoder: any Swift.Encoder) throws
   public static func == (lhs: IdsvrHaapiSdk.UsernameFormField, rhs: IdsvrHaapiSdk.UsernameFormField) -> Swift.Bool
 }
 @available(iOS 14.0, *)
-public struct TextFormField : IdsvrHaapiSdk.FormField {
+public struct TextFormField : IdsvrHaapiSdk.FormField, IdsvrHaapiSdk.TextLengthRestriction {
   public let name: Swift.String
   public let label: IdsvrHaapiSdk.Message?
   public let placeholder: IdsvrHaapiSdk.Message?
+  public let isRequired: Swift.Bool
+  public let maxLength: Swift.Int?
+  public let minLength: Swift.Int?
   public let kind: IdsvrHaapiSdk.TextFormField.Kind?
   public let value: Swift.String?
   @frozen public enum Kind : Swift.RawRepresentable, Swift.Codable, Swift.Equatable {
@@ -114,6 +132,7 @@ public struct SelectFormField : IdsvrHaapiSdk.FormField {
   public let name: Swift.String
   public let label: IdsvrHaapiSdk.Message?
   public let placeholder: IdsvrHaapiSdk.Message?
+  public let isRequired: Swift.Bool
   public let options: [IdsvrHaapiSdk.SelectFormField.Option]
   public let value: Swift.String?
   public struct Option : Swift.Codable, Swift.Equatable, Swift.Sendable {
@@ -133,6 +152,7 @@ public struct CheckboxFormField : IdsvrHaapiSdk.FormField {
   public let name: Swift.String
   public let label: IdsvrHaapiSdk.Message?
   public let placeholder: IdsvrHaapiSdk.Message?
+  public let isRequired: Swift.Bool
   public let checked: Swift.Bool
   public let readonly: Swift.Bool
   public let value: Swift.String?
@@ -145,6 +165,7 @@ public struct ContextFormField : IdsvrHaapiSdk.FormField {
   public let name: Swift.String
   public let label: IdsvrHaapiSdk.Message?
   public let placeholder: IdsvrHaapiSdk.Message?
+  public let isRequired: Swift.Bool
   public init(from decoder: any Swift.Decoder) throws
   public func encode(to encoder: any Swift.Encoder) throws
   public static func == (lhs: IdsvrHaapiSdk.ContextFormField, rhs: IdsvrHaapiSdk.ContextFormField) -> Swift.Bool
@@ -154,6 +175,7 @@ public struct HiddenFormField : IdsvrHaapiSdk.FormField {
   public let name: Swift.String
   public let label: IdsvrHaapiSdk.Message?
   public let placeholder: IdsvrHaapiSdk.Message?
+  public let isRequired: Swift.Bool
   public let value: Swift.String
   public init(from decoder: any Swift.Decoder) throws
   public func encode(to encoder: any Swift.Encoder) throws
@@ -742,6 +764,8 @@ public struct OAuthAuthorizationResponseProperties : IdsvrHaapiSdk.Properties {
 public struct PollingProperties : IdsvrHaapiSdk.Properties {
   public let recipientOfCommunication: Swift.String?
   public let status: IdsvrHaapiSdk.PollingStatus
+  public let maxWaitTime: Swift.String?
+  public let maxWaitRemainingTime: Swift.String?
   public let rawJsonString: Swift.String
   public static func == (a: IdsvrHaapiSdk.PollingProperties, b: IdsvrHaapiSdk.PollingProperties) -> Swift.Bool
   public func encode(to encoder: any Swift.Encoder) throws
@@ -1136,22 +1160,22 @@ extension IdsvrHaapiSdk.HaapiModel {
   public enum FormFieldFactory {
     public static func selectOption(label: IdsvrHaapiSdk.Message, value: Swift.String, selected: Swift.Bool) -> IdsvrHaapiSdk.SelectFormField.Option
     #if compiler(>=5.3) && $NonescapableTypes
-    public static func select(options: [IdsvrHaapiSdk.SelectFormField.Option], name: Swift.String, label: IdsvrHaapiSdk.Message?) -> IdsvrHaapiSdk.SelectFormField
+    public static func select(options: [IdsvrHaapiSdk.SelectFormField.Option], name: Swift.String, label: IdsvrHaapiSdk.Message?, required: Swift.Bool = true) -> IdsvrHaapiSdk.SelectFormField
     #endif
     #if compiler(>=5.3) && $NonescapableTypes
-    public static func checkbox(checked: Swift.Bool, readonly: Swift.Bool, name: Swift.String, value: Swift.String?, label: IdsvrHaapiSdk.Message?) -> IdsvrHaapiSdk.CheckboxFormField
+    public static func checkbox(checked: Swift.Bool, readonly: Swift.Bool, name: Swift.String, value: Swift.String?, label: IdsvrHaapiSdk.Message?, isRequired: Swift.Bool = true) -> IdsvrHaapiSdk.CheckboxFormField
     #endif
     #if compiler(>=5.3) && $NonescapableTypes
-    public static func password(name: Swift.String, value: Swift.String?, label: IdsvrHaapiSdk.Message?, placeholder: IdsvrHaapiSdk.Message?) -> IdsvrHaapiSdk.PasswordFormField
+    public static func password(name: Swift.String, value: Swift.String?, label: IdsvrHaapiSdk.Message?, placeholder: IdsvrHaapiSdk.Message?, maxLength: Swift.Int? = nil, minLength: Swift.Int? = nil, isRequired: Swift.Bool = true) -> IdsvrHaapiSdk.PasswordFormField
     #endif
     #if compiler(>=5.3) && $NonescapableTypes
-    public static func username(name: Swift.String, value: Swift.String?, label: IdsvrHaapiSdk.Message?, placeholder: IdsvrHaapiSdk.Message?) -> IdsvrHaapiSdk.UsernameFormField
+    public static func username(name: Swift.String, value: Swift.String?, label: IdsvrHaapiSdk.Message?, placeholder: IdsvrHaapiSdk.Message?, maxLength: Swift.Int? = nil, minLength: Swift.Int? = nil, isRequired: Swift.Bool = true) -> IdsvrHaapiSdk.UsernameFormField
     #endif
     #if compiler(>=5.3) && $NonescapableTypes
-    public static func text(kind: IdsvrHaapiSdk.TextFormField.Kind?, name: Swift.String, value: Swift.String?, label: IdsvrHaapiSdk.Message?, placeholder: IdsvrHaapiSdk.Message?) -> IdsvrHaapiSdk.TextFormField
+    public static func text(kind: IdsvrHaapiSdk.TextFormField.Kind?, name: Swift.String, value: Swift.String?, label: IdsvrHaapiSdk.Message?, placeholder: IdsvrHaapiSdk.Message?, maxLength: Swift.Int? = nil, minLength: Swift.Int? = nil, isRequired: Swift.Bool = true) -> IdsvrHaapiSdk.TextFormField
     #endif
-    public static func context(name: Swift.String) -> IdsvrHaapiSdk.ContextFormField
-    public static func hidden(name: Swift.String, value: Swift.String) -> IdsvrHaapiSdk.HiddenFormField
+    public static func context(name: Swift.String, isRequired: Swift.Bool = true) -> IdsvrHaapiSdk.ContextFormField
+    public static func hidden(name: Swift.String, value: Swift.String, isRequired: Swift.Bool = true) -> IdsvrHaapiSdk.HiddenFormField
   }
 }
 @available(iOS 14.0, *)
@@ -1927,7 +1951,7 @@ extension IdsvrHaapiSdk.HaapiModel {
   public enum PropertiesFactory {
     public static func generic(rawJsonString: Swift.String) -> IdsvrHaapiSdk.GenericProperties
     #if compiler(>=5.3) && $NonescapableTypes
-    public static func polling(rawJsonString: Swift.String, recipientOfCommunication: Swift.String?, status: IdsvrHaapiSdk.PollingStatus) -> IdsvrHaapiSdk.PollingProperties
+    public static func polling(rawJsonString: Swift.String, recipientOfCommunication: Swift.String?, status: IdsvrHaapiSdk.PollingStatus, maxWaitTime: Swift.String? = nil, maxWaitRemainingTime: Swift.String? = nil) -> IdsvrHaapiSdk.PollingProperties
     #endif
     #if compiler(>=5.3) && $NonescapableTypes
     public static func oAuthAuthorizationResponse(rawJsonString: Swift.String, scope: Swift.String?, state: Swift.String?, code: Swift.String?, idToken: Swift.String?, rawJson: [Swift.String : Swift.String]) -> IdsvrHaapiSdk.OAuthAuthorizationResponseProperties
