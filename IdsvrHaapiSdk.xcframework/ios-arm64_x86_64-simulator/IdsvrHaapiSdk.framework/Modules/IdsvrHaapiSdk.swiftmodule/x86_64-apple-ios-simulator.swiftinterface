@@ -1454,18 +1454,22 @@ extension IdsvrHaapiSdk.ClientOperationName : Swift.RawRepresentable {
     get
     set
   }
+  @available(*, deprecated, message: "Use `setLogType(...)` instead. Support for this property will be removed in a future major version.")
   @objc public static var isDebugEnabled: Swift.Bool {
     @objc get
     @objc set
   }
+  @available(*, deprecated, message: "Use `setLogType(...)` instead. Support for this property will be removed in a future major version.")
   @objc public static var isInfoEnabled: Swift.Bool {
     @objc get
     @objc set
   }
+  @available(*, deprecated, message: "Use `setLogType(...)` instead. Support for this property will be removed in a future major version.")
   @objc public static var isWarningEnabled: Swift.Bool {
     @objc get
     @objc set
   }
+  @available(*, deprecated, message: "Use `setLogType(...)` instead. Support for this property will be removed in a future major version.")
   @objc public static var isErrorEnabled: Swift.Bool {
     @objc get
     @objc set
@@ -1475,13 +1479,14 @@ extension IdsvrHaapiSdk.ClientOperationName : Swift.RawRepresentable {
     @objc set
   }
   public static func appendLogSink(_ logSink: any IdsvrHaapiSdk.LogSink)
+  public static func setLogType(_ logType: IdsvrHaapiSdk.LogType)
   @objc deinit
 }
 public enum LogType : Swift.String {
-  case debug
   case error
-  case info
   case warning
+  case info
+  case debug
   #if compiler(>=5.3) && $NonescapableTypes
   public init?(rawValue: Swift.String)
   #endif
