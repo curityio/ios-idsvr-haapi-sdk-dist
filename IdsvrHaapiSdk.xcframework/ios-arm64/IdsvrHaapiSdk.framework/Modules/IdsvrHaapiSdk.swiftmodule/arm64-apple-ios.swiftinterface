@@ -566,10 +566,14 @@ extension IdsvrHaapiSdk.HaapiTokenManager {
   @objc final public func getHaapiToken(forceFresh: Swift.Bool = false, completionHandler: @escaping @Sendable (IdsvrHaapiSdk.DpopAccessTokenInfo?, (any Swift.Error)?) -> Swift.Void)
   #endif
   #if compiler(>=5.3) && $NonescapableTypes && $AsyncExecutionBehaviorAttributes
+  @available(*, deprecated, message: "The dpopNonce parameter is no longer needed. Use getHaapiTokenAsync(forceFresh:) instead.")
   nonisolated(nonsending) final public func getHaapiTokenAsync(forceFresh: Swift.Bool = false, dpopNonce: Swift.String? = nil) async throws -> IdsvrHaapiSdk.DpopAccessTokenInfo
   #endif
+  #if compiler(>=5.3) && $AsyncExecutionBehaviorAttributes
+  nonisolated(nonsending) final public func getHaapiTokenAsync(forceFresh: Swift.Bool = false) async throws -> IdsvrHaapiSdk.DpopAccessTokenInfo
+  #endif
   #if compiler(>=5.3) && $NonescapableTypes
-  @available(*, deprecated, message: "This function will not be supported in the next major version. Please use getHaapiTokenAsync")
+  @available(*, deprecated, message: "Use getHaapiTokenAsync(forceFresh:) instead.")
   final public func getHaapiToken(forceFresh: Swift.Bool = false, dpopNonce: Swift.String? = nil, completionHandler: @escaping @Sendable (Swift.Result<IdsvrHaapiSdk.DpopAccessTokenInfo, IdsvrHaapiSdk.HaapiError>) -> Swift.Void)
   #endif
   @objc final public func close()
@@ -766,6 +770,7 @@ public struct PollingProperties : IdsvrHaapiSdk.Properties {
   public let status: IdsvrHaapiSdk.PollingStatus
   public let maxWaitTime: Swift.String?
   public let maxWaitRemainingTime: Swift.String?
+  public let interval: Swift.String?
   public let rawJsonString: Swift.String
   public static func == (a: IdsvrHaapiSdk.PollingProperties, b: IdsvrHaapiSdk.PollingProperties) -> Swift.Bool
   public func encode(to encoder: any Swift.Encoder) throws
@@ -1956,7 +1961,7 @@ extension IdsvrHaapiSdk.HaapiModel {
   public enum PropertiesFactory {
     public static func generic(rawJsonString: Swift.String) -> IdsvrHaapiSdk.GenericProperties
     #if compiler(>=5.3) && $NonescapableTypes
-    public static func polling(rawJsonString: Swift.String, recipientOfCommunication: Swift.String?, status: IdsvrHaapiSdk.PollingStatus, maxWaitTime: Swift.String? = nil, maxWaitRemainingTime: Swift.String? = nil) -> IdsvrHaapiSdk.PollingProperties
+    public static func polling(rawJsonString: Swift.String, recipientOfCommunication: Swift.String?, status: IdsvrHaapiSdk.PollingStatus, maxWaitTime: Swift.String? = nil, maxWaitRemainingTime: Swift.String? = nil, interval: Swift.String? = nil) -> IdsvrHaapiSdk.PollingProperties
     #endif
     #if compiler(>=5.3) && $NonescapableTypes
     public static func oAuthAuthorizationResponse(rawJsonString: Swift.String, scope: Swift.String?, state: Swift.String?, code: Swift.String?, idToken: Swift.String?, rawJson: [Swift.String : Swift.String]) -> IdsvrHaapiSdk.OAuthAuthorizationResponseProperties
