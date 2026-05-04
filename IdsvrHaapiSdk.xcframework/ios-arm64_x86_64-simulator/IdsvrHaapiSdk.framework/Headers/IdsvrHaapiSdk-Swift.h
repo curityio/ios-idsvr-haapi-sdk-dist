@@ -888,19 +888,19 @@ SWIFT_CLASS("_TtC13IdsvrHaapiSdk11HaapiLogger")
 /// When <code>isDebugEnabled</code> is true, debug log statements will be available across the IdsvrHaapi frameworks. Default value is <code>false</code>.
 /// note:
 /// Setting <code>isDebugEnabled</code> should be done as early as possible before any Haapi objects are instantiated.
-SWIFT_CLASS_PROPERTY(@property (nonatomic, class) BOOL isDebugEnabled;)
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class) BOOL isDebugEnabled SWIFT_DEPRECATED_MSG("\n                Use `setLogType(...)` instead. Support for this property will be removed in a future major version.\n                ");)
 + (BOOL)isDebugEnabled SWIFT_WARN_UNUSED_RESULT;
 + (void)setIsDebugEnabled:(BOOL)newValue;
 /// When <code>isInfoEnabled</code> is true, info log statements will be available across the IdsvrHaapi frameworks. Default value is <code>true</code>.
-SWIFT_CLASS_PROPERTY(@property (nonatomic, class) BOOL isInfoEnabled;)
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class) BOOL isInfoEnabled SWIFT_DEPRECATED_MSG("\n                Use `setLogType(...)` instead. Support for this property will be removed in a future major version.\n                ");)
 + (BOOL)isInfoEnabled SWIFT_WARN_UNUSED_RESULT;
 + (void)setIsInfoEnabled:(BOOL)newValue;
 /// When <code>isWarningEnabled</code> is true, warning log statements will be available across the IdsvrHaapi frameworks. Default value is <code>true</code>.
-SWIFT_CLASS_PROPERTY(@property (nonatomic, class) BOOL isWarningEnabled;)
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class) BOOL isWarningEnabled SWIFT_DEPRECATED_MSG("\n                Use `setLogType(...)` instead. Support for this property will be removed in a future major version.\n                ");)
 + (BOOL)isWarningEnabled SWIFT_WARN_UNUSED_RESULT;
 + (void)setIsWarningEnabled:(BOOL)newValue;
 /// When <code>isErrorEnabled</code> is true, warning log statements will be available across the IdsvrHaapi frameworks. Default value is <code>true</code>.
-SWIFT_CLASS_PROPERTY(@property (nonatomic, class) BOOL isErrorEnabled;)
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class) BOOL isErrorEnabled SWIFT_DEPRECATED_MSG("\n                Use `setLogType(...)` instead. Support for this property will be removed in a future major version.\n                ");)
 + (BOOL)isErrorEnabled SWIFT_WARN_UNUSED_RESULT;
 + (void)setIsErrorEnabled:(BOOL)newValue;
 /// When <code>isSensitiveValueMasked</code> is true, data is masked when it is logged. Default value is <code>true</code>.
@@ -2185,19 +2185,19 @@ SWIFT_CLASS("_TtC13IdsvrHaapiSdk11HaapiLogger")
 /// When <code>isDebugEnabled</code> is true, debug log statements will be available across the IdsvrHaapi frameworks. Default value is <code>false</code>.
 /// note:
 /// Setting <code>isDebugEnabled</code> should be done as early as possible before any Haapi objects are instantiated.
-SWIFT_CLASS_PROPERTY(@property (nonatomic, class) BOOL isDebugEnabled;)
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class) BOOL isDebugEnabled SWIFT_DEPRECATED_MSG("\n                Use `setLogType(...)` instead. Support for this property will be removed in a future major version.\n                ");)
 + (BOOL)isDebugEnabled SWIFT_WARN_UNUSED_RESULT;
 + (void)setIsDebugEnabled:(BOOL)newValue;
 /// When <code>isInfoEnabled</code> is true, info log statements will be available across the IdsvrHaapi frameworks. Default value is <code>true</code>.
-SWIFT_CLASS_PROPERTY(@property (nonatomic, class) BOOL isInfoEnabled;)
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class) BOOL isInfoEnabled SWIFT_DEPRECATED_MSG("\n                Use `setLogType(...)` instead. Support for this property will be removed in a future major version.\n                ");)
 + (BOOL)isInfoEnabled SWIFT_WARN_UNUSED_RESULT;
 + (void)setIsInfoEnabled:(BOOL)newValue;
 /// When <code>isWarningEnabled</code> is true, warning log statements will be available across the IdsvrHaapi frameworks. Default value is <code>true</code>.
-SWIFT_CLASS_PROPERTY(@property (nonatomic, class) BOOL isWarningEnabled;)
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class) BOOL isWarningEnabled SWIFT_DEPRECATED_MSG("\n                Use `setLogType(...)` instead. Support for this property will be removed in a future major version.\n                ");)
 + (BOOL)isWarningEnabled SWIFT_WARN_UNUSED_RESULT;
 + (void)setIsWarningEnabled:(BOOL)newValue;
 /// When <code>isErrorEnabled</code> is true, warning log statements will be available across the IdsvrHaapi frameworks. Default value is <code>true</code>.
-SWIFT_CLASS_PROPERTY(@property (nonatomic, class) BOOL isErrorEnabled;)
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class) BOOL isErrorEnabled SWIFT_DEPRECATED_MSG("\n                Use `setLogType(...)` instead. Support for this property will be removed in a future major version.\n                ");)
 + (BOOL)isErrorEnabled SWIFT_WARN_UNUSED_RESULT;
 + (void)setIsErrorEnabled:(BOOL)newValue;
 /// When <code>isSensitiveValueMasked</code> is true, data is masked when it is logged. Default value is <code>true</code>.
