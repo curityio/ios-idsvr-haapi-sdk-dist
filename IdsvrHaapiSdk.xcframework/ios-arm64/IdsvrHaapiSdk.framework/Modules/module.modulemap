@@ -7,5 +7,4 @@ framework module IdsvrHaapiSdk {
 
 module IdsvrHaapiSdk.Swift {
   header "IdsvrHaapiSdk-Swift.h"
-  requires objc
 }
