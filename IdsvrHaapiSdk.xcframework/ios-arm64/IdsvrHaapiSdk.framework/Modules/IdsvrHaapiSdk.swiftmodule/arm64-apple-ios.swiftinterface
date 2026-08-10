@@ -1,7 +1,7 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 6.3.2 (swiftlang-6.3.2.1.108 clang-2100.1.1.101)
+// swift-compiler-version: Apple Swift version 6.3.3 (swiftlang-6.3.3.1.3 clang-2100.1.1.101)
 // swift-module-flags: -target arm64-apple-ios12.0 -enable-objc-interop -enable-library-evolution -swift-version 6 -O -enable-upcoming-feature InferIsolatedConformances -enable-upcoming-feature NonisolatedNonsendingByDefault -enable-experimental-feature DebugDescriptionMacro -module-name IdsvrHaapiSdk
-// swift-module-flags-ignorable: -no-verify-emitted-module-interface -formal-cxx-interoperability-mode=off -interface-compiler-version 6.3.2
+// swift-module-flags-ignorable: -no-verify-emitted-module-interface -formal-cxx-interoperability-mode=off -interface-compiler-version 6.3.3
 import Combine
 import CommonCrypto
 import Compression
@@ -171,10 +171,10 @@ public struct HiddenFormField : IdsvrHaapiSdk.FormField {
   public func encode(to encoder: any Swift.Encoder) throws
   public static func == (lhs: IdsvrHaapiSdk.HiddenFormField, rhs: IdsvrHaapiSdk.HiddenFormField) -> Swift.Bool
 }
-@objc @available(iOS 14, *)
+@objc @_hasMissingDesignatedInitializers @available(iOS 14, *)
 final public class DCRConfiguration : ObjectiveC.NSObject, Swift.Sendable {
   @objc convenience public init(templateClientId: Swift.String, clientRegistrationEndpointUrl: Foundation.URL)
-  public init(templateClientId: Swift.String, clientRegistrationEndpointUrl: Foundation.URL, storage: any IdsvrHaapiSdk.Storage)
+  convenience public init(templateClientId: Swift.String, clientRegistrationEndpointUrl: Foundation.URL, storage: any IdsvrHaapiSdk.Storage)
   @objc deinit
 }
 @available(iOS 13.0, *)
@@ -194,12 +194,27 @@ extension Foundation.Data {
     get
   }
 }
-@_hasMissingDesignatedInitializers @available(iOS 14, *)
-final public class KeychainStorage : IdsvrHaapiSdk.Storage {
-  final public func write(key: Swift.String, data: Foundation.Data) throws
-  final public func read(key: Swift.String) throws -> Foundation.Data?
-  final public func delete(key: Swift.String) throws
-  @objc deinit
+@available(iOS 14, *)
+public enum KeychainAccessibility : Swift.Sendable {
+  case afterFirstUnlockThisDeviceOnly
+  case whenUnlockedThisDeviceOnly
+  public static func == (a: IdsvrHaapiSdk.KeychainAccessibility, b: IdsvrHaapiSdk.KeychainAccessibility) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+@available(iOS 14, *)
+public enum StorageBuilder {
+  final public class Keychain {
+    public init()
+    @discardableResult
+    final public func accessGroup(_ accessGroup: Swift.String?) -> IdsvrHaapiSdk.StorageBuilder.Keychain
+    @discardableResult
+    final public func accessibility(_ accessibility: IdsvrHaapiSdk.KeychainAccessibility) -> IdsvrHaapiSdk.StorageBuilder.Keychain
+    final public func build() -> any IdsvrHaapiSdk.Storage
+    @objc deinit
+  }
 }
 @available(iOS 14.0, *)
 public enum HaapiModel {
@@ -292,7 +307,8 @@ public protocol HaapiConfigurable : Swift.Sendable {
   @objc final public let tokenEndpointResponseListener: (any IdsvrHaapiSdk.OAuthTokenManager.TokenEndpointResponseListener)?
   @objc final public let clientAuthenticationMethod: any IdsvrHaapiSdk.ClientAuthenticationMethod
   final public let riskAssessmentConfiguration: IdsvrHaapiSdk.RiskAssessmentConfiguration?
-  public init(name: Swift.String, clientId: Swift.String, baseURL: Foundation.URL, tokenEndpointURL: Foundation.URL, authorizationEndpointURL: Foundation.URL, appRedirect: Swift.String, httpHeadersProvider: IdsvrHaapiSdk.HttpHeadersProvider?, authorizationParametersProvider: IdsvrHaapiSdk.OAuthAuthorizationParametersProvider?, isAutoRedirect: Swift.Bool = true, urlSession: Foundation.URLSession = URLSession(configuration: .haapi), revocationEndpointURL: Foundation.URL? = nil, minTokenTtl: Foundation.TimeInterval = TimeInterval(floatLiteral: 10.0), attestationConfiguration: IdsvrHaapiSdk.AttestationConfiguration = AttestationConfiguration(), tokenBoundConfiguration: any IdsvrHaapiSdk.TokenBoundConfiguration = UnboundedTokenConfiguration(), tokenEndpointResponseListener: (any IdsvrHaapiSdk.OAuthTokenManager.TokenEndpointResponseListener)? = nil, clientAuthenticationMethod: any IdsvrHaapiSdk.ClientAuthenticationMethod = ClientAuthenticationMethodNone(), riskAssessmentConfiguration: IdsvrHaapiSdk.RiskAssessmentConfiguration? = nil)
+  @nonobjc final public let storage: any IdsvrHaapiSdk.Storage
+  public init(name: Swift.String, clientId: Swift.String, baseURL: Foundation.URL, tokenEndpointURL: Foundation.URL, authorizationEndpointURL: Foundation.URL, appRedirect: Swift.String, httpHeadersProvider: IdsvrHaapiSdk.HttpHeadersProvider?, authorizationParametersProvider: IdsvrHaapiSdk.OAuthAuthorizationParametersProvider?, isAutoRedirect: Swift.Bool = true, urlSession: Foundation.URLSession = URLSession(configuration: .haapi), revocationEndpointURL: Foundation.URL? = nil, minTokenTtl: Foundation.TimeInterval = TimeInterval(floatLiteral: 10.0), attestationConfiguration: IdsvrHaapiSdk.AttestationConfiguration = AttestationConfiguration(), tokenBoundConfiguration: any IdsvrHaapiSdk.TokenBoundConfiguration = UnboundedTokenConfiguration(), tokenEndpointResponseListener: (any IdsvrHaapiSdk.OAuthTokenManager.TokenEndpointResponseListener)? = nil, clientAuthenticationMethod: any IdsvrHaapiSdk.ClientAuthenticationMethod = ClientAuthenticationMethodNone(), riskAssessmentConfiguration: IdsvrHaapiSdk.RiskAssessmentConfiguration? = nil, storage: any IdsvrHaapiSdk.Storage = StorageBuilder.Keychain().build())
   @objc deinit
 }
 @available(iOS 14.0, *)
@@ -616,10 +632,34 @@ final public class ClientAuthenticationMethodJWTSymmetric : ObjectiveC.NSObject,
   @objc deinit
 }
 @available(iOS 14, *)
+public enum StorageOperation : Swift.Sendable {
+  case read
+  case write
+  case delete
+  public static func == (a: IdsvrHaapiSdk.StorageOperation, b: IdsvrHaapiSdk.StorageOperation) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+@available(iOS 14, *)
+public enum StorageItemCategory : Swift.Sendable {
+  case sessionCredential
+  case cryptographicKey
+  case diagnostic
+  case other
+  public static func == (a: IdsvrHaapiSdk.StorageItemCategory, b: IdsvrHaapiSdk.StorageItemCategory) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+@available(iOS 14, *)
 public enum StorageError : Swift.Error {
   case writeError(cause: any Swift.Error)
   case readError(cause: any Swift.Error)
   case deleteError(cause: any Swift.Error)
+  case unavailable(operation: IdsvrHaapiSdk.StorageOperation, category: IdsvrHaapiSdk.StorageItemCategory, code: Swift.Int32?)
 }
 @available(iOS 14, *)
 extension IdsvrHaapiSdk.StorageError : Foundation.LocalizedError {
@@ -1780,6 +1820,10 @@ extension IdsvrHaapiSdk.HaapiModel {
 }
 @available(iOS 14.0, *)
 extension IdsvrHaapiSdk.TextFormField.Kind : Swift.Sendable {}
+@available(iOS 14, *)
+extension IdsvrHaapiSdk.KeychainAccessibility : Swift.Equatable {}
+@available(iOS 14, *)
+extension IdsvrHaapiSdk.KeychainAccessibility : Swift.Hashable {}
 extension IdsvrHaapiSdk.CryptoKeyType : Swift.Equatable {}
 extension IdsvrHaapiSdk.CryptoKeyType : Swift.Hashable {}
 @available(iOS 14.0, *)
@@ -1796,6 +1840,14 @@ extension IdsvrHaapiSdk.JWTSymmetricAlgorithm : Swift.Equatable {}
 extension IdsvrHaapiSdk.JWTSymmetricAlgorithm : Swift.Hashable {}
 @available(iOS 14.0, *)
 extension IdsvrHaapiSdk.JWTSymmetricAlgorithm : Swift.RawRepresentable {}
+@available(iOS 14, *)
+extension IdsvrHaapiSdk.StorageOperation : Swift.Equatable {}
+@available(iOS 14, *)
+extension IdsvrHaapiSdk.StorageOperation : Swift.Hashable {}
+@available(iOS 14, *)
+extension IdsvrHaapiSdk.StorageItemCategory : Swift.Equatable {}
+@available(iOS 14, *)
+extension IdsvrHaapiSdk.StorageItemCategory : Swift.Hashable {}
 extension IdsvrHaapiSdk.SdkFollowUpTag : Swift.Equatable {}
 extension IdsvrHaapiSdk.SdkFollowUpTag : Swift.Hashable {}
 extension IdsvrHaapiSdk.SdkFollowUpTag : Swift.RawRepresentable {}
