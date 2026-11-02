@@ -287,7 +287,9 @@ public protocol HaapiConfigurable : Swift::Sendable {
   @objc final public let clientAuthenticationMethod: any IdsvrHaapiSdk::ClientAuthenticationMethod
   final public let riskAssessmentConfiguration: IdsvrHaapiSdk::RiskAssessmentConfiguration?
   @nonobjc final public let storage: any IdsvrHaapiSdk::Storage
-  public init(name: Swift::String, clientId: Swift::String, baseURL: Foundation::URL, tokenEndpointURL: Foundation::URL, authorizationEndpointURL: Foundation::URL, appRedirect: Swift::String, httpHeadersProvider: IdsvrHaapiSdk::HttpHeadersProvider?, authorizationParametersProvider: IdsvrHaapiSdk::OAuthAuthorizationParametersProvider?, isAutoRedirect: Swift::Bool = true, urlSession: Foundation::URLSession = URLSession(configuration: .haapi), revocationEndpointURL: Foundation::URL? = nil, minTokenTtl: Foundation::TimeInterval = TimeInterval(floatLiteral: 10.0), attestationConfiguration: IdsvrHaapiSdk::AttestationConfiguration = AttestationConfiguration(), tokenBoundConfiguration: any IdsvrHaapiSdk::TokenBoundConfiguration = UnboundedTokenConfiguration(), tokenEndpointResponseListener: (any IdsvrHaapiSdk::OAuthTokenManager.IdsvrHaapiSdk::TokenEndpointResponseListener)? = nil, clientAuthenticationMethod: any IdsvrHaapiSdk::ClientAuthenticationMethod = ClientAuthenticationMethodNone(), riskAssessmentConfiguration: IdsvrHaapiSdk::RiskAssessmentConfiguration? = nil, storage: any IdsvrHaapiSdk::Storage = StorageBuilder.Keychain().build())
+  @objc final public let allowInsecureHttpEndpoints: Swift::Bool
+  convenience public init(name: Swift::String, clientId: Swift::String, baseURL: Foundation::URL, tokenEndpointURL: Foundation::URL, authorizationEndpointURL: Foundation::URL, appRedirect: Swift::String, httpHeadersProvider: IdsvrHaapiSdk::HttpHeadersProvider?, authorizationParametersProvider: IdsvrHaapiSdk::OAuthAuthorizationParametersProvider?, isAutoRedirect: Swift::Bool = true, urlSession: Foundation::URLSession = URLSession(configuration: .haapi), revocationEndpointURL: Foundation::URL? = nil, minTokenTtl: Foundation::TimeInterval = TimeInterval(floatLiteral: 10.0), attestationConfiguration: IdsvrHaapiSdk::AttestationConfiguration = AttestationConfiguration(), tokenBoundConfiguration: any IdsvrHaapiSdk::TokenBoundConfiguration = UnboundedTokenConfiguration(), tokenEndpointResponseListener: (any IdsvrHaapiSdk::OAuthTokenManager.IdsvrHaapiSdk::TokenEndpointResponseListener)? = nil, clientAuthenticationMethod: any IdsvrHaapiSdk::ClientAuthenticationMethod = ClientAuthenticationMethodNone(), riskAssessmentConfiguration: IdsvrHaapiSdk::RiskAssessmentConfiguration? = nil, storage: any IdsvrHaapiSdk::Storage = StorageBuilder.Keychain().build())
+  public init(name: Swift::String, clientId: Swift::String, baseURL: Foundation::URL, tokenEndpointURL: Foundation::URL, authorizationEndpointURL: Foundation::URL, appRedirect: Swift::String, httpHeadersProvider: IdsvrHaapiSdk::HttpHeadersProvider?, authorizationParametersProvider: IdsvrHaapiSdk::OAuthAuthorizationParametersProvider?, isAutoRedirect: Swift::Bool = true, urlSession: Foundation::URLSession = URLSession(configuration: .haapi), revocationEndpointURL: Foundation::URL? = nil, minTokenTtl: Foundation::TimeInterval = TimeInterval(floatLiteral: 10.0), attestationConfiguration: IdsvrHaapiSdk::AttestationConfiguration = AttestationConfiguration(), tokenBoundConfiguration: any IdsvrHaapiSdk::TokenBoundConfiguration = UnboundedTokenConfiguration(), tokenEndpointResponseListener: (any IdsvrHaapiSdk::OAuthTokenManager.IdsvrHaapiSdk::TokenEndpointResponseListener)? = nil, clientAuthenticationMethod: any IdsvrHaapiSdk::ClientAuthenticationMethod = ClientAuthenticationMethodNone(), riskAssessmentConfiguration: IdsvrHaapiSdk::RiskAssessmentConfiguration? = nil, storage: any IdsvrHaapiSdk::Storage = StorageBuilder.Keychain().build(), allowInsecureHttpEndpoints: Swift::Bool)
   @objc deinit
 }
 extension Foundation::URLSessionConfiguration {
@@ -518,7 +520,7 @@ public struct SelectorAction : IdsvrHaapiSdk::Action {
   @objc override dynamic public init()
   @objc deinit
 }
-@objc final public class ClientAuthenticationMethodSecret : ObjectiveC::NSObject, IdsvrHaapiSdk::ClientAuthenticationMethod {
+@objc @_hasMissingDesignatedInitializers final public class ClientAuthenticationMethodSecret : ObjectiveC::NSObject, IdsvrHaapiSdk::ClientAuthenticationMethod {
   @objc public init(secret: Swift::String)
   @objc deinit
 }
@@ -701,6 +703,70 @@ public enum HaapiError : IdsvrHaapiSdk::IdsvrError, Swift::Error, Swift::Sendabl
     get
   }
 }
+public struct HaapiRedirectRefusal : Swift::Error, Swift::Equatable, Swift::Sendable {
+  public let statusCode: Swift::Int
+  public static func == (a: IdsvrHaapiSdk::HaapiRedirectRefusal, b: IdsvrHaapiSdk::HaapiRedirectRefusal) -> Swift::Bool
+}
+extension IdsvrHaapiSdk::HaapiRedirectRefusal : Swift::CustomStringConvertible, Foundation::LocalizedError {
+  public var description: Swift::String {
+    get
+  }
+  public var errorDescription: Swift::String? {
+    get
+  }
+}
+public struct HaapiAttestationLimitRefusal : Swift::Error, Swift::Equatable, Swift::Sendable {
+  public let nextAttemptAfter: Foundation::Date?
+  public static func == (a: IdsvrHaapiSdk::HaapiAttestationLimitRefusal, b: IdsvrHaapiSdk::HaapiAttestationLimitRefusal) -> Swift::Bool
+}
+extension IdsvrHaapiSdk::HaapiAttestationLimitRefusal : Swift::CustomStringConvertible, Foundation::LocalizedError {
+  public var description: Swift::String {
+    get
+  }
+  public var errorDescription: Swift::String? {
+    get
+  }
+  public var failureReason: Swift::String? {
+    get
+  }
+}
+public struct HaapiInsecureTransportRefusal : Swift::Error, Swift::Equatable, Swift::Sendable {
+  public let scheme: Swift::String
+  public let host: Swift::String
+  public static func == (a: IdsvrHaapiSdk::HaapiInsecureTransportRefusal, b: IdsvrHaapiSdk::HaapiInsecureTransportRefusal) -> Swift::Bool
+}
+extension IdsvrHaapiSdk::HaapiInsecureTransportRefusal : Swift::CustomStringConvertible, Foundation::LocalizedError {
+  public var description: Swift::String {
+    get
+  }
+  public var errorDescription: Swift::String? {
+    get
+  }
+}
+public struct HaapiInsecureConfigurationRefusal : Swift::Error, Swift::Equatable, Swift::Sendable {
+  public enum Address : Swift::Sendable {
+    case baseURL
+    case authorizationEndpoint
+    case tokenEndpoint
+    case revocationEndpoint
+    case clientRegistrationEndpoint
+    public static func == (a: IdsvrHaapiSdk::HaapiInsecureConfigurationRefusal.IdsvrHaapiSdk::Address, b: IdsvrHaapiSdk::HaapiInsecureConfigurationRefusal.IdsvrHaapiSdk::Address) -> Swift::Bool
+    public func hash(into hasher: inout Swift::Hasher)
+    public var hashValue: Swift::Int {
+      get
+    }
+  }
+  public let address: IdsvrHaapiSdk::HaapiInsecureConfigurationRefusal.IdsvrHaapiSdk::Address
+  public static func == (a: IdsvrHaapiSdk::HaapiInsecureConfigurationRefusal, b: IdsvrHaapiSdk::HaapiInsecureConfigurationRefusal) -> Swift::Bool
+}
+extension IdsvrHaapiSdk::HaapiInsecureConfigurationRefusal : Swift::CustomStringConvertible, Foundation::LocalizedError {
+  public var description: Swift::String {
+    get
+  }
+  public var errorDescription: Swift::String? {
+    get
+  }
+}
 @objc @_hasMissingDesignatedInitializers @objcMembers public class HaapiTokenResult : ObjectiveC::NSObject {
   @objc final public let dPopAccessTokenInfo: IdsvrHaapiSdk::DpopAccessTokenInfo?
   @objc final public let error: (any Swift::Error)?
@@ -833,6 +899,11 @@ extension IdsvrHaapiSdk::HaapiManager {
 }
 public enum HaapiErrorCode : Swift::String, Swift::Sendable {
   case nonHaapiLink
+  case haapiRedirectRefused
+  case insecureTransport
+  case foreignHaapiTarget
+  case insecureHaapiConfiguration
+  case attestationLimited
   public init?(rawValue: Swift::String)
   public typealias RawValue = Swift::String
   public var rawValue: Swift::String {
@@ -1180,9 +1251,14 @@ public struct WebAuthnRegistrationClientOperationStep : IdsvrHaapiSdk::ClientOpe
   public let rawJsonString: Swift::String?
   public let type: IdsvrHaapiSdk::RepresentationType
   public let continueAction: IdsvrHaapiSdk::FormAction
+  public var continueFormActionModel: IdsvrHaapiSdk::FormActionModel {
+    get
+  }
   public var fallbackActions: [any IdsvrHaapiSdk::Action] {
     get
   }
+  public func buildParameters(publicKey: any IdsvrHaapiSdk::WebAuthnRegistrationClientOperationActionModel.IdsvrHaapiSdk::CredentialRequestOptions, clientDataJSON: Foundation::Data, attestationObject: Foundation::Data, type: Swift::String, rawId: Foundation::Data) throws -> [Swift::String : any Swift::Sendable]
+  @available(*, deprecated, message: "This function will not be supported in the next major version. Please use buildParameters(publicKey:clientDataJSON:attestationObject:type:rawId:)")
   public func formattedParametersForRegistration(credentialOptions: any IdsvrHaapiSdk::WebAuthnRegistrationClientOperationActionModel.IdsvrHaapiSdk::CredentialRequestOptions, attestationObject: Foundation::Data, rawClientDataJSON: Foundation::Data, credentialID: Foundation::Data, credentialParamType: Swift::String = "public-key") -> [Swift::String : Any]
   public init(from decoder: any Swift::Decoder) throws
   public func encode(to encoder: any Swift::Encoder) throws
@@ -1198,9 +1274,14 @@ public struct WebAuthnAuthenticationClientOperationStep : IdsvrHaapiSdk::ClientO
   public let properties: (any IdsvrHaapiSdk::Properties)?
   public let rawJsonString: Swift::String?
   public let type: IdsvrHaapiSdk::RepresentationType
+  public var continueFormActionModel: IdsvrHaapiSdk::FormActionModel {
+    get
+  }
   public var fallbackActions: [any IdsvrHaapiSdk::Action] {
     get
   }
+  public func buildParameters(authenticatorData: Foundation::Data, clientDataJSON: Foundation::Data, signature: Foundation::Data, userHandle: Foundation::Data?, rawId: Foundation::Data, type: Swift::String) throws -> [Swift::String : any Swift::Sendable]
+  @available(*, deprecated, message: "This function will not be supported in the next major version. Please use buildParameters(authenticatorData:clientDataJSON:signature:userHandle:rawId:type:)")
   public func formattedParametersForAssertion(rawAuthenticatorData: Foundation::Data, rawClientDataJSON: Foundation::Data, signature: Foundation::Data, credentialID: Foundation::Data, credentialParamType: Swift::String = "public-key", userId: Foundation::Data? = nil) -> [Swift::String : Any]
   public init(from decoder: any Swift::Decoder) throws
   public func encode(to encoder: any Swift::Encoder) throws
@@ -1716,6 +1797,8 @@ extension IdsvrHaapiSdk::StorageItemCategory : Swift::Hashable {}
 extension IdsvrHaapiSdk::SdkFollowUpTag : Swift::Equatable {}
 extension IdsvrHaapiSdk::SdkFollowUpTag : Swift::Hashable {}
 extension IdsvrHaapiSdk::SdkFollowUpTag : Swift::RawRepresentable {}
+extension IdsvrHaapiSdk::HaapiInsecureConfigurationRefusal.IdsvrHaapiSdk::Address : Swift::Equatable {}
+extension IdsvrHaapiSdk::HaapiInsecureConfigurationRefusal.IdsvrHaapiSdk::Address : Swift::Hashable {}
 extension IdsvrHaapiSdk::RetryCondition : Swift::Equatable {}
 extension IdsvrHaapiSdk::RetryCondition : Swift::Hashable {}
 extension IdsvrHaapiSdk::HaapiErrorCode : Swift::Equatable {}
